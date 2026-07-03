@@ -134,15 +134,6 @@
       <div class="repo-total">{{ st.total }} merged PRs &middot; <a href="{{ repo_urls[repo_key] }}" target="_blank" rel="noopener" style="color: var(--text-dim);">{{ repo_urls[repo_key] }}</a></div>
 
       <table class="mini-table">
-        <thead><tr><th>Author</th><th class="num">Merged PRs</th></tr></thead>
-        <tbody>
-          {% for author, count in st.top_authors %}
-          <tr><td>{{ author }}</td><td class="num">{{ count }}</td></tr>
-          {% endfor %}
-        </tbody>
-      </table>
-
-      <table class="mini-table">
         <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
         <tbody>
           {% for category, count in st.category_dist %}
