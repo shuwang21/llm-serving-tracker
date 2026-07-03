@@ -6,15 +6,39 @@
 <title>LLM Serving Development Tracker — {{ date }}</title>
 <style>
   :root {
-    --bg: #0b0e14;
-    --panel: #131722;
-    --panel-2: #1a1f2e;
-    --border: #262c3d;
-    --text: #e6e9f0;
-    --text-dim: #9aa3b8;
+    --bg: #f5f6f8;
+    --panel: #ffffff;
+    --panel-2: #f0f2f5;
+    --border: #d8dde6;
+    --border-soft: #e6e9ef;
+    --text: #1c2130;
+    --text-dim: #5b6478;
+    --text-faint: #8a92a6;
+    --link: #0369a1;
+    --add: #15803d;
+    --del: #dc2626;
+    --warn: #b45309;
     --accent-sglang: #22c55e;
     --accent-vllm: #f59e0b;
     --radius: 10px;
+    --radius-sm: 7px;
+    --mono: "SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a0c12;
+      --panel: #12151f;
+      --panel-2: #191d29;
+      --border: #242938;
+      --border-soft: #1c202c;
+      --text: #e8eaf0;
+      --text-dim: #8b93a7;
+      --text-faint: #5c6478;
+      --link: #7dd3fc;
+      --add: #4ade80;
+      --del: #f87171;
+      --warn: #fbbf24;
+    }
   }
   * { box-sizing: border-box; }
   body {
@@ -23,128 +47,195 @@
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 1280px; margin: 0 auto; padding: 24px 20px 60px; }
-  header.page-header { text-align: center; padding: 32px 0 20px; }
-  header.page-header h1 { margin: 0 0 6px; font-size: 30px; }
-  header.page-header .subtitle { color: var(--text-dim); margin: 0 0 10px; font-size: 15px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 28px 20px 64px; }
+
+  header.page-header {
+    text-align: center; padding: 28px 0 24px; margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  header.page-header h1 {
+    margin: 0; font-size: 21px; font-weight: 650; letter-spacing: -0.01em;
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;
+  }
+  header.page-header .subtitle {
+    color: var(--text-dim); font-size: 14px; font-weight: 400;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  header.page-header .sep { color: var(--text-faint); }
   header.page-header .date-badge {
     display: inline-block; background: var(--panel-2); border: 1px solid var(--border);
-    border-radius: 999px; padding: 6px 16px; font-size: 13px; color: var(--text-dim);
+    border-radius: 999px; padding: 3px 12px; font-size: 12.5px; color: var(--text-dim);
+    font-family: var(--mono);
   }
 
-  .cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
-  @media (max-width: 800px) { .cards-row { grid-template-columns: 1fr; } }
-
-  .summary-card {
-    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 20px; border-top: 3px solid var(--repo-color, var(--border));
-  }
-  .summary-card h2 { margin: 0 0 14px; font-size: 19px; display: flex; align-items: center; gap: 8px; }
-  .summary-card .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .summary-card .stat { background: var(--panel-2); border-radius: 8px; padding: 10px 12px; }
-  .summary-card .stat .value { font-size: 20px; font-weight: 700; }
-  .summary-card .stat .label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
-  .summary-card .largest-pr { margin-top: 12px; font-size: 13px; color: var(--text-dim); }
-  .summary-card .largest-pr a { color: var(--text); }
-
-  h2.section-title { font-size: 22px; margin: 36px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-
-  .insights-list { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; list-style: none; margin: 0; }
-  .insights-list li { padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 14.5px; }
-  .insights-list li:last-child { border-bottom: none; }
-  .insights-list li::before { content: "→ "; color: var(--text-dim); }
-  .insights-list a { color: #7dd3fc; }
-
-  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
   @media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
 
-  .repo-column { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
-  .repo-column h3 { margin: 0 0 4px; font-size: 20px; }
-  .repo-column .repo-total { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+  .repo-column {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px; border-top: 3px solid var(--repo-color, var(--border));
+  }
+  .repo-column h2 {
+    margin: 0 0 5px; font-size: 18px; font-weight: 650;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .repo-column h2::before {
+    content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--repo-color, var(--text-dim));
+  }
+  .repo-column .repo-total { color: var(--text-dim); font-size: 12.5px; margin-bottom: 18px; }
+  .repo-column .repo-total a { color: var(--text-faint); }
 
-  table.mini-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
-  table.mini-table th, table.mini-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
-  table.mini-table th { color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
-  table.mini-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .stat {
+    background: var(--panel-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 11px 13px;
+  }
+  .stat .value { font-size: 19px; font-weight: 650; font-family: var(--mono); letter-spacing: -0.02em; }
+  .stat .label { font-size: 11.5px; color: var(--text-dim); margin-top: 3px; }
 
-  details.pr-list-toggle summary { cursor: pointer; color: var(--text-dim); font-size: 13px; margin-bottom: 10px; }
+  .high-impact-list {
+    margin-bottom: 18px; font-size: 13px; color: var(--text-dim);
+    background: var(--panel-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 12px 14px;
+  }
+  .high-impact-scroll { height: 110px; overflow-y: auto; }
+  .high-impact-scroll .empty-note { margin: 0; color: var(--text-faint); }
+  .high-impact-title {
+    font-weight: 650; color: var(--text); margin-bottom: 6px; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 6px;
+  }
+  .high-impact-title::before { content: "⚠"; color: var(--warn); font-size: 12px; }
+  .high-impact-list ul { margin: 0; padding-left: 0; list-style: none; }
+  .high-impact-list li { padding: 4px 0; border-top: 1px dashed var(--border-soft); }
+  .high-impact-list li:first-child { border-top: none; }
+  .high-impact-list a { color: var(--link); text-decoration: none; }
+  .high-impact-list a:hover { text-decoration: underline; }
 
-  .pr-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
-  .pr-card .pr-title { font-size: 14.5px; font-weight: 600; }
+  .category-box { height: 230px; overflow-y: auto; margin-bottom: 20px; border: 1px solid var(--border-soft); border-radius: var(--radius-sm); }
+  .category-box table.mini-table { margin-bottom: 0; }
+  .category-box thead th { position: sticky; top: 0; background: var(--panel); }
+
+  .pr-filter { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .pr-filter label { font-size: 11px; font-weight: 650; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+  .pr-filter select {
+    flex: 1; background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 6px 10px; font-size: 13px; font-family: inherit;
+  }
+
+  table.mini-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+  table.mini-table th, table.mini-table td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border-soft); }
+  table.mini-table th { color: var(--text-faint); font-weight: 650; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  table.mini-table td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); }
+  table.mini-table tbody tr:last-child td { border-bottom: none; }
+  table.mini-table tbody tr:hover td { background: var(--panel-2); }
+
+  .pr-list {
+    max-height: 480px; overflow-y: auto; border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 10px; background: var(--bg);
+  }
+  .pr-list::-webkit-scrollbar { width: 8px; }
+  .pr-list::-webkit-scrollbar-track { background: transparent; }
+  .pr-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .pr-card {
+    background: var(--panel-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 12px 14px; margin-bottom: 8px; transition: border-color 0.15s ease;
+  }
+  .pr-card:hover { border-color: var(--border); }
+  .pr-card:last-child { margin-bottom: 0; }
+  .pr-card .pr-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
   .pr-card .pr-title a { color: var(--text); text-decoration: none; }
-  .pr-card .pr-title a:hover { text-decoration: underline; }
-  .pr-card .pr-meta { color: var(--text-dim); font-size: 12.5px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .pr-card .pr-stats { color: var(--text-dim); font-size: 12px; margin-top: 6px; font-variant-numeric: tabular-nums; }
-  .pr-card .pr-stats .add { color: #4ade80; }
-  .pr-card .pr-stats .del { color: #f87171; }
-  .pr-card .high-impact-flag { color: #fbbf24; font-weight: 600; }
+  .pr-card .pr-title a:hover { color: var(--link); }
+  .pr-card .pr-meta {
+    color: var(--text-dim); font-size: 12px; margin-top: 7px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  .pr-card .pr-stats {
+    color: var(--text-faint); font-size: 11.5px; margin-top: 7px;
+    font-variant-numeric: tabular-nums; font-family: var(--mono);
+  }
+  .pr-card .pr-stats .add { color: var(--add); }
+  .pr-card .pr-stats .del { color: var(--del); }
+  .pr-card .high-impact-flag { color: var(--warn); font-weight: 600; }
 
-  .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #0b0e14; }
+  .badge {
+    display: inline-block; padding: 2px 9px; border-radius: 5px; font-size: 10.5px;
+    font-weight: 650; color: #0b0e14; letter-spacing: 0.01em;
+  }
 
-  footer.page-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 12.5px; text-align: center; }
-  footer.page-footer p { margin: 4px 0; }
+  footer.page-footer {
+    margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--border-soft);
+    color: var(--text-faint); font-size: 12px; text-align: center;
+  }
+  footer.page-footer p { margin: 4px 0; max-width: 640px; margin-left: auto; margin-right: auto; }
 </style>
 </head>
 <body>
 <div class="container">
 
   <header class="page-header">
-    <h1>LLM Serving Development Tracker</h1>
-    <p class="subtitle">Daily merged PR comparison: vLLM vs SGLang</p>
-    <span class="date-badge">{{ date }} &middot; {{ timezone }}</span>
+    <h1>
+      LLM Serving Development Tracker
+      <span class="subtitle"><span class="date-badge">{{ date }} reports</span></span>
+    </h1>
   </header>
 
-  <div class="cards-row">
+  <div class="columns">
     {% for repo_key in ["sglang", "vllm"] %}
     {% set st = stats[repo_key] %}
-    <div class="summary-card" style="--repo-color: {{ '#22c55e' if repo_key == 'sglang' else '#f59e0b' }}">
+    {% set prs = repos[repo_key] %}
+    <div class="repo-column" style="--repo-color: {{ '#22c55e' if repo_key == 'sglang' else '#f59e0b' }}">
       <h2>{{ repo_labels[repo_key] }}</h2>
+      <div class="repo-total">{{ st.total }} merged PRs &middot; <a href="{{ repo_urls[repo_key] }}" target="_blank" rel="noopener" style="color: var(--text-dim);">{{ repo_urls[repo_key] }}</a></div>
+
       <div class="stat-grid">
         <div class="stat"><div class="value">{{ st.total }}</div><div class="label">Merged PRs</div></div>
         <div class="stat"><div class="value">{{ st.unique_authors }}</div><div class="label">Unique authors</div></div>
         <div class="stat"><div class="value">+{{ st.total_additions }} / -{{ st.total_deletions }}</div><div class="label">Lines changed</div></div>
         <div class="stat"><div class="value">{{ st.top_category[0] or "—" }}</div><div class="label">Top category ({{ st.top_category[1] }})</div></div>
       </div>
-      {% if st.largest_pr %}
-      <div class="largest-pr">
-        Largest PR by files changed:
-        <a href="{{ st.largest_pr.url }}" target="_blank" rel="noopener">#{{ st.largest_pr.number }} {{ st.largest_pr.title }}</a>
-        ({{ st.largest_pr.changedFiles }} files)
+      <div class="high-impact-list">
+        <div class="high-impact-title">Notable potentially high-impact PRs today</div>
+        <div class="high-impact-scroll">
+          {% if st.high_impact_prs %}
+          <ul>
+            {% for pr in st.high_impact_prs %}
+            <li><a href="{{ pr.url }}" target="_blank" rel="noopener">#{{ pr.number }} {{ pr.title }}</a></li>
+            {% endfor %}
+          </ul>
+          {% else %}
+          <p class="empty-note">None matched the high-impact heuristics today.</p>
+          {% endif %}
+        </div>
       </div>
-      {% endif %}
-    </div>
-    {% endfor %}
-  </div>
 
-  <h2 class="section-title">Cross-Project Insights</h2>
-  <ul class="insights-list">
-    {% for bullet in insights %}
-    <li>{{ bullet }}</li>
-    {% endfor %}
-  </ul>
+      <div class="category-box">
+        <table class="mini-table">
+          <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
+          <tbody>
+            {% for category, count in st.category_dist %}
+            <tr><td>{{ category }}</td><td class="num">{{ count }}</td></tr>
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
 
-  <h2 class="section-title">Side-by-Side Comparison</h2>
-  <div class="columns">
-    {% for repo_key in ["sglang", "vllm"] %}
-    {% set st = stats[repo_key] %}
-    {% set prs = repos[repo_key] %}
-    <div class="repo-column">
-      <h3>{{ repo_labels[repo_key] }}</h3>
-      <div class="repo-total">{{ st.total }} merged PRs &middot; <a href="{{ repo_urls[repo_key] }}" target="_blank" rel="noopener" style="color: var(--text-dim);">{{ repo_urls[repo_key] }}</a></div>
-
-      <table class="mini-table">
-        <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
-        <tbody>
+      <div class="pr-filter">
+        <label>Category</label>
+        <select onchange="filterPRs(this)">
+          <option value="all" selected>All</option>
           {% for category, count in st.category_dist %}
-          <tr><td>{{ category }}</td><td class="num">{{ count }}</td></tr>
+          <option value="{{ category }}">{{ category }} ({{ count }})</option>
           {% endfor %}
-        </tbody>
-      </table>
+        </select>
+      </div>
 
       <div class="pr-list">
         {% for pr in prs %}
-        <div class="pr-card">
+        <div class="pr-card" data-category="{{ pr.category }}">
           <div class="pr-title"><a href="{{ pr.url }}" target="_blank" rel="noopener">#{{ pr.number }} {{ pr.title }}</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: {{ category_colors.get(pr.category, '#9ca3af') }}">{{ pr.category }}</span>
@@ -169,10 +260,19 @@
   </div>
 
   <footer class="page-footer">
-    <p>Data from public GitHub repositories. This site provides summaries and analysis, not a mirror of GitHub content.</p>
+    <p>Tracking where SGLang and vLLM are currently focused, based on merged PRs from public GitHub repositories &mdash; meant as a reference for following along and learning from active development, not a mirror of GitHub content.</p>
     <p>Generated {{ generated_at }}</p>
   </footer>
 
 </div>
+<script>
+function filterPRs(sel) {
+  var v = sel.value;
+  var cards = sel.closest(".repo-column").querySelectorAll(".pr-card");
+  cards.forEach(function (card) {
+    card.style.display = (v === "all" || card.dataset.category === v) ? "" : "none";
+  });
+}
+</script>
 </body>
 </html>

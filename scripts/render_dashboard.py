@@ -4,7 +4,6 @@
 from __future__ import annotations
 
 import argparse
-import html
 import json
 import re
 import shutil
@@ -12,7 +11,6 @@ from collections import Counter
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader
-from markupsafe import Markup
 
 ROOT = Path(__file__).resolve().parent.parent
 DATA_DIR = ROOT / "data"
@@ -52,7 +50,6 @@ def compute_repo_stats(prs: list[dict]) -> dict:
     category_counts = Counter(pr["category"] for pr in prs)
     total_additions = sum(pr["additions"] for pr in prs)
     total_deletions = sum(pr["deletions"] for pr in prs)
-    largest_pr = max(prs, key=lambda p: p["changedFiles"], default=None)
     top_category = category_counts.most_common(1)[0] if category_counts else (None, 0)
     high_impact_prs = [p for p in prs if p["highImpact"]]
 
@@ -64,75 +61,10 @@ def compute_repo_stats(prs: list[dict]) -> dict:
         "top_authors": author_counts.most_common(10),
         "category_dist": category_counts.most_common(),
         "top_category": top_category,
-        "largest_pr": largest_pr,
         "high_impact_prs": sorted(
             high_impact_prs, key=lambda p: p["changedFiles"] + p["additions"] + p["deletions"], reverse=True
         ),
     }
-
-
-def _bold(text: str) -> str:
-    return f"<strong>{html.escape(text)}</strong>"
-
-
-def _link(text: str, url: str) -> str:
-    return f'<a href="{html.escape(url)}" target="_blank" rel="noopener">{html.escape(text)}</a>'
-
-
-def build_insights(stats: dict, prs: dict) -> list[Markup]:
-    bullets = []
-    s_stats, v_stats = stats["sglang"], stats["vllm"]
-
-    if s_stats["total"] != v_stats["total"]:
-        more, fewer = ("SGLang", "vLLM") if s_stats["total"] > v_stats["total"] else ("vLLM", "SGLang")
-        more_n, fewer_n = (s_stats["total"], v_stats["total"]) if more == "SGLang" else (v_stats["total"], s_stats["total"])
-        bullets.append(
-            f"{_bold(more)} merged more PRs than {_bold(fewer)} ({more_n} vs {fewer_n})."
-        )
-    else:
-        bullets.append(f"Both projects merged the same number of PRs ({s_stats['total']}).")
-
-    def diversity_ratio(st):
-        return st["unique_authors"] / st["total"] if st["total"] else 0
-
-    s_div, v_div = diversity_ratio(s_stats), diversity_ratio(v_stats)
-    if s_stats["total"] and v_stats["total"]:
-        if abs(s_div - v_div) > 0.02:
-            broader = "SGLang" if s_div > v_div else "vLLM"
-            bullets.append(
-                f"{_bold(broader)} had a broader author distribution "
-                f"(SGLang: {s_stats['unique_authors']} authors / {s_stats['total']} PRs, "
-                f"vLLM: {v_stats['unique_authors']} authors / {v_stats['total']} PRs)."
-            )
-        else:
-            bullets.append("Author distribution was similarly broad in both projects.")
-
-    if s_stats["top_category"][0]:
-        bullets.append(
-            f"SGLang's most active category was {_bold(s_stats['top_category'][0])} "
-            f"({s_stats['top_category'][1]} PRs)."
-        )
-    if v_stats["top_category"][0]:
-        bullets.append(
-            f"vLLM's most active category was {_bold(v_stats['top_category'][0])} "
-            f"({v_stats['top_category'][1]} PRs)."
-        )
-
-    combined_high_impact = (
-        [dict(p, repo_label=REPO_LABELS["sglang"]) for p in prs["sglang"] if p["highImpact"]]
-        + [dict(p, repo_label=REPO_LABELS["vllm"]) for p in prs["vllm"] if p["highImpact"]]
-    )
-    combined_high_impact.sort(key=lambda p: p["changedFiles"] + p["additions"] + p["deletions"], reverse=True)
-    if combined_high_impact:
-        top_n = combined_high_impact[:5]
-        listing = "; ".join(
-            _link(f"{p['repo_label']} #{p['number']} {p['title']}", p["url"]) for p in top_n
-        )
-        bullets.append(f"Notable potentially high-impact PRs today: {listing}.")
-    else:
-        bullets.append("No PRs matched the high-impact heuristics today.")
-
-    return [Markup(b) for b in bullets]
 
 
 def render(date: str, force_public: bool = True) -> Path:
@@ -145,7 +77,6 @@ def render(date: str, force_public: bool = True) -> Path:
 
     repos = data["repos"]
     stats = {repo_key: compute_repo_stats(prs) for repo_key, prs in repos.items()}
-    insights = build_insights(stats, repos)
 
     # annotate PRs with a css-safe category slug for badge styling
     for repo_key, prs in repos.items():
@@ -162,7 +93,6 @@ def render(date: str, force_public: bool = True) -> Path:
         repo_urls=REPO_URLS,
         repos=repos,
         stats=stats,
-        insights=insights,
         category_colors=CATEGORY_COLORS,
     )
 

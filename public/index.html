@@ -3,18 +3,42 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>LLM Serving Development Tracker — 2026-07-01</title>
+<title>LLM Serving Development Tracker — 2026-07-02</title>
 <style>
   :root {
-    --bg: #0b0e14;
-    --panel: #131722;
-    --panel-2: #1a1f2e;
-    --border: #262c3d;
-    --text: #e6e9f0;
-    --text-dim: #9aa3b8;
+    --bg: #f5f6f8;
+    --panel: #ffffff;
+    --panel-2: #f0f2f5;
+    --border: #d8dde6;
+    --border-soft: #e6e9ef;
+    --text: #1c2130;
+    --text-dim: #5b6478;
+    --text-faint: #8a92a6;
+    --link: #0369a1;
+    --add: #15803d;
+    --del: #dc2626;
+    --warn: #b45309;
     --accent-sglang: #22c55e;
     --accent-vllm: #f59e0b;
     --radius: 10px;
+    --radius-sm: 7px;
+    --mono: "SF Mono", ui-monospace, "Cascadia Code", Consolas, monospace;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0a0c12;
+      --panel: #12151f;
+      --panel-2: #191d29;
+      --border: #242938;
+      --border-soft: #1c202c;
+      --text: #e8eaf0;
+      --text-dim: #8b93a7;
+      --text-faint: #5c6478;
+      --link: #7dd3fc;
+      --add: #4ade80;
+      --del: #f87171;
+      --warn: #fbbf24;
+    }
   }
   * { box-sizing: border-box; }
   body {
@@ -23,472 +47,1018 @@
     color: var(--text);
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
   }
-  .container { max-width: 1280px; margin: 0 auto; padding: 24px 20px 60px; }
-  header.page-header { text-align: center; padding: 32px 0 20px; }
-  header.page-header h1 { margin: 0 0 6px; font-size: 30px; }
-  header.page-header .subtitle { color: var(--text-dim); margin: 0 0 10px; font-size: 15px; }
+  .container { max-width: 1280px; margin: 0 auto; padding: 28px 20px 64px; }
+
+  header.page-header {
+    text-align: center; padding: 28px 0 24px; margin-bottom: 8px;
+    border-bottom: 1px solid var(--border-soft);
+  }
+  header.page-header h1 {
+    margin: 0; font-size: 21px; font-weight: 650; letter-spacing: -0.01em;
+    display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: 8px;
+  }
+  header.page-header .subtitle {
+    color: var(--text-dim); font-size: 14px; font-weight: 400;
+    display: inline-flex; align-items: center; gap: 8px;
+  }
+  header.page-header .sep { color: var(--text-faint); }
   header.page-header .date-badge {
     display: inline-block; background: var(--panel-2); border: 1px solid var(--border);
-    border-radius: 999px; padding: 6px 16px; font-size: 13px; color: var(--text-dim);
+    border-radius: 999px; padding: 3px 12px; font-size: 12.5px; color: var(--text-dim);
+    font-family: var(--mono);
   }
 
-  .cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
-  @media (max-width: 800px) { .cards-row { grid-template-columns: 1fr; } }
-
-  .summary-card {
-    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
-    padding: 20px; border-top: 3px solid var(--repo-color, var(--border));
-  }
-  .summary-card h2 { margin: 0 0 14px; font-size: 19px; display: flex; align-items: center; gap: 8px; }
-  .summary-card .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
-  .summary-card .stat { background: var(--panel-2); border-radius: 8px; padding: 10px 12px; }
-  .summary-card .stat .value { font-size: 20px; font-weight: 700; }
-  .summary-card .stat .label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
-  .summary-card .largest-pr { margin-top: 12px; font-size: 13px; color: var(--text-dim); }
-  .summary-card .largest-pr a { color: var(--text); }
-
-  h2.section-title { font-size: 22px; margin: 36px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
-
-  .insights-list { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; list-style: none; margin: 0; }
-  .insights-list li { padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 14.5px; }
-  .insights-list li:last-child { border-bottom: none; }
-  .insights-list li::before { content: "→ "; color: var(--text-dim); }
-  .insights-list a { color: #7dd3fc; }
-
-  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin: 28px 0; }
   @media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
 
-  .repo-column { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
-  .repo-column h3 { margin: 0 0 4px; font-size: 20px; }
-  .repo-column .repo-total { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+  .repo-column {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 22px; border-top: 3px solid var(--repo-color, var(--border));
+  }
+  .repo-column h2 {
+    margin: 0 0 5px; font-size: 18px; font-weight: 650;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .repo-column h2::before {
+    content: ""; display: inline-block; width: 9px; height: 9px; border-radius: 50%;
+    background: var(--repo-color, var(--text-dim));
+  }
+  .repo-column .repo-total { color: var(--text-dim); font-size: 12.5px; margin-bottom: 18px; }
+  .repo-column .repo-total a { color: var(--text-faint); }
 
-  table.mini-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
-  table.mini-table th, table.mini-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
-  table.mini-table th { color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
-  table.mini-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+  .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 18px; }
+  .stat {
+    background: var(--panel-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 11px 13px;
+  }
+  .stat .value { font-size: 19px; font-weight: 650; font-family: var(--mono); letter-spacing: -0.02em; }
+  .stat .label { font-size: 11.5px; color: var(--text-dim); margin-top: 3px; }
 
-  details.pr-list-toggle summary { cursor: pointer; color: var(--text-dim); font-size: 13px; margin-bottom: 10px; }
+  .high-impact-list {
+    margin-bottom: 18px; font-size: 13px; color: var(--text-dim);
+    background: var(--panel-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 12px 14px;
+  }
+  .high-impact-scroll { height: 110px; overflow-y: auto; }
+  .high-impact-scroll .empty-note { margin: 0; color: var(--text-faint); }
+  .high-impact-title {
+    font-weight: 650; color: var(--text); margin-bottom: 6px; font-size: 12px;
+    text-transform: uppercase; letter-spacing: 0.04em; display: flex; align-items: center; gap: 6px;
+  }
+  .high-impact-title::before { content: "⚠"; color: var(--warn); font-size: 12px; }
+  .high-impact-list ul { margin: 0; padding-left: 0; list-style: none; }
+  .high-impact-list li { padding: 4px 0; border-top: 1px dashed var(--border-soft); }
+  .high-impact-list li:first-child { border-top: none; }
+  .high-impact-list a { color: var(--link); text-decoration: none; }
+  .high-impact-list a:hover { text-decoration: underline; }
 
-  .pr-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
-  .pr-card .pr-title { font-size: 14.5px; font-weight: 600; }
+  .category-box { height: 230px; overflow-y: auto; margin-bottom: 20px; border: 1px solid var(--border-soft); border-radius: var(--radius-sm); }
+  .category-box table.mini-table { margin-bottom: 0; }
+  .category-box thead th { position: sticky; top: 0; background: var(--panel); }
+
+  .pr-filter { display: flex; align-items: center; gap: 8px; margin-bottom: 10px; }
+  .pr-filter label { font-size: 11px; font-weight: 650; color: var(--text-faint); text-transform: uppercase; letter-spacing: 0.05em; }
+  .pr-filter select {
+    flex: 1; background: var(--panel-2); color: var(--text); border: 1px solid var(--border);
+    border-radius: var(--radius-sm); padding: 6px 10px; font-size: 13px; font-family: inherit;
+  }
+
+  table.mini-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13px; }
+  table.mini-table th, table.mini-table td { text-align: left; padding: 7px 8px; border-bottom: 1px solid var(--border-soft); }
+  table.mini-table th { color: var(--text-faint); font-weight: 650; font-size: 11px; text-transform: uppercase; letter-spacing: 0.05em; }
+  table.mini-table td.num { text-align: right; font-variant-numeric: tabular-nums; font-family: var(--mono); }
+  table.mini-table tbody tr:last-child td { border-bottom: none; }
+  table.mini-table tbody tr:hover td { background: var(--panel-2); }
+
+  .pr-list {
+    max-height: 480px; overflow-y: auto; border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 10px; background: var(--bg);
+  }
+  .pr-list::-webkit-scrollbar { width: 8px; }
+  .pr-list::-webkit-scrollbar-track { background: transparent; }
+  .pr-list::-webkit-scrollbar-thumb { background: var(--border); border-radius: 4px; }
+
+  .pr-card {
+    background: var(--panel-2); border: 1px solid var(--border-soft); border-radius: var(--radius-sm);
+    padding: 12px 14px; margin-bottom: 8px; transition: border-color 0.15s ease;
+  }
+  .pr-card:hover { border-color: var(--border); }
+  .pr-card:last-child { margin-bottom: 0; }
+  .pr-card .pr-title { font-size: 14px; font-weight: 600; line-height: 1.4; }
   .pr-card .pr-title a { color: var(--text); text-decoration: none; }
-  .pr-card .pr-title a:hover { text-decoration: underline; }
-  .pr-card .pr-meta { color: var(--text-dim); font-size: 12.5px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
-  .pr-card .pr-stats { color: var(--text-dim); font-size: 12px; margin-top: 6px; font-variant-numeric: tabular-nums; }
-  .pr-card .pr-stats .add { color: #4ade80; }
-  .pr-card .pr-stats .del { color: #f87171; }
-  .pr-card .high-impact-flag { color: #fbbf24; font-weight: 600; }
+  .pr-card .pr-title a:hover { color: var(--link); }
+  .pr-card .pr-meta {
+    color: var(--text-dim); font-size: 12px; margin-top: 7px;
+    display: flex; flex-wrap: wrap; gap: 8px; align-items: center;
+  }
+  .pr-card .pr-stats {
+    color: var(--text-faint); font-size: 11.5px; margin-top: 7px;
+    font-variant-numeric: tabular-nums; font-family: var(--mono);
+  }
+  .pr-card .pr-stats .add { color: var(--add); }
+  .pr-card .pr-stats .del { color: var(--del); }
+  .pr-card .high-impact-flag { color: var(--warn); font-weight: 600; }
 
-  .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #0b0e14; }
+  .badge {
+    display: inline-block; padding: 2px 9px; border-radius: 5px; font-size: 10.5px;
+    font-weight: 650; color: #0b0e14; letter-spacing: 0.01em;
+  }
 
-  footer.page-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 12.5px; text-align: center; }
-  footer.page-footer p { margin: 4px 0; }
+  footer.page-footer {
+    margin-top: 44px; padding-top: 20px; border-top: 1px solid var(--border-soft);
+    color: var(--text-faint); font-size: 12px; text-align: center;
+  }
+  footer.page-footer p { margin: 4px 0; max-width: 640px; margin-left: auto; margin-right: auto; }
 </style>
 </head>
 <body>
 <div class="container">
 
   <header class="page-header">
-    <h1>LLM Serving Development Tracker</h1>
-    <p class="subtitle">Daily merged PR comparison: vLLM vs SGLang</p>
-    <span class="date-badge">2026-07-01 &middot; America/Los_Angeles</span>
+    <h1>
+      LLM Serving Development Tracker
+      <span class="subtitle"><span class="date-badge">2026-07-02 reports</span></span>
+    </h1>
   </header>
 
-  <div class="cards-row">
-    
-    
-    <div class="summary-card" style="--repo-color: #22c55e">
-      <h2>SGLang</h2>
-      <div class="stat-grid">
-        <div class="stat"><div class="value">56</div><div class="label">Merged PRs</div></div>
-        <div class="stat"><div class="value">37</div><div class="label">Unique authors</div></div>
-        <div class="stat"><div class="value">+20416 / -2439</div><div class="label">Lines changed</div></div>
-        <div class="stat"><div class="value">NVIDIA / CUDA</div><div class="label">Top category (24)</div></div>
-      </div>
-      
-      <div class="largest-pr">
-        Largest PR by files changed:
-        <a href="https://github.com/sgl-project/sglang/pull/29789" target="_blank" rel="noopener">#29789 chore: clean diffusion dead code</a>
-        (41 files)
-      </div>
-      
-    </div>
-    
-    
-    <div class="summary-card" style="--repo-color: #f59e0b">
-      <h2>vLLM</h2>
-      <div class="stat-grid">
-        <div class="stat"><div class="value">39</div><div class="label">Merged PRs</div></div>
-        <div class="stat"><div class="value">29</div><div class="label">Unique authors</div></div>
-        <div class="stat"><div class="value">+5199 / -5194</div><div class="label">Lines changed</div></div>
-        <div class="stat"><div class="value">AMD / ROCm</div><div class="label">Top category (10)</div></div>
-      </div>
-      
-      <div class="largest-pr">
-        Largest PR by files changed:
-        <a href="https://github.com/vllm-project/vllm/pull/47265" target="_blank" rel="noopener">#47265 [Rust Frontend] Split engine core DTOs into separate modules</a>
-        (54 files)
-      </div>
-      
-    </div>
-    
-  </div>
-
-  <h2 class="section-title">Cross-Project Insights</h2>
-  <ul class="insights-list">
-    
-    <li><strong>SGLang</strong> merged more PRs than <strong>vLLM</strong> (56 vs 39).</li>
-    
-    <li><strong>vLLM</strong> had a broader author distribution (SGLang: 37 authors / 56 PRs, vLLM: 29 authors / 39 PRs).</li>
-    
-    <li>SGLang's most active category was <strong>NVIDIA / CUDA</strong> (24 PRs).</li>
-    
-    <li>vLLM's most active category was <strong>AMD / ROCm</strong> (10 PRs).</li>
-    
-    <li>Notable potentially high-impact PRs today: <a href="https://github.com/sgl-project/sglang/pull/29678" target="_blank" rel="noopener">SGLang #29678 feat(mem_cache): unified memory pool for hybrid Mamba / SWA models</a>; <a href="https://github.com/sgl-project/sglang/pull/25377" target="_blank" rel="noopener">SGLang #25377 [HiCache][AMD] Add UMBP tiered DRAM + SSD L3 storage backend with hugepage host allocator  </a>; <a href="https://github.com/vllm-project/vllm/pull/44353" target="_blank" rel="noopener">vLLM #44353 Weight sync refactor + move sparse nccl engine</a>; <a href="https://github.com/vllm-project/vllm/pull/46995" target="_blank" rel="noopener">vLLM #46995 [Spec Decode] DSpark</a>; <a href="https://github.com/vllm-project/vllm/pull/47265" target="_blank" rel="noopener">vLLM #47265 [Rust Frontend] Split engine core DTOs into separate modules</a>.</li>
-    
-  </ul>
-
-  <h2 class="section-title">Side-by-Side Comparison</h2>
   <div class="columns">
     
     
     
-    <div class="repo-column">
-      <h3>SGLang</h3>
-      <div class="repo-total">56 merged PRs &middot; <a href="https://github.com/sgl-project/sglang" target="_blank" rel="noopener" style="color: var(--text-dim);">https://github.com/sgl-project/sglang</a></div>
+    <div class="repo-column" style="--repo-color: #22c55e">
+      <h2>SGLang</h2>
+      <div class="repo-total">32 merged PRs &middot; <a href="https://github.com/sgl-project/sglang" target="_blank" rel="noopener" style="color: var(--text-dim);">https://github.com/sgl-project/sglang</a></div>
 
-      <table class="mini-table">
-        <thead><tr><th>Author</th><th class="num">Merged PRs</th></tr></thead>
-        <tbody>
+      <div class="stat-grid">
+        <div class="stat"><div class="value">32</div><div class="label">Merged PRs</div></div>
+        <div class="stat"><div class="value">24</div><div class="label">Unique authors</div></div>
+        <div class="stat"><div class="value">+5813 / -8311</div><div class="label">Lines changed</div></div>
+        <div class="stat"><div class="value">AMD / ROCm</div><div class="label">Top category (11)</div></div>
+      </div>
+      <div class="high-impact-list">
+        <div class="high-impact-title">Notable potentially high-impact PRs today</div>
+        <div class="high-impact-scroll">
           
-          <tr><td>michaelzhang-ai</td><td class="num">3</td></tr>
+          <ul>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29937" target="_blank" rel="noopener">#29937 [NPU] [DOC] add missing DEEP_NORMAL_MODE_USE_INT8_QUANT for w8a8+deepep scenarios</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29807" target="_blank" rel="noopener">#29807 Add XPU CI job monitor workflow</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29884" target="_blank" rel="noopener">#29884 [Doc] Cookbook: Laguna-XS-2.1 (DFlash low-latency + high-throughput)</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29771" target="_blank" rel="noopener">#29771 [MoE] Consolidate ungrouped + grouped gate/topk onto one Triton router (#26771) — faster than AOT on B200/H100/H200, at parity with flashinfer</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29828" target="_blank" rel="noopener">#29828 glm5.2 on ascend doc (new version)</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29852" target="_blank" rel="noopener">#29852 [diffusion] refactor: refactor cuda attention backend resolver</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29770" target="_blank" rel="noopener">#29770 chore: cleanup garbage code</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29862" target="_blank" rel="noopener">#29862 [diffusion] Add --offload-during-compile to fit max-autotune on tight-memory GPUs</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/27835" target="_blank" rel="noopener">#27835 [bugfix][AMD] Disable aiter allreduce+RMSNorm fusion under DP attention / EP</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29822" target="_blank" rel="noopener">#29822 [AMD] Accept ROCm tensors in JIT kernel TensorMatcher + register 4 kernel tests</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29659" target="_blank" rel="noopener">#29659 [LFM2-MoE] Support Transformers v5 packed MoE expert weights</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29758" target="_blank" rel="noopener">#29758 Remove transformers 5.12.1 dead-code workarounds</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29017" target="_blank" rel="noopener">#29017 [model-gateway] PD router: cancel paired decode when prefill fails</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29544" target="_blank" rel="noopener">#29544 docs: add PD disaggregation to GLM-5.2 cookbook playground</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29702" target="_blank" rel="noopener">#29702 Fix wrong RMSNorm fallback to old Flashinfer CUDA kernel when in PCG</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29817" target="_blank" rel="noopener">#29817 [HiCache] write_back policy refinement</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29860" target="_blank" rel="noopener">#29860 Fix SWA eviction tombstoning the last leaf</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29503" target="_blank" rel="noopener">#29503 NPU case rl update weights for tensor load_format == None and flatten bucket</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29680" target="_blank" rel="noopener">#29680 [AMD] Register 2 CPU/ROCm-safe tests for AMD 1-GPU PR CI</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29918" target="_blank" rel="noopener">#29918 [AMD] Gate broken CK block-FP8 GEMM shapes to aiter-triton-GEMM to fix ROCm 7.0 Qwen3.5 accuracy</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29956" target="_blank" rel="noopener">#29956 Fix UE8M0 scale rounding for DeepGEMM</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29982" target="_blank" rel="noopener">#29982 [AMD][DeepSeek V4] Fix default FlashMLA sparse prefill off on ROCm/HIP</a></li>
+            
+            <li><a href="https://github.com/sgl-project/sglang/pull/29977" target="_blank" rel="noopener">#29977 `session_id` dataclass field should not put in msgpack struct</a></li>
+            
+          </ul>
           
-          <tr><td>mmangkad</td><td class="num">3</td></tr>
-          
-          <tr><td>JustinTong0323</td><td class="num">3</td></tr>
-          
-          <tr><td>yctseng0211</td><td class="num">2</td></tr>
-          
-          <tr><td>BBuf</td><td class="num">2</td></tr>
-          
-          <tr><td>huangtingwei9988</td><td class="num">2</td></tr>
-          
-          <tr><td>bingxche</td><td class="num">2</td></tr>
-          
-          <tr><td>Fridge003</td><td class="num">2</td></tr>
-          
-          <tr><td>mickqian</td><td class="num">2</td></tr>
-          
-          <tr><td>Lzy17</td><td class="num">2</td></tr>
-          
-        </tbody>
-      </table>
+        </div>
+      </div>
 
-      <table class="mini-table">
-        <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
-        <tbody>
+      <div class="category-box">
+        <table class="mini-table">
+          <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
+          <tbody>
+            
+            <tr><td>AMD / ROCm</td><td class="num">11</td></tr>
+            
+            <tr><td>NVIDIA / CUDA</td><td class="num">10</td></tr>
+            
+            <tr><td>MoE / Expert Parallel</td><td class="num">4</td></tr>
+            
+            <tr><td>Distributed / PD Disaggregation</td><td class="num">3</td></tr>
+            
+            <tr><td>Speculative Decoding</td><td class="num">2</td></tr>
+            
+            <tr><td>KV Cache / Memory</td><td class="num">1</td></tr>
+            
+            <tr><td>Docs / Cookbook</td><td class="num">1</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pr-filter">
+        <label>Category</label>
+        <select onchange="filterPRs(this)">
+          <option value="all" selected>All</option>
           
-          <tr><td>NVIDIA / CUDA</td><td class="num">24</td></tr>
+          <option value="AMD / ROCm">AMD / ROCm (11)</option>
           
-          <tr><td>AMD / ROCm</td><td class="num">13</td></tr>
+          <option value="NVIDIA / CUDA">NVIDIA / CUDA (10)</option>
           
-          <tr><td>MoE / Expert Parallel</td><td class="num">12</td></tr>
+          <option value="MoE / Expert Parallel">MoE / Expert Parallel (4)</option>
           
-          <tr><td>Speculative Decoding</td><td class="num">3</td></tr>
+          <option value="Distributed / PD Disaggregation">Distributed / PD Disaggregation (3)</option>
           
-          <tr><td>CI / Tests</td><td class="num">2</td></tr>
+          <option value="Speculative Decoding">Speculative Decoding (2)</option>
           
-          <tr><td>Distributed / PD Disaggregation</td><td class="num">1</td></tr>
+          <option value="KV Cache / Memory">KV Cache / Memory (1)</option>
           
-          <tr><td>Scheduler / Runtime</td><td class="num">1</td></tr>
+          <option value="Docs / Cookbook">Docs / Cookbook (1)</option>
           
-        </tbody>
-      </table>
+        </select>
+      </div>
 
       <div class="pr-list">
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29381" target="_blank" rel="noopener">#29381 [NPU] Fix glm 4.6v</a></div>
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29905" target="_blank" rel="noopener">#29905 docs: add Qwen3.6-27B-NVFP4 variant to cookbook</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by zijiexia</span>
+            <span>merged 2026-07-02T07:05:30Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+50</span> /
+            <span class="del">-12</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29680" target="_blank" rel="noopener">#29680 [AMD] Register 2 CPU/ROCm-safe tests for AMD 1-GPU PR CI</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by michaelzhang-ai</span>
+            <span>merged 2026-07-02T07:25:33Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+15</span> /
+            <span class="del">-2</span> &middot;
+            3 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29770" target="_blank" rel="noopener">#29770 chore: cleanup garbage code</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by BBuf</span>
+            <span>merged 2026-07-02T08:14:01Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            55 files &middot;
+            <span class="add">+86</span> /
+            <span class="del">-262</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29659" target="_blank" rel="noopener">#29659 [LFM2-MoE] Support Transformers v5 packed MoE expert weights</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by tugot17</span>
+            <span>merged 2026-07-02T09:13:02Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+76</span> /
+            <span class="del">-0</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29862" target="_blank" rel="noopener">#29862 [diffusion] Add --offload-during-compile to fit max-autotune on tight-memory GPUs</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by mickqian</span>
+            <span>merged 2026-07-02T11:39:20Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            7 files &middot;
+            <span class="add">+156</span> /
+            <span class="del">-8</span> &middot;
+            16 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29884" target="_blank" rel="noopener">#29884 [Doc] Cookbook: Laguna-XS-2.1 (DFlash low-latency + high-throughput)</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by Jiminator</span>
+            <span>merged 2026-07-02T12:05:34Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            5 files &middot;
+            <span class="add">+1065</span> /
+            <span class="del">-1</span> &middot;
+            11 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29852" target="_blank" rel="noopener">#29852 [diffusion] refactor: refactor cuda attention backend resolver</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by mickqian</span>
+            <span>merged 2026-07-02T13:34:54Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+373</span> /
+            <span class="del">-169</span> &middot;
+            4 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29860" target="_blank" rel="noopener">#29860 Fix SWA eviction tombstoning the last leaf</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by zhaozx-cn</span>
-            <span>merged 2026-07-01T07:13:48Z</span>
+            <span>by ispobock</span>
+            <span>merged 2026-07-02T13:42:30Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            5 files &middot;
+            <span class="add">+20</span> /
+            <span class="del">-15</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29503" target="_blank" rel="noopener">#29503 NPU case rl update weights for tensor load_format == None and flatten bucket</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by McZyWu</span>
+            <span>merged 2026-07-02T14:12:05Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+3</span> /
+            <span class="del">-16</span> &middot;
+            32 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29853" target="_blank" rel="noopener">#29853 bugfix for npu Grok2 model --detokenizer without all special ids</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by McZyWu</span>
+            <span>merged 2026-07-02T14:12:48Z</span>
             <span>base: main</span>
             
           </div>
           <div class="pr-stats">
             1 files &middot;
             <span class="add">+4</span> /
-            <span class="del">-6</span> &middot;
-            2 commits
+            <span class="del">-2</span> &middot;
+            12 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29161" target="_blank" rel="noopener">#29161 [Fix]: Defer DSA MLA CP KV gather for fp8 trtllm prefill in PD mode</a></div>
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29758" target="_blank" rel="noopener">#29758 Remove transformers 5.12.1 dead-code workarounds</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by Dovis01</span>
-            <span>merged 2026-07-01T07:20:12Z</span>
+            <span>by JustinTong0323</span>
+            <span>merged 2026-07-02T16:03:06Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             2 files &middot;
-            <span class="add">+59</span> /
-            <span class="del">-3</span> &middot;
-            5 commits
+            <span class="add">+5</span> /
+            <span class="del">-69</span> &middot;
+            1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29409" target="_blank" rel="noopener">#29409 [AMD] Split qwen3.5 triton DCP test into its own nightly job</a></div>
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29702" target="_blank" rel="noopener">#29702 Fix wrong RMSNorm fallback to old Flashinfer CUDA kernel when in PCG</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by yctseng0211</span>
-            <span>merged 2026-07-01T07:39:40Z</span>
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by b8zhong</span>
+            <span>merged 2026-07-02T16:49:50Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+26</span> /
+            <span class="del">-33</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29544" target="_blank" rel="noopener">#29544 docs: add PD disaggregation to GLM-5.2 cookbook playground</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by zijiexia</span>
+            <span>merged 2026-07-02T16:57:39Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            3 files &middot;
+            <span class="add">+53</span> /
+            <span class="del">-8</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="KV Cache / Memory">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29817" target="_blank" rel="noopener">#29817 [HiCache] write_back policy refinement</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #f59e0b">KV Cache / Memory</span>
+            <span>by xiezhq-hermann</span>
+            <span>merged 2026-07-02T19:16:04Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+29</span> /
+            <span class="del">-16</span> &middot;
+            3 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29974" target="_blank" rel="noopener">#29974 [Doc] Cookbook Laguna-XS-2.1: add AIME25 accuracy (B300 + GB300)</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by Jiminator</span>
+            <span>merged 2026-07-02T20:15:01Z</span>
             <span>base: main</span>
             
           </div>
           <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+75</span> /
-            <span class="del">-1</span> &middot;
+            2 files &middot;
+            <span class="add">+65</span> /
+            <span class="del">-23</span> &middot;
             2 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29789" target="_blank" rel="noopener">#29789 chore: clean diffusion dead code</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by BBuf</span>
-            <span>merged 2026-07-01T07:42:17Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            41 files &middot;
-            <span class="add">+37</span> /
-            <span class="del">-108</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29636" target="_blank" rel="noopener">#29636 [Kernel] Strengthen kernel shape coverage</a></div>
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29921" target="_blank" rel="noopener">#29921 perf(triton): avoid per-step D2H .item() sync in cuda-graph loc translate</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by BBuf</span>
-            <span>merged 2026-07-01T07:44:21Z</span>
+            <span>by ch-wan</span>
+            <span>merged 2026-07-02T20:20:00Z</span>
             <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
+            
           </div>
           <div class="pr-stats">
-            15 files &middot;
-            <span class="add">+373</span> /
-            <span class="del">-140</span> &middot;
-            10 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/28287" target="_blank" rel="noopener">#28287 [HiCache] Optimize HiCache hash generation with bulk token byte conversion</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by huangtingwei9988</span>
-            <span>merged 2026-07-01T07:44:24Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            7 files &middot;
-            <span class="add">+676</span> /
-            <span class="del">-181</span> &middot;
-            8 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29816" target="_blank" rel="noopener">#29816 [AMD] Update ROCm AITER pin to 9127c94</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by bingxche</span>
-            <span>merged 2026-07-01T08:09:12Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+6</span> /
+            1 files &middot;
+            <span class="add">+20</span> /
             <span class="del">-4</span> &middot;
             2 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29693" target="_blank" rel="noopener">#29693 [AMD] Register ltx2_ada_values JIT kernel test for AMD nightly CI</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by michaelzhang-ai</span>
-            <span>merged 2026-07-01T08:13:56Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+2</span> /
-            <span class="del">-1</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29290" target="_blank" rel="noopener">#29290 [AMD] Cover DeepSeek-R1 MXFP4 TP4 MTP nightly CI</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by bingxche</span>
-            <span>merged 2026-07-01T08:21:18Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+226</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/28908" target="_blank" rel="noopener">#28908 [Intel XPU] Initially add nightly GSM8K accuracy tests for Llama-3.1-8B (TP=2) and Qwen3-32B (TP=4)</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by arathi-hlab</span>
-            <span>merged 2026-07-01T08:27:25Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            8 files &middot;
-            <span class="add">+420</span> /
-            <span class="del">-10</span> &middot;
-            20 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29827" target="_blank" rel="noopener">#29827 [Doc] Tiny update dsv4 doc</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
-            <span>by Fridge003</span>
-            <span>merged 2026-07-01T08:47:35Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+2</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/26255" target="_blank" rel="noopener">#26255 [fix] Add support for flashinfer MOE A2A to Qwen3 BF16 model path</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by djns99</span>
-            <span>merged 2026-07-01T08:59:55Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+112</span> /
-            <span class="del">-0</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29667" target="_blank" rel="noopener">#29667 Add fused EH norm for DeepSeek NextN</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by mmangkad</span>
-            <span>merged 2026-07-01T09:46:22Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+386</span> /
-            <span class="del">-12</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/27060" target="_blank" rel="noopener">#27060 feat(hicache): Use NIXL path-mode</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by lluki</span>
-            <span>merged 2026-07-01T09:59:46Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+95</span> /
-            <span class="del">-9</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29791" target="_blank" rel="noopener">#29791 [diffusion] Add 5090 diffusion consumer GPU guard</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by mickqian</span>
-            <span>merged 2026-07-01T11:09:43Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            16 files &middot;
-            <span class="add">+732</span> /
-            <span class="del">-86</span> &middot;
-            8 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29823" target="_blank" rel="noopener">#29823 [HiCache]fix draft host pool allocator type</a></div>
+        <div class="pr-card" data-category="Speculative Decoding">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29956" target="_blank" rel="noopener">#29956 Fix UE8M0 scale rounding for DeepGEMM</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by huangtingwei9988</span>
-            <span>merged 2026-07-01T11:31:17Z</span>
+            <span>by mmangkad</span>
+            <span>merged 2026-07-02T20:42:17Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+12</span> /
+            <span class="del">-2</span> &middot;
+            3 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Distributed / PD Disaggregation">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29977" target="_blank" rel="noopener">#29977 `session_id` dataclass field should not put in msgpack struct</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
+            <span>by rainj-me</span>
+            <span>merged 2026-07-02T21:10:13Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             1 files &middot;
             <span class="add">+1</span> /
-            <span class="del">-0</span> &middot;
+            <span class="del">-1</span> &middot;
             1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29845" target="_blank" rel="noopener">#29845 [CI] Fix fused EH norm CI registration</a></div>
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29756" target="_blank" rel="noopener">#29756 [AMD] Fix MiniMax M3 state transfer in Mori PD</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #64748b">CI / Tests</span>
-            <span>by mmangkad</span>
-            <span>merged 2026-07-01T13:27:07Z</span>
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by YukioZzz</span>
+            <span>merged 2026-07-02T22:02:11Z</span>
             <span>base: main</span>
             
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+10</span> /
+            <span class="del">-1</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/27835" target="_blank" rel="noopener">#27835 [bugfix][AMD] Disable aiter allreduce+RMSNorm fusion under DP attention / EP</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by okorzh-amd</span>
+            <span>merged 2026-07-02T22:31:25Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+133</span> /
+            <span class="del">-0</span> &middot;
+            10 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29982" target="_blank" rel="noopener">#29982 [AMD][DeepSeek V4] Fix default FlashMLA sparse prefill off on ROCm/HIP</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by michaelzhang-ai</span>
+            <span>merged 2026-07-02T23:00:09Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+13</span> /
+            <span class="del">-0</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29943" target="_blank" rel="noopener">#29943 Fix shared logits buffer for reduced-vocab draft models</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by nvpohanh</span>
+            <span>merged 2026-07-02T23:08:57Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+10</span> /
+            <span class="del">-5</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Speculative Decoding">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29017" target="_blank" rel="noopener">#29017 [model-gateway] PD router: cancel paired decode when prefill fails</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
+            <span>by chenkaiyue</span>
+            <span>merged 2026-07-03T00:03:14Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+71</span> /
+            <span class="del">-4</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29807" target="_blank" rel="noopener">#29807 Add XPU CI job monitor workflow</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by arathi-hlab</span>
+            <span>merged 2026-07-03T00:30:17Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+2146</span> /
+            <span class="del">-0</span> &middot;
+            4 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Docs / Cookbook">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29990" target="_blank" rel="noopener">#29990 docs: sync LMSYS SGLang blog cards</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #94a3b8">Docs / Cookbook</span>
+            <span>by sglang-bot</span>
+            <span>merged 2026-07-03T01:01:33Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+29</span> /
+            <span class="del">-29</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29918" target="_blank" rel="noopener">#29918 [AMD] Gate broken CK block-FP8 GEMM shapes to aiter-triton-GEMM to fix ROCm 7.0 Qwen3.5 accuracy</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by yctseng0211</span>
+            <span>merged 2026-07-03T01:18:37Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+17</span> /
+            <span class="del">-1</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29937" target="_blank" rel="noopener">#29937 [NPU] [DOC] add missing DEEP_NORMAL_MODE_USE_INT8_QUANT for w8a8+deepep scenarios</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by amote-i</span>
+            <span>merged 2026-07-03T02:18:23Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            6 files &middot;
+            <span class="add">+20</span> /
+            <span class="del">-6930</span> &middot;
+            6 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Distributed / PD Disaggregation">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29828" target="_blank" rel="noopener">#29828 glm5.2 on ascend doc (new version)</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
+            <span>by stellaxcpeng</span>
+            <span>merged 2026-07-03T02:19:44Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+560</span> /
+            <span class="del">-0</span> &middot;
+            8 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29822" target="_blank" rel="noopener">#29822 [AMD] Accept ROCm tensors in JIT kernel TensorMatcher + register 4 kernel tests</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by michaelzhang-ai</span>
+            <span>merged 2026-07-03T02:29:48Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            6 files &middot;
+            <span class="add">+41</span> /
+            <span class="del">-38</span> &middot;
+            5 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Distributed / PD Disaggregation">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29932" target="_blank" rel="noopener">#29932 add mimo-v2-flash model tutorial</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
+            <span>by sigama-w</span>
+            <span>merged 2026-07-03T03:02:24Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+216</span> /
+            <span class="del">-0</span> &middot;
+            4 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29771" target="_blank" rel="noopener">#29771 [MoE] Consolidate ungrouped + grouped gate/topk onto one Triton router (#26771) — faster than AOT on B200/H100/H200, at parity with flashinfer</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by BBuf</span>
+            <span>merged 2026-07-03T03:19:00Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            7 files &middot;
+            <span class="add">+435</span> /
+            <span class="del">-617</span> &middot;
+            6 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29945" target="_blank" rel="noopener">#29945 Move deferred mamba cow and clear</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by ispobock</span>
+            <span>merged 2026-07-03T03:29:05Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+53</span> /
+            <span class="del">-43</span> &middot;
+            2 commits
+          </div>
+        </div>
+        
+      </div>
+    </div>
+    
+    
+    
+    <div class="repo-column" style="--repo-color: #f59e0b">
+      <h2>vLLM</h2>
+      <div class="repo-total">28 merged PRs &middot; <a href="https://github.com/vllm-project/vllm" target="_blank" rel="noopener" style="color: var(--text-dim);">https://github.com/vllm-project/vllm</a></div>
+
+      <div class="stat-grid">
+        <div class="stat"><div class="value">28</div><div class="label">Merged PRs</div></div>
+        <div class="stat"><div class="value">19</div><div class="label">Unique authors</div></div>
+        <div class="stat"><div class="value">+6603 / -2515</div><div class="label">Lines changed</div></div>
+        <div class="stat"><div class="value">NVIDIA / CUDA</div><div class="label">Top category (7)</div></div>
+      </div>
+      <div class="high-impact-list">
+        <div class="high-impact-title">Notable potentially high-impact PRs today</div>
+        <div class="high-impact-scroll">
+          
+          <ul>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/44785" target="_blank" rel="noopener">#44785 [Model] Add LLaVA-OneVision-2 (LlavaOnevision2ForConditionalGeneration)</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47361" target="_blank" rel="noopener">#47361 Delete PagedAttention</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47283" target="_blank" rel="noopener">#47283 [Rust Frontend] Use enum-backed domain types for engine outputs and structured outputs</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/43232" target="_blank" rel="noopener">#43232 Xqa decode kernels</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47435" target="_blank" rel="noopener">#47435 [Rust Frontend] Improve scheduler stats logging parity</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/46853" target="_blank" rel="noopener">#46853 Add Laguna XS.2.1 DFlash drafter support</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/46306" target="_blank" rel="noopener">#46306 [Rust Frontend] Expose profiler control routes</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/46974" target="_blank" rel="noopener">#46974 [BugFix][MRV2] Ensure all req slots are accounted for when scheduling</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47128" target="_blank" rel="noopener">#47128 [ROCm] [PyTorch] Move to stable abi since ROCm upgraded to torch 2.11</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47383" target="_blank" rel="noopener">#47383 [Bugfix][Model Runner V2][Spec Decode] Fix int32 offset overflow in block verification kernels</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47311" target="_blank" rel="noopener">#47311 [Bugfix][Tool Parser] poolside_v1: accept tool calls without newline after function name</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47217" target="_blank" rel="noopener">#47217 [Bugfix][Gemma4] Keep image bidirectional attention within the sliding window</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/44443" target="_blank" rel="noopener">#44443 [ModelRunner V2] Enable by default for all dense models</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47477" target="_blank" rel="noopener">#47477 [ROCm][CI] Adding metadata</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47437" target="_blank" rel="noopener">#47437 [Bugfix] Fix pooled Whisper encoder sliding-window kernel size</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47485" target="_blank" rel="noopener">#47485 [BugFix] Derive FlashInfer Q dtype from resolved per-group builder state</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47480" target="_blank" rel="noopener">#47480 [ROCm][CI] Adding qwen3 dp4 eplb</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47304" target="_blank" rel="noopener">#47304 Update DeepGEMM tag to point to latest nv-dev branch for sm120 support</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47285" target="_blank" rel="noopener">#47285 [Model Runner V2][Perf] Warm up GLM-5.2 DSA indexer prefill metadata kernel</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47482" target="_blank" rel="noopener">#47482 [ROCm][CI] Adding extract hs 2gpu</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47376" target="_blank" rel="noopener">#47376 [XPU][CI] Split test_punica_ops into separate pytest invocations for stability</a></li>
+            
+            <li><a href="https://github.com/vllm-project/vllm/pull/47483" target="_blank" rel="noopener">#47483 [ModelRunner V2][BugFix] Free all model refs on shutdown</a></li>
+            
+          </ul>
+          
+        </div>
+      </div>
+
+      <div class="category-box">
+        <table class="mini-table">
+          <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
+          <tbody>
+            
+            <tr><td>NVIDIA / CUDA</td><td class="num">7</td></tr>
+            
+            <tr><td>AMD / ROCm</td><td class="num">6</td></tr>
+            
+            <tr><td>MoE / Expert Parallel</td><td class="num">5</td></tr>
+            
+            <tr><td>Speculative Decoding</td><td class="num">4</td></tr>
+            
+            <tr><td>Scheduler / Runtime</td><td class="num">3</td></tr>
+            
+            <tr><td>KV Cache / Memory</td><td class="num">1</td></tr>
+            
+            <tr><td>Model Support</td><td class="num">1</td></tr>
+            
+            <tr><td>Distributed / PD Disaggregation</td><td class="num">1</td></tr>
+            
+          </tbody>
+        </table>
+      </div>
+
+      <div class="pr-filter">
+        <label>Category</label>
+        <select onchange="filterPRs(this)">
+          <option value="all" selected>All</option>
+          
+          <option value="NVIDIA / CUDA">NVIDIA / CUDA (7)</option>
+          
+          <option value="AMD / ROCm">AMD / ROCm (6)</option>
+          
+          <option value="MoE / Expert Parallel">MoE / Expert Parallel (5)</option>
+          
+          <option value="Speculative Decoding">Speculative Decoding (4)</option>
+          
+          <option value="Scheduler / Runtime">Scheduler / Runtime (3)</option>
+          
+          <option value="KV Cache / Memory">KV Cache / Memory (1)</option>
+          
+          <option value="Model Support">Model Support (1)</option>
+          
+          <option value="Distributed / PD Disaggregation">Distributed / PD Disaggregation (1)</option>
+          
+        </select>
+      </div>
+
+      <div class="pr-list">
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47376" target="_blank" rel="noopener">#47376 [XPU][CI] Split test_punica_ops into separate pytest invocations for stability</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by chaojun-zhang</span>
+            <span>merged 2026-07-02T07:50:56Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+3</span> /
+            <span class="del">-1</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Speculative Decoding">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/38174" target="_blank" rel="noopener">#38174 [Feature] Universal speculative decoding for heterogeneous vocabularies (TLI)</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
+            <span>by wan-danfeng</span>
+            <span>merged 2026-07-02T08:34:21Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            8 files &middot;
+            <span class="add">+364</span> /
+            <span class="del">-5</span> &middot;
+            21 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/44785" target="_blank" rel="noopener">#44785 [Model] Add LLaVA-OneVision-2 (LlavaOnevision2ForConditionalGeneration)</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by chengzheng345</span>
+            <span>merged 2026-07-02T08:41:50Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            6 files &middot;
+            <span class="add">+2593</span> /
+            <span class="del">-0</span> &middot;
+            26 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Scheduler / Runtime">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46306" target="_blank" rel="noopener">#46306 [Rust Frontend] Expose profiler control routes</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #0ea5e9">Scheduler / Runtime</span>
+            <span>by pranavthakur0-0</span>
+            <span>merged 2026-07-02T08:46:07Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            11 files &middot;
+            <span class="add">+381</span> /
+            <span class="del">-2</span> &middot;
+            4 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47283" target="_blank" rel="noopener">#47283 [Rust Frontend] Use enum-backed domain types for engine outputs and structured outputs</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by BugenZhao</span>
+            <span>merged 2026-07-02T09:41:46Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            16 files &middot;
+            <span class="add">+760</span> /
+            <span class="del">-603</span> &middot;
+            3 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47304" target="_blank" rel="noopener">#47304 Update DeepGEMM tag to point to latest nv-dev branch for sm120 support</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by mgoin</span>
+            <span>merged 2026-07-02T10:33:45Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             2 files &middot;
@@ -498,1392 +1068,377 @@
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/25377" target="_blank" rel="noopener">#25377 [HiCache][AMD] Add UMBP tiered DRAM + SSD L3 storage backend with hugepage host allocator  </a></div>
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47128" target="_blank" rel="noopener">#47128 [ROCm] [PyTorch] Move to stable abi since ROCm upgraded to torch 2.11</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by inkcherry</span>
-            <span>merged 2026-07-01T14:21:38Z</span>
+            <span>by tjtanaa</span>
+            <span>merged 2026-07-02T10:34:08Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
-            9 files &middot;
-            <span class="add">+2106</span> /
-            <span class="del">-1</span> &middot;
-            103 commits
+            6 files &middot;
+            <span class="add">+22</span> /
+            <span class="del">-131</span> &middot;
+            2 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29726" target="_blank" rel="noopener">#29726 [AMD] Rebalance stage-c-large-8-gpu-mi35x partitions to fix 60-min timeout</a></div>
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/44443" target="_blank" rel="noopener">#44443 [ModelRunner V2] Enable by default for all dense models</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by yctseng0211</span>
-            <span>merged 2026-07-01T15:17:00Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+5</span> /
-            <span class="del">-5</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29784" target="_blank" rel="noopener">#29784 [AMD][DI][CI] 2/N Add DSV4 DP8/EP8 and MTP MI355X 1P1D nightly recipes</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by Lzy17</span>
-            <span>merged 2026-07-01T15:46:48Z</span>
+            <span>by yewentao256</span>
+            <span>merged 2026-07-02T10:48:57Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
-            15 files &middot;
-            <span class="add">+970</span> /
-            <span class="del">-3</span> &middot;
-            5 commits
+            6 files &middot;
+            <span class="add">+55</span> /
+            <span class="del">-17</span> &middot;
+            22 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29824" target="_blank" rel="noopener">#29824 [diffusion] CI: tighten multimodal-gen consistency thresholds</a></div>
+        <div class="pr-card" data-category="Speculative Decoding">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47428" target="_blank" rel="noopener">#47428 [ModelRunner V2] Fix Mamba2 crash on non-spec-decode</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by mickqian</span>
-            <span>merged 2026-07-01T17:32:51Z</span>
+            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
+            <span>by njhill</span>
+            <span>merged 2026-07-02T14:05:16Z</span>
             <span>base: main</span>
             
           </div>
           <div class="pr-stats">
             1 files &middot;
-            <span class="add">+141</span> /
-            <span class="del">-141</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29211" target="_blank" rel="noopener">#29211 [disagg] Fix KV-event publisher port collision under pure data parallelism</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by Kangyan-Zhou</span>
-            <span>merged 2026-07-01T17:57:35Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+125</span> /
+            <span class="add">+1</span> /
             <span class="del">-1</span> &middot;
             1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29761" target="_blank" rel="noopener">#29761 [Bugfix] compressed-tensors WNA16 MoE: don&#39;t assume a &#34;Linear&#34; config group</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by joerowell</span>
-            <span>merged 2026-07-01T18:08:10Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            4 files &middot;
-            <span class="add">+145</span> /
-            <span class="del">-8</span> &middot;
-            6 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/28676" target="_blank" rel="noopener">#28676 [RL] fix deepseek v4 MXFP8 flashinfer_trtllm_routed MoE weight update</a></div>
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47383" target="_blank" rel="noopener">#47383 [Bugfix][Model Runner V2][Spec Decode] Fix int32 offset overflow in block verification kernels</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by xiuhu17</span>
-            <span>merged 2026-07-01T19:29:09Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+29</span> /
-            <span class="del">-1</span> &middot;
-            10 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29554" target="_blank" rel="noopener">#29554 Upgrading tvm-ffi/sgl-deep-gemm/tilelang</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by Fridge003</span>
-            <span>merged 2026-07-01T19:32:18Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+45</span> /
-            <span class="del">-31</span> &middot;
-            10 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29694" target="_blank" rel="noopener">#29694 [AMD] Fix int8 per-token quant Triton portability + register test for AMD nightly CI</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by michaelzhang-ai</span>
-            <span>merged 2026-07-01T19:56:34Z</span>
+            <span>by WoosukKwon</span>
+            <span>merged 2026-07-02T14:32:38Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             2 files &middot;
-            <span class="add">+13</span> /
-            <span class="del">-3</span> &middot;
-            4 commits
+            <span class="add">+148</span> /
+            <span class="del">-4</span> &middot;
+            1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29782" target="_blank" rel="noopener">#29782 [AMD] Register 3 unit mem_cache + utils tests for stage-b-test-1-gpu-small-amd</a></div>
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47410" target="_blank" rel="noopener">#47410 support GLM-5.2 gate use FP32</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by michaelzhang-ai</span>
-            <span>merged 2026-07-01T19:57:48Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+6</span> /
-            <span class="del">-3</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29678" target="_blank" rel="noopener">#29678 feat(mem_cache): unified memory pool for hybrid Mamba / SWA models</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by ch-wan</span>
-            <span>merged 2026-07-01T20:21:59Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            28 files &middot;
-            <span class="add">+8378</span> /
-            <span class="del">-551</span> &middot;
-            46 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29595" target="_blank" rel="noopener">#29595 [Spec] Enable FlashInfer autotune for spec draft</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by mmangkad</span>
-            <span>merged 2026-07-01T20:36:08Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            16 files &middot;
-            <span class="add">+313</span> /
-            <span class="del">-172</span> &middot;
-            13 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29775" target="_blank" rel="noopener">#29775 [DeepSeek V4] Enable FlashMLA sparse prefill by default</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by YAMY1234</span>
-            <span>merged 2026-07-01T20:50:05Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+150</span> /
-            <span class="del">-35</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29621" target="_blank" rel="noopener">#29621 Extract reusable VMM shareable-handle helpers from register_graph_inputs</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by minosfuture</span>
-            <span>merged 2026-07-01T21:02:01Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+530</span> /
-            <span class="del">-246</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29870" target="_blank" rel="noopener">#29870 Add pranjalssh to CI_PERMISSIONS.json</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #64748b">CI / Tests</span>
-            <span>by merrymercy</span>
-            <span>merged 2026-07-01T21:52:02Z</span>
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by zRzRzRzRzRzRzR</span>
+            <span>merged 2026-07-02T14:45:39Z</span>
             <span>base: main</span>
             
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+19</span> /
+            <span class="del">-0</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47435" target="_blank" rel="noopener">#47435 [Rust Frontend] Improve scheduler stats logging parity</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by BugenZhao</span>
+            <span>merged 2026-07-02T14:55:26Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            6 files &middot;
+            <span class="add">+521</span> /
+            <span class="del">-30</span> &middot;
+            5 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47285" target="_blank" rel="noopener">#47285 [Model Runner V2][Perf] Warm up GLM-5.2 DSA indexer prefill metadata kernel</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by chaunceyjiang</span>
+            <span>merged 2026-07-02T16:31:32Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             1 files &middot;
             <span class="add">+7</span> /
             <span class="del">-0</span> &middot;
-            2 commits
+            1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29872" target="_blank" rel="noopener">#29872 [sglang-miles] Cherry-pick #28371: [LoRA] Fix chunked SGMV (csgmv) CUDA graph segment replay</a></div>
+        <div class="pr-card" data-category="Speculative Decoding">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47437" target="_blank" rel="noopener">#47437 [Bugfix] Fix pooled Whisper encoder sliding-window kernel size</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
+            <span>by njhill</span>
+            <span>merged 2026-07-02T17:19:11Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+27</span> /
+            <span class="del">-13</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Scheduler / Runtime">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46974" target="_blank" rel="noopener">#46974 [BugFix][MRV2] Ensure all req slots are accounted for when scheduling</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #0ea5e9">Scheduler / Runtime</span>
+            <span>by njhill</span>
+            <span>merged 2026-07-02T17:19:24Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+223</span> /
+            <span class="del">-5</span> &middot;
+            3 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47311" target="_blank" rel="noopener">#47311 [Bugfix][Tool Parser] poolside_v1: accept tool calls without newline after function name</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by joerowell</span>
+            <span>merged 2026-07-02T19:08:38Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+103</span> /
+            <span class="del">-1</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="KV Cache / Memory">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47361" target="_blank" rel="noopener">#47361 Delete PagedAttention</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #f59e0b">KV Cache / Memory</span>
+            <span>by mgoin</span>
+            <span>merged 2026-07-02T19:31:27Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            9 files &middot;
+            <span class="add">+90</span> /
+            <span class="del">-1472</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/43232" target="_blank" rel="noopener">#43232 Xqa decode kernels</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by jybsuper</span>
-            <span>merged 2026-07-01T22:09:32Z</span>
-            <span>base: sglang-miles</span>
+            <span>by DanBlanaru</span>
+            <span>merged 2026-07-02T19:32:06Z</span>
+            <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             7 files &middot;
-            <span class="add">+392</span> /
-            <span class="del">-27</span> &middot;
-            1 commits
+            <span class="add">+538</span> /
+            <span class="del">-143</span> &middot;
+            12 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29871" target="_blank" rel="noopener">#29871 [chore] Add no-getattr rule; refine no-dataclasses rule</a></div>
+        <div class="pr-card" data-category="Model Support">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47472" target="_blank" rel="noopener">#47472 Fix Transformers modeling backend usage stats</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #0ea5e9">Scheduler / Runtime</span>
-            <span>by merrymercy</span>
-            <span>merged 2026-07-01T22:31:35Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+41</span> /
-            <span class="del">-3</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/28925" target="_blank" rel="noopener">#28925 fix(nightly-precision): pin flashinfer allreduce-fusion backend for TP-partial capture contract</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by JustinTong0323</span>
-            <span>merged 2026-07-02T00:26:19Z</span>
+            <span class="badge" style="background: #6366f1">Model Support</span>
+            <span>by hmellor</span>
+            <span>merged 2026-07-02T19:51:23Z</span>
             <span>base: main</span>
             
           </div>
           <div class="pr-stats">
             1 files &middot;
-            <span class="add">+9</span> /
-            <span class="del">-0</span> &middot;
+            <span class="add">+8</span> /
+            <span class="del">-1</span> &middot;
             1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/27730" target="_blank" rel="noopener">#27730 [AMD]: docker(rocm) bump Mooncake to latest main + enable multi-protocol</a></div>
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47477" target="_blank" rel="noopener">#47477 [ROCm][CI] Adding metadata</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by Lzy17</span>
-            <span>merged 2026-07-02T00:41:46Z</span>
+            <span>by AndreasKaratzas</span>
+            <span>merged 2026-07-03T00:45:23Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             3 files &middot;
-            <span class="add">+14</span> /
-            <span class="del">-4</span> &middot;
-            6 commits
+            <span class="add">+62</span> /
+            <span class="del">-0</span> &middot;
+            1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/28190" target="_blank" rel="noopener">#28190 fix(precision): do not promote failed runs to the comparison baseline</a></div>
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47480" target="_blank" rel="noopener">#47480 [ROCm][CI] Adding qwen3 dp4 eplb</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by JustinTong0323</span>
-            <span>merged 2026-07-02T01:19:16Z</span>
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by AndreasKaratzas</span>
+            <span>merged 2026-07-03T00:58:56Z</span>
             <span>base: main</span>
-            
+            <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             2 files &middot;
-            <span class="add">+73</span> /
-            <span class="del">-1</span> &middot;
-            4 commits
+            <span class="add">+25</span> /
+            <span class="del">-0</span> &middot;
+            1 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/27923" target="_blank" rel="noopener">#27923 Fix MambaPool.clear_slots OOM by replacing expand-based tensor allocation with scalar zeroing</a></div>
+        <div class="pr-card" data-category="AMD / ROCm">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47482" target="_blank" rel="noopener">#47482 [ROCm][CI] Adding extract hs 2gpu</a></div>
           <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by iridiumine</span>
-            <span>merged 2026-07-02T01:26:56Z</span>
+            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
+            <span>by AndreasKaratzas</span>
+            <span>merged 2026-07-03T00:59:38Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            2 files &middot;
+            <span class="add">+4</span> /
+            <span class="del">-2</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Speculative Decoding">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46853" target="_blank" rel="noopener">#46853 Add Laguna XS.2.1 DFlash drafter support</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
+            <span>by adamkbaranowski</span>
+            <span>merged 2026-07-03T01:09:28Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            7 files &middot;
+            <span class="add">+494</span> /
+            <span class="del">-47</span> &middot;
+            7 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="Distributed / PD Disaggregation">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46456" target="_blank" rel="noopener">#46456 [CI] intel CI: add quantization and awq case for xpu</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
+            <span>by wendyliu235</span>
+            <span>merged 2026-07-03T01:51:56Z</span>
             <span>base: main</span>
             
           </div>
           <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+15</span> /
-            <span class="del">-8</span> &middot;
-            2 commits
+            3 files &middot;
+            <span class="add">+30</span> /
+            <span class="del">-0</span> &middot;
+            5 commits
           </div>
         </div>
         
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29867" target="_blank" rel="noopener">#29867 feat(short-conv): shared ShortConvAttnBackend for ZAYA1 CCA + LFM2 short conv</a></div>
+        <div class="pr-card" data-category="Scheduler / Runtime">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47483" target="_blank" rel="noopener">#47483 [ModelRunner V2][BugFix] Free all model refs on shutdown</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #0ea5e9">Scheduler / Runtime</span>
+            <span>by njhill</span>
+            <span>merged 2026-07-03T02:32:48Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+4</span> /
+            <span class="del">-0</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="MoE / Expert Parallel">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47465" target="_blank" rel="noopener">#47465 [CI] Pin modelscope version to fix test breakage</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
+            <span>by njhill</span>
+            <span>merged 2026-07-03T02:33:08Z</span>
+            <span>base: main</span>
+            
+          </div>
+          <div class="pr-stats">
+            6 files &middot;
+            <span class="add">+7</span> /
+            <span class="del">-7</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47485" target="_blank" rel="noopener">#47485 [BugFix] Derive FlashInfer Q dtype from resolved per-group builder state</a></div>
           <div class="pr-meta">
             <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by ch-wan</span>
-            <span>merged 2026-07-02T03:08:00Z</span>
+            <span>by mgoin</span>
+            <span>merged 2026-07-03T02:33:28Z</span>
+            <span>base: main</span>
+            <span class="high-impact-flag">⚠ potentially important</span>
+          </div>
+          <div class="pr-stats">
+            1 files &middot;
+            <span class="add">+21</span> /
+            <span class="del">-19</span> &middot;
+            1 commits
+          </div>
+        </div>
+        
+        <div class="pr-card" data-category="NVIDIA / CUDA">
+          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47217" target="_blank" rel="noopener">#47217 [Bugfix][Gemma4] Keep image bidirectional attention within the sliding window</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
+            <span>by lucianommartins</span>
+            <span>merged 2026-07-03T02:57:41Z</span>
             <span>base: main</span>
             <span class="high-impact-flag">⚠ potentially important</span>
           </div>
           <div class="pr-stats">
             8 files &middot;
-            <span class="add">+644</span> /
-            <span class="del">-330</span> &middot;
-            6 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29829" target="_blank" rel="noopener">#29829 [NPU] Fix block_table batch size mismatch in GLM-4.7-Flash DeepEP + MTP without CUDA Graphs</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by Estrella-xx</span>
-            <span>merged 2026-07-02T03:09:02Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+12</span> /
-            <span class="del">-2</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29446" target="_blank" rel="noopener">#29446 Add Laguna XS.2.1 DFlash support to SGLang</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by adamkbaranowski</span>
-            <span>merged 2026-07-02T03:26:24Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            4 files &middot;
-            <span class="add">+237</span> /
-            <span class="del">-29</span> &middot;
-            9 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29472" target="_blank" rel="noopener">#29472 [KDA] Add FlashKDA prefill backend for safe-gate KDA linear attention</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by yuan-luo</span>
-            <span>merged 2026-07-02T03:37:05Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+499</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29691" target="_blank" rel="noopener">#29691 [Apple Silicon] [CI] Add model-free unit-test workflow on macos-26</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by jlee5814</span>
-            <span>merged 2026-07-02T04:00:22Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+97</span> /
-            <span class="del">-0</span> &middot;
-            6 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29842" target="_blank" rel="noopener">#29842 pad customized_info for mixed output batches</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by yaof20</span>
-            <span>merged 2026-07-02T04:07:59Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+111</span> /
-            <span class="del">-4</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29551" target="_blank" rel="noopener">#29551 sgl-kernel: bump sgl-attn for varlen num_splits OOM fix</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by JustinTong0323</span>
-            <span>merged 2026-07-02T04:13:54Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+52</span> /
-            <span class="del">-2</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29885" target="_blank" rel="noopener">#29885 [DeepSeek V4] Cover both dense and sparse prefill paths in the compress attention unittest</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by YAMY1234</span>
-            <span>merged 2026-07-02T04:20:12Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+105</span> /
-            <span class="del">-17</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29354" target="_blank" rel="noopener">#29354 [bug6] clear stale mamba cow source on rematch</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by yaof20</span>
-            <span>merged 2026-07-02T05:04:10Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+12</span> /
+            <span class="add">+89</span> /
             <span class="del">-9</span> &middot;
-            6 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29458" target="_blank" rel="noopener">#29458 Enable Breakable Cuda Graph as Default</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by Oasis-Git</span>
-            <span>merged 2026-07-02T05:04:45Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            10 files &middot;
-            <span class="add">+137</span> /
-            <span class="del">-32</span> &middot;
-            21 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29672" target="_blank" rel="noopener">#29672 [amd][diffusion] Fix causal Conv3D cat/pad fusion crashes for wan2.2 t2v</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by sushildubey171</span>
-            <span>merged 2026-07-02T05:11:30Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+2</span> /
-            <span class="del">-0</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29866" target="_blank" rel="noopener">#29866 Fix capture-mode detection during breakable CUDA graph capture</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by cctry</span>
-            <span>merged 2026-07-02T05:12:57Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+5</span> /
-            <span class="del">-1</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/20072" target="_blank" rel="noopener">#20072 [CPU] Padding for dim divisibility in TP3/6 cases</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by ZailiWang</span>
-            <span>merged 2026-07-02T05:14:40Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            6 files &middot;
-            <span class="add">+119</span> /
-            <span class="del">-18</span> &middot;
-            62 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29497" target="_blank" rel="noopener">#29497 [CPU] Fix model failures on Xeon</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by ZailiWang</span>
-            <span>merged 2026-07-02T05:20:19Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            6 files &middot;
-            <span class="add">+86</span> /
-            <span class="del">-98</span> &middot;
-            15 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/27915" target="_blank" rel="noopener">#27915 [Intel GPU] DeepSeek V4 7/N: Support fused_rope_inplace on XPU using triton</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by polisettyvarma</span>
-            <span>merged 2026-07-02T05:22:20Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+3</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/23180" target="_blank" rel="noopener">#23180 Speculative decoding support on XPU</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by ANSHUMAN87</span>
-            <span>merged 2026-07-02T05:23:24Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            9 files &middot;
-            <span class="add">+562</span> /
-            <span class="del">-16</span> &middot;
-            10 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29053" target="_blank" rel="noopener">#29053 [XPU] Enable XPU graph support (decode full-graph + prefill tc_piecewise)</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by CaoE</span>
-            <span>merged 2026-07-02T05:24:35Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            25 files &middot;
-            <span class="add">+886</span> /
-            <span class="del">-43</span> &middot;
-            15 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/sgl-project/sglang/pull/29779" target="_blank" rel="noopener">#29779 Share one logits output buffer across prefill/decode/draft cuda-graph runners</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by cctry</span>
-            <span>merged 2026-07-02T06:30:56Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            9 files &middot;
-            <span class="add">+130</span> /
-            <span class="del">-23</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-      </div>
-    </div>
-    
-    
-    
-    <div class="repo-column">
-      <h3>vLLM</h3>
-      <div class="repo-total">39 merged PRs &middot; <a href="https://github.com/vllm-project/vllm" target="_blank" rel="noopener" style="color: var(--text-dim);">https://github.com/vllm-project/vllm</a></div>
-
-      <table class="mini-table">
-        <thead><tr><th>Author</th><th class="num">Merged PRs</th></tr></thead>
-        <tbody>
-          
-          <tr><td>jeejeelee</td><td class="num">3</td></tr>
-          
-          <tr><td>hmellor</td><td class="num">3</td></tr>
-          
-          <tr><td>njhill</td><td class="num">3</td></tr>
-          
-          <tr><td>Fangzhou-Ai</td><td class="num">2</td></tr>
-          
-          <tr><td>mganczarenko</td><td class="num">2</td></tr>
-          
-          <tr><td>zyongye</td><td class="num">2</td></tr>
-          
-          <tr><td>atalman</td><td class="num">2</td></tr>
-          
-          <tr><td>chaunceyjiang</td><td class="num">1</td></tr>
-          
-          <tr><td>xianbaoqian</td><td class="num">1</td></tr>
-          
-          <tr><td>matteso1</td><td class="num">1</td></tr>
-          
-        </tbody>
-      </table>
-
-      <table class="mini-table">
-        <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
-        <tbody>
-          
-          <tr><td>AMD / ROCm</td><td class="num">10</td></tr>
-          
-          <tr><td>Speculative Decoding</td><td class="num">8</td></tr>
-          
-          <tr><td>NVIDIA / CUDA</td><td class="num">8</td></tr>
-          
-          <tr><td>MoE / Expert Parallel</td><td class="num">6</td></tr>
-          
-          <tr><td>Distributed / PD Disaggregation</td><td class="num">3</td></tr>
-          
-          <tr><td>KV Cache / Memory</td><td class="num">1</td></tr>
-          
-          <tr><td>Model Support</td><td class="num">1</td></tr>
-          
-          <tr><td>Docs / Cookbook</td><td class="num">1</td></tr>
-          
-          <tr><td>Scheduler / Runtime</td><td class="num">1</td></tr>
-          
-        </tbody>
-      </table>
-
-      <div class="pr-list">
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47126" target="_blank" rel="noopener">#47126 [Bugfix] Fix beam search candidate indexing when logprobs count varies</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by chaunceyjiang</span>
-            <span>merged 2026-07-01T07:07:07Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+119</span> /
-            <span class="del">-51</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46806" target="_blank" rel="noopener">#46806 Remove mantis</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
-            <span>by xianbaoqian</span>
-            <span>merged 2026-07-01T07:13:59Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            10 files &middot;
-            <span class="add">+8</span> /
-            <span class="del">-203</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47243" target="_blank" rel="noopener">#47243 [Core] Make sleep-mode backend capability flags communicator-agnostic</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by matteso1</span>
-            <span>merged 2026-07-01T07:17:44Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+15</span> /
-            <span class="del">-14</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47242" target="_blank" rel="noopener">#47242 [CI/Build]  Fix LoRA testing </a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
-            <span>by jeejeelee</span>
-            <span>merged 2026-07-01T07:36:13Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+17</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/42486" target="_blank" rel="noopener">#42486 [XPU][UT]Enable ut qk_norm_rope_fusion</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by Yejing-Lai</span>
-            <span>merged 2026-07-01T07:38:03Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+10</span> /
-            <span class="del">-7</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/44353" target="_blank" rel="noopener">#44353 Weight sync refactor + move sparse nccl engine</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by hao-aaron</span>
-            <span>merged 2026-07-01T08:25:20Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            32 files &middot;
-            <span class="add">+953</span> /
-            <span class="del">-1046</span> &middot;
-            14 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/43950" target="_blank" rel="noopener">#43950 [ROCm][DSV4] Use aiter mHC pre/post as the default ROCm path</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by Fangzhou-Ai</span>
-            <span>merged 2026-07-01T08:27:43Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+32</span> /
-            <span class="del">-39</span> &middot;
             5 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47250" target="_blank" rel="noopener">#47250 [Test] Run SageMaker handler-override tests in-process via TestClient</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by Jyothirmaikottu</span>
-            <span>merged 2026-07-01T09:14:01Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+227</span> /
-            <span class="del">-333</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47071" target="_blank" rel="noopener">#47071 [Bugfix] Fix pooled Whisper sliding-window KV sizing</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by andylolu2</span>
-            <span>merged 2026-07-01T09:33:20Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+43</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46730" target="_blank" rel="noopener">#46730 [ROCm][Perf][Bugfix] DSv4 indexer: use platform FP8 dtype (fnuz) for Q-quant on gfx942</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by akii96</span>
-            <span>merged 2026-07-01T09:33:55Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+19</span> /
-            <span class="del">-8</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47197" target="_blank" rel="noopener">#47197 [CI] Fix various failures on `main`</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by hmellor</span>
-            <span>merged 2026-07-01T09:35:34Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+18</span> /
-            <span class="del">-14</span> &middot;
-            8 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/42748" target="_blank" rel="noopener">#42748 [Bugfix] Expose usage field in GenerateResponse for disaggregated serving</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #f59e0b">KV Cache / Memory</span>
-            <span>by AIvashov</span>
-            <span>merged 2026-07-01T10:00:19Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+4</span> /
-            <span class="del">-2</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47192" target="_blank" rel="noopener">#47192 [Model] Support Hy3 token suffix and JSON Schema array types</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by stevenkuang-tencent</span>
-            <span>merged 2026-07-01T10:16:08Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+24</span> /
-            <span class="del">-11</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47263" target="_blank" rel="noopener">#47263 [Model] Remove AyaVision, MusicFlamingo</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #6366f1">Model Support</span>
-            <span>by hmellor</span>
-            <span>merged 2026-07-01T10:39:34Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            12 files &middot;
-            <span class="add">+3</span> /
-            <span class="del">-1422</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47269" target="_blank" rel="noopener">#47269 [ROCm][MiniMax-M3] Cross-layer lightning-indexer top-k sharing</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by Fangzhou-Ai</span>
-            <span>merged 2026-07-01T10:50:10Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+41</span> /
-            <span class="del">-1</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/45903" target="_blank" rel="noopener">#45903 docs(security): document gRPC interface as insecure for private use only</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #94a3b8">Docs / Cookbook</span>
-            <span>by jperezdealgaba</span>
-            <span>merged 2026-07-01T12:39:58Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+21</span> /
-            <span class="del">-0</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/30966" target="_blank" rel="noopener">#30966 Migrate GPTBigCode and Starcoder2 to the Transformers modeling backend</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by hmellor</span>
-            <span>merged 2026-07-01T13:41:36Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            5 files &middot;
-            <span class="add">+4</span> /
-            <span class="del">-681</span> &middot;
-            6 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47299" target="_blank" rel="noopener">#47299 [CI] Fix segfault in tracing test</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by njhill</span>
-            <span>merged 2026-07-01T14:00:38Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+4</span> /
-            <span class="del">-5</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/45368" target="_blank" rel="noopener">#45368 [xpu][lora]: Align LoRA implementation with Punica GPU: fix _apply_expand rank mismatch, add_inputs hardcode, and MoE EP</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by chaojun-zhang</span>
-            <span>merged 2026-07-01T14:14:05Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+182</span> /
-            <span class="del">-35</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47290" target="_blank" rel="noopener">#47290 [BugFix for #47070] Lora should not be with MoE SP</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by gcanlin</span>
-            <span>merged 2026-07-01T14:25:52Z</span>
-            <span>base: wentao-fix-moe-reduce-scatter</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+4</span> /
-            <span class="del">-1</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47265" target="_blank" rel="noopener">#47265 [Rust Frontend] Split engine core DTOs into separate modules</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by BugenZhao</span>
-            <span>merged 2026-07-01T14:28:21Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            54 files &middot;
-            <span class="add">+806</span> /
-            <span class="del">-789</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47031" target="_blank" rel="noopener">#47031 [Bugfix] Fix GraniteMoeShared weight loading broken by #41184</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by mganczarenko</span>
-            <span>merged 2026-07-01T14:39:13Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+3</span> /
-            <span class="del">-3</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46995" target="_blank" rel="noopener">#46995 [Spec Decode] DSpark</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by benchislett</span>
-            <span>merged 2026-07-01T15:30:25Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            24 files &middot;
-            <span class="add">+1821</span> /
-            <span class="del">-94</span> &middot;
-            14 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47135" target="_blank" rel="noopener">#47135 [Bench][BugFix] Fix empty decoder prompt for Cohere ASR in throughput benchmark</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by mganczarenko</span>
-            <span>merged 2026-07-01T15:42:28Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+85</span> /
-            <span class="del">-1</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47029" target="_blank" rel="noopener">#47029 [Bugfix] Prevent padding placeholders from reaching embeddings</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by qianlihuang</span>
-            <span>merged 2026-07-01T16:26:03Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+60</span> /
-            <span class="del">-0</span> &middot;
-            9 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46482" target="_blank" rel="noopener">#46482 [ROCm][P/D] MoRIIO toy proxy: support JSON Content-Type for OpenAI clients.</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by lcskrishna</span>
-            <span>merged 2026-07-01T19:17:05Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+3</span> /
-            <span class="del">-0</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47308" target="_blank" rel="noopener">#47308 [ModelRunner V2] Warmup cross-attn properly in encoder-decoder case</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #0ea5e9">Scheduler / Runtime</span>
-            <span>by njhill</span>
-            <span>merged 2026-07-01T19:36:49Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+27</span> /
-            <span class="del">-2</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47305" target="_blank" rel="noopener">#47305 [Bugfix] Don&#39;t read KV cache past `seq_len` in triton paged attn kernels</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by njhill</span>
-            <span>merged 2026-07-01T19:43:00Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            2 files &middot;
-            <span class="add">+13</span> /
-            <span class="del">-6</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47229" target="_blank" rel="noopener">#47229 [DSV4] Better MXFP8 quantization kernel</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by zyongye</span>
-            <span>merged 2026-07-01T21:33:52Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+1</span> /
-            <span class="del">-0</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/45723" target="_blank" rel="noopener">#45723 [MoE] Plumb gemm1_alpha/beta/clamp_limit into TRT-LLM FP8 MoE</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by zyongye</span>
-            <span>merged 2026-07-01T21:34:05Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            4 files &middot;
-            <span class="add">+52</span> /
-            <span class="del">-3</span> &middot;
-            2 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47342" target="_blank" rel="noopener">#47342 [CI] Remove torch_nightly mirror tags (superseded by TORCH_NIGHTLY full-nightly build)</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by atalman</span>
-            <span>merged 2026-07-01T23:19:06Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+0</span> /
-            <span class="del">-44</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47338" target="_blank" rel="noopener">#47338 [Docker] Remove unused Dockerfile.nightly_torch</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #ec4899">MoE / Expert Parallel</span>
-            <span>by atalman</span>
-            <span>merged 2026-07-01T23:19:42Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+0</span> /
-            <span class="del">-326</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47093" target="_blank" rel="noopener">#47093 [Spec Decode] DSpark speculators checkpoint support</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #8b5cf6">Speculative Decoding</span>
-            <span>by mgoin</span>
-            <span>merged 2026-07-02T00:32:27Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            4 files &middot;
-            <span class="add">+140</span> /
-            <span class="del">-16</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47208" target="_blank" rel="noopener">#47208 [CI][Bugfix] Rerun test_engine_log_metrics_ray on Ray GCS startup timeout</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by peizhang56</span>
-            <span>merged 2026-07-02T02:32:09Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+13</span> /
-            <span class="del">-0</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46984" target="_blank" rel="noopener">#46984 [Misc] Use functions instead of PTX for the PDL instruction</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #14b8a6">Distributed / PD Disaggregation</span>
-            <span>by jeejeelee</span>
-            <span>merged 2026-07-02T02:38:36Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            7 files &middot;
-            <span class="add">+27</span> /
-            <span class="del">-25</span> &middot;
-            6 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47319" target="_blank" rel="noopener">#47319 [UX] Include NVTX in cuda.txt</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by jeejeelee</span>
-            <span>merged 2026-07-02T02:38:51Z</span>
-            <span>base: main</span>
-            
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+2</span> /
-            <span class="del">-1</span> &middot;
-            3 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/47238" target="_blank" rel="noopener">#47238 [BugFix][Spec Decode] Compact shared topk indices buffer after first MTP draft step</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by TheEpicDolphin</span>
-            <span>merged 2026-07-02T04:38:51Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            3 files &middot;
-            <span class="add">+27</span> /
-            <span class="del">-0</span> &middot;
-            1 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/44977" target="_blank" rel="noopener">#44977 [ROCm][MLA] Fuse MLA q/kv RMSNorm + FP8 per-token quant in the FP8 attention path</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #e0663f">AMD / ROCm</span>
-            <span>by xaguilar-amd</span>
-            <span>merged 2026-07-02T05:00:42Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            4 files &middot;
-            <span class="add">+371</span> /
-            <span class="del">-5</span> &middot;
-            4 commits
-          </div>
-        </div>
-        
-        <div class="pr-card">
-          <div class="pr-title"><a href="https://github.com/vllm-project/vllm/pull/46838" target="_blank" rel="noopener">#46838 [Bugfix][Kernel] Correct FlashInfer CUTLASS MoE tuning token bound</a></div>
-          <div class="pr-meta">
-            <span class="badge" style="background: #76b900">NVIDIA / CUDA</span>
-            <span>by Aneureka</span>
-            <span>merged 2026-07-02T05:11:00Z</span>
-            <span>base: main</span>
-            <span class="high-impact-flag">⚠ potentially important</span>
-          </div>
-          <div class="pr-stats">
-            1 files &middot;
-            <span class="add">+0</span> /
-            <span class="del">-2</span> &middot;
-            2 commits
           </div>
         </div>
         
@@ -1893,10 +1448,19 @@
   </div>
 
   <footer class="page-footer">
-    <p>Data from public GitHub repositories. This site provides summaries and analysis, not a mirror of GitHub content.</p>
-    <p>Generated 2026-07-03T04:02:31.497654+00:00</p>
+    <p>Tracking where SGLang and vLLM are currently focused, based on merged PRs from public GitHub repositories &mdash; meant as a reference for following along and learning from active development, not a mirror of GitHub content.</p>
+    <p>Generated 2026-07-03T03:31:08.119765+00:00</p>
   </footer>
 
 </div>
+<script>
+function filterPRs(sel) {
+  var v = sel.value;
+  var cards = sel.closest(".repo-column").querySelectorAll(".pr-card");
+  cards.forEach(function (card) {
+    card.style.display = (v === "all" || card.dataset.category === v) ? "" : "none";
+  });
+}
+</script>
 </body>
 </html>
