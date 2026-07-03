@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LLM Serving Development Tracker — {{ date }}</title>
+<style>
+  :root {
+    --bg: #0b0e14;
+    --panel: #131722;
+    --panel-2: #1a1f2e;
+    --border: #262c3d;
+    --text: #e6e9f0;
+    --text-dim: #9aa3b8;
+    --accent-sglang: #22c55e;
+    --accent-vllm: #f59e0b;
+    --radius: 10px;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    line-height: 1.5;
+  }
+  .container { max-width: 1280px; margin: 0 auto; padding: 24px 20px 60px; }
+  header.page-header { text-align: center; padding: 32px 0 20px; }
+  header.page-header h1 { margin: 0 0 6px; font-size: 30px; }
+  header.page-header .subtitle { color: var(--text-dim); margin: 0 0 10px; font-size: 15px; }
+  header.page-header .date-badge {
+    display: inline-block; background: var(--panel-2); border: 1px solid var(--border);
+    border-radius: 999px; padding: 6px 16px; font-size: 13px; color: var(--text-dim);
+  }
+
+  .cards-row { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 28px 0; }
+  @media (max-width: 800px) { .cards-row { grid-template-columns: 1fr; } }
+
+  .summary-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius);
+    padding: 20px; border-top: 3px solid var(--repo-color, var(--border));
+  }
+  .summary-card h2 { margin: 0 0 14px; font-size: 19px; display: flex; align-items: center; gap: 8px; }
+  .summary-card .stat-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .summary-card .stat { background: var(--panel-2); border-radius: 8px; padding: 10px 12px; }
+  .summary-card .stat .value { font-size: 20px; font-weight: 700; }
+  .summary-card .stat .label { font-size: 12px; color: var(--text-dim); margin-top: 2px; }
+  .summary-card .largest-pr { margin-top: 12px; font-size: 13px; color: var(--text-dim); }
+  .summary-card .largest-pr a { color: var(--text); }
+
+  h2.section-title { font-size: 22px; margin: 36px 0 16px; border-bottom: 1px solid var(--border); padding-bottom: 10px; }
+
+  .insights-list { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px 24px; list-style: none; margin: 0; }
+  .insights-list li { padding: 8px 0; border-bottom: 1px dashed var(--border); font-size: 14.5px; }
+  .insights-list li:last-child { border-bottom: none; }
+  .insights-list li::before { content: "→ "; color: var(--text-dim); }
+  .insights-list a { color: #7dd3fc; }
+
+  .columns { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  @media (max-width: 900px) { .columns { grid-template-columns: 1fr; } }
+
+  .repo-column { background: var(--panel); border: 1px solid var(--border); border-radius: var(--radius); padding: 20px; }
+  .repo-column h3 { margin: 0 0 4px; font-size: 20px; }
+  .repo-column .repo-total { color: var(--text-dim); font-size: 13px; margin-bottom: 16px; }
+
+  table.mini-table { width: 100%; border-collapse: collapse; margin-bottom: 20px; font-size: 13.5px; }
+  table.mini-table th, table.mini-table td { text-align: left; padding: 6px 8px; border-bottom: 1px solid var(--border); }
+  table.mini-table th { color: var(--text-dim); font-weight: 600; font-size: 12px; text-transform: uppercase; letter-spacing: 0.03em; }
+  table.mini-table td.num { text-align: right; font-variant-numeric: tabular-nums; }
+
+  details.pr-list-toggle summary { cursor: pointer; color: var(--text-dim); font-size: 13px; margin-bottom: 10px; }
+
+  .pr-card { background: var(--panel-2); border: 1px solid var(--border); border-radius: 8px; padding: 12px 14px; margin-bottom: 10px; }
+  .pr-card .pr-title { font-size: 14.5px; font-weight: 600; }
+  .pr-card .pr-title a { color: var(--text); text-decoration: none; }
+  .pr-card .pr-title a:hover { text-decoration: underline; }
+  .pr-card .pr-meta { color: var(--text-dim); font-size: 12.5px; margin-top: 4px; display: flex; flex-wrap: wrap; gap: 10px; align-items: center; }
+  .pr-card .pr-stats { color: var(--text-dim); font-size: 12px; margin-top: 6px; font-variant-numeric: tabular-nums; }
+  .pr-card .pr-stats .add { color: #4ade80; }
+  .pr-card .pr-stats .del { color: #f87171; }
+  .pr-card .high-impact-flag { color: #fbbf24; font-weight: 600; }
+
+  .badge { display: inline-block; padding: 2px 9px; border-radius: 999px; font-size: 11px; font-weight: 600; color: #0b0e14; }
+
+  footer.page-footer { margin-top: 50px; padding-top: 20px; border-top: 1px solid var(--border); color: var(--text-dim); font-size: 12.5px; text-align: center; }
+  footer.page-footer p { margin: 4px 0; }
+</style>
+</head>
+<body>
+<div class="container">
+
+  <header class="page-header">
+    <h1>LLM Serving Development Tracker</h1>
+    <p class="subtitle">Daily merged PR comparison: vLLM vs SGLang</p>
+    <span class="date-badge">{{ date }} &middot; {{ timezone }}</span>
+  </header>
+
+  <div class="cards-row">
+    {% for repo_key in ["sglang", "vllm"] %}
+    {% set st = stats[repo_key] %}
+    <div class="summary-card" style="--repo-color: {{ '#22c55e' if repo_key == 'sglang' else '#f59e0b' }}">
+      <h2>{{ repo_labels[repo_key] }}</h2>
+      <div class="stat-grid">
+        <div class="stat"><div class="value">{{ st.total }}</div><div class="label">Merged PRs</div></div>
+        <div class="stat"><div class="value">{{ st.unique_authors }}</div><div class="label">Unique authors</div></div>
+        <div class="stat"><div class="value">+{{ st.total_additions }} / -{{ st.total_deletions }}</div><div class="label">Lines changed</div></div>
+        <div class="stat"><div class="value">{{ st.top_category[0] or "—" }}</div><div class="label">Top category ({{ st.top_category[1] }})</div></div>
+      </div>
+      {% if st.largest_pr %}
+      <div class="largest-pr">
+        Largest PR by files changed:
+        <a href="{{ st.largest_pr.url }}" target="_blank" rel="noopener">#{{ st.largest_pr.number }} {{ st.largest_pr.title }}</a>
+        ({{ st.largest_pr.changedFiles }} files)
+      </div>
+      {% endif %}
+    </div>
+    {% endfor %}
+  </div>
+
+  <h2 class="section-title">Cross-Project Insights</h2>
+  <ul class="insights-list">
+    {% for bullet in insights %}
+    <li>{{ bullet }}</li>
+    {% endfor %}
+  </ul>
+
+  <h2 class="section-title">Side-by-Side Comparison</h2>
+  <div class="columns">
+    {% for repo_key in ["sglang", "vllm"] %}
+    {% set st = stats[repo_key] %}
+    {% set prs = repos[repo_key] %}
+    <div class="repo-column">
+      <h3>{{ repo_labels[repo_key] }}</h3>
+      <div class="repo-total">{{ st.total }} merged PRs &middot; <a href="{{ repo_urls[repo_key] }}" target="_blank" rel="noopener" style="color: var(--text-dim);">{{ repo_urls[repo_key] }}</a></div>
+
+      <table class="mini-table">
+        <thead><tr><th>Author</th><th class="num">Merged PRs</th></tr></thead>
+        <tbody>
+          {% for author, count in st.top_authors %}
+          <tr><td>{{ author }}</td><td class="num">{{ count }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <table class="mini-table">
+        <thead><tr><th>Category</th><th class="num">PRs</th></tr></thead>
+        <tbody>
+          {% for category, count in st.category_dist %}
+          <tr><td>{{ category }}</td><td class="num">{{ count }}</td></tr>
+          {% endfor %}
+        </tbody>
+      </table>
+
+      <div class="pr-list">
+        {% for pr in prs %}
+        <div class="pr-card">
+          <div class="pr-title"><a href="{{ pr.url }}" target="_blank" rel="noopener">#{{ pr.number }} {{ pr.title }}</a></div>
+          <div class="pr-meta">
+            <span class="badge" style="background: {{ category_colors.get(pr.category, '#9ca3af') }}">{{ pr.category }}</span>
+            <span>by {{ pr.author }}</span>
+            <span>merged {{ pr.mergedAt }}</span>
+            <span>base: {{ pr.baseRefName }}</span>
+            {% if pr.highImpact %}<span class="high-impact-flag">⚠ potentially important</span>{% endif %}
+          </div>
+          <div class="pr-stats">
+            {{ pr.changedFiles }} files &middot;
+            <span class="add">+{{ pr.additions }}</span> /
+            <span class="del">-{{ pr.deletions }}</span> &middot;
+            {{ pr.commits }} commits
+          </div>
+        </div>
+        {% else %}
+        <p style="color: var(--text-dim); font-size: 13px;">No merged PRs in this window.</p>
+        {% endfor %}
+      </div>
+    </div>
+    {% endfor %}
+  </div>
+
+  <footer class="page-footer">
+    <p>Data from public GitHub repositories. This site provides summaries and analysis, not a mirror of GitHub content.</p>
+    <p>Generated {{ generated_at }}</p>
+  </footer>
+
+</div>
+</body>
+</html>
