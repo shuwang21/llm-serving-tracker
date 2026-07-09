@@ -1,0 +1,48 @@
+{
+  "date": "2023-06-27",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-27T07:00:00+00:00",
+  "utc_end": "2023-06-28T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:29:41.557288+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 271,
+        "title": "expand coverage of gpt2 models",
+        "url": "https://github.com/vllm-project/vllm/pull/271",
+        "author": "twaka",
+        "mergedAt": "2023-06-27T13:27:41Z",
+        "createdAt": "2023-06-27T03:22:06Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Thanks for the amazing project!\nI noticed some gpt2 models have different naming of weights from https://huggingface.co/gpt2\nFor example, DialoGPT-small and mGPT are saved in a way that transformer. prefix is already prepended and also masked_bias is saved.\ntransformer.wte.weight\ntransformer.wpe.wei",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 282,
+        "title": "[Setup] Check CUDA_HOME instead of cuda.is_available() in setup.py",
+        "url": "https://github.com/vllm-project/vllm/pull/282",
+        "author": "comaniac",
+        "mergedAt": "2023-06-27T21:34:24Z",
+        "createdAt": "2023-06-27T18:43:18Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is to solve #177\nThe issue is when building a docker image, torch.cuda.is_available() always shows False even CUDA_HOME is available. This seems normal to me because you don't need GPUs but just CUDA (or nvcc).\nWith this change, I could use the following Dockerfile to build an image:\nFROM nvcr.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,310 @@
+{
+  "date": "2024-08-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-08-19T07:00:00+00:00",
+  "utc_end": "2024-08-20T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:59:22.139934+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1138,
+        "title": "Optimize MLA/GQA/MQA Triton decoding",
+        "url": "https://github.com/sgl-project/sglang/pull/1138",
+        "author": "ispobock",
+        "mergedAt": "2024-08-19T10:23:07Z",
+        "createdAt": "2024-08-17T16:11:52Z",
+        "changedFiles": 1,
+        "additions": 337,
+        "deletions": 49,
+        "commits": 5,
+        "labels": [
+          "high priority",
+          "performance"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nOptimize memory access for MLA/GQA/MQA decoding.\nModification\nOne block handle BLOCK_H q heads with shared k/v head. Inspired by InternLM/lmdeploy#1649.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 7638,
+        "title": "[Misc] Remove Gemma RoPE",
+        "url": "https://github.com/vllm-project/vllm/pull/7638",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-08-19T16:29:32Z",
+        "createdAt": "2024-08-18T09:06:57Z",
+        "changedFiles": 3,
+        "additions": 7,
+        "deletions": 26,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR removes GemmaRotaryEmbedding because it is actually the same as the normal RotaryEmbedding.\nThis is because\ntorch.arange(0, self.rotary_dim, 2, dtype=torch.float)\nis equal to\ntorch.arange(0, self.rotary_dim, 2, dtype=torch.int64).float()\nas rotary_dim is less than or equal to head_size (i.e.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7606,
+        "title": "[MISC] Add prefix cache hit rate to metrics",
+        "url": "https://github.com/vllm-project/vllm/pull/7606",
+        "author": "comaniac",
+        "mergedAt": "2024-08-19T18:52:08Z",
+        "createdAt": "2024-08-16T19:03:46Z",
+        "changedFiles": 16,
+        "additions": 200,
+        "deletions": 16,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds prefix cache hit rate to log metrics. The metrics will be logged only when the prefix cache is enabled. Here is an example:\n[INFO 08-16 11:53:40 metrics.py:418] Avg prompt throughput: 2876.7 tokens/s, Avg generation throughput: 384.8 tokens/s, Running: 91 reqs, Swapped: 0 reqs, Pending:",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 5428,
+        "title": "[Bugfix] fix lora_dtype value type in arg_utils.py - part 2",
+        "url": "https://github.com/vllm-project/vllm/pull/5428",
+        "author": "c3-ali",
+        "mergedAt": "2024-08-19T20:47:01Z",
+        "createdAt": "2024-06-11T17:43:19Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "A follow up to the #5398 based on @rkooo567 comment #5398 (comment)\nFIX #5397",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7000,
+        "title": "[core] Multi Step Scheduling",
+        "url": "https://github.com/vllm-project/vllm/pull/7000",
+        "author": "SolitaryThinker",
+        "mergedAt": "2024-08-19T20:52:13Z",
+        "createdAt": "2024-07-31T18:04:33Z",
+        "changedFiles": 13,
+        "additions": 1004,
+        "deletions": 34,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Adds initial multi step scheduling support to vLLM.\nRFC: #6854\nCurrent Status:\n8/16: Initial support for chunked prefill thanks to @varun-sundar-rabindranath\n8/14: Ready for another round of reviews! please review #7452\n8/8: multi-node working\n8/6: PP+TP working; PP+ray fixed; a few single GPU perf ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7520,
+        "title": "[Core] Support tensor parallelism for GGUF quantization",
+        "url": "https://github.com/vllm-project/vllm/pull/7520",
+        "author": "Isotr0py",
+        "mergedAt": "2024-08-19T21:30:14Z",
+        "createdAt": "2024-08-14T15:11:05Z",
+        "changedFiles": 3,
+        "additions": 39,
+        "deletions": 15,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #7662\n\nIn previous #5191, we introduced GGUF quantization without tensor parallelism.\nThis PR adds tensor parallelism support for gguf quantization.\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Ex",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7664,
+        "title": "[Bugfix] Don't disable existing loggers",
+        "url": "https://github.com/vllm-project/vllm/pull/7664",
+        "author": "a-ys",
+        "mergedAt": "2024-08-19T22:11:58Z",
+        "createdAt": "2024-08-19T22:08:47Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "One-liner that stops existing loggers from being disabled. By default, logging.dictConfig disables existing named loggers.\nThis bug only occurs when Ray is not installed (e.g. for AWS Neuron). This is because Ray adds this field to their logging configuration here.\nFIX #5803\nCode Example\nimport logg",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7660,
+        "title": "[TPU] Fix redundant input tensor cloning",
+        "url": "https://github.com/vllm-project/vllm/pull/7660",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-08-19T22:55:04Z",
+        "createdAt": "2024-08-19T19:48:56Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 20,
+        "commits": 5,
+        "labels": [
+          "tpu"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7665,
+        "title": "[Bugfix] use StoreBoolean instead of type=bool for --disable-logprobs-during-spec-decoding",
+        "url": "https://github.com/vllm-project/vllm/pull/7665",
+        "author": "tjohnson31415",
+        "mergedAt": "2024-08-20T00:43:09Z",
+        "createdAt": "2024-08-19T23:01:26Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The --disable-logprobs-during-spec-decoding flag defaults to True and cannot be set to false by setting --disable-logprobs-during-spec-decoding=false. The problem is using type=bool as the type for the arg value. From the argparse documentation\n\nThe bool() function is not recommended as a type conve",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7659,
+        "title": "[doc] fix doc build error caused by msgspec",
+        "url": "https://github.com/vllm-project/vllm/pull/7659",
+        "author": "youkaichao",
+        "mergedAt": "2024-08-20T00:50:59Z",
+        "createdAt": "2024-08-19T17:58:53Z",
+        "changedFiles": 2,
+        "additions": 40,
+        "deletions": 8,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "caused by #7109\nadding msgspec should solve this.\ncc @simon-mo @khluu @ywang96 @DarkLight1337  , let's find a permanent solution.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7508,
+        "title": "[Speculative Decoding] Fixing hidden states handling in batch expansion",
+        "url": "https://github.com/vllm-project/vllm/pull/7508",
+        "author": "abhigoyal1997",
+        "mergedAt": "2024-08-20T00:58:14Z",
+        "createdAt": "2024-08-14T07:30:25Z",
+        "changedFiles": 6,
+        "additions": 139,
+        "deletions": 41,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes the handling of hidden_states in batch expansion.\nFix #7505",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7667,
+        "title": "[ci] Install Buildkite test suite analysis",
+        "url": "https://github.com/vllm-project/vllm/pull/7667",
+        "author": "khluu",
+        "mergedAt": "2024-08-20T02:55:04Z",
+        "createdAt": "2024-08-19T23:46:06Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 5724,
+        "title": "[Bugfix] support `tie_word_embeddings` for all models",
+        "url": "https://github.com/vllm-project/vllm/pull/5724",
+        "author": "zijian-hu",
+        "mergedAt": "2024-08-20T03:00:05Z",
+        "createdAt": "2024-06-20T21:24:44Z",
+        "changedFiles": 30,
+        "additions": 90,
+        "deletions": 16,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR addresses #5621\nIt unifies the support for tie_word_embeddings across all models. For models that do not support this feature, a clear error message will be displayed when tie_word_embeddings is enabled. The modifications are designed such that only minimal changes are made to the original c",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7616,
+        "title": "[CI] Organizing performance benchmark files",
+        "url": "https://github.com/vllm-project/vllm/pull/7616",
+        "author": "KuntaiDu",
+        "mergedAt": "2024-08-20T05:43:54Z",
+        "createdAt": "2024-08-16T23:54:29Z",
+        "changedFiles": 5,
+        "additions": 36,
+        "deletions": 24,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reorganizing performance benchmark files.\n\nAll documentations should be in .buildkite/nightly-benchmarks\nAll buildkite workflow yaml files should be in .buildkite/nightly-benchmarks\nAll scripts should be in .buildkite/nightly-benchmarks/scripts\n\n#7412 will also fix nightly benchmark scripts and file",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7674,
+        "title": "[misc] add nvidia related library in collect env ",
+        "url": "https://github.com/vllm-project/vllm/pull/7674",
+        "author": "youkaichao",
+        "mergedAt": "2024-08-20T06:22:49Z",
+        "createdAt": "2024-08-20T06:22:40Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

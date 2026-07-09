@@ -1,0 +1,48 @@
+{
+  "date": "2023-10-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-11T07:00:00+00:00",
+  "utc_end": "2023-10-12T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:36:03.224648+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1295,
+        "title": "Fix overflow in awq kernel",
+        "url": "https://github.com/vllm-project/vllm/pull/1295",
+        "author": "chu-tianxiang",
+        "mergedAt": "2023-10-11T07:19:53Z",
+        "createdAt": "2023-10-09T09:10:29Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix overflow problem in #1236.\nFor Mistral model, the output dimension of gate_up_proj is 14336 * 2 = 28672 and maximum blockIdx_z is 7, so when a length over 2147483647 / 7 / 28672 = 10699 would cause overflow. (Considering the padding in vllm, the maximum is actually 10699 // 8 * 8 + 1 = 10697)",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1278,
+        "title": "Update model_loader.py",
+        "url": "https://github.com/vllm-project/vllm/pull/1278",
+        "author": "AmaleshV",
+        "mergedAt": "2023-10-11T07:26:24Z",
+        "createdAt": "2023-10-06T15:05:49Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Added MistralForCausalLM awq quantization solution",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

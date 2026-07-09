@@ -1,0 +1,238 @@
+{
+  "date": "2024-12-24",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-24T08:00:00+00:00",
+  "utc_end": "2024-12-25T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:11:51.406696+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11438,
+        "title": "[Misc]Suppress irrelevant exception stack trace information when CUDA\u2026",
+        "url": "https://github.com/vllm-project/vllm/pull/11438",
+        "author": "shiquan1988",
+        "mergedAt": "2024-12-24T08:43:40Z",
+        "createdAt": "2024-12-23T15:33:47Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11437",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11457,
+        "title": "[Frontend] Online Pooling API",
+        "url": "https://github.com/vllm-project/vllm/pull/11457",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-24T09:54:30Z",
+        "createdAt": "2024-12-24T07:12:44Z",
+        "changedFiles": 15,
+        "additions": 809,
+        "deletions": 157,
+        "commits": 10,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previously, #11129 made Embeddings API unusable for reward models. This PR adds a new Pooling API that satisfies this need. It also adds backward compatibility by making Embedding API fall back to Pooling API if the model doesn't support embedding outputs (which is the case for reward models).\nFIX #",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11430,
+        "title": "[Bugfix] Fix Qwen2-VL LoRA weight loading ",
+        "url": "https://github.com/vllm-project/vllm/pull/11430",
+        "author": "jeejeelee",
+        "mergedAt": "2024-12-24T09:56:10Z",
+        "createdAt": "2024-12-23T09:58:25Z",
+        "changedFiles": 7,
+        "additions": 168,
+        "deletions": 14,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11406\nUpcoming PRs include:\n\nConvert hf_to_vllm_mapper to static variable for all models\nSupport substr and subfix mapping",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11434,
+        "title": "[Bugfix][Hardware][CPU] Fix CPU `input_positions` creation for text-only inputs with mrope",
+        "url": "https://github.com/vllm-project/vllm/pull/11434",
+        "author": "Isotr0py",
+        "mergedAt": "2024-12-24T09:59:51Z",
+        "createdAt": "2024-12-23T14:31:57Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 9,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11154\n\nMRope position should not be used to create input_positions for text-only inputs",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11458,
+        "title": "[OpenVINO] Fixed installation conflicts",
+        "url": "https://github.com/vllm-project/vllm/pull/11458",
+        "author": "ilya-lavrenov",
+        "mergedAt": "2024-12-24T11:38:22Z",
+        "createdAt": "2024-12-24T07:59:59Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #11412\nCloses #11398",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11463,
+        "title": "[attn][tiny fix] fix attn backend in MultiHeadAttention",
+        "url": "https://github.com/vllm-project/vllm/pull/11463",
+        "author": "MengqingCao",
+        "mergedAt": "2024-12-24T12:39:37Z",
+        "createdAt": "2024-12-24T09:52:08Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The original logic will never step into xformer backend branch, because attn_backend is the class object of a certain attention backend.\nThis pr fix that.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11443,
+        "title": "[Misc] Move weights mapper",
+        "url": "https://github.com/vllm-project/vllm/pull/11443",
+        "author": "jeejeelee",
+        "mergedAt": "2024-12-24T13:05:26Z",
+        "createdAt": "2024-12-24T01:02:01Z",
+        "changedFiles": 8,
+        "additions": 74,
+        "deletions": 68,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Waiting for #11430  to merge",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11435,
+        "title": "[Bugfix] Fix issues in CPU build Dockerfile. Fixes #9182",
+        "url": "https://github.com/vllm-project/vllm/pull/11435",
+        "author": "terrytangyuan",
+        "mergedAt": "2024-12-24T16:53:28Z",
+        "createdAt": "2024-12-23T15:07:41Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #9182. This fixes the following two issues. Verified that build is successful after these changes.\nIssue 1:\nERROR: Could not open requirements file: [Errno 13] Permission denied: 'requirements-build.txt'\n\nIssue 2:\nLookupError: setuptools-scm was unable to detect version for /workspace/vllm\n\nRe",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11469,
+        "title": "[Model] Automatic conversion of classification and reward models",
+        "url": "https://github.com/vllm-project/vllm/pull/11469",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-24T18:22:22Z",
+        "createdAt": "2024-12-24T16:03:30Z",
+        "changedFiles": 9,
+        "additions": 206,
+        "deletions": 161,
+        "commits": 7,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is the last PR to finish off #10674.\nCLOSE #10674\nFIX #11459",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11472,
+        "title": "[V1] Unify VLLM_ENABLE_V1_MULTIPROCESSING handling in RayExecutor",
+        "url": "https://github.com/vllm-project/vllm/pull/11472",
+        "author": "ruisearch42",
+        "mergedAt": "2024-12-25T03:49:46Z",
+        "createdAt": "2024-12-25T00:06:06Z",
+        "changedFiles": 3,
+        "additions": 4,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow up for #11107 (comment)\nSince the EngineCoreClient and EngineCore may be in different processes, we initialize ray in the EngineCore process (specifically, in RayExecutor).",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11456,
+        "title": "[Misc] Update disaggregation benchmark scripts and test logs",
+        "url": "https://github.com/vllm-project/vllm/pull/11456",
+        "author": "Jeffwan",
+        "mergedAt": "2024-12-25T06:58:48Z",
+        "createdAt": "2024-12-24T07:07:25Z",
+        "changedFiles": 6,
+        "additions": 43,
+        "deletions": 29,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11455\n/cc @KuntaiDu  this is a minor improvement on existing benchmark tools and tests",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      }
+    ]
+  }
+}

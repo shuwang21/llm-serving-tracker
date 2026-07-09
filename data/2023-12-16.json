@@ -1,0 +1,66 @@
+{
+  "date": "2023-12-16",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-16T08:00:00+00:00",
+  "utc_end": "2023-12-17T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:40:12.717227+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2133,
+        "title": "simplify loading weights logic",
+        "url": "https://github.com/vllm-project/vllm/pull/2133",
+        "author": "esmeetu",
+        "mergedAt": "2023-12-16T20:41:23Z",
+        "createdAt": "2023-12-15T15:37:44Z",
+        "changedFiles": 3,
+        "additions": 33,
+        "deletions": 37,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #2132.\nThis pull request streamlines the logic for loading weights, making it more concise and cleaner.\nIntroducing the fall_back_to_pt parameter to the model's custom variables, enabling the model to autonomously decide whether to utilize weights in the .pt format.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1926,
+        "title": "Optimize model execution with CUDA graph",
+        "url": "https://github.com/vllm-project/vllm/pull/1926",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-17T05:12:09Z",
+        "createdAt": "2023-12-05T02:01:09Z",
+        "changedFiles": 34,
+        "additions": 557,
+        "deletions": 254,
+        "commits": 109,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR uses CUDA graph to optimize the CPU overheads in model execution. This is particularly effective for small models and when using tensor parallelism.\nMany thanks to @scv119 and @Yard1 for addressing the NCCL-related issues.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2146,
+        "title": "[Minor] Delete Llama tokenizer warnings",
+        "url": "https://github.com/vllm-project/vllm/pull/2146",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-17T06:05:18Z",
+        "createdAt": "2023-12-17T05:50:53Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 17,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Now that Llama V1 is not popular, I believe we can remove the warnings. The warning sometimes misled people to use the HF internal tokenizer even if it's not needed.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      }
+    ]
+  }
+}

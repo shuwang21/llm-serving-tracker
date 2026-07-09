@@ -1,0 +1,333 @@
+{
+  "date": "2024-12-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-19T08:00:00+00:00",
+  "utc_end": "2024-12-20T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:11:27.002451+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2524,
+        "title": "fix followup #2517",
+        "url": "https://github.com/sgl-project/sglang/pull/2524",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-19T15:24:30Z",
+        "createdAt": "2024-12-19T15:18:30Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11164,
+        "title": "[Feature] Add load generation config from model",
+        "url": "https://github.com/vllm-project/vllm/pull/11164",
+        "author": "liuyanyi",
+        "mergedAt": "2024-12-19T10:50:39Z",
+        "createdAt": "2024-12-13T08:37:53Z",
+        "changedFiles": 10,
+        "additions": 307,
+        "deletions": 74,
+        "commits": 20,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Desc\nAdd generation_config to engine_arg, allow load and overwrite the default sampling param.\nTo avoid braking change, this flag is defaults to None, preserving the existing behavior unless explicitly configured.\nHere are the three mode of generation_config\n\nNone: keep the same behavior in previous",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11333,
+        "title": "[Bugfix] Cleanup Pixtral HF code",
+        "url": "https://github.com/vllm-project/vllm/pull/11333",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-19T13:22:01Z",
+        "createdAt": "2024-12-19T10:34:43Z",
+        "changedFiles": 1,
+        "additions": 14,
+        "deletions": 141,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes incorrect max image tokens for Pixtral HF, and also cleans up unused code that are already integrated into the merged multi-modal processor.",
+        "category": "Cleanup / Refactor",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10860,
+        "title": "[Model] Add JambaForSequenceClassification model ",
+        "url": "https://github.com/vllm-project/vllm/pull/10860",
+        "author": "yecohn",
+        "mergedAt": "2024-12-19T14:48:06Z",
+        "createdAt": "2024-12-03T11:37:52Z",
+        "changedFiles": 5,
+        "additions": 48,
+        "deletions": 2,
+        "commits": 10,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "[Model] Add support for embedding model JambaClassfication](#10858)",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11325,
+        "title": "[V1] Fix multimodal profiling for `Molmo`",
+        "url": "https://github.com/vllm-project/vllm/pull/11325",
+        "author": "ywang96",
+        "mergedAt": "2024-12-19T16:27:22Z",
+        "createdAt": "2024-12-19T08:44:28Z",
+        "changedFiles": 4,
+        "additions": 24,
+        "deletions": 4,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Molmo is a special case where the input processing also handles the preprocessing of multimodal data, therefore the dummy data for this model is defined as MultiModalKwags without a PIL.Image.\nThis PR adds a temporary workaround to fix this issue as well as renaming some functions to indicate their ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11258,
+        "title": "[Model] Refactor Qwen2-VL to use merged multimodal processor",
+        "url": "https://github.com/vllm-project/vllm/pull/11258",
+        "author": "Isotr0py",
+        "mergedAt": "2024-12-19T16:28:01Z",
+        "createdAt": "2024-12-17T09:11:51Z",
+        "changedFiles": 5,
+        "additions": 277,
+        "deletions": 527,
+        "commits": 14,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11339,
+        "title": "[Misc] Clean up and consolidate LRUCache",
+        "url": "https://github.com/vllm-project/vllm/pull/11339",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-19T16:59:32Z",
+        "createdAt": "2024-12-19T14:48:57Z",
+        "changedFiles": 5,
+        "additions": 34,
+        "deletions": 67,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "LRUDictCache and LRUCache are fundamentally the same, so I merged them together. I also improved the existing type annotations to be more precise.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11338,
+        "title": "[Bugfix] Fix broken CPU compressed-tensors test",
+        "url": "https://github.com/vllm-project/vllm/pull/11338",
+        "author": "Isotr0py",
+        "mergedAt": "2024-12-19T17:37:31Z",
+        "createdAt": "2024-12-19T14:07:13Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix broken CPU compressed-tensors test due to sparse_cutlass_supported: https://buildkite.com/vllm/ci/builds/10916#0193deb9-61bc-4abe-b98b-dd544b3a7fdd/6-1653",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11336,
+        "title": "[Misc] Remove unused vllm/block.py",
+        "url": "https://github.com/vllm-project/vllm/pull/11336",
+        "author": "Ghjk94522",
+        "mergedAt": "2024-12-19T17:54:25Z",
+        "createdAt": "2024-12-19T11:48:09Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 90,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Since this file is no longer referenced, it can be removed from the project.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11261,
+        "title": "[CI] Adding CPU docker pipeline",
+        "url": "https://github.com/vllm-project/vllm/pull/11261",
+        "author": "zhouyuan",
+        "mergedAt": "2024-12-19T19:46:55Z",
+        "createdAt": "2024-12-17T13:31:04Z",
+        "changedFiles": 1,
+        "additions": 15,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This patch adds the pipeline for CPU docker image. On each release(tag) it will build push the image to vllm/vllm-cpu\nFixes: #4771",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11331,
+        "title": "[Bugfix][Hardware][POWERPC] Fix auto dtype failure in case of POWER10",
+        "url": "https://github.com/vllm-project/vllm/pull/11331",
+        "author": "Akashcodes732",
+        "mergedAt": "2024-12-20T01:32:07Z",
+        "createdAt": "2024-12-19T10:04:33Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11327\nThis PR fixes the dtype=\"auto\" failure in case of POWEPC.\nThe failure observed in above issue was due to FP16 not supported in ppc64le architecture. With this PR we are making changes to select BF16 instead of FP16 when \"auto\" type is selected.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11351,
+        "title": "[ci][gh200] dockerfile clean up",
+        "url": "https://github.com/vllm-project/vllm/pull/11351",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-20T02:13:06Z",
+        "createdAt": "2024-12-20T00:46:57Z",
+        "changedFiles": 7,
+        "additions": 51,
+        "deletions": 37,
+        "commits": 27,
+        "labels": [
+          "documentation",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "built upon #11302 , check it out with another branch in the upstream repo so that we can test it before merging.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11349,
+        "title": "[Misc] Add tqdm progress bar during graph capture",
+        "url": "https://github.com/vllm-project/vllm/pull/11349",
+        "author": "mgoin",
+        "mergedAt": "2024-12-20T04:35:18Z",
+        "createdAt": "2024-12-19T22:59:27Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Nice idea inspired by sgl-project/sglang#2502\nExample of log:\nvllm serve meta-llama/Llama-3.2-1B-Instruct\n ...\nINFO 12-19 22:58:27 model_runner.py:1415] Capturing cudagraphs for decoding. This may lead to unexpected consequences if the model is not static. To run the model in eager mode, set 'enforc",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10863,
+        "title": "[Bugfix] Fix spec decoding when seed is none in a batch",
+        "url": "https://github.com/vllm-project/vllm/pull/10863",
+        "author": "wallashss",
+        "mergedAt": "2024-12-20T05:15:31Z",
+        "createdAt": "2024-12-03T14:35:39Z",
+        "changedFiles": 2,
+        "additions": 66,
+        "deletions": 7,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The issue was in the rejection_sampler in a custom _multinomial function. When a batch contains a seed as None, the calculation fails because the access with non-spec indices does not change in place. So, I changed to every request to be calculated the same way as seeded using ranges.\n\nConcise scrip",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11355,
+        "title": "[misc] add early error message for custom ops",
+        "url": "https://github.com/vllm-project/vllm/pull/11355",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-20T05:18:25Z",
+        "createdAt": "2024-12-20T03:23:39Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "reported by @joschu-anthropic\nI think it might also solve #2021 (comment) , cc @yajuvendrarawat",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11359,
+        "title": "[doc] backward compatibility for 0.6.4",
+        "url": "https://github.com/vllm-project/vllm/pull/11359",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-20T05:33:53Z",
+        "createdAt": "2024-12-20T05:30:13Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "fixes #11353",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      }
+    ]
+  }
+}

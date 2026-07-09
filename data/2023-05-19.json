@@ -1,0 +1,48 @@
+{
+  "date": "2023-05-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-19T07:00:00+00:00",
+  "utc_end": "2023-05-20T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:26:48.285068+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 81,
+        "title": "Use runtime profiling to replace manual memory analyzers",
+        "url": "https://github.com/vllm-project/vllm/pull/81",
+        "author": "zhuohan123",
+        "mergedAt": "2023-05-19T17:35:44Z",
+        "createdAt": "2023-05-07T16:58:50Z",
+        "changedFiles": 14,
+        "additions": 211,
+        "deletions": 478,
+        "commits": 16,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #59.\nPreviously we used a manual memory profiler, which must be implemented separately for each model. This PR replaces it with a general memory profiler.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 34,
+        "title": "Fix timeout error in the FastAPI frontend",
+        "url": "https://github.com/vllm-project/vllm/pull/34",
+        "author": "zhuohan123",
+        "mergedAt": "2023-05-19T20:00:47Z",
+        "createdAt": "2023-04-09T07:37:31Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ]
+  }
+}

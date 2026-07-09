@@ -1,0 +1,48 @@
+{
+  "date": "2023-08-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-01T07:00:00+00:00",
+  "utc_end": "2023-08-02T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:31:47.558010+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 598,
+        "title": "fix biachuan-7b tp",
+        "url": "https://github.com/vllm-project/vllm/pull/598",
+        "author": "Sanster",
+        "mergedAt": "2023-08-01T22:41:36Z",
+        "createdAt": "2023-07-27T08:10:25Z",
+        "changedFiles": 1,
+        "additions": 37,
+        "deletions": 10,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The main modifications are in the \"load_weights\" function.\nBefore:\n\nAfter:",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 643,
+        "title": "[Model] support baichuan-13b based on baichuan-7b",
+        "url": "https://github.com/vllm-project/vllm/pull/643",
+        "author": "Oliver-ss",
+        "mergedAt": "2023-08-02T05:22:51Z",
+        "createdAt": "2023-08-02T03:36:22Z",
+        "changedFiles": 3,
+        "additions": 76,
+        "deletions": 17,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "baichuan-7b and baichuan-13b have different architectures in config.json, \"BaichuanForCausalLM\" for baichuan-13b and \"BaiChuanForCausalLM\" for baichuan-7b.\nThe model structures are almost the same except for position embedding. (RoPE for baichuan-7b and Alibi for baichuan-13b.) So most of the code c",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

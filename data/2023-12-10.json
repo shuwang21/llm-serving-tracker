@@ -1,0 +1,66 @@
+{
+  "date": "2023-12-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-10T08:00:00+00:00",
+  "utc_end": "2023-12-11T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:39:49.389799+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2004,
+        "title": "[Minor] Add comment on skipping rope caches",
+        "url": "https://github.com/vllm-project/vllm/pull/2004",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-10T18:04:12Z",
+        "createdAt": "2023-12-10T03:19:15Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Added a comment to explain the reason for adding the logic.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1997,
+        "title": "Replace head_mapping params with num_kv_heads to attention kernel.",
+        "url": "https://github.com/vllm-project/vllm/pull/1997",
+        "author": "wbn03",
+        "mergedAt": "2023-12-10T18:12:53Z",
+        "createdAt": "2023-12-09T04:59:00Z",
+        "changedFiles": 5,
+        "additions": 26,
+        "deletions": 37,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Replace head_mapping params with num_kv_heads to attention kernel.\nBase on this issue:\nhttps://github.com/vllm-project/vllm/issues/1928\nTo avoid the head_mapping load from global memory.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1992,
+        "title": "Fix completion API echo and logprob combo",
+        "url": "https://github.com/vllm-project/vllm/pull/1992",
+        "author": "simon-mo",
+        "mergedAt": "2023-12-10T21:20:30Z",
+        "createdAt": "2023-12-08T18:26:06Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #1967\nThe bug comes down that somewhere in echo code path, logprobs's conditional existence was not fully considered.\nI have tested the following four requests and all working:\ncurl http://localhost:8000/v1/completions  -H \"Content-Type: application/json\"      -d '{ \"model\": \"facebook/opt-125",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

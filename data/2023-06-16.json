@@ -1,0 +1,48 @@
+{
+  "date": "2023-06-16",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-16T07:00:00+00:00",
+  "utc_end": "2023-06-17T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:28:58.416133+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 149,
+        "title": "Rename servers and change port numbers to reduce confusion",
+        "url": "https://github.com/vllm-project/vllm/pull/149",
+        "author": "zhuohan123",
+        "mergedAt": "2023-06-16T16:13:02Z",
+        "createdAt": "2023-06-14T16:40:42Z",
+        "changedFiles": 10,
+        "additions": 41,
+        "deletions": 37,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 151,
+        "title": "[Minor] Fix `benchmark_throughput.py`",
+        "url": "https://github.com/vllm-project/vllm/pull/151",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-17T04:00:52Z",
+        "createdAt": "2023-06-17T04:00:40Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

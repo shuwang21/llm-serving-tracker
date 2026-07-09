@@ -1,0 +1,48 @@
+{
+  "date": "2023-08-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-29T07:00:00+00:00",
+  "utc_end": "2023-08-30T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:26.104407+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 877,
+        "title": "use flash-attn via xformers",
+        "url": "https://github.com/vllm-project/vllm/pull/877",
+        "author": "tmm1",
+        "mergedAt": "2023-08-30T04:52:13Z",
+        "createdAt": "2023-08-25T19:18:54Z",
+        "changedFiles": 2,
+        "additions": 0,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "fixes #485 (comment)",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 865,
+        "title": "Enable request body OpenAPI spec for OpenAI endpoints",
+        "url": "https://github.com/vllm-project/vllm/pull/865",
+        "author": "Peilun-Li",
+        "mergedAt": "2023-08-30T04:54:08Z",
+        "createdAt": "2023-08-25T04:52:44Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "What & Why\nFastAPI by default supports OpenAPI spec https://fastapi.tiangolo.com/tutorial/body/#automatic-docs which will be used to generate docs (e.g., Swagger UI). The way to enable request body documentation for post based endpoint is to include the custom data model into the function signature.",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

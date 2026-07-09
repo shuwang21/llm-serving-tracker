@@ -1,0 +1,196 @@
+{
+  "date": "2025-01-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-29T08:00:00+00:00",
+  "utc_end": "2025-01-30T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:16:13.862507+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 12347,
+        "title": "[Bugfix] handle alignment of arguments in convert_sparse_cross_attention_mask_to_dense",
+        "url": "https://github.com/vllm-project/vllm/pull/12347",
+        "author": "tjohnson31415",
+        "mergedAt": "2025-01-29T08:54:36Z",
+        "createdAt": "2025-01-23T07:53:31Z",
+        "changedFiles": 2,
+        "additions": 222,
+        "deletions": 4,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reproducing the bug reqiures a batch with a text-only request and a request with an image. With the OpenAI server, this can happen when under load, but it is easier to reproduce in offline mode:\nfrom vllm import LLM, SamplingParams\nfrom vllm.multimodal.utils import fetch_image\n\nimage_url = \"https://",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12069,
+        "title": "[Model] Refactoring of MiniCPM-V and add MiniCPM-o-2.6 support for vLLM",
+        "url": "https://github.com/vllm-project/vllm/pull/12069",
+        "author": "HwwwwwwwH",
+        "mergedAt": "2025-01-29T09:24:59Z",
+        "createdAt": "2025-01-15T07:12:18Z",
+        "changedFiles": 15,
+        "additions": 1622,
+        "deletions": 186,
+        "commits": 118,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR aims to adapt and support all the features of MiniCPM-V and MiniCPM-o. It is designed to be compatible with various modalities (image, video, audio), different model versions (2.0, 2.5, 2.6, o), and diverse input types (raw, embeddings), while maintaining support for LORA, which might requir",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12409,
+        "title": "[Frontend] Support override generation config in args",
+        "url": "https://github.com/vllm-project/vllm/pull/12409",
+        "author": "liuyanyi",
+        "mergedAt": "2025-01-29T09:41:02Z",
+        "createdAt": "2025-01-24T15:09:27Z",
+        "changedFiles": 3,
+        "additions": 100,
+        "deletions": 8,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Support override generation config in args\nIn my past pr #11164, generation config could be load from model or other file.\nIn this pr, generation config can be override by user in args or model config, this allow control generation config in cli args.\noverride_generation_config has been added to Mod",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11787,
+        "title": "[Hardware][NV] Fix Modelopt model loading for k-v-scales for Llama models.",
+        "url": "https://github.com/vllm-project/vllm/pull/11787",
+        "author": "pavanimajety",
+        "mergedAt": "2025-01-29T09:46:13Z",
+        "createdAt": "2025-01-07T04:36:39Z",
+        "changedFiles": 3,
+        "additions": 20,
+        "deletions": 6,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR enables loading ModelOpt checkpoints with .k_scale and .v_scale.\nModelOpt's kv scales are stored as:\n \"model.layers.[layer-number].self_attn.k_proj.k_scale\"\n \"model.layers.[layer-number].self_attn.v_proj.v_scale\"\n\nIn comparison, NeuralMagic's kv_scale is stored as model.layers.1.self_attn.kv",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12185,
+        "title": "[Kernel] add triton fused moe kernel for gptq/awq",
+        "url": "https://github.com/vllm-project/vllm/pull/12185",
+        "author": "jinzhen-lin",
+        "mergedAt": "2025-01-29T14:07:10Z",
+        "createdAt": "2025-01-18T11:21:09Z",
+        "changedFiles": 4,
+        "additions": 874,
+        "deletions": 55,
+        "commits": 26,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The current only option for using moe+gptq/awq is the Marlin kernel, but for the Marlin kernel, a single marlin_gemm_moe would launching num_experts CUDA kernels at least, while the fused_moe triton kernel only needs to launch one cuda kernel. This makes the Marlin kernel significantly slower than t",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12552,
+        "title": "Revert \"[Build/CI] Fix libcuda.so linkage\"",
+        "url": "https://github.com/vllm-project/vllm/pull/12552",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2025-01-29T21:12:24Z",
+        "createdAt": "2025-01-29T15:11:11Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Looks like #12424 is causing problems for some users that don't have libcuda.so on their LD_LIBRARY_PATH. See #12505.\nI believe there are potential linkage issues for _C.abi3.so, but I haven't seen any concrete examples of users running into any issues with this so I think it makes sense to revert t",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12545,
+        "title": "[V1][BugFix] Free encoder cache for aborted requests",
+        "url": "https://github.com/vllm-project/vllm/pull/12545",
+        "author": "WoosukKwon",
+        "mergedAt": "2025-01-29T21:47:34Z",
+        "createdAt": "2025-01-29T10:24:23Z",
+        "changedFiles": 2,
+        "additions": 16,
+        "deletions": 7,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a bug that encoder cache is not properly freed when the request is aborted.\nPlus, this PR includes minor code cleanup.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12558,
+        "title": "[Misc][MoE] add Deepseek-V3 moe tuning support",
+        "url": "https://github.com/vllm-project/vllm/pull/12558",
+        "author": "divakar-amd",
+        "mergedAt": "2025-01-30T00:47:30Z",
+        "createdAt": "2025-01-29T17:16:41Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "add moe tuning support for DeepSeek-V3\nadd arg.trust_remote_code for better user exeperience. Use --trut_remote_code when tuning for deepseek\n\nCurrently, DeepSeek-V3 runs into error when using graph-mode. This has been handled by forcing 'eager-mode' as a workaround. Hence, bypassing graph capture i",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12561,
+        "title": "[V1][Metrics] Add GPU cache usage % gauge",
+        "url": "https://github.com/vllm-project/vllm/pull/12561",
+        "author": "markmc",
+        "mergedAt": "2025-01-30T02:31:01Z",
+        "createdAt": "2025-01-29T19:06:52Z",
+        "changedFiles": 5,
+        "additions": 18,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow on from #12530, part of #10582\nNote - cpu_cache_usage is not implemented because it is not relevant in v1. CPU swapping (see --swap-space and --preemption-mode) was intended for beam search type use cases, but in v1 with prefix caching enabled by default, the preemption and recompute strategy",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2024-03-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-06T08:00:00+00:00",
+  "utc_end": "2024-03-07T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:45:37.987886+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3224,
+        "title": "[Testing] Fix core tests",
+        "url": "https://github.com/vllm-project/vllm/pull/3224",
+        "author": "cadedaniel",
+        "mergedAt": "2024-03-06T09:04:23Z",
+        "createdAt": "2024-03-06T07:40:04Z",
+        "changedFiles": 4,
+        "additions": 36,
+        "deletions": 23,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "24aecf4 started causing failures after it was merged.",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3242,
+        "title": "A simple addition of `dynamic_ncols=True`",
+        "url": "https://github.com/vllm-project/vllm/pull/3242",
+        "author": "chujiezheng",
+        "mergedAt": "2024-03-06T22:41:42Z",
+        "createdAt": "2024-03-06T21:34:12Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "It can be useful when using tmux where the window size may change.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3200,
+        "title": "Add GPTQ support for Gemma",
+        "url": "https://github.com/vllm-project/vllm/pull/3200",
+        "author": "TechxGenus",
+        "mergedAt": "2024-03-07T00:19:14Z",
+        "createdAt": "2024-03-05T10:49:57Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The latest version of AutoGPTQ already supports Gemma. Add some minor modifications can provide support for vllm.\nMy test code is as follow:\nfrom vllm import LLM, SamplingParams\n\nsampling_params = SamplingParams(temperature=0, max_tokens=256)\nllm = LLM(model=\"TechxGenus/gemma-2b-GPTQ\")\n\noutputs = ll",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2023-09-22",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-22T07:00:00+00:00",
+  "utc_end": "2023-09-23T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:53.568950+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1145,
+        "title": "Docs: Fix broken link to openai example",
+        "url": "https://github.com/vllm-project/vllm/pull/1145",
+        "author": "nkpz",
+        "mergedAt": "2023-09-22T18:36:10Z",
+        "createdAt": "2023-09-22T12:42:14Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Link to openai_client.py is no longer valid - updated to openai_completion_client.py",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1148,
+        "title": "Announce the First vLLM Meetup",
+        "url": "https://github.com/vllm-project/vllm/pull/1148",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-22T18:37:15Z",
+        "createdAt": "2023-09-22T18:35:24Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1048,
+        "title": "[Sampler] Vectorized sampling (simplified)",
+        "url": "https://github.com/vllm-project/vllm/pull/1048",
+        "author": "zhuohan123",
+        "mergedAt": "2023-09-23T00:48:05Z",
+        "createdAt": "2023-09-15T00:23:41Z",
+        "changedFiles": 3,
+        "additions": 481,
+        "deletions": 180,
+        "commits": 27,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Simplified version of #820. This version does not have any complicated torch operations.\ncc @Yard1\nTODOs:\n\n Ensure the correctness via the tests in #820.\n Measure the performance of the new PR.",
+        "category": "CI / Tests",
+        "highImpact": true
+      }
+    ]
+  }
+}

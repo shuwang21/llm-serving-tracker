@@ -1,0 +1,48 @@
+{
+  "date": "2023-06-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-02T07:00:00+00:00",
+  "utc_end": "2023-06-03T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:27:37.653429+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 136,
+        "title": "Add .readthedocs.yaml",
+        "url": "https://github.com/vllm-project/vllm/pull/136",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-03T05:27:44Z",
+        "createdAt": "2023-06-03T05:19:35Z",
+        "changedFiles": 2,
+        "additions": 24,
+        "deletions": 3,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds .readthedocs.yaml for building our hosted document.",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 127,
+        "title": "Document supported models",
+        "url": "https://github.com/vllm-project/vllm/pull/127",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-03T05:35:17Z",
+        "createdAt": "2023-05-25T04:11:10Z",
+        "changedFiles": 5,
+        "additions": 58,
+        "deletions": 3,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

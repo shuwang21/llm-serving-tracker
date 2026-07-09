@@ -1,0 +1,48 @@
+{
+  "date": "2023-08-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-11T07:00:00+00:00",
+  "utc_end": "2023-08-12T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:32:22.629614+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 740,
+        "title": "[Fix] unwantted bias in InternLM Model",
+        "url": "https://github.com/vllm-project/vllm/pull/740",
+        "author": "wangruohui",
+        "mergedAt": "2023-08-11T18:40:38Z",
+        "createdAt": "2023-08-11T11:35:54Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 6,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR modifies a possible mistake.\nThe original InternLM implementation does not add bias to MLP layers, as shown https://huggingface.co/internlm/internlm-chat-7b-8k/blob/main/modeling_internlm.py#L152\nMoreover, imports are sorted using isort.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 715,
+        "title": "Supports tokens and arrays of tokens as inputs to the OpenAI completion API",
+        "url": "https://github.com/vllm-project/vllm/pull/715",
+        "author": "wanmok",
+        "mergedAt": "2023-08-11T19:14:34Z",
+        "createdAt": "2023-08-09T09:09:34Z",
+        "changedFiles": 2,
+        "additions": 45,
+        "deletions": 16,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "According to the completion API doc, the API supports a string, array of strings, array of tokens, or array of token arrays. At the moment, the API only supports str | list[str].\nIn this PR, I made the following modifications:\n\nextended the model protocol to support deserializing all these types in ",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

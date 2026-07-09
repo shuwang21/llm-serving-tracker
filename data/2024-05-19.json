@@ -1,0 +1,66 @@
+{
+  "date": "2024-05-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-05-19T07:00:00+00:00",
+  "utc_end": "2024-05-20T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:51:17.214221+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 4809,
+        "title": "[Bugfix][Model] Add base class for vision-language models",
+        "url": "https://github.com/vllm-project/vllm/pull/4809",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-05-19T07:13:33Z",
+        "createdAt": "2024-05-14T10:35:33Z",
+        "changedFiles": 4,
+        "additions": 53,
+        "deletions": 29,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds a base class VLMBase to avoid importing LlavaForConditionalGeneration in vllm/model_executor/model_loader/loader.py, thus solving #4807.\nAlong the way, I have also ported the improved error handling logic regarding image_feature_size for LLaVA model.\nFIX #4807",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 4901,
+        "title": "[Kernel] Add marlin_24 unit tests",
+        "url": "https://github.com/vllm-project/vllm/pull/4901",
+        "author": "alexm-redhat",
+        "mergedAt": "2024-05-19T15:37:34Z",
+        "createdAt": "2024-05-18T21:30:36Z",
+        "changedFiles": 6,
+        "additions": 649,
+        "deletions": 103,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds units tests for the marlin_24 GPU kernel (as part of general unit tests for marlin)",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 4907,
+        "title": "[Kernel] Add flash-attn back",
+        "url": "https://github.com/vllm-project/vllm/pull/4907",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-05-20T01:11:30Z",
+        "createdAt": "2024-05-19T10:03:36Z",
+        "changedFiles": 6,
+        "additions": 304,
+        "deletions": 61,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR reverts #4820 by adding back flash-attn. Previously, using flash-attn for decoding caused errors when using small models (like the Llama 68M model in lora/test_layer_variation.py). This was because the index calculation for paged KV cache was done in int instead of int64_t, leading to intege",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

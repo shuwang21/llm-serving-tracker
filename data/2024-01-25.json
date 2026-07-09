@@ -1,0 +1,103 @@
+{
+  "date": "2024-01-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-25T08:00:00+00:00",
+  "utc_end": "2024-01-26T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:42:46.945647+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 48,
+        "title": "support speculative execution for openai API",
+        "url": "https://github.com/sgl-project/sglang/pull/48",
+        "author": "parasol-aser",
+        "mergedAt": "2024-01-25T09:57:06Z",
+        "createdAt": "2024-01-18T22:16:33Z",
+        "changedFiles": 10,
+        "additions": 178,
+        "deletions": 12,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 98,
+        "title": "fix batch error for llava-hd",
+        "url": "https://github.com/sgl-project/sglang/pull/98",
+        "author": "caoshiyi",
+        "mergedAt": "2024-01-25T15:56:25Z",
+        "createdAt": "2024-01-25T01:56:27Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 8,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 101,
+        "title": "Dynamic model class loading",
+        "url": "https://github.com/sgl-project/sglang/pull/101",
+        "author": "comaniac",
+        "mergedAt": "2024-01-25T23:29:08Z",
+        "createdAt": "2024-01-25T21:25:28Z",
+        "changedFiles": 6,
+        "additions": 40,
+        "deletions": 28,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR attempts to make the model loading process more systematic and self-contained. Currently when addinga new model, we have to explicitly import the model entry class in model_runnter.load_model function. This introduces two drawbacks:\n\nmodel_runner.py cannot focus on the changes of \"model runn",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 103,
+        "title": "Flush Cache API",
+        "url": "https://github.com/sgl-project/sglang/pull/103",
+        "author": "hnyls2002",
+        "mergedAt": "2024-01-26T05:32:59Z",
+        "createdAt": "2024-01-26T01:56:00Z",
+        "changedFiles": 6,
+        "additions": 48,
+        "deletions": 64,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2583,
+        "title": "[Fix] Use a correct device when creating OptionalCUDAGuard",
+        "url": "https://github.com/vllm-project/vllm/pull/2583",
+        "author": "sh1ng",
+        "mergedAt": "2024-01-26T07:48:18Z",
+        "createdAt": "2024-01-24T17:53:00Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "fix of #2350",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

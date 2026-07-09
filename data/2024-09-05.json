@@ -1,0 +1,223 @@
+{
+  "date": "2024-09-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-05T07:00:00+00:00",
+  "utc_end": "2024-09-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:00:58.052635+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1336,
+        "title": "docs: update README",
+        "url": "https://github.com/sgl-project/sglang/pull/1336",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-05T13:39:44Z",
+        "createdAt": "2024-09-05T13:39:36Z",
+        "changedFiles": 1,
+        "additions": 83,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1337,
+        "title": "docs: highlight ttft itl and throughput",
+        "url": "https://github.com/sgl-project/sglang/pull/1337",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-05T14:00:06Z",
+        "createdAt": "2024-09-05T13:53:23Z",
+        "changedFiles": 1,
+        "additions": 16,
+        "deletions": 12,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1340,
+        "title": "docs: add conclusion",
+        "url": "https://github.com/sgl-project/sglang/pull/1340",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-05T18:25:15Z",
+        "createdAt": "2024-09-05T18:21:28Z",
+        "changedFiles": 1,
+        "additions": 38,
+        "deletions": 36,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1339,
+        "title": "Optimize schedule",
+        "url": "https://github.com/sgl-project/sglang/pull/1339",
+        "author": "hnyls2002",
+        "mergedAt": "2024-09-05T21:30:27Z",
+        "createdAt": "2024-09-05T18:16:47Z",
+        "changedFiles": 2,
+        "additions": 123,
+        "deletions": 8,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8181,
+        "title": "[Doc] Add multi-image input example and update supported models",
+        "url": "https://github.com/vllm-project/vllm/pull/8181",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-09-05T10:51:53Z",
+        "createdAt": "2024-09-05T07:09:53Z",
+        "changedFiles": 7,
+        "additions": 206,
+        "deletions": 51,
+        "commits": 11,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR updates the VLM documentation with examples for multi-image input.\nIt also updates the list of supported multi-modal models to indicate whether embeddings and multi-input are supported for each modality.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7860,
+        "title": "Inclusion of InternVLChatModel In PP_SUPPORTED_MODELS(Pipeline Parallelism)",
+        "url": "https://github.com/vllm-project/vllm/pull/7860",
+        "author": "Manikandan-Thangaraj-ZS0321",
+        "mergedAt": "2024-09-05T11:33:37Z",
+        "createdAt": "2024-08-26T05:15:40Z",
+        "changedFiles": 6,
+        "additions": 90,
+        "deletions": 35,
+        "commits": 56,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nHi Folks, This PR is completed based on the 7168. This @andoorve PR includes the changes needed for the  Add remaining model PP support, This PR 7168  appears to be out of date and lacks the most recent changes.\nFrom the PR, I have included the changes needed for only",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8029,
+        "title": "[MODEL] Qwen Multimodal Support (Qwen-VL / Qwen-VL-Chat)",
+        "url": "https://github.com/vllm-project/vllm/pull/8029",
+        "author": "alex-jw-brooks",
+        "mergedAt": "2024-09-05T12:48:10Z",
+        "createdAt": "2024-08-30T10:50:28Z",
+        "changedFiles": 8,
+        "additions": 1110,
+        "deletions": 208,
+        "commits": 35,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #962\nFIX #7017\nFIX #7192\nCurrently Qwen models in VLLM skip loading the visual transformer weights. This PR adds support for loading the visual weights (if they're present) and adds multimodal support, e.g., for qwen-vl and qwen-vl-chat.\nThis PR only concerns Qwen-VL (version 1). For Qwen2-VL, p",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8165,
+        "title": "Move verify_marlin_supported to GPTQMarlinLinearMethod",
+        "url": "https://github.com/vllm-project/vllm/pull/8165",
+        "author": "mgoin",
+        "mergedAt": "2024-09-05T15:09:46Z",
+        "createdAt": "2024-09-04T19:27:15Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #8149\nWe fail when constructing the GPTQMarlin config on unsupported platforms, meaning that GPTQMarlin.get_min_capability() can't be queried to check for support without failing to allow for GPTQ fallback. This PR moves the check to when we actually need it in the GPTQMarlinLinearMethod constru",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7962,
+        "title": "[Documentation][Spec Decode] Add documentation about lossless guarantees in Speculative Decoding in vLLM",
+        "url": "https://github.com/vllm-project/vllm/pull/7962",
+        "author": "sroy745",
+        "mergedAt": "2024-09-05T20:25:29Z",
+        "createdAt": "2024-08-28T18:40:08Z",
+        "changedFiles": 2,
+        "additions": 59,
+        "deletions": 0,
+        "commits": 51,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add documentation about lossless guarantees in Speculative Decoding in vLLM. The documentation documents the finding in this issue here #7627\n@cadedaniel",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 6566,
+        "title": "[Core] Support load and unload LoRA in api server",
+        "url": "https://github.com/vllm-project/vllm/pull/6566",
+        "author": "Jeffwan",
+        "mergedAt": "2024-09-06T01:10:33Z",
+        "createdAt": "2024-07-19T07:46:18Z",
+        "changedFiles": 10,
+        "additions": 336,
+        "deletions": 6,
+        "commits": 11,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Address #6275 #3308 #5491\nAdd the two methods in the apiserver to allow user to load/unload lora adapters explicitly.\n\nUpdate the serving_engine.py and add load and unload with request checking\nUpdate api_server.py and add api endpoint and request object\nOverride LoraRequest __eq__ and __hash__. We ",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8216,
+        "title": "[BugFix] Fix Granite model configuration",
+        "url": "https://github.com/vllm-project/vllm/pull/8216",
+        "author": "njhill",
+        "mergedAt": "2024-09-06T03:39:29Z",
+        "createdAt": "2024-09-05T22:18:21Z",
+        "changedFiles": 2,
+        "additions": 42,
+        "deletions": 24,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The recently added granite model doesn't load properly since it's not yet in the latest transformers release.\nThis changes the model config loading logic to not require a registered AutoConfig if the model type has a custom config class in our own config registry.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

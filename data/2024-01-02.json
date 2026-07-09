@@ -1,0 +1,48 @@
+{
+  "date": "2024-01-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-02T08:00:00+00:00",
+  "utc_end": "2024-01-03T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:14.271055+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1959,
+        "title": "[FIX] Fix kernel bug",
+        "url": "https://github.com/vllm-project/vllm/pull/1959",
+        "author": "jeejeelee",
+        "mergedAt": "2024-01-03T03:09:59Z",
+        "createdAt": "2023-12-07T08:44:23Z",
+        "changedFiles": 12,
+        "additions": 74,
+        "deletions": 30,
+        "commits": 11,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "While assessing the effectiveness of the RMSNorm operator, I observed that executing this operator on non-zero GPU resulted in a 'RuntimeError: CUDA error: an illegal memory access was encountered.'\nUpon further investigation through debugging, I  found that cause as the absence of device guards, mo",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2305,
+        "title": "fix typo and remove unused code",
+        "url": "https://github.com/vllm-project/vllm/pull/2305",
+        "author": "esmeetu",
+        "mergedAt": "2024-01-03T03:23:15Z",
+        "createdAt": "2023-12-30T09:55:52Z",
+        "changedFiles": 2,
+        "additions": 1,
+        "deletions": 22,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      }
+    ]
+  }
+}

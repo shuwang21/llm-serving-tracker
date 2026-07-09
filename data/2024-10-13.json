@@ -1,0 +1,123 @@
+{
+  "date": "2024-10-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-13T07:00:00+00:00",
+  "utc_end": "2024-10-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:04:33.185832+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1656,
+        "title": "[doc] Add engine section in backend.md",
+        "url": "https://github.com/sgl-project/sglang/pull/1656",
+        "author": "ByronHsu",
+        "mergedAt": "2024-10-13T07:33:58Z",
+        "createdAt": "2024-10-13T07:27:22Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nas title\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1650,
+        "title": "[Fix] fix eos trim inconsistency",
+        "url": "https://github.com/sgl-project/sglang/pull/1650",
+        "author": "Ying1123",
+        "mergedAt": "2024-10-13T08:07:09Z",
+        "createdAt": "2024-10-12T22:47:56Z",
+        "changedFiles": 7,
+        "additions": 77,
+        "deletions": 27,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix the issue of not trimming tokenizer's eos id, even if it is in the stop tokens.\n Add option --no-eos-trim when launching the server to preserve the eos tokens in the output text.\n Fix sampling adapter in the openai api\n\nBefore the fix:\n# stop tokens:\n['<|eos|>']\n# output string WITHOUT --no-eos-",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1659,
+        "title": "Add output_ids into ScheduleBatch",
+        "url": "https://github.com/sgl-project/sglang/pull/1659",
+        "author": "merrymercy",
+        "mergedAt": "2024-10-14T02:54:03Z",
+        "createdAt": "2024-10-14T01:04:17Z",
+        "changedFiles": 3,
+        "additions": 29,
+        "deletions": 24,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is to make the dependency in ScheduleBatch more clearer",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1661,
+        "title": "[Minor] Rename no_eos_trim to no_stop_trim",
+        "url": "https://github.com/sgl-project/sglang/pull/1661",
+        "author": "Ying1123",
+        "mergedAt": "2024-10-14T03:30:03Z",
+        "createdAt": "2024-10-14T02:56:59Z",
+        "changedFiles": 6,
+        "additions": 16,
+        "deletions": 16,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1662,
+        "title": "Add a test case to test retract",
+        "url": "https://github.com/sgl-project/sglang/pull/1662",
+        "author": "merrymercy",
+        "mergedAt": "2024-10-14T03:32:38Z",
+        "createdAt": "2024-10-14T03:22:58Z",
+        "changedFiles": 4,
+        "additions": 50,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 9327,
+        "title": "[Bugfix] Bandaid fix for speculative decoding tests",
+        "url": "https://github.com/vllm-project/vllm/pull/9327",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2024-10-13T23:02:11Z",
+        "createdAt": "2024-10-13T19:06:28Z",
+        "changedFiles": 1,
+        "additions": 18,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "In #6484, the attention selection was changed to allow for attention-free models like Mamba to have a placeholder attention backend, as Mamba still needs attention metadata to manage its internal state.\nThe change was to call get_attn_backend even if num_attn_heads was zero. This is causing a divide",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

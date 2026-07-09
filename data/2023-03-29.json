@@ -1,0 +1,66 @@
+{
+  "date": "2023-03-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-29T07:00:00+00:00",
+  "utc_end": "2023-03-30T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:23:53.043834+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11,
+        "title": "Add cache watermark to avoid frequent cache eviction",
+        "url": "https://github.com/vllm-project/vllm/pull/11",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-29T23:38:49Z",
+        "createdAt": "2023-03-27T23:55:41Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 2,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements the watermark mechanism to prevent frequent preemption.\nIf we admit new sequences such that the GPU KV cache becomes full, preemptions are highly likely to happen in the next few steps. Instead, we can reserve a small portion of the cache and refrain from utilizing the entire cach",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 13,
+        "title": "Refactor the test code for attention kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/13",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-30T01:59:28Z",
+        "createdAt": "2023-03-30T01:57:28Z",
+        "changedFiles": 1,
+        "additions": 53,
+        "deletions": 19,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9,
+        "title": "Implement LLaMA",
+        "url": "https://github.com/vllm-project/vllm/pull/9",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-30T04:25:33Z",
+        "createdAt": "2023-03-26T05:42:49Z",
+        "changedFiles": 7,
+        "additions": 500,
+        "deletions": 35,
+        "commits": 16,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "TODO:\n\n Test against HF implementation\n Add TP support (@zhuohan123)",
+        "category": "CI / Tests",
+        "highImpact": true
+      }
+    ]
+  }
+}

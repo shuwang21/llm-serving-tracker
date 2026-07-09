@@ -1,0 +1,66 @@
+{
+  "date": "2024-02-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-17T08:00:00+00:00",
+  "utc_end": "2024-02-18T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:23.236428+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2881,
+        "title": "Defensively copy `sampling_params`",
+        "url": "https://github.com/vllm-project/vllm/pull/2881",
+        "author": "njhill",
+        "mergedAt": "2024-02-17T19:18:05Z",
+        "createdAt": "2024-02-15T00:21:35Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "If the SamplingParams object passed to LLMEngine.add_request() is mutated after that method returns, it could affect the async sampling process for that request.\nSuggested by @Yard1 in #2514 (comment)",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2775,
+        "title": "multi-LoRA as extra models in OpenAI server",
+        "url": "https://github.com/vllm-project/vllm/pull/2775",
+        "author": "jvmncs",
+        "mergedAt": "2024-02-17T20:00:48Z",
+        "createdAt": "2024-02-05T22:05:14Z",
+        "changedFiles": 7,
+        "additions": 200,
+        "deletions": 27,
+        "commits": 31,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "closes #2600\nhow to serve the loras (mimicking the multilora inference example):\n$ export LORA_PATH=~/.cache/huggingface/hub/models--yard1--llama-2-7b-sql-lora-test/\n$ python -m vllm.entrypoints.api_server \\\n --model meta-llama/Llama-2-7b-hf \\\n --enable-lora \\\n --lora-modules sql-lora=$LORA_PATH sql",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2892,
+        "title": "Add code-revision config argument for Hugging Face Hub",
+        "url": "https://github.com/vllm-project/vllm/pull/2892",
+        "author": "mbm-ai",
+        "mergedAt": "2024-02-18T06:36:53Z",
+        "createdAt": "2024-02-16T17:51:20Z",
+        "changedFiles": 3,
+        "additions": 30,
+        "deletions": 11,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Introduce the code-revision argument to facilitate the selection of a specific revision when fetching model code from the Hugging Face Hub. Prior to this enhancement, the default behavior was to always download the latest version which may not always be intended. Users can now specify a revision to ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

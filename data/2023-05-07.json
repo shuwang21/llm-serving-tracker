@@ -1,0 +1,30 @@
+{
+  "date": "2023-05-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-07T07:00:00+00:00",
+  "utc_end": "2023-05-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:26:06.116941+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 78,
+        "title": "Specify python package dependencies in requirements.txt",
+        "url": "https://github.com/vllm-project/vllm/pull/78",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-07T23:30:43Z",
+        "createdAt": "2023-05-06T07:59:31Z",
+        "changedFiles": 3,
+        "additions": 57,
+        "deletions": 36,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #56\nThis PR specifies the python package dependencies in requirements.txt. The file will be parsed by setup.py.\nWhy not directly specify them in setup.py?\nFor those who build CacheFlow from source, the dependencies (or at least pytorch) should be installed BEFORE executing pip install .. This",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

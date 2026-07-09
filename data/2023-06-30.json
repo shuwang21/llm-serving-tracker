@@ -1,0 +1,30 @@
+{
+  "date": "2023-06-30",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-30T07:00:00+00:00",
+  "utc_end": "2023-07-01T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:29:53.712834+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 273,
+        "title": "Raise error for long prompt",
+        "url": "https://github.com/vllm-project/vllm/pull/273",
+        "author": "LiuXiaoxuanPKU",
+        "mergedAt": "2023-07-01T01:48:49Z",
+        "createdAt": "2023-06-27T04:47:19Z",
+        "changedFiles": 5,
+        "additions": 42,
+        "deletions": 11,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is a fix for  #113. The program hangs when the input prompt is too long because the check  will always succeed and the request will always in the waiting queue and will never be added to the running queue.\nAdd a check before the if statement, if the prompt length is too long, it will raise Valu",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

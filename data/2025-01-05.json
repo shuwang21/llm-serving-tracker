@@ -1,0 +1,268 @@
+{
+  "date": "2025-01-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-05T08:00:00+00:00",
+  "utc_end": "2025-01-06T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:12:59.945195+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2735,
+        "title": "improve moe_align_kernel for deepseek v3",
+        "url": "https://github.com/sgl-project/sglang/pull/2735",
+        "author": "BBuf",
+        "mergedAt": "2025-01-05T16:28:22Z",
+        "createdAt": "2025-01-05T15:27:59Z",
+        "changedFiles": 2,
+        "additions": 32,
+        "deletions": 51,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "In H200\npython3 -m sglang.launch_server --model deepseek-ai/DeepSeek-V3 --tp 8 --trust-remote-code\n\npython3 benchmark/gsm8k/bench_sglang.py --num-questions 2000 --parallel 2000 --num-shots 8\nmain branch:\nAccuracy: 0.951\nInvalid: 0.000\nLatency: 83.593 s\nOutput throughput: 1676.993 token/s\npr:\n0.952\nI",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2688,
+        "title": "Support twoshot kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/2688",
+        "author": "yizhang2077",
+        "mergedAt": "2025-01-05T16:47:16Z",
+        "createdAt": "2024-12-31T13:52:12Z",
+        "changedFiles": 5,
+        "additions": 216,
+        "deletions": 21,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nsupport twoshot allreduce mainly from tensorrt llm, so custom allreduce can support larger data size, correctness has been verified, performance result in a100:\ntest_size = 512, world_size = 2, vllm time = 0.0130ms,custom time = 0.0119ms\ntest_size = 4096, world_size = 2, vllm time = 0.01",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2713,
+        "title": "chore: bump v0.4.1.post4",
+        "url": "https://github.com/sgl-project/sglang/pull/2713",
+        "author": "zhyncs",
+        "mergedAt": "2025-01-05T17:29:55Z",
+        "createdAt": "2025-01-02T13:53:20Z",
+        "changedFiles": 5,
+        "additions": 11,
+        "deletions": 11,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nEAGLE-2\nDeepSeek V3 36 tokens/s\n\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11744,
+        "title": "[distributed] remove pynccl's redundant stream",
+        "url": "https://github.com/vllm-project/vllm/pull/11744",
+        "author": "cennn",
+        "mergedAt": "2025-01-05T15:09:11Z",
+        "createdAt": "2025-01-05T08:33:36Z",
+        "changedFiles": 3,
+        "additions": 12,
+        "deletions": 24,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I've streamlined the PyNcclCommunicator codebase by removing redundant stream initializations and assignments.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11751,
+        "title": "fix: [doc] fix typo",
+        "url": "https://github.com/vllm-project/vllm/pull/11751",
+        "author": "RuixiangMa",
+        "mergedAt": "2025-01-05T16:48:16Z",
+        "createdAt": "2025-01-05T16:40:21Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "I corrected the spell of sequance,the message as follows;\nsequance -> sequence",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11752,
+        "title": "[Frontend] Improve `StreamingResponse` Exception Handling",
+        "url": "https://github.com/vllm-project/vllm/pull/11752",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-05T21:35:01Z",
+        "createdAt": "2025-01-05T18:06:33Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 3,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nSplit #11737 into 2 PRs\nWe have been incorrectly handling errors while streaming. We have only been catching ValueError so any RuntimeErrors that occur are causing long stack traces like the below. While we have global @app.exceptionhander for RuntimeError and AsyncEngineDeadError which re",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11749,
+        "title": "[distributed] remove pynccl's redundant change_state",
+        "url": "https://github.com/vllm-project/vllm/pull/11749",
+        "author": "cennn",
+        "mergedAt": "2025-01-06T01:05:48Z",
+        "createdAt": "2025-01-05T15:24:05Z",
+        "changedFiles": 3,
+        "additions": 28,
+        "deletions": 62,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I've optimized the PyNcclCommunicator codebase by eliminating the redundant function change_state.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11645,
+        "title": "[Doc] [1/N] Reorganize Getting Started section",
+        "url": "https://github.com/vllm-project/vllm/pull/11645",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-06T02:18:33Z",
+        "createdAt": "2024-12-31T04:25:06Z",
+        "changedFiles": 22,
+        "additions": 54,
+        "deletions": 41,
+        "commits": 4,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The installation guide for each hardware platform is now nested under Installation to conserve space in the navigation tab.\n\nRenamed basic installation guide to CUDA to be more explicit about the hardware platform.\nRenamed CPU installation guide to x86 CPU in order to distinguish it from ARM CPUs.\n\n",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11723,
+        "title": "[Bugfix] Remove block size constraint",
+        "url": "https://github.com/vllm-project/vllm/pull/11723",
+        "author": "comaniac",
+        "mergedAt": "2025-01-06T04:49:55Z",
+        "createdAt": "2025-01-03T19:38:03Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Remove the block size constraint introduced by #11259, because only Page Attention kernel has this limitation. Other attentions such as Flash Attention doesn't have this constraint even it's also one CUDA.\ncc @kzawora-intel @mgoin @simon-mo",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11693,
+        "title": "[V1] Add BlockTable class",
+        "url": "https://github.com/vllm-project/vllm/pull/11693",
+        "author": "WoosukKwon",
+        "mergedAt": "2025-01-06T05:24:42Z",
+        "createdAt": "2025-01-02T17:05:45Z",
+        "changedFiles": 3,
+        "additions": 94,
+        "deletions": 25,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the BlockTable class, a thin wrapper of the GPU & CPU block table tensors. It will help reduce the complexity of the input preparation logic.\nAlso, BlockTable optimizes the memory movement for switching the rows of the CPU block table tensor, by tracking the actual number of blocks per ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11753,
+        "title": "[Misc] Fix typo for valid_tool_parses ",
+        "url": "https://github.com/vllm-project/vllm/pull/11753",
+        "author": "ruisearch42",
+        "mergedAt": "2025-01-06T07:12:38Z",
+        "createdAt": "2025-01-05T19:46:09Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11754,
+        "title": "[V1] Refactor get_executor_cls",
+        "url": "https://github.com/vllm-project/vllm/pull/11754",
+        "author": "ruisearch42",
+        "mergedAt": "2025-01-06T07:59:17Z",
+        "createdAt": "2025-01-05T23:11:42Z",
+        "changedFiles": 5,
+        "additions": 26,
+        "deletions": 46,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow up for #11712 (comment)",
+        "category": "Cleanup / Refactor",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11740,
+        "title": "[mypy] Forward pass function type hints in lora",
+        "url": "https://github.com/vllm-project/vllm/pull/11740",
+        "author": "lucas-tucker",
+        "mergedAt": "2025-01-06T07:59:37Z",
+        "createdAt": "2025-01-04T16:12:45Z",
+        "changedFiles": 3,
+        "additions": 14,
+        "deletions": 5,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds mypy type hints for forward functions on subclasses of torch.nn.Module, which returns an output due to the forward pass paired with a Parameter bias.\n#3680",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

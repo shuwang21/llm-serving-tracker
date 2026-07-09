@@ -1,0 +1,85 @@
+{
+  "date": "2024-06-22",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-06-22T07:00:00+00:00",
+  "utc_end": "2024-06-23T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:53:57.395354+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 557,
+        "title": "Fix latency benchmark",
+        "url": "https://github.com/sgl-project/sglang/pull/557",
+        "author": "hnyls2002",
+        "mergedAt": "2024-06-22T07:11:04Z",
+        "createdAt": "2024-06-22T07:10:50Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 558,
+        "title": "Clean up logits processor",
+        "url": "https://github.com/sgl-project/sglang/pull/558",
+        "author": "merrymercy",
+        "mergedAt": "2024-06-22T07:25:25Z",
+        "createdAt": "2024-06-22T07:16:14Z",
+        "changedFiles": 3,
+        "additions": 127,
+        "deletions": 113,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add a new class LogitProcessorOutput to organize the output of LogitProcessor.\nAdd a new function add_logprob_return_values to organize the outputs of logprob info",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 559,
+        "title": "Add LlamaForClassification",
+        "url": "https://github.com/sgl-project/sglang/pull/559",
+        "author": "merrymercy",
+        "mergedAt": "2024-06-22T07:45:34Z",
+        "createdAt": "2024-06-22T07:34:01Z",
+        "changedFiles": 2,
+        "additions": 169,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 5754,
+        "title": "[core][distributed] improve shared memory broadcast",
+        "url": "https://github.com/vllm-project/vllm/pull/5754",
+        "author": "youkaichao",
+        "mergedAt": "2024-06-22T17:00:43Z",
+        "createdAt": "2024-06-21T21:18:29Z",
+        "changedFiles": 1,
+        "additions": 32,
+        "deletions": 10,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "add more comments for explanation\nfix race condition\nremove reader side initialization check",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

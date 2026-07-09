@@ -1,0 +1,66 @@
+{
+  "date": "2024-01-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-28T08:00:00+00:00",
+  "utc_end": "2024-01-29T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:42:58.668309+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2636,
+        "title": "Update Ray version requirements",
+        "url": "https://github.com/vllm-project/vllm/pull/2636",
+        "author": "simon-mo",
+        "mergedAt": "2024-01-28T22:27:23Z",
+        "createdAt": "2024-01-28T07:21:01Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #2619",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2279,
+        "title": "Support FP8-E5M2 KV Cache",
+        "url": "https://github.com/vllm-project/vllm/pull/2279",
+        "author": "zhaoyang-star",
+        "mergedAt": "2024-01-29T00:43:55Z",
+        "createdAt": "2023-12-27T02:32:43Z",
+        "changedFiles": 26,
+        "additions": 912,
+        "deletions": 196,
+        "commits": 43,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Quantize KV Cache to fp8 can reduce memory usage of kv cache and then could boost throughput. The impl uses fp8 data type for kv cache and has been tested on A100.\nThe following test is under WarzardCoder-34B.\n\n\n\nDataset\nBaseline(KV\u00a0Cache\u00a0FP16)\nKV\u00a0Cache\u00a0FP8\u00a0E5M2\nKV\u00a0Cache\u00a0FP8\u00a0E4M3\n\n\n\n\nHumanEval-Pytho",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2644,
+        "title": "Fix error when tp > 1",
+        "url": "https://github.com/vllm-project/vllm/pull/2644",
+        "author": "zhaoyang-star",
+        "mergedAt": "2024-01-29T06:47:40Z",
+        "createdAt": "2024-01-29T05:59:59Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix issue #2640",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

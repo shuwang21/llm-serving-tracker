@@ -1,0 +1,67 @@
+{
+  "date": "2024-02-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-07T08:00:00+00:00",
+  "utc_end": "2024-02-08T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:43:44.360763+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 160,
+        "title": "add `--disable-disk-cache`",
+        "url": "https://github.com/sgl-project/sglang/pull/160",
+        "author": "hnyls2002",
+        "mergedAt": "2024-02-07T16:50:12Z",
+        "createdAt": "2024-02-07T16:37:50Z",
+        "changedFiles": 3,
+        "additions": 17,
+        "deletions": 5,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 162,
+        "title": "Add Auth Token to RuntimeEndpoint",
+        "url": "https://github.com/sgl-project/sglang/pull/162",
+        "author": "nivibilla",
+        "mergedAt": "2024-02-08T04:07:32Z",
+        "createdAt": "2024-02-07T19:29:22Z",
+        "changedFiles": 2,
+        "additions": 18,
+        "deletions": 9,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Hi,\nSo I had an interesting use case. I was deploying this model for testing on a databricks notebook. And I was trying to use the sglang library locally. To do this the databricks_access_token must be passed as the auth token in the header.\nIf im calling the endpoint via CURL its fine since I can m",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2796,
+        "title": "Add documentation on how to do incremental builds",
+        "url": "https://github.com/vllm-project/vllm/pull/2796",
+        "author": "pcmoritz",
+        "mergedAt": "2024-02-07T22:42:02Z",
+        "createdAt": "2024-02-07T02:32:43Z",
+        "changedFiles": 2,
+        "additions": 15,
+        "deletions": 0,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "On my system, this reduces compilation time from 2:40 min to 0:30 min, therefore enabling faster development iterations.",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      }
+    ]
+  }
+}

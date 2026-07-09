@@ -1,0 +1,299 @@
+{
+  "date": "2025-07-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-07-13T07:00:00+00:00",
+  "utc_end": "2025-07-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:09:17.593926+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 7749,
+        "title": "[BugFix] add verify logit_bias to avoid crash because of IndexError ",
+        "url": "https://github.com/sgl-project/sglang/pull/7749",
+        "author": "ehuaa",
+        "mergedAt": "2025-07-13T18:44:12Z",
+        "createdAt": "2025-07-03T14:09:39Z",
+        "changedFiles": 2,
+        "additions": 9,
+        "deletions": 2,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nfix this issue #7670.\nModifications\nAdd check of logit_bias in verify to avoid IndexError in #7670, which may cause server crash.\nEnsure the keys in logit_bias is in [0, vocab_size - 1]\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outli",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 7367,
+        "title": "SWA Prefix Cache",
+        "url": "https://github.com/sgl-project/sglang/pull/7367",
+        "author": "hanming-lu",
+        "mergedAt": "2025-07-13T19:31:08Z",
+        "createdAt": "2025-06-19T22:52:57Z",
+        "changedFiles": 16,
+        "additions": 1740,
+        "deletions": 156,
+        "commits": 26,
+        "labels": [
+          "high priority"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nSupport hybrid LLM architecture prefix cache - interleaved full attention and sliding window attention layers\n\n\nModifications\n\nDepends on SWA mem pool: #6563\npython/sglang/srt/mem_cache/swa_radix_cache.py:\n\nswa prefix cache logic and swa_memory_pool api usage\nuse a LRU linked list to man",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 7997,
+        "title": "chore: remove unnecessary limits on quantization methods in test script",
+        "url": "https://github.com/sgl-project/sglang/pull/7997",
+        "author": "AniZpZ",
+        "mergedAt": "2025-07-13T23:11:49Z",
+        "createdAt": "2025-07-13T14:43:30Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe existing test script limits quantization methods that incorrectly flags some unit tests as failures. This PR addresses these false positives.\nrelated PR: #7014\n\n\nModifications\nauto detect quantization method for awq and gptq in test script\n\nChecklist\n\n Format your code according to th",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 7844,
+        "title": "Refactor dynamic LoRA update to fix incorrect handling of variant weight shapes",
+        "url": "https://github.com/sgl-project/sglang/pull/7844",
+        "author": "lifuhuang",
+        "mergedAt": "2025-07-14T01:36:02Z",
+        "createdAt": "2025-07-08T06:13:03Z",
+        "changedFiles": 10,
+        "additions": 842,
+        "deletions": 229,
+        "commits": 8,
+        "labels": [
+          "lora"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe current implementation of the dynamic LoRA update has several major limitations, most notably:\n\nIssue 1 [Known limitation] (#7463 ). User must provide at least one initial --lora-paths, and\nIssue 2 [Bug]  (#7808 ). the initial adapter shapes (target modules, lora_rank) must be either ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 7862,
+        "title": "Support for Phi-1.5 & Phi-2 models",
+        "url": "https://github.com/sgl-project/sglang/pull/7862",
+        "author": "ppraneth",
+        "mergedAt": "2025-07-14T01:43:40Z",
+        "createdAt": "2025-07-08T13:54:17Z",
+        "changedFiles": 4,
+        "additions": 324,
+        "deletions": 1,
+        "commits": 23,
+        "labels": [
+          "ready-to-merge"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "@lifuhuang  Here are the new results\nSGLang vs. vLLM: Verified MMLU Benchmark on Phi-2 & Phi-1.5 Models\n\n\n\nModel\nMetric\nSGLang\nvLLM\nSGLang Advantage\n\n\n\n\nmicrosoft/phi-2\nAvg. MMLU Accuracy\n55.5%\n55.6%\n-0.1%\n\n\n\nTotal Latency\n620.4s\n1,274.0s\n2.05x Faster\n\n\nmicrosoft/phi-1.5\nAvg. MMLU Accuracy\n42.3%\n42.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 7902,
+        "title": "[Dockerfile] Multi-arch support for ROCm",
+        "url": "https://github.com/sgl-project/sglang/pull/7902",
+        "author": "mqhc2020",
+        "mergedAt": "2025-07-14T06:13:10Z",
+        "createdAt": "2025-07-09T14:51:42Z",
+        "changedFiles": 3,
+        "additions": 97,
+        "deletions": 38,
+        "commits": 20,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTo support multi-arch for ROCm\nModifications\n\nDockerfile\npyproject.toml\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Wri",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 20807,
+        "title": "Support for LlamaForSequenceClassification",
+        "url": "https://github.com/vllm-project/vllm/pull/20807",
+        "author": "thechaos16",
+        "mergedAt": "2025-07-13T07:09:34Z",
+        "createdAt": "2025-07-11T08:26:56Z",
+        "changedFiles": 3,
+        "additions": 7,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "new-model",
+          "ready",
+          "llama"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Essential Elements of an Effective PR Description Checklist\n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison before and after, or e2e results\n (Opti",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 20857,
+        "title": "[Bugfix] Fix: add patch_rope_scaling after hf override",
+        "url": "https://github.com/vllm-project/vllm/pull/20857",
+        "author": "Wangmerlyn",
+        "mergedAt": "2025-07-13T07:13:26Z",
+        "createdAt": "2025-07-12T09:21:38Z",
+        "changedFiles": 2,
+        "additions": 17,
+        "deletions": 11,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Essential Elements of an Effective PR Description Checklist\n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison before and after, or e2e results\n (Opti",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 20877,
+        "title": "[Bugfix] fix define of RerankDocument",
+        "url": "https://github.com/vllm-project/vllm/pull/20877",
+        "author": "Liuchenlong",
+        "mergedAt": "2025-07-13T14:32:41Z",
+        "createdAt": "2025-07-13T10:27:33Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFix 400 BadRequest when call JinaVLForRanking model by /v1/rerank (#20804)\nFIX #20804\nTest Plan\ncurl -X 'POST' \\\n  'http://127.0.0.1:8000/v1/rerank' \\\n  -H 'accept: application/json' \\\n  -H 'Content-Type: application/json' \\\n  -d '{\n  \"model\": \"/workspace/models/jina-reranker-m0\",\n  \"query\":",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 20880,
+        "title": "[V1] [ROCm] [AITER] Upgrade AITER to commit `916bf3c` and bugfix APIs",
+        "url": "https://github.com/vllm-project/vllm/pull/20880",
+        "author": "tjtanaa",
+        "mergedAt": "2025-07-13T15:19:32Z",
+        "createdAt": "2025-07-13T11:57:55Z",
+        "changedFiles": 3,
+        "additions": 48,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "rocm",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Essential Elements of an Effective PR Description Checklist\n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison before and after, or e2e results\n (Opti",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 20661,
+        "title": "[V1] Hybrid allocator without prefix caching",
+        "url": "https://github.com/vllm-project/vllm/pull/20661",
+        "author": "nopperl",
+        "mergedAt": "2025-07-13T16:55:14Z",
+        "createdAt": "2025-07-09T03:30:04Z",
+        "changedFiles": 1,
+        "additions": 33,
+        "deletions": 0,
+        "commits": 5,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Essential Elements of an Effective PR Description Checklist\n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison before and after, or e2e results\n (Opti",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 20095,
+        "title": "[Core] Add `update_config` RPC method",
+        "url": "https://github.com/vllm-project/vllm/pull/20095",
+        "author": "22quinn",
+        "mergedAt": "2025-07-14T00:49:18Z",
+        "createdAt": "2025-06-25T21:00:00Z",
+        "changedFiles": 7,
+        "additions": 97,
+        "deletions": 9,
+        "commits": 18,
+        "labels": [
+          "tpu",
+          "ready",
+          "v1",
+          "rl"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Essential Elements of an Effective PR Description Checklist\n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison before and after, or e2e results\n (Opti",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 20511,
+        "title": "[Prefix Cache] Add reproducible prefix-cache block hashing using SHA-256 + CBOR (64bit)",
+        "url": "https://github.com/vllm-project/vllm/pull/20511",
+        "author": "vMaroon",
+        "mergedAt": "2025-07-14T02:45:31Z",
+        "createdAt": "2025-07-05T14:42:56Z",
+        "changedFiles": 8,
+        "additions": 88,
+        "deletions": 28,
+        "commits": 7,
+        "labels": [
+          "ready",
+          "ci/build",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAs part of [RFC]: KV-Cache Management Standardization for Interop #20492 and to support the development of llm-d's vLLM-native global KV-Cache indexer, prefix-cache block hashing must be reproducible. Given the same prefix-cache key input and configuration, the block hash should be reproduci",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 20888,
+        "title": "Removing redundant python version check",
+        "url": "https://github.com/vllm-project/vllm/pull/20888",
+        "author": "Dannyso05",
+        "mergedAt": "2025-07-14T06:15:05Z",
+        "createdAt": "2025-07-13T23:14:30Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nCleaning up redundant version check code",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ]
+  }
+}

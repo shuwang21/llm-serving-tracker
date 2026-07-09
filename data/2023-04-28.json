@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-28T07:00:00+00:00",
+  "utc_end": "2023-04-29T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:25:34.621579+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 50,
+        "title": "Add support for GPT-NeoX (Pythia)",
+        "url": "https://github.com/vllm-project/vllm/pull/50",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-28T07:32:11Z",
+        "createdAt": "2023-04-26T10:41:52Z",
+        "changedFiles": 9,
+        "additions": 436,
+        "deletions": 71,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds support for the GPT-NeoX (Pythia) model, which is the backbone of many popular models including Dolly V2, Stable-LM, and Open Assistant.",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

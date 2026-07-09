@@ -1,0 +1,333 @@
+{
+  "date": "2025-01-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-09T08:00:00+00:00",
+  "utc_end": "2025-01-10T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:13:24.368418+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2809,
+        "title": "Remove vllm dependency in model config",
+        "url": "https://github.com/sgl-project/sglang/pull/2809",
+        "author": "cermeng",
+        "mergedAt": "2025-01-09T09:51:56Z",
+        "createdAt": "2025-01-09T08:26:19Z",
+        "changedFiles": 6,
+        "additions": 372,
+        "deletions": 16,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nRemove vllm dependency in model config, part of #2245\nModifications\n\nCopy chatglm and dbrx model config from vllm\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings o",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2813,
+        "title": "Fix typo in cuda_graph_bs",
+        "url": "https://github.com/sgl-project/sglang/pull/2813",
+        "author": "merrymercy",
+        "mergedAt": "2025-01-09T11:03:24Z",
+        "createdAt": "2025-01-09T10:59:42Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2816,
+        "title": "minor: support specifying local dataset path for gsm8k and hellaswag",
+        "url": "https://github.com/sgl-project/sglang/pull/2816",
+        "author": "sleepcoo",
+        "mergedAt": "2025-01-09T14:24:43Z",
+        "createdAt": "2025-01-09T13:51:40Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix the bug where local datasets gsm8k and hellaswag are not effective.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2787,
+        "title": "[Doc] Deepseek reference docs",
+        "url": "https://github.com/sgl-project/sglang/pull/2787",
+        "author": "XiaotongJiang",
+        "mergedAt": "2025-01-09T21:43:12Z",
+        "createdAt": "2025-01-08T08:35:42Z",
+        "changedFiles": 3,
+        "additions": 37,
+        "deletions": 2,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\n#2744\nModifications\n\nAdd reference doc for sglangs optimizations for deepseek models\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11882,
+        "title": "[Bugfix] Override dunder methods of placeholder modules",
+        "url": "https://github.com/vllm-project/vllm/pull/11882",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-09T09:02:54Z",
+        "createdAt": "2025-01-09T06:00:36Z",
+        "changedFiles": 2,
+        "additions": 220,
+        "deletions": 16,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR enables the more informative Please install vllm[...] message to be thrown when using dunder methods of placeholder modules.\nFIX #11858",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11875,
+        "title": "[Bugfix] fix beam search input errors and latency benchmark script",
+        "url": "https://github.com/vllm-project/vllm/pull/11875",
+        "author": "yeqcharlotte",
+        "mergedAt": "2025-01-09T09:36:39Z",
+        "createdAt": "2025-01-09T03:11:45Z",
+        "changedFiles": 2,
+        "additions": 23,
+        "deletions": 10,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nSupport latency benchmarking for beam search, which was not added in #9087.\nRan into follow type errors so fixed them too.\n[rank0]: Traceback (most recent call last):\n[rank0]:   File \"/data/users/yeq/gitrepos/vllm/benchmarks/benchmark_latency.py\", line 158, in <module>\n[rank0]:     main(args",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11884,
+        "title": "[Doc] Add model development API Reference",
+        "url": "https://github.com/vllm-project/vllm/pull/11884",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-09T09:43:40Z",
+        "createdAt": "2025-01-09T06:49:09Z",
+        "changedFiles": 9,
+        "additions": 54,
+        "deletions": 9,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "To facilitate upcoming tutorials, this PR adds API Reference pages for model development.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11609,
+        "title": "[platform] Allow platform specify attention backend",
+        "url": "https://github.com/vllm-project/vllm/pull/11609",
+        "author": "wangxiyuan",
+        "mergedAt": "2025-01-09T13:46:50Z",
+        "createdAt": "2024-12-30T03:34:27Z",
+        "changedFiles": 10,
+        "additions": 164,
+        "deletions": 175,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Part of #11162\nThis PR add the ability for platform to implement its own attention backend out-of-tree.",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11894,
+        "title": "[ci]try to fix flaky multi-step tests",
+        "url": "https://github.com/vllm-project/vllm/pull/11894",
+        "author": "youkaichao",
+        "mergedAt": "2025-01-09T14:47:29Z",
+        "createdAt": "2025-01-09T12:08:29Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 4,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The test Multi-step Tests (4 GPUs) is found to be quite flaky, e.g. https://buildkite.com/vllm/ci/builds/11759#01944a43-2101-4b44-9e06-3c6dc1259452\nAfter investigation, I find the max_wait_seconds=5 * 240 is not respected in the function, max_wait_seconds = 240 * 3  overrides the argument.\nIn additi",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11891,
+        "title": "[Misc] Provide correct Pixtral-HF chat template",
+        "url": "https://github.com/vllm-project/vllm/pull/11891",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-09T17:19:37Z",
+        "createdAt": "2025-01-09T10:00:15Z",
+        "changedFiles": 3,
+        "additions": 73,
+        "deletions": 27,
+        "commits": 4,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The chat template of Pixtral-HF is incorrect when messages[i][\"content\"] is a dictionary rather than a string, which has been the case in vLLM since #9919. This PR provides a corrected chat template and reminds users to use it.\nFIX #11781\nFIX #11816",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11907,
+        "title": "[Docs] Add Modal to deployment frameworks",
+        "url": "https://github.com/vllm-project/vllm/pull/11907",
+        "author": "charlesfrye",
+        "mergedAt": "2025-01-09T23:26:37Z",
+        "createdAt": "2025-01-09T20:57:28Z",
+        "changedFiles": 3,
+        "additions": 9,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds Modal to the list of deployment frameworks, as discussed in Slack DMs with @mgoin.\nThe documentation page essentially just links to a page on our docs that explains how to use vLLM on our platform -- so we're the ones on the hook for maintaining the example.\nI copied the style of the ot",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11896,
+        "title": "[Doc][5/N] Move Community and API Reference to the bottom",
+        "url": "https://github.com/vllm-project/vllm/pull/11896",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-10T03:10:12Z",
+        "createdAt": "2025-01-09T12:28:39Z",
+        "changedFiles": 3,
+        "additions": 40,
+        "deletions": 26,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR moves the Community and API Reference to the bottom so they are easier to find (no need to search in the middle).\nAlso, add/updated links related to PagedAttention to refer to the original blog.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11900,
+        "title": "[VLM] Enable tokenized inputs for merged multi-modal processor",
+        "url": "https://github.com/vllm-project/vllm/pull/11900",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-10T03:24:01Z",
+        "createdAt": "2025-01-09T14:42:22Z",
+        "changedFiles": 12,
+        "additions": 207,
+        "deletions": 77,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "By overriding HF's prompt replacement logic with our own, token IDs can now be passed to the merged multi-modal processor.\nI have updated #10114 to cover this at a high level.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11904,
+        "title": "[Doc] Show default pooling method in a table",
+        "url": "https://github.com/vllm-project/vllm/pull/11904",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-10T03:25:20Z",
+        "createdAt": "2025-01-09T16:26:50Z",
+        "changedFiles": 2,
+        "additions": 45,
+        "deletions": 22,
+        "commits": 2,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "To avoid confusion like in #8740 (comment), this PR emphasizes the default pooling method for each task using a table.\nAlso, removed unnecessary {code} directives.",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11677,
+        "title": "[torch.compile] Hide KV cache behind torch.compile boundary",
+        "url": "https://github.com/vllm-project/vllm/pull/11677",
+        "author": "heheda12345",
+        "mergedAt": "2025-01-10T05:14:42Z",
+        "createdAt": "2025-01-02T06:54:22Z",
+        "changedFiles": 18,
+        "additions": 198,
+        "deletions": 44,
+        "commits": 22,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Put kv_cache in forward_context, so that we do not need to pass kv_cache to unified_attention and unified_attention_with_output.\nWe need this pr to support #9098 (hide continuous batching complexity through forward context) and #11382 (hybrid memory allocator, kv_cache type will be more complex than",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11727,
+        "title": "[Bugfix] Validate lora adapters to avoid crashing server",
+        "url": "https://github.com/vllm-project/vllm/pull/11727",
+        "author": "joerunde",
+        "mergedAt": "2025-01-10T07:56:36Z",
+        "createdAt": "2025-01-03T22:24:19Z",
+        "changedFiles": 15,
+        "additions": 459,
+        "deletions": 171,
+        "commits": 14,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR addresses an issue where loading an invalid lora adapter will crash the engine and shut the server down. This happens because dynamically loaded adapters are first loaded just-in-time, during model execution. Invalid adapters will raise at load time, and any exceptions raised during model ex",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

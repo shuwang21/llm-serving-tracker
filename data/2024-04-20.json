@@ -1,0 +1,48 @@
+{
+  "date": "2024-04-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-04-20T07:00:00+00:00",
+  "utc_end": "2024-04-21T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:48:59.745154+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3570,
+        "title": "[Frontend] multiple sampling params support ",
+        "url": "https://github.com/vllm-project/vllm/pull/3570",
+        "author": "nunjunj",
+        "mergedAt": "2024-04-20T07:11:58Z",
+        "createdAt": "2024-03-22T21:28:52Z",
+        "changedFiles": 2,
+        "additions": 61,
+        "deletions": 10,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #3313 (link existing issues this PR will resolve)\n\nadding support multiple sampling params in LLM API.\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 4222,
+        "title": "Updating lm-format-enforcer version and adding links to decoding libraries in docs",
+        "url": "https://github.com/vllm-project/vllm/pull/4222",
+        "author": "noamgat",
+        "mergedAt": "2024-04-20T08:33:16Z",
+        "createdAt": "2024-04-20T07:38:43Z",
+        "changedFiles": 3,
+        "additions": 8,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Updated lm-format-enforcer version from 0.9.3 to 0.9.8. These versions have no API changes, solve a few bugs and improve JSONSchemaParser performance by 2x in many cases.\nAdded links to the libraries in the guided-decoding-backend docstring, so the vLLM OpenAI Compatible Server docs page now looks l",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

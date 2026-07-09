@@ -1,0 +1,495 @@
+{
+  "date": "2025-10-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-10-04T07:00:00+00:00",
+  "utc_end": "2025-10-05T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:22:16.447585+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 11012,
+        "title": "[fix]enable flashmla when using draft model P/D attention select",
+        "url": "https://github.com/sgl-project/sglang/pull/11012",
+        "author": "HanHan009527",
+        "mergedAt": "2025-10-04T12:59:34Z",
+        "createdAt": "2025-09-28T07:25:41Z",
+        "changedFiles": 3,
+        "additions": 14,
+        "deletions": 5,
+        "commits": 8,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\non #9755 , when using flashmla , draft_extend_attn_backend will report an error when initialized, which is inconsistent with the pre-refactoring version. So I added unimplemented select for _create_backend  .\nadd mutile token support for mla\n\n\nModifications\n\nAccuracy Tests\npython3 bench_",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11213,
+        "title": "[router] fix get load response parsing",
+        "url": "https://github.com/sgl-project/sglang/pull/11213",
+        "author": "slin1237",
+        "mergedAt": "2025-10-04T13:58:03Z",
+        "createdAt": "2025-10-04T12:57:03Z",
+        "changedFiles": 2,
+        "additions": 26,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "bug",
+          "router",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "as titled\noriginal get load was not parsing the response properly\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark results",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11140,
+        "title": "[router] add grpc router pd mode for chat and generate",
+        "url": "https://github.com/sgl-project/sglang/pull/11140",
+        "author": "slin1237",
+        "mergedAt": "2025-10-04T13:58:28Z",
+        "createdAt": "2025-10-01T17:40:13Z",
+        "changedFiles": 11,
+        "additions": 3165,
+        "deletions": 1076,
+        "commits": 2,
+        "labels": [
+          "router",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "goal for this PR\n\nupdate grpc server to support PD mode including\n\n\n health check\n warm up\n all configurations (pp, dp, tp and countless of them)\n fix bootstrap service startup order in grpc server\n pass bootstrap payload to scheduler\n\n\nfinish grpc pd router\n\n\nchat completion\n\n log prob\n n > 1\n non ",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11215,
+        "title": "EAGLE cache fix for HiCache",
+        "url": "https://github.com/sgl-project/sglang/pull/11215",
+        "author": "ispobock",
+        "mergedAt": "2025-10-04T23:53:53Z",
+        "createdAt": "2025-10-04T13:01:54Z",
+        "changedFiles": 5,
+        "additions": 90,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n#10846\nAccept Length\npython3 -m sglang.launch_server --model meta-llama/Llama-3.1-8B-Instruct --speculative-algo EAGLE3 \\\n    --speculative-draft-model-path lmsys/sglang-EAGLE3-LLaMA3.1-Instruct-8B  \\\n    --speculative-num-steps 2 --speculative-eagle-topk 1 --speculative-num-draft-tokens ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11217,
+        "title": "Add --max-new-tokens CLI flag for MMMU evaluation",
+        "url": "https://github.com/sgl-project/sglang/pull/11217",
+        "author": "yhyang201",
+        "mergedAt": "2025-10-05T00:35:53Z",
+        "createdAt": "2025-10-04T13:53:11Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nExpose max_new_tokens as a CLI option and apply it in sampling params.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation accor",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11063,
+        "title": "Add DeepSeek-V3.2 Tool Call Template",
+        "url": "https://github.com/sgl-project/sglang/pull/11063",
+        "author": "Xu-Wenqing",
+        "mergedAt": "2025-10-05T01:53:50Z",
+        "createdAt": "2025-09-29T11:05:36Z",
+        "changedFiles": 1,
+        "additions": 100,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 26212,
+        "title": "[Model] Support nested structures for TensorSchema",
+        "url": "https://github.com/vllm-project/vllm/pull/26212",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-04T08:20:32Z",
+        "createdAt": "2025-10-04T06:22:55Z",
+        "changedFiles": 5,
+        "additions": 274,
+        "deletions": 292,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis helps simplify the implementation of HyperCLOVAX-SEED-Vision and enable merge_by_field_config=True for that model.\nOther changes:\n\nImprove the name of the field in Phi3VImagePixelInputs\nFix invalid import for GLM4.1V caused by #25631\n\ncc @bbeckca\nTest Plan\nTest Result\n\n\n Essential Eleme",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26214,
+        "title": "[Misc] Require `merge_by_field_config` argument",
+        "url": "https://github.com/vllm-project/vllm/pull/26214",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-04T08:40:15Z",
+        "createdAt": "2025-10-04T06:50:50Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 45,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAccording to #26149, some models now have merge_by_field_config=True while others still have merge_by_field_config=False. It is therefore now required for model runners to pass this argument explicitly in order for both sets of models to receive the correct input format.\nBecause of this, the",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26215,
+        "title": "[Misc] Remove unused `executor.apply_model`",
+        "url": "https://github.com/vllm-project/vllm/pull/26215",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-04T08:45:54Z",
+        "createdAt": "2025-10-04T06:57:37Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 12,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nV0 has been removed, so this method is just dead code.\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The tes",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26053,
+        "title": "[CI Failure] fix_test_auto_prefix_cache_support",
+        "url": "https://github.com/vllm-project/vllm/pull/26053",
+        "author": "hl475",
+        "mergedAt": "2025-10-04T09:44:49Z",
+        "createdAt": "2025-10-01T22:28:33Z",
+        "changedFiles": 2,
+        "additions": 14,
+        "deletions": 7,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nRecent changes from #25075 breaks two tests from tests/models/language/pooling/test_auto_prefix_cache_support.py (https://buildkite.com/vllm/ci/builds/33031/steps/canvas?sid=01999dee-5c62-422e-9c31-054b1091dc6b).\nPer suggestion, the breaking change from previous PR is from https://github.com",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26220,
+        "title": "Revert \"Add batch invariant kernel override for FlashInfer backend [2/n]\"",
+        "url": "https://github.com/vllm-project/vllm/pull/26220",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-04T09:45:08Z",
+        "createdAt": "2025-10-04T08:34:27Z",
+        "changedFiles": 3,
+        "additions": 29,
+        "deletions": 84,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reverts #25769 because it failed PyTorch Fullgraph Smoke Test",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26054,
+        "title": "Add Olmo 3 reasoning parser",
+        "url": "https://github.com/vllm-project/vllm/pull/26054",
+        "author": "soldni",
+        "mergedAt": "2025-10-04T09:48:29Z",
+        "createdAt": "2025-10-01T22:38:10Z",
+        "changedFiles": 3,
+        "additions": 453,
+        "deletions": 0,
+        "commits": 5,
+        "labels": [
+          "new-model",
+          "ready",
+          "tool-calling"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR adds support for parsing reasoning traces for the Olmo 3 family of models. (support for models has been already merged in #24534).\nOlmo models use <think> and </think> string to bracket their reasoning traces; however, unlike Qwen or Deepseek families, the strings are not special tok",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26168,
+        "title": "[Core] Enable decode of context length equal to max model length",
+        "url": "https://github.com/vllm-project/vllm/pull/26168",
+        "author": "yannicks1",
+        "mergedAt": "2025-10-04T09:59:26Z",
+        "createdAt": "2025-10-03T13:10:20Z",
+        "changedFiles": 4,
+        "additions": 32,
+        "deletions": 15,
+        "commits": 6,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nOn the current main branch, the stopping criterion does not allow a decode on context length max_model_len, the last decode happens at context length max_model_len - 1 (one token before the actual limit).\nProposed change\nRelax the assertion/check such that a last token can be generated and s",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26012,
+        "title": "[Bugfix] Fix `_reqs_to_process` leak on abort",
+        "url": "https://github.com/vllm-project/vllm/pull/26012",
+        "author": "NickLucche",
+        "mergedAt": "2025-10-04T11:39:31Z",
+        "createdAt": "2025-10-01T10:27:51Z",
+        "changedFiles": 2,
+        "additions": 82,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1",
+          "kv-connector"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix a small leak that can happen whenever a request is aborted while prefilling on P, causing its id to not be removed from the set.\nI've added a unit test to clarify the scenario.\nThe test should fail on main with\n>       assert req.request_id not in connector.connector_worker._reqs_to_process\nE   ",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26010,
+        "title": "[Model] CLIP Embedding Support",
+        "url": "https://github.com/vllm-project/vllm/pull/26010",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-04T13:21:42Z",
+        "createdAt": "2025-10-01T09:01:48Z",
+        "changedFiles": 11,
+        "additions": 850,
+        "deletions": 78,
+        "commits": 13,
+        "labels": [
+          "documentation",
+          "new-model",
+          "ready",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nSupport CLIP text and image embedding in the same model.\n\nFor text inputs, we only apply token_embedding when calling get_input_embeddings. The rest of the text embedding and the encoder logic are applied when calling forward on the model.\nFor image inputs, we apply vision embeddings when ca",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26219,
+        "title": "Fix tensor device and dtype placement in Qwen2VL model",
+        "url": "https://github.com/vllm-project/vllm/pull/26219",
+        "author": "yuafng",
+        "mergedAt": "2025-10-04T13:41:39Z",
+        "createdAt": "2025-10-04T08:33:20Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary:\nSigned-off-by: Yuanfeng Li yuanfengli@meta.com\nFix device placement issue in Qwen2-VL model by explicitly specifying device and dtype when creating grid_thw_ tensor to prevent device mismatch errors during GPU inference.\nTest Plan:\nTested with Qwen2-VL model inference on GPU to verify the t",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26226,
+        "title": "[V1] [Hybrid] Remove code to override default CUDA graph configuration",
+        "url": "https://github.com/vllm-project/vllm/pull/26226",
+        "author": "tdoublep",
+        "mergedAt": "2025-10-04T13:47:48Z",
+        "createdAt": "2025-10-04T11:00:11Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 15,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nRemoves some legacy code that enabled FULL_AND_PIECEWISE as the default for hybrid models. This code is now entirely redundant as this is now the global default.\nTest Plan\nI verified that for MinimaxText-01 (which is the only hybrid remaining that doesn't support FCG) it still falls back to ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26096,
+        "title": "[CPU] Refine batch reorder of CPU attention backend",
+        "url": "https://github.com/vllm-project/vllm/pull/26096",
+        "author": "bigPYJ1151",
+        "mergedAt": "2025-10-04T13:54:35Z",
+        "createdAt": "2025-10-02T13:24:15Z",
+        "changedFiles": 2,
+        "additions": 44,
+        "deletions": 128,
+        "commits": 4,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nRefine batch reorder of CPU attention backend to put decode requests in front of prefill requests likes other attention backends.\nTest Plan\nCI tests\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing iss",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26227,
+        "title": "[Frontend] Cache chat template kwargs resolution",
+        "url": "https://github.com/vllm-project/vllm/pull/26227",
+        "author": "Isotr0py",
+        "mergedAt": "2025-10-04T15:32:30Z",
+        "createdAt": "2025-10-04T12:56:36Z",
+        "changedFiles": 7,
+        "additions": 81,
+        "deletions": 18,
+        "commits": 3,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nFix #25794 (comment)\nAlso add missing trust_request_chat_template to other entrypoint.\n\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such a",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26216,
+        "title": "[Renderer] Clean up renderer code",
+        "url": "https://github.com/vllm-project/vllm/pull/26216",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-04T17:05:29Z",
+        "createdAt": "2025-10-04T07:50:08Z",
+        "changedFiles": 5,
+        "additions": 94,
+        "deletions": 134,
+        "commits": 7,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nRemove unnecessary overloads in vllm.inputs.parse because it doesn't affect the type annotations in downstream code anyway\nRefactor parse_and_batch_prompt to parse_raw_prompts in order to reuse the existing TextPrompt and TokensPrompt instead of creating new TypedDict classes just for this ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26230,
+        "title": "[Model] Use `merge_by_field_config` for MM models (H-L)",
+        "url": "https://github.com/vllm-project/vllm/pull/26230",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-05T03:54:17Z",
+        "createdAt": "2025-10-04T14:56:46Z",
+        "changedFiles": 6,
+        "additions": 29,
+        "deletions": 161,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nPart of #26149\nTest Plan\nTested all models other than Kimi-VL (doesn't work with latest Transformers)\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, suc",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26232,
+        "title": "[Easy] Add str repr for IterationStats",
+        "url": "https://github.com/vllm-project/vllm/pull/26232",
+        "author": "22quinn",
+        "mergedAt": "2025-10-05T05:00:22Z",
+        "createdAt": "2025-10-04T22:30:38Z",
+        "changedFiles": 2,
+        "additions": 26,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nfor debugging\nTest Plan\n>>> from vllm.v1.metrics.stats import IterationStats\nINFO 10-04 15:05:08 [__init__.py:215] Automatically detected platform cuda.\n>>> a = IterationStats()\n>>> a\nIterationStats(iteration_timestamp=1759615513.896626, num_generation_tokens=0, num_prompt_tokens=0, num_pree",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26238,
+        "title": "[Bugfix] Allow `--skip-tokenizer-init` with `echo and return_token_ids`",
+        "url": "https://github.com/vllm-project/vllm/pull/26238",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-05T05:38:53Z",
+        "createdAt": "2025-10-05T02:57:49Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nOops, I made a mistake in #26216. Actually request.echo has special handling for request.return_token_ids so we should still allow --skip-tokenizer-init with it.\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some i",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

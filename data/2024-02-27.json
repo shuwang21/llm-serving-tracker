@@ -1,0 +1,66 @@
+{
+  "date": "2024-02-27",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-27T08:00:00+00:00",
+  "utc_end": "2024-02-28T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:45:04.621215+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3007,
+        "title": "Enables GQA support in the prefix prefill kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/3007",
+        "author": "sighingnow",
+        "mergedAt": "2024-02-27T09:14:32Z",
+        "createdAt": "2024-02-23T09:45:08Z",
+        "changedFiles": 3,
+        "additions": 87,
+        "deletions": 47,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3064,
+        "title": "multi-lora documentation fix",
+        "url": "https://github.com/vllm-project/vllm/pull/3064",
+        "author": "ElefHead",
+        "mergedAt": "2024-02-28T05:26:15Z",
+        "createdAt": "2024-02-27T21:47:20Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 1,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Minor fixes to the documentation for open-ai compatible server.",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3070,
+        "title": "Restrict prometheus_client >= 0.18.0 to prevent errors when importing pkgs",
+        "url": "https://github.com/vllm-project/vllm/pull/3070",
+        "author": "AllenDou",
+        "mergedAt": "2024-02-28T05:38:26Z",
+        "createdAt": "2024-02-28T04:01:11Z",
+        "changedFiles": 3,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Traceback (most recent call last):\nFile \"/usr/lib/python3.10/runpy.py\", line 187, in _run_module_as_main\nmod_name, mod_spec, code = _get_module_details(mod_name, _Error)\nFile \"/usr/lib/python3.10/runpy.py\", line 110, in _get_module_details\nimport(pkg_name)\nFile \"/root/vllm/vllm/init.py\", line 4, in ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

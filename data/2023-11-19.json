@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-19T08:00:00+00:00",
+  "utc_end": "2023-11-20T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:30.893391+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1709,
+        "title": "Documentation about official docker image",
+        "url": "https://github.com/vllm-project/vllm/pull/1709",
+        "author": "simon-mo",
+        "mergedAt": "2023-11-20T04:56:26Z",
+        "createdAt": "2023-11-17T18:54:22Z",
+        "changedFiles": 1,
+        "additions": 16,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "After the #1551, we should publish official docker image tagged with latest and v0.2.2.\nThe way to push to docker image should be\ndocker login --username vllm\nDOCKER_BUILDKIT=1 docker build . --target vllm-openai --tag vllm/vllm-openai --build-arg max_jobs=8\ndocker tag vllm/vllm-openai vllm/vllm-ope",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ]
+  }
+}

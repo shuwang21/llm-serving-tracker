@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-09T07:00:00+00:00",
+  "utc_end": "2023-04-10T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:31.504570+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 35,
+        "title": "Support block size 32",
+        "url": "https://github.com/vllm-project/vllm/pull/35",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-10T06:07:18Z",
+        "createdAt": "2023-04-10T05:33:35Z",
+        "changedFiles": 4,
+        "additions": 49,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds support for block size 32. It turns out that no modification to our attention kernel is required for this support.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

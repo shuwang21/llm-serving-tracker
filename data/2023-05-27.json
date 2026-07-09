@@ -1,0 +1,48 @@
+{
+  "date": "2023-05-27",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-27T07:00:00+00:00",
+  "utc_end": "2023-05-28T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:27:17.328145+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 130,
+        "title": "Improve setup script & Add a guard for bfloat16 kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/130",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-27T07:59:32Z",
+        "createdAt": "2023-05-27T06:48:44Z",
+        "changedFiles": 4,
+        "additions": 90,
+        "deletions": 16,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes setup.py so that the compiled modules can include the binaries for multiple types of GPUs. And the PR improves how we avoid build errors on bfloat16 kernels.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 128,
+        "title": "Add a doc for installation",
+        "url": "https://github.com/vllm-project/vllm/pull/128",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-27T08:13:07Z",
+        "createdAt": "2023-05-25T08:02:24Z",
+        "changedFiles": 1,
+        "additions": 41,
+        "deletions": 1,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      }
+    ]
+  }
+}

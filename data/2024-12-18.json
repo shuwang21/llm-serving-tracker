@@ -1,0 +1,353 @@
+{
+  "date": "2024-12-18",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-18T08:00:00+00:00",
+  "utc_end": "2024-12-19T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:11:21.612623+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2515,
+        "title": "feat: add llama3 eval",
+        "url": "https://github.com/sgl-project/sglang/pull/2515",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-19T05:37:09Z",
+        "createdAt": "2024-12-19T05:33:48Z",
+        "changedFiles": 1,
+        "additions": 316,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2516,
+        "title": "docs: update README",
+        "url": "https://github.com/sgl-project/sglang/pull/2516",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-19T05:44:02Z",
+        "createdAt": "2024-12-19T05:43:22Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2517,
+        "title": "fix: continue to use flashinfer 0.1.6 temporarily",
+        "url": "https://github.com/sgl-project/sglang/pull/2517",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-19T06:03:24Z",
+        "createdAt": "2024-12-19T06:00:25Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIf using the latest 0.2.0, CI cannot pass. Temporarily fix it to 0.1.6 and wait for FlashInfer to release 0.2.0.post1 or 0.2.1 before lifting the restriction again.\nref https://github.com/sgl-project/sglang/actions/runs/12407074179\ncc @yzh119 @merrymercy\n\nModifications\n\nChecklist\n\n Format",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 10995,
+        "title": "[Kernel]: Cutlass 2:4 Sparsity + FP8/Int8 Quant Support",
+        "url": "https://github.com/vllm-project/vllm/pull/10995",
+        "author": "dsikka",
+        "mergedAt": "2024-12-18T14:57:16Z",
+        "createdAt": "2024-12-08T20:42:38Z",
+        "changedFiles": 30,
+        "additions": 2365,
+        "deletions": 117,
+        "commits": 102,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nAdd sparse quantized and unquantized kernels for CUTLASS 3.x.\nAdd compressed tensors support for 2of4 Sparse Only, 2of4 Sparse + INT8/FP8 Quantized Models\n\nFrom Neural Magic",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11263,
+        "title": "[Bugfix] Fix broken phi3-v mm_processor_kwargs tests",
+        "url": "https://github.com/vllm-project/vllm/pull/11263",
+        "author": "Isotr0py",
+        "mergedAt": "2024-12-18T18:16:40Z",
+        "createdAt": "2024-12-17T16:49:44Z",
+        "changedFiles": 2,
+        "additions": 17,
+        "deletions": 12,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix broken mm_processor_kwargs tests for phi3-v, because num_crops is not exposed in get_max_phi3v_image_tokens.\nThe mm_processor_kwargs tests were not triggered in #11199 CI and before, because the test-pipeline hadn't updated at that time.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11274,
+        "title": "[CI][Misc] Remove Github Action Release Workflow",
+        "url": "https://github.com/vllm-project/vllm/pull/11274",
+        "author": "simon-mo",
+        "mergedAt": "2024-12-18T18:16:53Z",
+        "createdAt": "2024-12-18T00:58:40Z",
+        "changedFiles": 1,
+        "additions": 62,
+        "deletions": 61,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We no longer use it",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11287,
+        "title": "[FIX] update openai version",
+        "url": "https://github.com/vllm-project/vllm/pull/11287",
+        "author": "jikunshang",
+        "mergedAt": "2024-12-18T18:17:06Z",
+        "createdAt": "2024-12-18T08:08:16Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "PR #11027 import  ChatCompletionContentPartInputAudioParam. this is introduced in openai 1.52.0  PR 1796",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11304,
+        "title": "[Bugfix] fix minicpmv test",
+        "url": "https://github.com/vllm-project/vllm/pull/11304",
+        "author": "joerunde",
+        "mergedAt": "2024-12-18T18:34:27Z",
+        "createdAt": "2024-12-18T16:26:54Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Context: https://vllm-dev.slack.com/archives/C07QT0LUF4K/p1734490695369139\nThis test now reserves too much memory after the profiling changes",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11305,
+        "title": "[V1] VLM - enable processor cache by default",
+        "url": "https://github.com/vllm-project/vllm/pull/11305",
+        "author": "alexm-redhat",
+        "mergedAt": "2024-12-18T23:54:46Z",
+        "createdAt": "2024-12-18T16:52:07Z",
+        "changedFiles": 7,
+        "additions": 72,
+        "deletions": 48,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We have found that V1 VLM prefix caching performs best when it is combined with VLM processor cache. This PR enables VLM processor cache by default, so we get best performance in all cases.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11311,
+        "title": "[Bugfix][Build/CI] Fix sparse CUTLASS compilation on CUDA [12.0, 12.2)",
+        "url": "https://github.com/vllm-project/vllm/pull/11311",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2024-12-19T02:43:30Z",
+        "createdAt": "2024-12-18T22:52:18Z",
+        "changedFiles": 12,
+        "additions": 89,
+        "deletions": 20,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We were checking against CUDA 12.0 when we should have been checking for 12.2\nhttps://github.com/NVIDIA/cutlass/blob/e1cd8c7866dd6de02b66a89879795e7d7301aacc/examples/62_hopper_sparse_gemm/62_hopper_sparse_gemm.cu#L553-L559\nI also plumbed up a cutlass_sparse_scaled_mm_supported function so we can fa",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11307,
+        "title": "[Model] IBM Granite 3.1",
+        "url": "https://github.com/vllm-project/vllm/pull/11307",
+        "author": "tjohnson31415",
+        "mergedAt": "2024-12-19T03:27:24Z",
+        "createdAt": "2024-12-18T18:24:37Z",
+        "changedFiles": 4,
+        "additions": 27,
+        "deletions": 6,
+        "commits": 3,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "IBM just released new Granite 3.1 models (Press Release; HF Hub).\nTool calling with the new version is different becuase it uses a <tool_call> html-style string to mark the start of a tool call response instead of the <|tool_call|> token. The default chat template from HF Hub passes the unit tests, ",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11313,
+        "title": "[CI] Expand test_guided_generate to test all backends",
+        "url": "https://github.com/vllm-project/vllm/pull/11313",
+        "author": "mgoin",
+        "mergedAt": "2024-12-19T04:00:38Z",
+        "createdAt": "2024-12-19T00:36:52Z",
+        "changedFiles": 3,
+        "additions": 129,
+        "deletions": 51,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previously we were only testing the default structured output backend, so we should expand to explicitly call all backends. This revealed some lack of support in outlines for json_object and lm-format-enforcer for regex patterns in json schemas.\nI also found some of the tests are flaky for some back",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11310,
+        "title": "[V1] Simplify prefix caching logic by removing `num_evictable_computed_blocks`",
+        "url": "https://github.com/vllm-project/vllm/pull/11310",
+        "author": "heheda12345",
+        "mergedAt": "2024-12-19T04:17:12Z",
+        "createdAt": "2024-12-18T22:45:27Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 11,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The evictable_computed_blocks are removed from self.free_block_queue during self._touch(computed_blocks), so we do not need to treat them specially in allocate_slots.\nThe num_evictable_computed_blocks is always zero (I've checked here 667af1b) because self._touch also increases the reference count b",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11303,
+        "title": "[VLM] Merged multimodal processor for Qwen2-Audio",
+        "url": "https://github.com/vllm-project/vllm/pull/11303",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-19T06:14:17Z",
+        "createdAt": "2024-12-18T16:11:30Z",
+        "changedFiles": 11,
+        "additions": 416,
+        "deletions": 360,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Implement #10114 for Qwen2-Audio; also consolidate common code between Ultravox and Qwen2-Audio processing.\nI can successfully run the example script with identical results as the previous version of the model.",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10049,
+        "title": "[Kernel] Refactor Cutlass c3x",
+        "url": "https://github.com/vllm-project/vllm/pull/10049",
+        "author": "varun-sundar-rabindranath",
+        "mergedAt": "2024-12-19T07:00:18Z",
+        "createdAt": "2024-11-05T20:22:28Z",
+        "changedFiles": 7,
+        "additions": 406,
+        "deletions": 373,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Refactor Cutlass c3x kernels for better maintainability and easier experimentation.\n\nBreak scaled_mm_c3x.cu into,\n\nscaled_mm_c3x.cuh : All the base cutlass c3x code (cutlass_3x_gemm and cutlass_gemm_caller).\nscaled_mm_c3x_sm90_fp8_dispatch.cuh : All fp8 kernels along with the gemm shape based dispat",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11275,
+        "title": "[Misc] Optimize ray worker initialization time",
+        "url": "https://github.com/vllm-project/vllm/pull/11275",
+        "author": "ruisearch42",
+        "mergedAt": "2024-12-19T07:38:02Z",
+        "createdAt": "2024-12-18T00:59:14Z",
+        "changedFiles": 1,
+        "additions": 22,
+        "deletions": 13,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR optimizes ray worker initialization time.\nIn the current code base, ray.get(worker.get_node_ip.remote()) is called for each worker right after we get its handle, and it takes ~3s. This call is expensive because when RayWorkerWrapper.remote() just returns, we get an actor handle, but the acto",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11267,
+        "title": "[misc] benchmark_throughput : Add LoRA",
+        "url": "https://github.com/vllm-project/vllm/pull/11267",
+        "author": "varun-sundar-rabindranath",
+        "mergedAt": "2024-12-19T07:43:16Z",
+        "createdAt": "2024-12-17T19:52:42Z",
+        "changedFiles": 1,
+        "additions": 89,
+        "deletions": 13,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Update benchmark_throughput.py to support LoRA benchmarking.\nExamples:\nMachine : 1xA100\npython3 benchmarks/benchmark_throughput.py --model  meta-llama/Llama-2-7b-hf --backend vllm   --dataset ./ShareGPT_V3_unfiltered_cleaned_split.json --num-prompts 1000\nThroughput: 11.45 requests/s, 5509.93 total t",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2023-05-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-04T07:00:00+00:00",
+  "utc_end": "2023-05-05T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:25:55.506034+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 68,
+        "title": "Fix a bug in attention kernel",
+        "url": "https://github.com/vllm-project/vllm/pull/68",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-04T09:56:09Z",
+        "createdAt": "2023-05-04T09:50:21Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #66\nThis PR fixes a bug in our attention kernel. The bug was introduced in #53 when changing the precision of computations in the attention kernel. Now the kernel unit tests are passed normally.",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 60,
+        "title": "Add support for GPT-2",
+        "url": "https://github.com/vllm-project/vllm/pull/60",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-04T09:59:56Z",
+        "createdAt": "2023-05-03T20:14:36Z",
+        "changedFiles": 7,
+        "additions": 350,
+        "deletions": 8,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #55",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 63,
+        "title": "Use dtype from model config & Add Dolly V2",
+        "url": "https://github.com/vllm-project/vllm/pull/63",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-04T10:05:37Z",
+        "createdAt": "2023-05-03T23:28:20Z",
+        "changedFiles": 2,
+        "additions": 33,
+        "deletions": 7,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the default option to dtype, which uses FP16 for FP16 and FP32 models and BF16 for BF16 models. While this option will be used by default, users can specify the data type if they want to use BF16 for FP32 models.\nIn addition, the PR integrates Dolly V2, a recent LLM with the GPT-NeoX ar",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

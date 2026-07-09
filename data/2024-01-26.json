@@ -1,0 +1,105 @@
+{
+  "date": "2024-01-26",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-26T08:00:00+00:00",
+  "utc_end": "2024-01-27T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:42:50.637655+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 108,
+        "title": "Fix Mistral model loading",
+        "url": "https://github.com/sgl-project/sglang/pull/108",
+        "author": "comaniac",
+        "mergedAt": "2024-01-26T17:38:44Z",
+        "createdAt": "2024-01-26T17:36:31Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Close #107\nCo-authored with @johndun",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2274,
+        "title": "[ROCm] add support to ROCm 6.0 and MI300",
+        "url": "https://github.com/vllm-project/vllm/pull/2274",
+        "author": "hongxiayang",
+        "mergedAt": "2024-01-26T20:41:10Z",
+        "createdAt": "2023-12-26T19:44:17Z",
+        "changedFiles": 8,
+        "additions": 96,
+        "deletions": 13,
+        "commits": 17,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This diff adds support to ROCm 6.0 and MI300",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2598,
+        "title": "Support for Stable LM 2",
+        "url": "https://github.com/vllm-project/vllm/pull/2598",
+        "author": "dakotamahan-stability",
+        "mergedAt": "2024-01-26T20:45:19Z",
+        "createdAt": "2024-01-25T15:50:52Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "add config.qkv_bias from Stable LM 2 to modeling code",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2605,
+        "title": "Don't build punica kernels by default",
+        "url": "https://github.com/vllm-project/vllm/pull/2605",
+        "author": "pcmoritz",
+        "mergedAt": "2024-01-26T23:19:19Z",
+        "createdAt": "2024-01-25T22:39:44Z",
+        "changedFiles": 4,
+        "additions": 11,
+        "deletions": 4,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The punica kernels take quite a while to build and most developers won't need them, so it will be better to not build them by default.\nMaybe in the future the build can be optimized and then we can bring them back. E.g. if we had good incremental compilation that would probably solve the problem.\nFi",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2566,
+        "title": "AWQ: Up to 2.66x higher throughput",
+        "url": "https://github.com/vllm-project/vllm/pull/2566",
+        "author": "casper-hansen",
+        "mergedAt": "2024-01-27T07:53:17Z",
+        "createdAt": "2024-01-23T22:05:54Z",
+        "changedFiles": 4,
+        "additions": 127,
+        "deletions": 1,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The strategy is to dequantize and run FP16 matmul for longer sequences. This could probably be faster if we just used cublas instead of torch.matmul.\nEDIT: It seems throughput can be over 2x in vLLM because context processing is such a crucial part of the framework.\npython benchmarks/benchmark_throu",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

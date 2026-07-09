@@ -1,0 +1,48 @@
+{
+  "date": "2023-05-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-20T07:00:00+00:00",
+  "utc_end": "2023-05-21T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:26:52.159107+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 110,
+        "title": "Remove unused parts in Megatron-LM code and add copyright notice",
+        "url": "https://github.com/vllm-project/vllm/pull/110",
+        "author": "zhuohan123",
+        "mergedAt": "2023-05-20T15:11:35Z",
+        "createdAt": "2023-05-19T18:55:51Z",
+        "changedFiles": 8,
+        "additions": 23,
+        "deletions": 297,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #77",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 109,
+        "title": "Refactor system architecture",
+        "url": "https://github.com/vllm-project/vllm/pull/109",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-20T20:06:59Z",
+        "createdAt": "2023-05-19T10:30:51Z",
+        "changedFiles": 24,
+        "additions": 1019,
+        "deletions": 1036,
+        "commits": 80,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Should be merged after #81",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,49 @@
+{
+  "date": "2024-02-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-23T08:00:00+00:00",
+  "utc_end": "2024-02-24T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:48.258047+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 219,
+        "title": "Support outlines > 0.0.31",
+        "url": "https://github.com/sgl-project/sglang/pull/219",
+        "author": "comaniac",
+        "mergedAt": "2024-02-24T07:06:17Z",
+        "createdAt": "2024-02-22T19:22:22Z",
+        "changedFiles": 2,
+        "additions": 24,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "close #203\nThis PR provides outline >0.0.31 support so that we could relax the pinned upper version.\nThe implementation is based on dottxt-ai/outlines@0.0.31...0.0.32\ncc @hnyls2002",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2984,
+        "title": "[Fix] Fix assertion on Mistral YaRN model len",
+        "url": "https://github.com/vllm-project/vllm/pull/2984",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-02-23T20:57:48Z",
+        "createdAt": "2024-02-22T09:43:50Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "For Mistral + YaRN models such as NousResearch/Yarn-Mistral-7b-128k, the current assertion does not hold. This PR deletes it.",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

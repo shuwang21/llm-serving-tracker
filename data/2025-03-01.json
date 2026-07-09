@@ -1,0 +1,152 @@
+{
+  "date": "2025-03-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-03-01T08:00:00+00:00",
+  "utc_end": "2025-03-02T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:20:12.765533+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 3985,
+        "title": "Move return_hidden_states to the generate input",
+        "url": "https://github.com/sgl-project/sglang/pull/3985",
+        "author": "Qiaolin-Yu",
+        "mergedAt": "2025-03-02T01:51:29Z",
+        "createdAt": "2025-03-01T21:40:47Z",
+        "changedFiles": 12,
+        "additions": 54,
+        "deletions": 44,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nRefine #3897\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Writing Documentation.\n Provide throughput / la",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 3989,
+        "title": "Update CODEOWNERS",
+        "url": "https://github.com/sgl-project/sglang/pull/3989",
+        "author": "merrymercy",
+        "mergedAt": "2025-03-02T05:47:30Z",
+        "createdAt": "2025-03-02T05:47:23Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 3893,
+        "title": "add deepgemm and sglang fp8 block-wise gemm benchmark",
+        "url": "https://github.com/sgl-project/sglang/pull/3893",
+        "author": "BBuf",
+        "mergedAt": "2025-03-02T07:01:58Z",
+        "createdAt": "2025-02-26T16:06:19Z",
+        "changedFiles": 2,
+        "additions": 320,
+        "deletions": 0,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The script benchmark all FP8 w8a8 block-wise matrix multiplications involved in DeepSeek V3/R1 under the current tensor parallelism (TP) setting with DeepGemm and vLLM/SGLang.\nConclusion : The FP8 block-wise GEMM of DeepGeem consistently outperforms the SGLang/VLLM implementation under all circumsta",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 14073,
+        "title": "[v1][Bugfix] Only cache blocks that are not in the prefix cache",
+        "url": "https://github.com/vllm-project/vllm/pull/14073",
+        "author": "heheda12345",
+        "mergedAt": "2025-03-01T08:25:55Z",
+        "createdAt": "2025-03-01T06:27:50Z",
+        "changedFiles": 2,
+        "additions": 9,
+        "deletions": 22,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Pass correct num_cached_blocks to cache_full_blocks to remove the additional check inside that function.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 14081,
+        "title": "[v1] Add `__repr__` to KVCacheBlock to avoid recursive print",
+        "url": "https://github.com/vllm-project/vllm/pull/14081",
+        "author": "heheda12345",
+        "mergedAt": "2025-03-01T20:46:02Z",
+        "createdAt": "2025-03-01T16:47:58Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "As KVCacheBlock is a doubly linked list, the default print of one block will recursively print all KVCacheBlock objects in the list, and can cause stack overflow. To avoid this problem, print prev_block_id and next_block_id instead.\n\nReproduce script\nfrom vllm.multimodal.inputs import MultiModalKwar",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 13770,
+        "title": "[Model] Add LoRA support for TransformersModel",
+        "url": "https://github.com/vllm-project/vllm/pull/13770",
+        "author": "jeejeelee",
+        "mergedAt": "2025-03-02T01:17:34Z",
+        "createdAt": "2025-02-24T16:15:58Z",
+        "changedFiles": 7,
+        "additions": 166,
+        "deletions": 70,
+        "commits": 16,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add unit test\n  Update docs",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 14063,
+        "title": "[Misc] Accurately capture the time of loading weights",
+        "url": "https://github.com/vllm-project/vllm/pull/14063",
+        "author": "waltforme",
+        "mergedAt": "2025-03-02T01:20:31Z",
+        "createdAt": "2025-02-28T18:31:18Z",
+        "changedFiles": 3,
+        "additions": 13,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR tries to better capture the time of loading weights.\nAs we know, there are two major phases when loading a model: (A) downloading model if not in cache, and (B) loading weights.\nDue to the lazy nature of generators that yield tensors one by one, the downloading phase is not executed until a ",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2024-03-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-02T08:00:00+00:00",
+  "utc_end": "2024-03-03T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:45:20.942259+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2762,
+        "title": "Add Automatic Prefix Caching",
+        "url": "https://github.com/vllm-project/vllm/pull/2762",
+        "author": "SageMoore",
+        "mergedAt": "2024-03-02T08:50:02Z",
+        "createdAt": "2024-02-05T14:24:46Z",
+        "changedFiles": 18,
+        "additions": 618,
+        "deletions": 292,
+        "commits": 88,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "resolves #2614\nThe goal of this diff is to allow for automatic prefix caching. This is done by adding an additional level of indirection between the logical and physical blocks which allows for identical logical blocks to map to the same physical block.\nThis diff replaces the existing manual prefix ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 3161,
+        "title": "Add vLLM version info to logs and openai API server",
+        "url": "https://github.com/vllm-project/vllm/pull/3161",
+        "author": "jasonacox",
+        "mergedAt": "2024-03-03T05:00:29Z",
+        "createdAt": "2024-03-03T00:45:48Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR makes the version of vLLM running accessible for operational maintainability via logfile and API.\n\nLogging - openai/api_server.py will log a header \"vLLM API server version X.X.X\" and llm_engine.py will log \"Initializing an LLM engine (vX.X.X)\" - This will help for forensics and startup vali",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

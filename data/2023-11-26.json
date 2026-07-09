@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-26",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-26T08:00:00+00:00",
+  "utc_end": "2023-11-27T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:55.990413+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1504,
+        "title": "Added echo function to OpenAI API server.",
+        "url": "https://github.com/vllm-project/vllm/pull/1504",
+        "author": "wanmok",
+        "mergedAt": "2023-11-27T05:29:17Z",
+        "createdAt": "2023-10-30T02:27:35Z",
+        "changedFiles": 2,
+        "additions": 71,
+        "deletions": 24,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The feature implements the echo function for OpenAI API server. It supersedes previous PR #959 on top of #1328. Also, it supports the issue #201.\nFor OpenAI API server, the PR makes following modifications:\n\nRemoved error message for requesting echo.\nModified create_logprobs function to reflect engi",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      }
+    ]
+  }
+}

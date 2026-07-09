@@ -1,0 +1,367 @@
+{
+  "date": "2024-09-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-23T07:00:00+00:00",
+  "utc_end": "2024-09-24T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:02:40.401793+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1494,
+        "title": "minor: add mla fp8 test",
+        "url": "https://github.com/sgl-project/sglang/pull/1494",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-23T12:40:18Z",
+        "createdAt": "2024-09-23T12:39:52Z",
+        "changedFiles": 3,
+        "additions": 52,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nWriting report to /tmp/mgsm_en_neuralmagic_DeepSeek-Coder-V2-Lite-Instruct-FP8.html\n{'en': 0.852, 'en:std': 0.35509998591945907, 'group_latin': 0.852, 'group_latin:std': 0.35509998591945907, 'score:std': 0.35509998591945907, 'score': 0.852}\nWriting results to /tmp/mgsm_en_neuralmagic_Dee",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1496,
+        "title": "Fix the overhead due to penalizer in bench_latency",
+        "url": "https://github.com/sgl-project/sglang/pull/1496",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-23T14:38:14Z",
+        "createdAt": "2024-09-23T13:54:12Z",
+        "changedFiles": 6,
+        "additions": 9,
+        "deletions": 16,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "There is a wrong line in schedule_batch.py that will trigger cpu-gpu copy. It introduces unnecessary overhead in bench_latency.py. This wrong line is only used in bench_latency.py",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8657,
+        "title": "[Core][Frontend] Support Passing Multimodal Processor Kwargs",
+        "url": "https://github.com/vllm-project/vllm/pull/8657",
+        "author": "alex-jw-brooks",
+        "mergedAt": "2024-09-23T07:44:48Z",
+        "createdAt": "2024-09-20T07:49:49Z",
+        "changedFiles": 16,
+        "additions": 589,
+        "deletions": 116,
+        "commits": 36,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "In support of #7861 - It's split into two PRs to make it easier to review\nThis PR adds support for passing processor_kwargs at initialization time to override values, e.g., in the image processor config and adds a pattern that we can use to easily implement such overrides, especially in the case of ",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8729,
+        "title": "[Hardware][CPU] Refactor CPU model runner",
+        "url": "https://github.com/vllm-project/vllm/pull/8729",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-23T12:12:20Z",
+        "createdAt": "2024-09-23T07:53:55Z",
+        "changedFiles": 1,
+        "additions": 193,
+        "deletions": 109,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\n\nThis PR refactors cpu_model_runner.py to use ModelInputWithSamplingMetadata and ModelInputBuilder like GPU and XPU model runner.\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOV",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8733,
+        "title": "[Bugfix][CPU] fix missing input intermediate_tensors in the cpu_model_runner",
+        "url": "https://github.com/vllm-project/vllm/pull/8733",
+        "author": "bigPYJ1151",
+        "mergedAt": "2024-09-23T13:15:16Z",
+        "createdAt": "2024-09-23T09:49:21Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixed missing intermediate_tensors in the cpu_model_runner to make internlm2 models work.\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This helps vLLM maintain the code quali",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8696,
+        "title": "[Model] Support pp for qwen2-vl",
+        "url": "https://github.com/vllm-project/vllm/pull/8696",
+        "author": "liuyanyi",
+        "mergedAt": "2024-09-23T13:46:59Z",
+        "createdAt": "2024-09-21T15:22:09Z",
+        "changedFiles": 4,
+        "additions": 46,
+        "deletions": 14,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFollow #7860 , this pr introduce pp support for the latest qwen2-vl.\nAlready tested on Qwen2-VL-72B-Instruct-GPTQ-Int4\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribut",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8707,
+        "title": "[VLM] Fix paligemma, fuyu and persimmon with transformers 4.45 : use config.text_config.vocab_size",
+        "url": "https://github.com/vllm-project/vllm/pull/8707",
+        "author": "janimo",
+        "mergedAt": "2024-09-23T14:43:10Z",
+        "createdAt": "2024-09-22T10:09:09Z",
+        "changedFiles": 3,
+        "additions": 9,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "In the latest transformers (4.45.0.dev0) the config.vocab_size accessor and  _vocab_size field in the config were removed from a few models.\nhuggingface/transformers#33446\nRunning examples/offline_inference_vision_language.py results in an error\nAttributeError: 'PaliGemmaConfig' object has no attrib",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 4738,
+        "title": "[CI/Build] use setuptools-scm to set __version__",
+        "url": "https://github.com/vllm-project/vllm/pull/4738",
+        "author": "dtrifiro",
+        "mergedAt": "2024-09-23T16:44:26Z",
+        "createdAt": "2024-05-10T10:48:41Z",
+        "changedFiles": 16,
+        "additions": 94,
+        "deletions": 95,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "By using setuptools-scm, we can get versioning information directly from git.\nThis PR includes changes to Dockerfiles in order correctly build including setuptools-scm.\nExample of version string for a dev build: 0.5.0.post2.dev75+gbabbef7d (75 commits after last tag, commit sha: babbef7d)\nNote that ",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7701,
+        "title": "[Kernel] (2/N) Machete - Integrate into CompressedTensorsWNA16 and GPTQMarlin",
+        "url": "https://github.com/vllm-project/vllm/pull/7701",
+        "author": "LucasWilkinson",
+        "mergedAt": "2024-09-23T17:46:26Z",
+        "createdAt": "2024-08-20T19:07:32Z",
+        "changedFiles": 29,
+        "additions": 1056,
+        "deletions": 318,
+        "commits": 27,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add Machete kernels as a backend kernel for GPTQMarlinLinearMethod and CompressedTensorsWNA16. As part of adding support  GPTQMarlinLinearMethod support for dynamic group ids (g_idx, i.e. colloquially known and actorder) was added by permuting the columns of the activation tensor before calling mach",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7585,
+        "title": "[Kernel][LoRA]  Add assertion for punica sgmv kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/7585",
+        "author": "jeejeelee",
+        "mergedAt": "2024-09-23T18:57:43Z",
+        "createdAt": "2024-08-16T08:08:01Z",
+        "changedFiles": 8,
+        "additions": 64,
+        "deletions": 38,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add an assertion for the input token numbers of the Punica SGMV kernel to avoid incorrect kernel calculation results. This is particularly useful for supporting LoRA in Vision-Language models.\nFix some typo errors\n\nping @Yard1",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8575,
+        "title": "[Core] Allow IPv6 in VLLM_HOST_IP with zmq",
+        "url": "https://github.com/vllm-project/vllm/pull/8575",
+        "author": "russellb",
+        "mergedAt": "2024-09-23T19:15:41Z",
+        "createdAt": "2024-09-18T20:07:14Z",
+        "changedFiles": 2,
+        "additions": 15,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "To use IPv6 on a zmq socket, you must explicitly specify the IPv6 socket option. For the remote socket case, check to see if the IP includes a ':' and if so, turn on IPv6 mode.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8562,
+        "title": "Fix typical acceptance sampler with correct recovered token ids",
+        "url": "https://github.com/vllm-project/vllm/pull/8562",
+        "author": "jiqing-feng",
+        "mergedAt": "2024-09-23T19:32:27Z",
+        "createdAt": "2024-09-18T08:36:56Z",
+        "changedFiles": 2,
+        "additions": 17,
+        "deletions": 28,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix typical acceptance sampler with correct recovered token ids",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8335,
+        "title": "Add output streaming support to multi-step + async while ensuring RequestOutput obj reuse",
+        "url": "https://github.com/vllm-project/vllm/pull/8335",
+        "author": "alexm-redhat",
+        "mergedAt": "2024-09-23T22:38:04Z",
+        "createdAt": "2024-09-10T13:53:24Z",
+        "changedFiles": 7,
+        "additions": 142,
+        "deletions": 42,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds output streaming support to multi-step + async. Current implementation is based on MQLLMEngine. For efficiency, output objects (class RequestOutput) are cached as much as possible to reduce python object allocations, and the recent delta outputs addition by @njhill  #7381 is exploited t",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8674,
+        "title": "[Hardware][AMD] ROCm6.2 upgrade",
+        "url": "https://github.com/vllm-project/vllm/pull/8674",
+        "author": "hongxiayang",
+        "mergedAt": "2024-09-24T01:52:39Z",
+        "createdAt": "2024-09-20T17:28:08Z",
+        "changedFiles": 2,
+        "additions": 61,
+        "deletions": 60,
+        "commits": 11,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is to upgrade Dockerfile.rocm to support ROCm 6.2 (with torch 2.6) for AMD GPUs.\n\nbase image upgrade\ntorch upgrade\ntriton flash-attention branch upgrade\nck flash-attention branch upgrade\ndocumentation update\ncleaned up 6.1 related steps\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8728,
+        "title": "Fix tests in test_scheduler.py that fail with BlockManager V2",
+        "url": "https://github.com/vllm-project/vllm/pull/8728",
+        "author": "sroy745",
+        "mergedAt": "2024-09-24T04:43:14Z",
+        "createdAt": "2024-09-23T06:05:15Z",
+        "changedFiles": 1,
+        "additions": 260,
+        "deletions": 89,
+        "commits": 44,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "In #8718 we identified the tests failing in test_scheduler.py when run with BlockManagerV2. In this pr we are fixing all tests except test_schedule_swapped_simple. We are making the following changes in this pr\n\nWe make all tests run with both BlockManager V1 and V2.\nIn some of the cases we were add",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8726,
+        "title": "re-implement beam search on top of vllm core",
+        "url": "https://github.com/vllm-project/vllm/pull/8726",
+        "author": "youkaichao",
+        "mergedAt": "2024-09-24T05:08:12Z",
+        "createdAt": "2024-09-23T03:51:32Z",
+        "changedFiles": 4,
+        "additions": 171,
+        "deletions": 9,
+        "commits": 26,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "submitting the pr draft on behalf of @LunrEclipse .",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8750,
+        "title": "Revert \"[Core] Rename `PromptInputs` to `PromptType`, and `inputs` to `prompt`\"",
+        "url": "https://github.com/vllm-project/vllm/pull/8750",
+        "author": "simon-mo",
+        "mergedAt": "2024-09-24T05:45:20Z",
+        "createdAt": "2024-09-23T23:24:21Z",
+        "changedFiles": 18,
+        "additions": 162,
+        "deletions": 157,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reverts #8673",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8744,
+        "title": "[MISC] Skip dumping inputs when unpicklable",
+        "url": "https://github.com/vllm-project/vllm/pull/8744",
+        "author": "comaniac",
+        "mergedAt": "2024-09-24T06:10:03Z",
+        "createdAt": "2024-09-23T19:45:16Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #8738\nSome model inputs such as FlashInfer kernel wrapper cannot be pickled. While we should have a better way to dump these inputs for reproducible, this quick PR simply does not pickle model inputs in this case to make sure the real error can be exposed in the first place.\ncc @robertgshaw2-neu",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

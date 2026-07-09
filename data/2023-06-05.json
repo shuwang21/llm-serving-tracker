@@ -1,0 +1,66 @@
+{
+  "date": "2023-06-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-05T07:00:00+00:00",
+  "utc_end": "2023-06-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:27:47.816553+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 135,
+        "title": "Fixing various issues of async servers",
+        "url": "https://github.com/vllm-project/vllm/pull/135",
+        "author": "zhuohan123",
+        "mergedAt": "2023-06-05T15:44:51Z",
+        "createdAt": "2023-06-02T16:21:40Z",
+        "changedFiles": 11,
+        "additions": 289,
+        "deletions": 121,
+        "commits": 32,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Completely fix #47\nSpecifically, the changes include\n\nA benchmark script that starts multiple processes to query the webserver to test the serving throughput.\nFix the performance issue of the async server without ray.\nSupport aborting requests.\n\nRemaining TODOs:\n\n Support aborting requests for OpenA",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 138,
+        "title": "[Docs] Write the `Adding a New Model` section",
+        "url": "https://github.com/vllm-project/vllm/pull/138",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-06T03:01:27Z",
+        "createdAt": "2023-06-04T02:03:42Z",
+        "changedFiles": 1,
+        "additions": 88,
+        "deletions": 1,
+        "commits": 13,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #65\nThis PR adds the Adding a New Model section to the doc.\nBecause the process of adding a model is complex and highly depends on the model architecture, I only provided the high-level guidance. I think we can further improve this section later.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 140,
+        "title": "[PyPI] Packaging for PyPI distribution",
+        "url": "https://github.com/vllm-project/vllm/pull/140",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-06T03:03:14Z",
+        "createdAt": "2023-06-05T00:35:49Z",
+        "changedFiles": 12,
+        "additions": 72,
+        "deletions": 7,
+        "commits": 16,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR enables packaging the library for PyPI distribution.\nThe instructions (or workflow) to upload the package to PyPI will be added in the next PR.",
+        "category": "Other",
+        "highImpact": true
+      }
+    ]
+  }
+}

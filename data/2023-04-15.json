@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-15T07:00:00+00:00",
+  "utc_end": "2023-04-16T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:51.309066+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 38,
+        "title": "Support various block sizes",
+        "url": "https://github.com/vllm-project/vllm/pull/38",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-15T16:03:24Z",
+        "createdAt": "2023-04-15T09:45:50Z",
+        "changedFiles": 7,
+        "additions": 602,
+        "deletions": 619,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": true
+      }
+    ]
+  }
+}

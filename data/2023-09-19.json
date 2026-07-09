@@ -1,0 +1,30 @@
+{
+  "date": "2023-09-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-19T07:00:00+00:00",
+  "utc_end": "2023-09-20T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:42.701850+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1090,
+        "title": "Add gpu_memory_utilization and swap_space to LLM",
+        "url": "https://github.com/vllm-project/vllm/pull/1090",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-20T05:16:05Z",
+        "createdAt": "2023-09-18T21:46:21Z",
+        "changedFiles": 1,
+        "additions": 19,
+        "deletions": 3,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "It will be useful to make the gpu_memory_utilization and swap_space parameters explicit in the LLM class, as they are frequently used and asked.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      }
+    ]
+  }
+}

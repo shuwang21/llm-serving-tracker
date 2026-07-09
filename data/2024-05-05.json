@@ -1,0 +1,49 @@
+{
+  "date": "2024-05-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-05-05T07:00:00+00:00",
+  "utc_end": "2024-05-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:50:13.103771+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 381,
+        "title": "Organize Benchmark",
+        "url": "https://github.com/sgl-project/sglang/pull/381",
+        "author": "hnyls2002",
+        "mergedAt": "2024-05-05T08:14:17Z",
+        "createdAt": "2024-04-23T03:34:22Z",
+        "changedFiles": 36,
+        "additions": 828,
+        "deletions": 808,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "What does this PR do?\n\nSimplified the benchmark code by reusing some common parts of dispatching different backends.\nAdd LMQL benchmark code for most of the benchmarks.\nAdd a progress bar for better visuals.",
+        "category": "CI / Tests",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 4530,
+        "title": "Disable cuda version check in vllm-openai image",
+        "url": "https://github.com/vllm-project/vllm/pull/4530",
+        "author": "zhaoyang-star",
+        "mergedAt": "2024-05-05T23:58:56Z",
+        "createdAt": "2024-05-01T15:48:23Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 33,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #4521\nCurrently we no need to check cuda version when using fp8 kv cache. As of now, vLLM's binaries are compiled with CUDA 12.1 and public PyTorch release versions by default. The vllm-openai image has also CUDA 12.1.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

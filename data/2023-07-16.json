@@ -1,0 +1,48 @@
+{
+  "date": "2023-07-16",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-16T07:00:00+00:00",
+  "utc_end": "2023-07-17T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:51.248569+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 426,
+        "title": "[Doc] Add doc for running vLLM on the cloud",
+        "url": "https://github.com/vllm-project/vllm/pull/426",
+        "author": "Michaelvll",
+        "mergedAt": "2023-07-16T20:37:14Z",
+        "createdAt": "2023-07-11T03:44:44Z",
+        "changedFiles": 2,
+        "additions": 70,
+        "deletions": 0,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 477,
+        "title": "[Fix] Fix the condition of max_seq_len",
+        "url": "https://github.com/vllm-project/vllm/pull/477",
+        "author": "zhuohan123",
+        "mergedAt": "2023-07-17T04:33:49Z",
+        "createdAt": "2023-07-16T22:02:57Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "When the input length is exactly the same as the max_seq_len, the model can still run, because the generated new word will only be in the output.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

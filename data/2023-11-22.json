@@ -1,0 +1,66 @@
+{
+  "date": "2023-11-22",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-22T08:00:00+00:00",
+  "utc_end": "2023-11-23T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:42.071504+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1741,
+        "title": "[DOCS]\u00a0Add engine args documentation",
+        "url": "https://github.com/vllm-project/vllm/pull/1741",
+        "author": "casper-hansen",
+        "mergedAt": "2023-11-22T20:31:27Z",
+        "createdAt": "2023-11-21T11:55:00Z",
+        "changedFiles": 3,
+        "additions": 119,
+        "deletions": 0,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Engine arguments are largely undocumented which means users have to go and read the source-code to discover which arguments that exist and what they mean. This PR attempts to create a documentation page for the engine arguments that are nicely formatted and easy to expand in the future.\nNOTE: All ar",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1748,
+        "title": "Set top_p=0 and top_k=-1 in greedy sampling",
+        "url": "https://github.com/vllm-project/vllm/pull/1748",
+        "author": "beginlner",
+        "mergedAt": "2023-11-22T20:51:10Z",
+        "createdAt": "2023-11-22T05:16:06Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1577,
+        "title": "Fix repetition penalty aligned with huggingface",
+        "url": "https://github.com/vllm-project/vllm/pull/1577",
+        "author": "beginlner",
+        "mergedAt": "2023-11-22T22:41:44Z",
+        "createdAt": "2023-11-07T01:39:52Z",
+        "changedFiles": 2,
+        "additions": 50,
+        "deletions": 32,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #1424\nThis pr also penalty for prompt_tokens, aligned with huggingface.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

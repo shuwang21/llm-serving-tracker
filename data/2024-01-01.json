@@ -1,0 +1,11 @@
+{
+  "date": "2024-01-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-01T08:00:00+00:00",
+  "utc_end": "2024-01-02T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:10.923771+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": []
+  }
+}

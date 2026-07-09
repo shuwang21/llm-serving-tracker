@@ -1,0 +1,48 @@
+{
+  "date": "2023-09-03",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-03T07:00:00+00:00",
+  "utc_end": "2023-09-04T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:44.026515+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 936,
+        "title": "[BugFix] Fix NaN errors in paged attention kernel",
+        "url": "https://github.com/vllm-project/vllm/pull/936",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-04T00:20:07Z",
+        "createdAt": "2023-09-03T03:23:38Z",
+        "changedFiles": 4,
+        "additions": 32,
+        "deletions": 5,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #641\nThis PR fixes the paged attention kernel. Currently, the kernel computes attn_weight * value for all tokens in a value block, even if some of them are not included in the context. It is generally acceptable since the attn_weight for those tokens is 0, but this causes errors when the token",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 880,
+        "title": "Refactor AsyncLLMEngine",
+        "url": "https://github.com/vllm-project/vllm/pull/880",
+        "author": "Yard1",
+        "mergedAt": "2023-09-04T04:43:44Z",
+        "createdAt": "2023-08-25T22:18:05Z",
+        "changedFiles": 3,
+        "additions": 267,
+        "deletions": 145,
+        "commits": 11,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR aims to refactor and simplify AsyncLLMEngine implementation by moving to a single background scheduling loop. There should also be a tiny peformance boost.",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ]
+  }
+}

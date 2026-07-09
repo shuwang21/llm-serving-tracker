@@ -1,0 +1,30 @@
+{
+  "date": "2023-03-21",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-21T07:00:00+00:00",
+  "utc_end": "2023-03-22T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:23:26.275568+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2,
+        "title": "Support tensor parallel",
+        "url": "https://github.com/vllm-project/vllm/pull/2",
+        "author": "zhuohan123",
+        "mergedAt": "2023-03-21T20:45:43Z",
+        "createdAt": "2023-02-28T08:40:38Z",
+        "changedFiles": 24,
+        "additions": 2482,
+        "deletions": 176,
+        "commits": 21,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "TODOs:\n\n Parallel embedding and softmax.\n Merge with the main branch.\n Modify README.\n Remove unused codes.\n Fix the bug that downloads the weight twice.\n Test with larger models.\n\nIn another PR:\n\nMerge QKV into one.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

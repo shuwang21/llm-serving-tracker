@@ -1,0 +1,66 @@
+{
+  "date": "2023-09-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-17T07:00:00+00:00",
+  "utc_end": "2023-09-18T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:34.897244+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1059,
+        "title": "Remove AsyncLLMEngine busy loop, shield background task",
+        "url": "https://github.com/vllm-project/vllm/pull/1059",
+        "author": "Yard1",
+        "mergedAt": "2023-09-17T07:29:09Z",
+        "createdAt": "2023-09-15T22:03:30Z",
+        "changedFiles": 4,
+        "additions": 154,
+        "deletions": 18,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR reduces CPU utilisation of AsyncLLMEngine by replacing busy looping with an asyncio.Event triggered whenever there are new requests, and makes sure that the background loop task is shielded from cancellation.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1029,
+        "title": "Fix hanging when prompt exceeds limit",
+        "url": "https://github.com/vllm-project/vllm/pull/1029",
+        "author": "chenxu2048",
+        "mergedAt": "2023-09-17T08:48:57Z",
+        "createdAt": "2023-09-13T09:01:09Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 13,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "I discovered that my API server with AsyncLLMEngine was blocked when a lengthy prompt was submitted to it. This problem shares similarities with issues #765 and #1026.\nThe scheduler is adding seq_groups that are larger than the prompt_limit:\nif num_prompt_tokens > self.prompt_limit:\n    logger.warni",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1067,
+        "title": "[FIX] Don't initialize parameter by default",
+        "url": "https://github.com/vllm-project/vllm/pull/1067",
+        "author": "zhuohan123",
+        "mergedAt": "2023-09-18T00:15:38Z",
+        "createdAt": "2023-09-17T08:24:28Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Without this fix, many models cannot run. For example, gpt2 will initialize the parameters for vocab and the following assert will immediately fail.",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

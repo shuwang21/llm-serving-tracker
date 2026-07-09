@@ -1,0 +1,597 @@
+{
+  "date": "2025-11-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-11-01T07:00:00+00:00",
+  "utc_end": "2025-11-02T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:26:52.884737+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 12485,
+        "title": "Filter tokenizer warning for kimi models",
+        "url": "https://github.com/sgl-project/sglang/pull/12485",
+        "author": "ispobock",
+        "mergedAt": "2025-11-01T08:27:31Z",
+        "createdAt": "2025-11-01T05:00:58Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n#8082",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12480,
+        "title": "[CI] Build aarch64 kernels for sgl-kernel test",
+        "url": "https://github.com/sgl-project/sglang/pull/12480",
+        "author": "Fridge003",
+        "mergedAt": "2025-11-01T18:55:42Z",
+        "createdAt": "2025-11-01T01:34:58Z",
+        "changedFiles": 3,
+        "additions": 49,
+        "deletions": 6,
+        "commits": 8,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix https://github.com/sgl-project/sglang/actions/runs/18985632628/job/54235359762?pr=12474\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Upda",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12500,
+        "title": "[Hotfix] Remove extra comment in sgl-kernel README",
+        "url": "https://github.com/sgl-project/sglang/pull/12500",
+        "author": "Fridge003",
+        "mergedAt": "2025-11-01T19:22:46Z",
+        "createdAt": "2025-11-01T19:19:13Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFollowing #12480\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and s",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12423,
+        "title": "[feat] Add SGLANG_TOOL_STRICT_LEVEL for tool-call behavior control",
+        "url": "https://github.com/sgl-project/sglang/pull/12423",
+        "author": "JustinTong0323",
+        "mergedAt": "2025-11-01T20:15:02Z",
+        "createdAt": "2025-10-31T02:30:41Z",
+        "changedFiles": 4,
+        "additions": 38,
+        "deletions": 3,
+        "commits": 5,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFor Kimi-K2 tool call quality: https://github.com/MoonshotAI/K2-Vendor-Verifier\nOffer an option to control the function strict level in server level.\nUsing SGLANG_TOOL_STRICT_LEVEL env var, set to 0 means no control, set to 1 means control the function selected, set to 2 means control the",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12238,
+        "title": "Reduce docker image size. mount cache when use pip/cargo build",
+        "url": "https://github.com/sgl-project/sglang/pull/12238",
+        "author": "whybeyoung",
+        "mergedAt": "2025-11-01T21:58:04Z",
+        "createdAt": "2025-10-28T03:10:36Z",
+        "changedFiles": 1,
+        "additions": 21,
+        "deletions": 21,
+        "commits": 5,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "When building an image with Docker, for installations via pip and cargo\uff0c and  apt , you should use mount cache to prevent the built image from becoming excessively large.\nCC @zhyncs  @slin1237",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11966,
+        "title": "[HICache / PD]: Support offloading incremental KV cache in decode side.",
+        "url": "https://github.com/sgl-project/sglang/pull/11966",
+        "author": "hzh0425",
+        "mergedAt": "2025-11-01T21:59:38Z",
+        "createdAt": "2025-10-22T09:13:48Z",
+        "changedFiles": 1,
+        "additions": 71,
+        "deletions": 28,
+        "commits": 2,
+        "labels": [
+          "high priority",
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIn the previous implementation of Decode Offloading, the system would offload the entire KVCache for each request during decoding, resulting in very long offloading times.\nThis PR introduces incremental offloading for Decode:\n\n\nThe P side offloads the prefill portion:\nprefill_offloaded_le",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12412,
+        "title": "[Deterministic] add deepseek v3 deterministic inference CI test",
+        "url": "https://github.com/sgl-project/sglang/pull/12412",
+        "author": "zminglei",
+        "mergedAt": "2025-11-02T01:10:33Z",
+        "createdAt": "2025-10-30T20:48:24Z",
+        "changedFiles": 2,
+        "additions": 55,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nadd deepseek v3 deterministic inference CI test\n\nModifications\n\nAccuracy Tests\n====================================================================================================== slowest durations =========================================================================================",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12488,
+        "title": "[Bug] test_flashattn_mla_backend errors in Hopper #12487",
+        "url": "https://github.com/sgl-project/sglang/pull/12488",
+        "author": "Johnsonms",
+        "mergedAt": "2025-11-02T01:28:06Z",
+        "createdAt": "2025-11-01T05:18:58Z",
+        "changedFiles": 1,
+        "additions": 58,
+        "deletions": 13,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n#12487\n\nModifications\nSummary of All Fixes\n\n\u2705 Added server_args mock with required attributes:\n- kv_cache_dtype\n- speculative_eagle_topk\n- speculative_num_draft_tokens\n- enable_deterministic_inference\n\u2705 Added missing kv_cache_dtype and is_hybrid attributes to MockModelRunner\n\u2705 Fixed MLA t",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12391,
+        "title": "Update Mooncake EP's a2a interface",
+        "url": "https://github.com/sgl-project/sglang/pull/12391",
+        "author": "UNIDY2002",
+        "mergedAt": "2025-11-02T01:48:47Z",
+        "createdAt": "2025-10-30T10:17:10Z",
+        "changedFiles": 2,
+        "additions": 18,
+        "deletions": 11,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe interface of token_dispatcher has changed (specifically, the combine API).\nThis PR updates the Mooncake's token_dispatcher to match the API change.\n\nModifications\n\nAccuracy Tests\nExisting unit tests should pass.\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to th",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12499,
+        "title": "[CI][NPU] remove pypi mirror site that hangs ci dependency installation",
+        "url": "https://github.com/sgl-project/sglang/pull/12499",
+        "author": "iforgetmyname",
+        "mergedAt": "2025-11-02T02:25:53Z",
+        "createdAt": "2025-11-01T18:58:28Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 8,
+        "commits": 2,
+        "labels": [
+          "npu",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nTo solve the issue that NPU CIs running for a long time.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11052,
+        "title": "[Ascend] Add Ascend NPU support for sglang.check_env & rework proposal",
+        "url": "https://github.com/sgl-project/sglang/pull/11052",
+        "author": "Alexhaoge",
+        "mergedAt": "2025-11-02T02:26:45Z",
+        "createdAt": "2025-09-29T06:45:12Z",
+        "changedFiles": 1,
+        "additions": 286,
+        "deletions": 166,
+        "commits": 5,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe first commit adds Ascend NPU support for sglang.check_env script that allow users to export their environments for raising Github issues or other diagnostic purposes.\nThe second commit refactors the script, which allows vendors to write difference version check procedures without brea",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11133,
+        "title": "[Feature] Qwen3-Next & FLA: Support MTP topk>1; Up to 6% faster",
+        "url": "https://github.com/sgl-project/sglang/pull/11133",
+        "author": "byjiang1996",
+        "mergedAt": "2025-11-02T02:47:57Z",
+        "createdAt": "2025-10-01T06:42:26Z",
+        "changedFiles": 6,
+        "additions": 493,
+        "deletions": 79,
+        "commits": 8,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Co-authored-by: @hebiao064\nMotivation\nMTP spec decoding top>1 is not supported in Qwen3-Next & FLA. This PR adds the support.\n\nThe overall idea of this PR is:\n\nBuild a parent pointer list for each draft token\nUse parent's State to calculate the new State:\n\n$$\n\n\\mathbf{S}_{[current]} = \\mathbf{S}_{[p",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12507,
+        "title": "[CI] Move some Lora/Deterministic CI tests to nightly",
+        "url": "https://github.com/sgl-project/sglang/pull/12507",
+        "author": "Fridge003",
+        "mergedAt": "2025-11-02T02:54:23Z",
+        "createdAt": "2025-11-02T02:36:25Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 10,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12505,
+        "title": "Migrate weak_ref_tensor to sgl-kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/12505",
+        "author": "BBuf",
+        "mergedAt": "2025-11-02T02:55:39Z",
+        "createdAt": "2025-11-02T01:42:55Z",
+        "changedFiles": 4,
+        "additions": 40,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add weak_ref_tensor implementation in sgl-kernel/csrc/memory/\nRegister weak_ref_tensor kernel in common_extension.cc\nAdd function declaration in sgl_kernel_ops.h\nUpdate CMakeLists.txt to include new source file\n\n\nMotivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Form",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10078,
+        "title": "feat: Add FP4 (E2M1) KV Cache Support with Quantization Utilities for MLA",
+        "url": "https://github.com/sgl-project/sglang/pull/10078",
+        "author": "JackChuang",
+        "mergedAt": "2025-11-02T05:24:58Z",
+        "createdAt": "2025-09-05T13:18:06Z",
+        "changedFiles": 8,
+        "additions": 624,
+        "deletions": 165,
+        "commits": 5,
+        "labels": [
+          "high priority",
+          "quant",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR introduces FP4 (E2M1) support for Multi-Head Latent Attention (MLA) KV cache in SGLang, enabling low-precision caching to reduce memory usage and improve inference efficiency. It integrates FP4 quantization utilities, Triton kernels, and unit tests while remaining backward compatible",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12511,
+        "title": "chore: bump sgl-kernel version to 0.3.16.post5",
+        "url": "https://github.com/sgl-project/sglang/pull/12511",
+        "author": "sglang-bot",
+        "mergedAt": "2025-11-02T06:08:11Z",
+        "createdAt": "2025-11-02T04:35:52Z",
+        "changedFiles": 5,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR bumps the sgl-kernel version to 0.3.16.post5 across all relevant files.\nFiles Updated\n\ndocker/Dockerfile\nsgl-kernel/pyproject.toml\nsgl-kernel/pyproject_cpu.toml\nsgl-kernel/pyproject_rocm.toml\nsgl-kernel/python/sgl_kernel/version.py\n\n\ud83e\udd16 Generated with GitHub Actions",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 27621,
+        "title": "[Add] cmdline argument parsing for KV cache offloading modules",
+        "url": "https://github.com/vllm-project/vllm/pull/27621",
+        "author": "ApostaC",
+        "mergedAt": "2025-11-01T07:17:07Z",
+        "createdAt": "2025-10-28T01:48:28Z",
+        "changedFiles": 4,
+        "additions": 142,
+        "deletions": 1,
+        "commits": 10,
+        "labels": [
+          "ready",
+          "v1",
+          "kv-connector"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR partly fixes #26858 .\nMajor changes:\n\nadds two command-line arguments: --kv-offloading-size and --kv-offloading-backend.\nadds a new class KVOffloadingConfigParser which produces the connector config based on the above command line args\npartly adds the support for the native offloadin",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27850,
+        "title": "feat(benchmarks): support HF model names in multi-turn benchmark",
+        "url": "https://github.com/vllm-project/vllm/pull/27850",
+        "author": "ai-jz",
+        "mergedAt": "2025-11-01T08:04:52Z",
+        "createdAt": "2025-10-31T01:53:09Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "performance",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR enables benchmark_serving_multi_turn.py to accept HuggingFace model names directly (e.g., meta-llama/Llama-2-7b-hf), in addition to local file paths.\nProblem\nPreviously, the script would fail when given a HuggingFace model name:\npython benchmark_serving_multi_turn.py --model meta-lla",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27873,
+        "title": "[Docs] Mock all imports for docs",
+        "url": "https://github.com/vllm-project/vllm/pull/27873",
+        "author": "hmellor",
+        "mergedAt": "2025-11-01T10:02:23Z",
+        "createdAt": "2025-10-31T09:53:45Z",
+        "changedFiles": 3,
+        "additions": 49,
+        "deletions": 23,
+        "commits": 6,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Special cases that needed handling:\n\nMake nn.Parameter inheritable when it's mocked\nMake registering a custom op a no-op (decorator and functional)\n\nGeneral improvements:\n\nIf vLLM asks for a package version, get it from requirements/test.txt\nSome runtime imports need mocking too, handle those\nAdd if",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27798,
+        "title": "[V0 deprecation] Remove VLLM_USE_V1 usage in platform and v1 module",
+        "url": "https://github.com/vllm-project/vllm/pull/27798",
+        "author": "wangxiyuan",
+        "mergedAt": "2025-11-01T10:17:46Z",
+        "createdAt": "2025-10-30T07:02:50Z",
+        "changedFiles": 8,
+        "additions": 125,
+        "deletions": 201,
+        "commits": 3,
+        "labels": [
+          "rocm",
+          "tpu",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFollowing #27784, this PR remove VLLM_USE_V1 usage in platform and v1 module\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing ",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26779,
+        "title": "[Bugfix] DeepSeek V3.2 MTP metadata & CUDA graph issues",
+        "url": "https://github.com/vllm-project/vllm/pull/26779",
+        "author": "xiaohajiayou",
+        "mergedAt": "2025-11-01T14:52:43Z",
+        "createdAt": "2025-10-14T07:55:53Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 5,
+        "commits": 5,
+        "labels": [
+          "speculative-decoding",
+          "ready",
+          "v1",
+          "deepseek"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n(see Issue #26711).\n\n\nFix CUDA Graph Capture Crash in EAGLE\nResolve IndexError: list index out of range when accessing self.cudagraph_batch_sizes[-1] during CUDA Graph capture\n\nRoot Cause:\n\nWhen using PIECEWISE capture, gpu_model_runner passes use_cudagraphs=True, but MTP heads of draft mode",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27918,
+        "title": "[Bugfix] Python 3.10 compatibility for `Self`",
+        "url": "https://github.com/vllm-project/vllm/pull/27918",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-11-01T15:28:54Z",
+        "createdAt": "2025-11-01T13:27:41Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFIX #26519 (comment)\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the res",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27365,
+        "title": "[Core][TPU] Support TPU Data Parallalism",
+        "url": "https://github.com/vllm-project/vllm/pull/27365",
+        "author": "wenxindongwork",
+        "mergedAt": "2025-11-01T17:14:44Z",
+        "createdAt": "2025-10-22T19:15:30Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 1,
+        "commits": 9,
+        "labels": [
+          "frontend",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This pull request introduces a small but important update to the data parallel initialization logic in vllm/entrypoints/llm.py. The change ensures that the warning and error for unsupported single-process data parallel usage are not triggered when running on TPU platforms.\nTPU DP support added in vl",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27910,
+        "title": "[BugFix] Fix mixed penalties batch with async scheduling",
+        "url": "https://github.com/vllm-project/vllm/pull/27910",
+        "author": "njhill",
+        "mergedAt": "2025-11-01T17:51:24Z",
+        "createdAt": "2025-11-01T06:27:58Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "bug",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "#26467 fixed compatibility of penalties sampling parameters with async scheduling but has a flaw that it breaks in cases where there is a mix of requests with and without penalties in the batch, specifically if a request with a penalties param starts while a batch without penalties is already runnin",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27882,
+        "title": "Adds anthropic /v1/messages endpoint to openai api_server",
+        "url": "https://github.com/vllm-project/vllm/pull/27882",
+        "author": "bbartels",
+        "mergedAt": "2025-11-01T19:45:42Z",
+        "createdAt": "2025-10-31T15:00:23Z",
+        "changedFiles": 5,
+        "additions": 138,
+        "deletions": 461,
+        "commits": 15,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison befor",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27648,
+        "title": "[KV offload] Offloading connector async scheduling support",
+        "url": "https://github.com/vllm-project/vllm/pull/27648",
+        "author": "KevinCheung2259",
+        "mergedAt": "2025-11-01T21:08:57Z",
+        "createdAt": "2025-10-28T10:31:55Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "kv-connector"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR extends #27647  to add offloading_connector supports async scheduling.\nChanges\n\nEnhance OffloadingConnector to be compatible with async scheduling\u2019s placeholder semantics: during scheduling, \u201cscheduled-but-not-yet-generated\u201d tokens may temporarily reduce available block hashes vs. th",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27924,
+        "title": "[CI/Build] Fix flaky test_transcription_validation.py::test_basic_audio_gemma",
+        "url": "https://github.com/vllm-project/vllm/pull/27924",
+        "author": "bbrowning",
+        "mergedAt": "2025-11-02T03:45:02Z",
+        "createdAt": "2025-11-01T19:20:37Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThe test was failing intermittently in CI with \"RuntimeError: Server failed to start in time.\" The Gemma model (google/gemma-3n-E2B-it) takes longer than the default 240s timeout to load.\nIncreased max_wait_seconds to 480s to give the model adequate time to load during CI runs.\nFixes #27576\n",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27920,
+        "title": "[Bugfix] Fix Qwen Omni audio inference",
+        "url": "https://github.com/vllm-project/vllm/pull/27920",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-11-02T05:06:05Z",
+        "createdAt": "2025-11-01T16:14:57Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 10,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFIX #27906\nFIX #27907\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the re",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

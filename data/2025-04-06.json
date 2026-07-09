@@ -1,0 +1,419 @@
+{
+  "date": "2025-04-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-04-06T07:00:00+00:00",
+  "utc_end": "2025-04-07T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:24:54.252063+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 5098,
+        "title": "[Feature] A naive C++ kernel for transferring KVcache from/to CPU",
+        "url": "https://github.com/sgl-project/sglang/pull/5098",
+        "author": "DarkSharpness",
+        "mergedAt": "2025-04-06T07:32:54Z",
+        "createdAt": "2025-04-06T07:10:48Z",
+        "changedFiles": 6,
+        "additions": 174,
+        "deletions": 27,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "xiezhq-dev",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Writing Documentation.\n Provide throughput / latency benchma",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 5097,
+        "title": "Fix: Reduce the number of document ci attempts to avoid long ci running",
+        "url": "https://github.com/sgl-project/sglang/pull/5097",
+        "author": "minleminzui",
+        "mergedAt": "2025-04-06T07:43:48Z",
+        "createdAt": "2025-04-06T05:48:11Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "times\n\nMotivation\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Writing Documentation.\n Provide throughput / latency ",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 14501,
+        "title": "[Frontend] Fix typo in tool chat templates for llama3.2 and toolace",
+        "url": "https://github.com/vllm-project/vllm/pull/14501",
+        "author": "bjj",
+        "mergedAt": "2025-04-06T07:44:36Z",
+        "createdAt": "2025-03-08T19:53:36Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix a stray r I noticed while debugging tool calling @mdepinet",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16117,
+        "title": "[CI][V1] Fix passing `tokenizer` as kwarg to `validate_guidance_grammar`",
+        "url": "https://github.com/vllm-project/vllm/pull/16117",
+        "author": "ywang96",
+        "mergedAt": "2025-04-06T08:18:00Z",
+        "createdAt": "2025-04-06T05:46:37Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "llguidance.LLMatcher.validate_grammar no longer takes tokenizer as a keyword argument (not sure if this is a bug on their side), but this has caused V1 test to always break on main.\nThis PR fixes it.\ntests/v1/entrypoints/llm/test_struct_output_generate.py ....                                        ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16100,
+        "title": "[Misc] refactor example eagle",
+        "url": "https://github.com/vllm-project/vllm/pull/16100",
+        "author": "reidliu41",
+        "mergedAt": "2025-04-06T09:42:49Z",
+        "createdAt": "2025-04-05T15:35:59Z",
+        "changedFiles": 1,
+        "additions": 99,
+        "deletions": 86,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "refactor eagle",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16025,
+        "title": "[Doc][Bugfix] Add missing EOF in k8s deploy doc",
+        "url": "https://github.com/vllm-project/vllm/pull/16025",
+        "author": "psschwei",
+        "mergedAt": "2025-04-06T12:10:57Z",
+        "createdAt": "2025-04-03T15:55:47Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Signed-off-by: Paul S. Schweigert paul@paulschweigert.com\nIn \"Deployment with CPUs\" section, the PVC/Secret command was missing an EOF.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16119,
+        "title": "[Misc] Improve model redirect to accept json dictionary",
+        "url": "https://github.com/vllm-project/vllm/pull/16119",
+        "author": "Isotr0py",
+        "mergedAt": "2025-04-06T12:51:45Z",
+        "createdAt": "2025-04-06T06:15:51Z",
+        "changedFiles": 2,
+        "additions": 31,
+        "deletions": 11,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Following PR for #14116.\nIt's not very useful if the model redirection only accepts tab-separated values, because some IDEs like vscode will replace tab with four spaces for indent.\nThis PR allows using json file and space-separated table for model redirection.\n\nExamples:\n$ VLLM_MODEL_REDIRECT_PATH=",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16103,
+        "title": "[Model] use AutoWeightsLoader for stablelm,starcoder2,zamba2",
+        "url": "https://github.com/vllm-project/vllm/pull/16103",
+        "author": "lengrongfu",
+        "mergedAt": "2025-04-06T12:52:01Z",
+        "createdAt": "2025-04-05T18:49:36Z",
+        "changedFiles": 3,
+        "additions": 135,
+        "deletions": 121,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Issue #15697\n\n\nStablelmForCausalLM\n\n$ python3 -m vllm.entrypoints.cli.main stabilityai/stablelm-3b-4e1t\n\n\nStarcoder2ForCausalLM\n\n$ python3 -m vllm.entrypoints.cli.main bigcode/starcoder2-3b\n\n\nZamba2ForCausalLM\n\n$ python3 -m vllm.entrypoints.cli.main Zyphra/Zamba2-1.2B-instruct",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16040,
+        "title": "[Bugfix] LoRA : Fix the order in which the kernels process LoRAs ",
+        "url": "https://github.com/vllm-project/vllm/pull/16040",
+        "author": "varun-sundar-rabindranath",
+        "mergedAt": "2025-04-06T14:04:51Z",
+        "createdAt": "2025-04-03T23:15:22Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #15979\nThis is a fix for a potential bug that may occur in the future. Thanks @Terranlee for the identifying the bug and suggesting a fix!",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16093,
+        "title": "[Bugfix] add hf_token to EngineArgs",
+        "url": "https://github.com/vllm-project/vllm/pull/16093",
+        "author": "paolovic",
+        "mergedAt": "2025-04-06T14:47:33Z",
+        "createdAt": "2025-04-05T11:30:09Z",
+        "changedFiles": 4,
+        "additions": 27,
+        "deletions": 2,
+        "commits": 13,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Added hf_token to EngineArgs. It stores True if just the flag and no value is given, it stores the value if the flag and value are given, and evaluates to None otherwise.\nAlso, it can be passed to LLM as an argument where it's forwarded in the __init__ to EngineArgs where it's stored as an attribute",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16116,
+        "title": "[Misc] update requires-python in pyproject.toml",
+        "url": "https://github.com/vllm-project/vllm/pull/16116",
+        "author": "reidliu41",
+        "mergedAt": "2025-04-06T14:56:35Z",
+        "createdAt": "2025-04-06T05:41:16Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Supported version py 3.9 - 3.12\nhttps://docs.vllm.ai/en/stable/getting_started/quickstart.html",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16130,
+        "title": "[TPU] Update PyTorch/XLA",
+        "url": "https://github.com/vllm-project/vllm/pull/16130",
+        "author": "yaochengji",
+        "mergedAt": "2025-04-06T18:25:55Z",
+        "createdAt": "2025-04-06T15:04:56Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This update can fix the performance degradation caused by the incorrect block sizes of the ragged attention kernel.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16135,
+        "title": "[V1][Minor] Optimize get_cached_block",
+        "url": "https://github.com/vllm-project/vllm/pull/16135",
+        "author": "WoosukKwon",
+        "mergedAt": "2025-04-06T20:48:14Z",
+        "createdAt": "2025-04-06T18:19:34Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Minor optimizations\n\nAvoid redundant dictionary lookups cached_block_hash_to_block[block_hash]\nAvoid creating a list by using next",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 16132,
+        "title": "Fix requires-python",
+        "url": "https://github.com/vllm-project/vllm/pull/16132",
+        "author": "martinhoyer",
+        "mergedAt": "2025-04-07T02:22:25Z",
+        "createdAt": "2025-04-06T15:39:04Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previous <=3.12 would exclude micro versions, like 3.12.1.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15202,
+        "title": "[Metrics] Add bucket for `request_latency`, `time_to_first_token` and `time_per_output_token`",
+        "url": "https://github.com/vllm-project/vllm/pull/15202",
+        "author": "yankay",
+        "mergedAt": "2025-04-07T03:34:51Z",
+        "createdAt": "2025-03-20T09:31:56Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The request_latency_buckets histogram is currently capped at 60 seconds. However, many requests to large language models can take significantly longer than this threshold. While p90 and p99 are commonly used to analyze latency distributions in histograms, the top bucket\u2019s cap limits the accuracy of ",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16139,
+        "title": "[V1][Minor] Minor simplification for get_computed_blocks ",
+        "url": "https://github.com/vllm-project/vllm/pull/16139",
+        "author": "WoosukKwon",
+        "mergedAt": "2025-04-07T03:38:12Z",
+        "createdAt": "2025-04-06T22:56:01Z",
+        "changedFiles": 1,
+        "additions": 31,
+        "deletions": 30,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Early exit for the requests asking prompt_logprobs\nIf the last block is dropped, do not include it in prefix_cache_stats.queries.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 16147,
+        "title": "[Misc] Update Mistral-3.1 example",
+        "url": "https://github.com/vllm-project/vllm/pull/16147",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-04-07T03:57:38Z",
+        "createdAt": "2025-04-07T02:45:07Z",
+        "changedFiles": 1,
+        "additions": 22,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Update Mistral-3.1 example so people don't think that they always have to use Mistral format, even for quantized models",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16129,
+        "title": "[Bugfix] Make dummy encoder prompt padding alternative and add missing warnings",
+        "url": "https://github.com/vllm-project/vllm/pull/16129",
+        "author": "Isotr0py",
+        "mergedAt": "2025-04-07T04:07:15Z",
+        "createdAt": "2025-04-06T14:10:58Z",
+        "changedFiles": 5,
+        "additions": 108,
+        "deletions": 4,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #13929\n\nThis PR makes multimodal dummy encoder sequence padding alternative, because we still need padding to keep whisper working.\nAdd missing warnings messages for encoder dummy data",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16149,
+        "title": "[CI] Set max transformers version for Ultravox model test ",
+        "url": "https://github.com/vllm-project/vllm/pull/16149",
+        "author": "ywang96",
+        "mergedAt": "2025-04-07T04:37:59Z",
+        "createdAt": "2025-04-07T03:28:06Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We need to upgrade the transformers version to 4.51.0 so that Llama-4 can work in our nightly after #16113 is merged. However, Ultravox impl on huggingface is currently breaking on 4.51.0 from the standard model test, so this PR sets the max transformers version for this model to unblock other PRs.\n",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 16154,
+        "title": "doc: fix some typos in doc",
+        "url": "https://github.com/vllm-project/vllm/pull/16154",
+        "author": "yihong0618",
+        "mergedAt": "2025-04-07T05:32:06Z",
+        "createdAt": "2025-04-07T04:02:58Z",
+        "changedFiles": 3,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "as title",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -7,12 +7,15 @@ import argparse
 import json
 import os
 import sys
+import re
 import time
 from datetime import datetime, timedelta
 from pathlib import Path
 from zoneinfo import ZoneInfo
 
 import requests
+
+SECRET_RE = re.compile(r"(ghp_|gho_|ghs_|ghu_|github_pat_|sk-|AKIA)[A-Za-z0-9_\-]{16,}")
 
 REPOS = {
     "sglang": "sgl-project/sglang",
@@ -165,7 +168,8 @@ def normalize_pr(raw: dict, repo_key: str, utc_start: datetime, utc_end: datetim
         return None
 
     body_text = (raw.get("bodyText") or "").strip()
-    body_excerpt = body_text[:300]
+    # Redact secret-looking strings (leaked tokens in PR bodies trip GitHub push protection)
+    body_excerpt = SECRET_RE.sub(r"\1[REDACTED]", body_text[:300])
     labels = [n["name"] for n in raw.get("labels", {}).get("nodes", [])]
     author = raw.get("author")
 

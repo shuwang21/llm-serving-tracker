@@ -1,0 +1,30 @@
+{
+  "date": "2023-09-30",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-30T07:00:00+00:00",
+  "utc_end": "2023-10-01T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:35:23.352990+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1228,
+        "title": "Added `dtype` arg to benchmarks",
+        "url": "https://github.com/vllm-project/vllm/pull/1228",
+        "author": "kg6-sleipnir",
+        "mergedAt": "2023-10-01T04:04:03Z",
+        "createdAt": "2023-09-29T14:07:23Z",
+        "changedFiles": 2,
+        "additions": 22,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Added dtype argument to benchmarking scripts to increase compatibility with certain quantized models such as TheBloke/CodeLlama-13B-Instruct-AWQ when testing.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,363 @@
+{
+  "date": "2024-10-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-10T07:00:00+00:00",
+  "utc_end": "2024-10-11T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:04:16.009746+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1620,
+        "title": "Fix test_vision_openai_server on CI",
+        "url": "https://github.com/sgl-project/sglang/pull/1620",
+        "author": "ByronHsu",
+        "mergedAt": "2024-10-10T23:34:13Z",
+        "createdAt": "2024-10-09T21:05:20Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nFix #1621\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1619,
+        "title": "[Performance, hardware] MoE tuning update to AMD MI300x GPUs",
+        "url": "https://github.com/sgl-project/sglang/pull/1619",
+        "author": "HaiShaw",
+        "mergedAt": "2024-10-11T05:48:15Z",
+        "createdAt": "2024-10-09T19:08:08Z",
+        "changedFiles": 2,
+        "additions": 353,
+        "deletions": 57,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTuning update to optimize MoE kernels for AMD MI300x.\nModifications\nUpdated configuration files.\nChecklist\n\n[+] Format your code according to the Contributor Guide.\n[+] Add unit tests as outlined in the Contributor Guide.\n[+] Update documentation as needed, including docstrings or example",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 9227,
+        "title": "[Bugfix] Fix lm_head weights tying with lora for llama",
+        "url": "https://github.com/vllm-project/vllm/pull/9227",
+        "author": "Isotr0py",
+        "mergedAt": "2024-10-10T13:11:56Z",
+        "createdAt": "2024-10-10T06:06:44Z",
+        "changedFiles": 2,
+        "additions": 12,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #9207 (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure th",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9237,
+        "title": "[Model] support input image embedding for minicpmv",
+        "url": "https://github.com/vllm-project/vllm/pull/9237",
+        "author": "whyiug",
+        "mergedAt": "2024-10-10T15:00:47Z",
+        "createdAt": "2024-10-10T08:24:33Z",
+        "changedFiles": 3,
+        "additions": 101,
+        "deletions": 43,
+        "commits": 7,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow-up to #6613.\nAchieving consistency in multi-image input formats across different multimodal models is challenging. To address this, I adopted a dictionary-based approach to append additional parameters.\nI have tested both multi-image and batch inference locally, and the full script is provide",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9121,
+        "title": "[OpenVINO] Use torch 2.4.0 and newer optimim version",
+        "url": "https://github.com/vllm-project/vllm/pull/9121",
+        "author": "ilya-lavrenov",
+        "mergedAt": "2024-10-10T17:18:58Z",
+        "createdAt": "2024-10-07T09:57:33Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "As was asked there #8932 (comment), OpenVINO needs explicitly state that 2.4.0 torch is used (even we had wider range of supported versions on current vLLM main).\nSecondly, use latest optimum and optimum-intel to support latest transformer versions.\nRelated to #8932\nCloses #9092\nBEFORE SUBMITTING, P",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9218,
+        "title": "[Bugfix] Fix Machete unittests failing with `NotImplementedError`",
+        "url": "https://github.com/vllm-project/vllm/pull/9218",
+        "author": "LucasWilkinson",
+        "mergedAt": "2024-10-10T17:39:56Z",
+        "createdAt": "2024-10-10T04:26:20Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "After #8845\npytest tests/kernels/test_machete_gemm.py::test_machete_all_schedules\n\nstarted failing due to machete_supported_schedules being registered for CUDA despite having no tensor args (so the dispatcher doesn't know how to dispatch it), fixed this by moving its dispatch key back to CatchAll",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9204,
+        "title": "[Doc] Improve debugging documentation",
+        "url": "https://github.com/vllm-project/vllm/pull/9204",
+        "author": "rafvasq",
+        "mergedAt": "2024-10-10T17:48:51Z",
+        "createdAt": "2024-10-09T19:06:34Z",
+        "changedFiles": 1,
+        "additions": 53,
+        "deletions": 36,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR tries to improve the existing documentation for general debugging.\n\nLink to searching/opening issues\nMove reminder to deactivate debug env vars to top of doc\nSplitting and reorganizing topics using headers\nImprove readability",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9252,
+        "title": "[CI/Build] Make the `Dockerfile.cpu` file's  `PIP_EXTRA_INDEX_URL` Configurable as a Build Argument",
+        "url": "https://github.com/vllm-project/vllm/pull/9252",
+        "author": "jyono",
+        "mergedAt": "2024-10-10T18:18:18Z",
+        "createdAt": "2024-10-10T14:47:41Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently, the Dockerfile.cpu only supports \"https://download.pytorch.org/whl/cpu\" as the PIP_EXTRA_INDEX_URL. This is problematic for folks who need to get their pytorch whl from a mirror registry or another artifact store. I am making \"https://download.pytorch.org/whl/cpu\" the default, but now use",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9210,
+        "title": "Suggest codeowners for the core componenets",
+        "url": "https://github.com/vllm-project/vllm/pull/9210",
+        "author": "simon-mo",
+        "mergedAt": "2024-10-10T19:29:24Z",
+        "createdAt": "2024-10-10T00:21:20Z",
+        "changedFiles": 1,
+        "additions": 16,
+        "deletions": 5,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds owners for some critical parts of the code that requires careful review.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9058,
+        "title": "[torch.compile] integration with compilation control",
+        "url": "https://github.com/vllm-project/vllm/pull/9058",
+        "author": "youkaichao",
+        "mergedAt": "2024-10-10T19:39:37Z",
+        "createdAt": "2024-10-03T23:12:41Z",
+        "changedFiles": 22,
+        "additions": 404,
+        "deletions": 98,
+        "commits": 57,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "closes #8821\nthis pr defines the way we integrate torch.compile . Some features of vLLM are not tested yet, so I just put the functionality under a test flag VLLM_TEST_TORCH_COMPILE_LEVEL .\nthe user-facing flags are:\n\n\n\nUsage\nCompilationLevel\nhow vLLM uses Dynamo\nhow vLLM uses Inductor\nuse vLLM's cu",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9197,
+        "title": "Bump actions/github-script from 6 to 7",
+        "url": "https://github.com/vllm-project/vllm/pull/9197",
+        "author": "dependabot",
+        "mergedAt": "2024-10-10T20:30:24Z",
+        "createdAt": "2024-10-09T15:17:25Z",
+        "changedFiles": 3,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Bumps actions/github-script from 6 to 7.\n\nRelease notes\nSourced from actions/github-script's releases.\n\nv7.0.0\nWhat's Changed\n\nAdd base-url option by @\u200brobandpdx in actions/github-script#429\nExpose async-function argument type by @\u200bviktorlott in actions/github-script#402, see for details https://git",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9196,
+        "title": "Bump actions/checkout from 3 to 4",
+        "url": "https://github.com/vllm-project/vllm/pull/9196",
+        "author": "dependabot",
+        "mergedAt": "2024-10-10T20:30:35Z",
+        "createdAt": "2024-10-09T15:17:25Z",
+        "changedFiles": 6,
+        "additions": 7,
+        "deletions": 7,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Bumps actions/checkout from 3 to 4.\n\nRelease notes\nSourced from actions/checkout's releases.\n\nv4.0.0\nWhat's Changed\n\nUpdate default runtime to node20 by @\u200btakost in actions/checkout#1436\nSupport fetching without the --progress option by @\u200bsimonbaird in actions/checkout#1067\nRelease 4.0.0 by @\u200btakost",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9195,
+        "title": "Bump actions/setup-python from 3 to 5",
+        "url": "https://github.com/vllm-project/vllm/pull/9195",
+        "author": "dependabot",
+        "mergedAt": "2024-10-10T20:30:46Z",
+        "createdAt": "2024-10-09T15:17:18Z",
+        "changedFiles": 5,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "\u26a0\ufe0f  Dependabot is rebasing this PR \u26a0\ufe0f\nRebasing might not happen immediately, so don't worry if this takes some time.\nNote: if you make any changes to this PR yourself, they will take precedence over the rebase.\n\nBumps actions/setup-python from 3 to 5.\n\nRelease notes\nSourced from actions/setup-python",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9262,
+        "title": "[ci/build] Add placeholder command for custom models test and add comments",
+        "url": "https://github.com/vllm-project/vllm/pull/9262",
+        "author": "khluu",
+        "mergedAt": "2024-10-10T22:45:09Z",
+        "createdAt": "2024-10-10T22:26:52Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The test has been run accidentally a few times so a comment is added here to make it clear that it's used only for testing invidividual model during PR development phase, should not be merged and tested on main.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9258,
+        "title": "[torch.compile] generic decorators",
+        "url": "https://github.com/vllm-project/vllm/pull/9258",
+        "author": "youkaichao",
+        "mergedAt": "2024-10-10T22:54:23Z",
+        "createdAt": "2024-10-10T19:53:56Z",
+        "changedFiles": 3,
+        "additions": 74,
+        "deletions": 34,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "address #9058 (comment)",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9257,
+        "title": "[Doc][Neuron] add note to neuron documentation about resolving triton issue",
+        "url": "https://github.com/vllm-project/vllm/pull/9257",
+        "author": "omrishiv",
+        "mergedAt": "2024-10-10T23:36:32Z",
+        "createdAt": "2024-10-10T18:29:33Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nNeuron currently uses torch version 2.1.0, which has a dependency on an older version of triton. This PR adds a note to the documentation for resolving an error using this dependency with newer versions of vLLM.\nFIX #7166 (link existing issues this PR will resolve)",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9235,
+        "title": "[Misc] Fix sampling from sonnet for long context case",
+        "url": "https://github.com/vllm-project/vllm/pull/9235",
+        "author": "Imss27",
+        "mergedAt": "2024-10-11T00:33:16Z",
+        "createdAt": "2024-10-10T08:20:21Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Sample multiple rounds from sonnet.txt when the sonnet input length is larger than the whole file.\nFIX #9185 (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contrib",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9261,
+        "title": "[misc] hide best_of from engine",
+        "url": "https://github.com/vllm-project/vllm/pull/9261",
+        "author": "youkaichao",
+        "mergedAt": "2024-10-11T04:30:44Z",
+        "createdAt": "2024-10-10T21:41:04Z",
+        "changedFiles": 14,
+        "additions": 46,
+        "deletions": 73,
+        "commits": 12,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "submit on behalf of @LunrEclipse",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      }
+    ]
+  }
+}

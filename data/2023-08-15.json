@@ -1,0 +1,30 @@
+{
+  "date": "2023-08-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-15T07:00:00+00:00",
+  "utc_end": "2023-08-16T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:32:36.648200+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 753,
+        "title": "Align with huggingface Top K sampling",
+        "url": "https://github.com/vllm-project/vllm/pull/753",
+        "author": "Abraham-Xu",
+        "mergedAt": "2023-08-15T23:44:33Z",
+        "createdAt": "2023-08-13T12:35:15Z",
+        "changedFiles": 1,
+        "additions": 23,
+        "deletions": 24,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "main modifications\nall modifications are in vllm/model_executor/layers/sampler.py\n\nReverse the order of softmax and _apply_top_p_top_k function in forward function of class Sampler. So the _apply_top_p_top_k will use logits as input instead of probabilites.\nIn _apply_top_p_top_k function, it compute",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

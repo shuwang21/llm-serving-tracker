@@ -1,0 +1,228 @@
+{
+  "date": "2024-08-18",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-08-18T07:00:00+00:00",
+  "utc_end": "2024-08-19T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:59:17.195495+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1143,
+        "title": "fixed a typo",
+        "url": "https://github.com/sgl-project/sglang/pull/1143",
+        "author": "min-xu-et",
+        "mergedAt": "2024-08-18T21:29:10Z",
+        "createdAt": "2024-08-18T20:53:05Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "trivial fix\nChecklist\n\n Before submitting a PR for review, make sure it has passed verification in your local development environment at least.\n Ensure pre-commit pre-commit run --all-files or other linting tools are used to fix potential lint issues.\n Confirm that modifications are covered by compl",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1144,
+        "title": "[Docs] Add instruction for running on clouds and kubernetes with SkyPilot",
+        "url": "https://github.com/sgl-project/sglang/pull/1144",
+        "author": "Michaelvll",
+        "mergedAt": "2024-08-19T06:01:55Z",
+        "createdAt": "2024-08-18T22:36:05Z",
+        "changedFiles": 1,
+        "additions": 40,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nAdd instruction for running on clouds and Kubernetes with SkyPilot.\ncc'ing @merrymercy\nChecklist\n\n Before submitting a PR for review, make sure it has passed verification in your local development environment at least.\n Ensure pre-commit pre-commit run --all-files or other linting tools ",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1035,
+        "title": "[Feat]Add support for optional start len of logprobs",
+        "url": "https://github.com/sgl-project/sglang/pull/1035",
+        "author": "yichuan-w",
+        "mergedAt": "2024-08-19T06:45:42Z",
+        "createdAt": "2024-08-11T19:12:32Z",
+        "changedFiles": 8,
+        "additions": 112,
+        "deletions": 30,
+        "commits": 23,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Thank you for your contribution, we really appreciate it. The following instructions will help improve your pull request and make it easier to receive feedback. If there are any items you don't understand, don't worry. Just submit the pull request and ask the maintainers for help.\nMotivation\n#902 re",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 7634,
+        "title": "[TPU] Use mark_dynamic only for dummy run",
+        "url": "https://github.com/vllm-project/vllm/pull/7634",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-08-18T07:18:53Z",
+        "createdAt": "2024-08-18T06:55:09Z",
+        "changedFiles": 1,
+        "additions": 28,
+        "deletions": 48,
+        "commits": 3,
+        "labels": [
+          "tpu"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7636,
+        "title": "[TPU] Optimize RoPE forward_native2",
+        "url": "https://github.com/vllm-project/vllm/pull/7636",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-08-18T08:15:10Z",
+        "createdAt": "2024-08-18T07:24:26Z",
+        "changedFiles": 1,
+        "additions": 27,
+        "deletions": 26,
+        "commits": 5,
+        "labels": [
+          "tpu"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR rewrites the forward_native2 method in RotaryEmbedding so that it's more compiler-friendly. On TPU, this removes redundant copy operations to the cos-sin cache, leading to ~10% latency reduction.\nTODO:\n\nRewrite forward_native and merge forward_native2 into forward_native",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7279,
+        "title": "[ Bugfix ] Fix Prometheus Metrics With `zeromq` Frontend",
+        "url": "https://github.com/vllm-project/vllm/pull/7279",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2024-08-18T20:19:48Z",
+        "createdAt": "2024-08-07T19:01:47Z",
+        "changedFiles": 7,
+        "additions": 366,
+        "deletions": 116,
+        "commits": 42,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nPrometheus metrics are broken in v0.5.4 due to zeromq multiprocessing frontend\nSet PROMETHEUS_MULTIPROC_DIR environment variable to enable multiprocessing mode (note, this must be set before prometheus_client is imported. So we lazily init anything that imports prometheus_client\nUse tempfi",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7475,
+        "title": "[CI/Build] Add text-only test for Qwen models ",
+        "url": "https://github.com/vllm-project/vllm/pull/7475",
+        "author": "alex-jw-brooks",
+        "mergedAt": "2024-08-18T23:43:47Z",
+        "createdAt": "2024-08-13T17:37:12Z",
+        "changedFiles": 3,
+        "additions": 52,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Hello! I noticed that there aren't any model tests for QwenModel yet, and was wondering if there was a reason for this, or if it would make sense to add one similar to the other tests running on the example test prompts.\nI am working on extending QwenModel, which currently skips loading the visual c",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7637,
+        "title": "[Misc] Refactor Llama3 RoPE initialization",
+        "url": "https://github.com/vllm-project/vllm/pull/7637",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-08-19T00:18:12Z",
+        "createdAt": "2024-08-18T08:31:32Z",
+        "changedFiles": 1,
+        "additions": 53,
+        "deletions": 29,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR refactors the Llama3 RoPE initialization. The PR includes the following changes:\n\nUse the rope scaling values from HF config instead of the hardcoded ones.\nVectorize the calculation of inv_freq.",
+        "category": "Cleanup / Refactor",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7109,
+        "title": "[Core] Optimize SPMD architecture with delta + serialization optimization",
+        "url": "https://github.com/vllm-project/vllm/pull/7109",
+        "author": "rkooo567",
+        "mergedAt": "2024-08-19T00:57:20Z",
+        "createdAt": "2024-08-03T10:01:50Z",
+        "changedFiles": 36,
+        "additions": 727,
+        "deletions": 351,
+        "commits": 48,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is a part of performance roadmap #6801 and based on #6556.\nAlso it exactly implements #6241\nI verified the PR works with\n\nchunked prefill\npreemption\nPP + TP + ray aDAG\nseed (we moved this to worker already thanksfully!)\n\nIt doesn't currently work with mp yet.\nMore details about the PR;\n\nSend",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7137,
+        "title": "[Core] Use flashinfer sampling kernel when available",
+        "url": "https://github.com/vllm-project/vllm/pull/7137",
+        "author": "peng1999",
+        "mergedAt": "2024-08-19T03:24:04Z",
+        "createdAt": "2024-08-05T03:26:16Z",
+        "changedFiles": 5,
+        "additions": 130,
+        "deletions": 28,
+        "commits": 27,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Flashinfer contains a combined kernel top_k_top_p_sampling_from_probs, and it is way faster than the sorting kernels used currently. This will eliminate the timely _apply_top_k_top_p function and reduce the GPU time of sampler.\nmain:\n\nthis PR:\n\nEnd-to-end test (input length=1024, batch size=2048, mo",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7644,
+        "title": "fix xpu build",
+        "url": "https://github.com/vllm-project/vllm/pull/7644",
+        "author": "jikunshang",
+        "mergedAt": "2024-08-19T05:00:10Z",
+        "createdAt": "2024-08-19T03:12:48Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "intel-gpu",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nXPU doesn't need to build core_ext. fix this.\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR mee",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

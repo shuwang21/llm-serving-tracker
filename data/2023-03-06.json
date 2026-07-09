@@ -1,0 +1,30 @@
+{
+  "date": "2023-03-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-06T08:00:00+00:00",
+  "utc_end": "2023-03-07T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:22:34.696630+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 5,
+        "title": "Fix a bug in 1D input shape",
+        "url": "https://github.com/vllm-project/vllm/pull/5",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-06T18:05:27Z",
+        "createdAt": "2023-03-03T04:18:38Z",
+        "changedFiles": 3,
+        "additions": 11,
+        "deletions": 6,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a miscalculation of the input shape when iteration-level scheduling is used.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

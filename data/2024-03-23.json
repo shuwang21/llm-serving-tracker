@@ -1,0 +1,103 @@
+{
+  "date": "2024-03-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-23T07:00:00+00:00",
+  "utc_end": "2024-03-24T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:46:50.483956+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 298,
+        "title": "Cleanup codebase: removed unnecessary code/logic",
+        "url": "https://github.com/sgl-project/sglang/pull/298",
+        "author": "Qubitium",
+        "mergedAt": "2024-03-23T17:15:16Z",
+        "createdAt": "2024-03-14T08:17:40Z",
+        "changedFiles": 3,
+        "additions": 8,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixed two issues in  router loop:\n\ndouble sleep (this may cause performance loss during high concurrency)\nprotect against sleep on potential GLOBAL_BACKEND_CONFIG.extend_dependency_time == 0\n\nCleanup:\n\nremove unused  self.eos_token_id in modle_rpc\nremoved unused ReqState.lock\n\nEDIT:\nReverted due to ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 326,
+        "title": "Update dependencies",
+        "url": "https://github.com/sgl-project/sglang/pull/326",
+        "author": "janimo",
+        "mergedAt": "2024-03-23T17:15:58Z",
+        "createdAt": "2024-03-23T07:59:10Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Removes no longer used dependencies (they come via outlines now) and add tqdm and tiktoken.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 327,
+        "title": "Openrouter usage example",
+        "url": "https://github.com/sgl-project/sglang/pull/327",
+        "author": "janimo",
+        "mergedAt": "2024-03-23T17:16:24Z",
+        "createdAt": "2024-03-23T08:10:28Z",
+        "changedFiles": 1,
+        "additions": 79,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3578,
+        "title": "[Bugfix] use SoftLockFile instead of LockFile",
+        "url": "https://github.com/vllm-project/vllm/pull/3578",
+        "author": "kota-iizuka",
+        "mergedAt": "2024-03-23T18:43:11Z",
+        "createdAt": "2024-03-23T06:26:00Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "filelock.LockFile does not delete the .lock file it created. Use filelock.SoftLockFile instead to remove .lock when it is no longer needed. This prevents another user from referencing an unused .lock file and causing an error.\nFIX #2232 #2179 #2675\nsample code\nThe following script will delete the a.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 3591,
+        "title": "[Misc] Fix BLOOM copyright notice",
+        "url": "https://github.com/vllm-project/vllm/pull/3591",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-03-24T06:30:56Z",
+        "createdAt": "2024-03-24T06:30:16Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

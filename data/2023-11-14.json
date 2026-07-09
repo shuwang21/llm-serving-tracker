@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-14",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-14T08:00:00+00:00",
+  "utc_end": "2023-11-15T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:11.193161+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1649,
+        "title": "Add DeepSpeed MII backend to benchmark script",
+        "url": "https://github.com/vllm-project/vllm/pull/1649",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-11-14T20:35:30Z",
+        "createdAt": "2023-11-14T00:01:32Z",
+        "changedFiles": 1,
+        "additions": 71,
+        "deletions": 12,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the DeepSpeed-MII backend to benchmark_throughput.py. The script uses MII's non-persistent pipeline API.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

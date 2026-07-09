@@ -1,0 +1,30 @@
+{
+  "date": "2023-12-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-01T08:00:00+00:00",
+  "utc_end": "2023-12-02T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:39:15.611645+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1886,
+        "title": "Fix the typo in SamplingParams' docstring.",
+        "url": "https://github.com/vllm-project/vllm/pull/1886",
+        "author": "xukp20",
+        "mergedAt": "2023-12-01T10:06:36Z",
+        "createdAt": "2023-12-01T10:03:56Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "To fix the typo of \"special\" in line 72:\n\n  \n    \n      vllm/vllm/sampling_params.py\n    \n    \n         Line 72\n      in\n      e5452dd\n    \n  \n  \n    \n\n        \n          \n                       the stop tokens are sepcial tokens. \n        \n    \n  \n\n\nMentioned in this issue [#1872].",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-05-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-05T07:00:00+00:00",
+  "utc_end": "2023-05-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:25:59.340648+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 70,
+        "title": "Replace FlashAttention with xformers",
+        "url": "https://github.com/vllm-project/vllm/pull/70",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-05T09:01:08Z",
+        "createdAt": "2023-05-04T10:31:35Z",
+        "changedFiles": 13,
+        "additions": 87,
+        "deletions": 131,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR replaces FlashAttention with xformers.\nPros:\n\nRicher features & higher compatibility. xformers supports attention bias, FP32, head size 256, and old GPUs (such as V100) while FlashAttention does not.\nxformers provides pre-compiled python wheels, while FlashAttention compiles the entire CUDA ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

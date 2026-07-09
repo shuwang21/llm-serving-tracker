@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-15T08:00:00+00:00",
+  "utc_end": "2023-11-16T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:15.129244+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1622,
+        "title": "TP/quantization/weight loading refactor part 2 - Refactor quantized linear logic and extend quantization support to all models",
+        "url": "https://github.com/vllm-project/vllm/pull/1622",
+        "author": "zhuohan123",
+        "mergedAt": "2023-11-16T06:50:42Z",
+        "createdAt": "2023-11-10T08:10:04Z",
+        "changedFiles": 36,
+        "additions": 2159,
+        "deletions": 2508,
+        "commits": 53,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Refactor the tensor parallelism, quantization, and weight-loading codes.\nSummary of the new features enabled by this PR:\n\nAll models are able to be quantized with AWQ and SqueezeLLM, and soon GPTQ.\nModel loading code became much simpler.\nSupport model parallelism for all MQA/GQA models when the numb",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

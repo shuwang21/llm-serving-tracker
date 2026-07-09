@@ -1,0 +1,48 @@
+{
+  "date": "2024-03-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-17T07:00:00+00:00",
+  "utc_end": "2024-03-18T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:46:25.132414+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3452,
+        "title": "[Misc] Define from_dict and to_dict in InputMetadata",
+        "url": "https://github.com/vllm-project/vllm/pull/3452",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-03-17T10:02:46Z",
+        "createdAt": "2024-03-17T07:51:40Z",
+        "changedFiles": 3,
+        "additions": 24,
+        "deletions": 63,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds from_dict and  to_dict to InputMetadata so that the code in model runner becomes a bit cleaner.",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 3445,
+        "title": "[CI] Shard tests for LoRA and Kernels to speed up",
+        "url": "https://github.com/vllm-project/vllm/pull/3445",
+        "author": "simon-mo",
+        "mergedAt": "2024-03-17T21:56:30Z",
+        "createdAt": "2024-03-16T05:49:03Z",
+        "changedFiles": 3,
+        "additions": 10,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "PR Checklist (Click to expand. Please read before submitting.) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This helps vLLM maintain the code quality and improve the efficiency of the review process.\nPR Title and Cla",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2023-07-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-13T07:00:00+00:00",
+  "utc_end": "2023-07-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:40.955915+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 411,
+        "title": "add vocab padding for LLama(Support WizardLM)",
+        "url": "https://github.com/vllm-project/vllm/pull/411",
+        "author": "esmeetu",
+        "mergedAt": "2023-07-14T03:56:23Z",
+        "createdAt": "2023-07-09T11:03:05Z",
+        "changedFiles": 1,
+        "additions": 17,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR add support for WizardLM-13B. When running with args: tensor-parallel-size 2, it will throw AssertionError: 32001 is not divisible by 2.\nThe reason is WizardLM's vocab size is 32001, and is not divisible by 2.\nSo i reference gpt2.py to add vocab padding for llama.py and it works.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 441,
+        "title": "Fix the `KeyError` when loading bloom-based models",
+        "url": "https://github.com/vllm-project/vllm/pull/441",
+        "author": "HermitSun",
+        "mergedAt": "2023-07-14T04:58:10Z",
+        "createdAt": "2023-07-12T08:41:37Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 3,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As the issue #413 mentioned, a KeyError will be raised when loading some bloom-based models. This is because those bloom-based models provide their lm_head in pretrained weights, which is slightly different from the behavior of original bloom models.\nAfter applying this patch, the following bloom-ba",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

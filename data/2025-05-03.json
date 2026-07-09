@@ -1,0 +1,136 @@
+{
+  "date": "2025-05-03",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-05-03T07:00:00+00:00",
+  "utc_end": "2025-05-04T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:28:31.272216+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 5991,
+        "title": "Fix Phi3 serving which was broke by earlier change",
+        "url": "https://github.com/sgl-project/sglang/pull/5991",
+        "author": "hebiao064",
+        "mergedAt": "2025-05-03T07:28:47Z",
+        "createdAt": "2025-05-03T04:16:04Z",
+        "changedFiles": 1,
+        "additions": 16,
+        "deletions": 2,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix Phi3 serving which was broke by earlier change #5724\nBenchmark ...\nPrefill. latency: 0.02725 s, throughput:  37581.53 token/s\nDecode 0. Batch size: 1, latency: 0.00689 s, throughput:    145.24 token/s\nDecode 1. Batch size: 1, latency: 0.00675 s, throughput:    148.15 token/s\nDecode 2.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5998,
+        "title": "[perf] H100 DeepSeek-V3 fused moe tuned config",
+        "url": "https://github.com/sgl-project/sglang/pull/5998",
+        "author": "Alcanderian",
+        "mergedAt": "2025-05-03T21:02:26Z",
+        "createdAt": "2025-05-03T17:10:56Z",
+        "changedFiles": 1,
+        "additions": 146,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Writing Documentation.\n Provide throughput / latency benchma",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 17607,
+        "title": "[Core] Gate `prompt_embeds` behind a feature flag",
+        "url": "https://github.com/vllm-project/vllm/pull/17607",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-05-03T16:19:20Z",
+        "createdAt": "2025-05-03T05:17:03Z",
+        "changedFiles": 8,
+        "additions": 84,
+        "deletions": 33,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Since the existence of input_embeds triggers a separate graph compilation, this PR disables prompt_embeds inputs (#15428) by default. This should revert the engine startup time to normal for most users.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 17613,
+        "title": "[Bugfix] Fix broken Qwen2.5-omni tests",
+        "url": "https://github.com/vllm-project/vllm/pull/17613",
+        "author": "Isotr0py",
+        "mergedAt": "2025-05-03T17:08:14Z",
+        "createdAt": "2025-05-03T14:26:25Z",
+        "changedFiles": 4,
+        "additions": 21,
+        "deletions": 8,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Use Qwen2.5-omni-3B for test\nFix version comparison so that preview models with transformers 4.52.0.dev0 can also be run.\nCorrect Qwen2.5-Omni auto_cls to AutoModelForTextToWaveform:\n\nValueError: Unrecognized configuration class <class 'transformers.models.qwen2_5_omni.configuration_qwen2_5_omni.Qwe",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17615,
+        "title": "[Misc] V0 fallback for `--enable-prompt-embeds`",
+        "url": "https://github.com/vllm-project/vllm/pull/17615",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-05-03T22:59:24Z",
+        "createdAt": "2025-05-03T16:24:32Z",
+        "changedFiles": 2,
+        "additions": 6,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "RESOLVE #17607 (comment)",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17485,
+        "title": "Add full API docs and improve the UX of navigating them",
+        "url": "https://github.com/vllm-project/vllm/pull/17485",
+        "author": "hmellor",
+        "mergedAt": "2025-05-04T02:42:43Z",
+        "createdAt": "2025-04-30T16:44:03Z",
+        "changedFiles": 101,
+        "additions": 900,
+        "deletions": 1008,
+        "commits": 64,
+        "labels": [
+          "documentation",
+          "frontend",
+          "speculative-decoding",
+          "ready",
+          "ci/build",
+          "v1",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Changes:\n\nPorted from sphinx.ext.autodoc and sphinx.ext.autosummary to autodoc2:\n\nautodoc2 supports myst (markdown) so we can stop writing rst formatted docstrings\nThe entire codebase is documented in API Reference\nAll of these docs can be cross-referenced throughout the docs\n\n\nUpdated the API Refer",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

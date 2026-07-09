@@ -1,0 +1,68 @@
+{
+  "date": "2023-12-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-19T08:00:00+00:00",
+  "utc_end": "2023-12-20T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:40:25.365078+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2062,
+        "title": "Added DeciLM-7b and DeciLM-7b-instruct",
+        "url": "https://github.com/vllm-project/vllm/pull/2062",
+        "author": "avideci",
+        "mergedAt": "2023-12-19T10:29:34Z",
+        "createdAt": "2023-12-12T17:27:25Z",
+        "changedFiles": 5,
+        "additions": 129,
+        "deletions": 0,
+        "commits": 6,
+        "labels": [
+          "new-model"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "New models: DeciLM-7b and DeciLM-7b-instruct\nDeciLM-7b and DeciLM-7b-instruct have been released today.\nIt has reached first place in the OpenLLM leaderboard (7B catagory).\n\nDeciLM-7B is a 7.04 billion parameter decoder-only text generation model, released under the Apache 2.0 license. At the time o",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2208,
+        "title": "[BugFix] Fix weight loading for Mixtral with TP",
+        "url": "https://github.com/vllm-project/vllm/pull/2208",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-20T00:16:12Z",
+        "createdAt": "2023-12-20T00:13:24Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 26,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #2202\nCurrently, the Mixtral model does not support quantization with TP > 1 because DummyModule does not use quantized linear methods. This PR removes DummyModule and instead modifies the weight loading logic to consider expert parallelism.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2207,
+        "title": "Make _prepare_sample non blocking and pin memory of CPU input buffers",
+        "url": "https://github.com/vllm-project/vllm/pull/2207",
+        "author": "hanzhi713",
+        "mergedAt": "2023-12-20T00:52:46Z",
+        "createdAt": "2023-12-19T22:26:45Z",
+        "changedFiles": 1,
+        "additions": 38,
+        "deletions": 17,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Hide _prepare_sample latency with model execution since it looks like it doesn't depend on model forward.\nWe can use a copy stream for h2ds in _prepare_sample, but we probably don't really need to because these h2ds are very short.\ncc @Yard1",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

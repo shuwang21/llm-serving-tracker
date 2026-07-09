@@ -1,0 +1,310 @@
+{
+  "date": "2024-09-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-25T07:00:00+00:00",
+  "utc_end": "2024-09-26T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:02:52.647776+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1513,
+        "title": "[Fix] Ignore model import error",
+        "url": "https://github.com/sgl-project/sglang/pull/1513",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-25T18:32:21Z",
+        "createdAt": "2024-09-25T18:30:28Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8672,
+        "title": "[Frontend] OpenAI server: propagate usage accounting to FastAPI middleware layer",
+        "url": "https://github.com/vllm-project/vllm/pull/8672",
+        "author": "agt",
+        "mergedAt": "2024-09-25T07:49:26Z",
+        "createdAt": "2024-09-20T17:09:46Z",
+        "changedFiles": 3,
+        "additions": 57,
+        "deletions": 11,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR makes aggregate, per-Request UsageInfo (total prompt/completion tokens) available to the OpenAI API server's FastAPI middleware, e.g. out-of-tree add-ons specified via command-line argument --middleware.\nExample use case:\nExisting (locally-written) middleware validates API callers via JWT; e",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8767,
+        "title": "[Bugfix] Ray 2.9.x doesn't expose available_resources_per_node",
+        "url": "https://github.com/vllm-project/vllm/pull/8767",
+        "author": "darthhexx",
+        "mergedAt": "2024-09-25T07:52:26Z",
+        "createdAt": "2024-09-24T07:22:29Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX: #7584 (comment)\nThe changes in #7584 resulted in losing Ray 2.9 compatibility, because ray._private.state.available_resources_per_node is not exposed in 2.9.3 and only is from available_resources_per_node from 2.10 onwards.\nRay Serve 2.9.3 error when deploying vLLM 0.5.5 and above:\n(ServeContro",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8765,
+        "title": "[Misc] Fix minor typo in scheduler",
+        "url": "https://github.com/vllm-project/vllm/pull/8765",
+        "author": "wooyeonlee0",
+        "mergedAt": "2024-09-25T07:53:03Z",
+        "createdAt": "2024-09-24T07:08:57Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "It's just a minor fix to correct typo",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8777,
+        "title": "[CI/Build][Bugfix][Doc][ROCm] CI fix and doc update after ROCm 6.2 upgrade",
+        "url": "https://github.com/vllm-project/vllm/pull/8777",
+        "author": "hongxiayang",
+        "mergedAt": "2024-09-25T14:26:37Z",
+        "createdAt": "2024-09-24T14:54:50Z",
+        "changedFiles": 3,
+        "additions": 16,
+        "deletions": 3,
+        "commits": 5,
+        "labels": [
+          "rocm",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is to fix the CI failures after ROCm 6.2 upgrade, along with minor documentation changes.\nTwo types of failures were observed and then fixed:\n(1) amd-entrypoints-test: failed with OOM: torch.OutOfMemoryError: HIP out of memory. Tried to allocate 224.00 MiB. GPU 0 has a total capacity of 63.9",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8479,
+        "title": "[Kernel] Fullgraph and opcheck tests",
+        "url": "https://github.com/vllm-project/vllm/pull/8479",
+        "author": "bnellnm",
+        "mergedAt": "2024-09-25T14:35:52Z",
+        "createdAt": "2024-09-14T01:51:24Z",
+        "changedFiles": 27,
+        "additions": 748,
+        "deletions": 119,
+        "commits": 37,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add opcheck tests for all remaining ops and add some more models (and an inductor check) to the torch.compile fullgraph tests.\nThe new tests uncovered a few issues (schema problems, missing meta-function, etc.) which have been fixed.\nThe selective_scan_fwd op had a weird schema/behavior.  It returne",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8792,
+        "title": "[[Misc]] Add extra deps for openai server image",
+        "url": "https://github.com/vllm-project/vllm/pull/8792",
+        "author": "jeejeelee",
+        "mergedAt": "2024-09-25T16:35:23Z",
+        "createdAt": "2024-09-25T05:46:20Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #5503\nFIX #8107\nping @simon-mo",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8614,
+        "title": "[VLM][Bugfix] enable internvl running with num_scheduler_steps > 1",
+        "url": "https://github.com/vllm-project/vllm/pull/8614",
+        "author": "DefTruth",
+        "mergedAt": "2024-09-25T16:35:53Z",
+        "createdAt": "2024-09-19T03:00:15Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 1,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nA small fix for InternVL while running with num_scheduler_steps > 1, before this PR, set num_scheduler_steps > 1 for InternVL, will raise an error:\n[rank0]:   File \"/root/anaconda3/envs/vllm/lib/python3.10/site-packages/torch/utils/_contextlib.py\", line 116, in decora",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8760,
+        "title": "[Core] Rename `PromptInputs` and `inputs`, with backwards compatibility",
+        "url": "https://github.com/vllm-project/vllm/pull/8760",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-09-25T16:36:47Z",
+        "createdAt": "2024-09-24T04:12:04Z",
+        "changedFiles": 21,
+        "additions": 438,
+        "deletions": 245,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR re-implements #8673, with backwards compatibility for:\n\nMake the old name PromptInputs still available\ninputs keyword argument in various methods of LLMEngine, AsyncLLMEngine and vllm.engine.multiprocessing.\n\nFIX #8673 (comment)",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8761,
+        "title": "[Frontend] MQLLMEngine supports profiling.",
+        "url": "https://github.com/vllm-project/vllm/pull/8761",
+        "author": "Abatom",
+        "mergedAt": "2024-09-25T16:37:41Z",
+        "createdAt": "2024-09-24T05:05:01Z",
+        "changedFiles": 3,
+        "additions": 45,
+        "deletions": 7,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "MQLLMEngine supports profiling.\n\nThe profiling-related protocols and APIs from previous versions have been adapted to MQLLMEngine.",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8588,
+        "title": "[Misc] Support FP8 MoE for compressed-tensors",
+        "url": "https://github.com/vllm-project/vllm/pull/8588",
+        "author": "mgoin",
+        "mergedAt": "2024-09-25T16:43:36Z",
+        "createdAt": "2024-09-19T00:59:24Z",
+        "changedFiles": 5,
+        "additions": 226,
+        "deletions": 8,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Adds support for loading compressed-tensors format MoE models that have been compressed using FP8 per-tensor weights and activations, leveraging the existing kernel\nModels tested (GSM8k eval is on the model card):\n\n Mixtral https://huggingface.co/mgoin/Mixtral-8x7B-Instruct-v0.1-FP8\n DeepSeek https:",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8810,
+        "title": "Revert \"rename PromptInputs and inputs with backward compatibility (#8760)",
+        "url": "https://github.com/vllm-project/vllm/pull/8810",
+        "author": "simon-mo",
+        "mergedAt": "2024-09-25T17:36:26Z",
+        "createdAt": "2024-09-25T17:36:19Z",
+        "changedFiles": 21,
+        "additions": 245,
+        "deletions": 438,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This reverts commit 28e1299.\n@DarkLight1337 we need to release a new model today and this is causing merge conflicts. Sorry about this and please apply it again after we merge the new model code. \ud83d\ude47",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8811,
+        "title": "[Model] Add support for the multi-modal Llama 3.2 model",
+        "url": "https://github.com/vllm-project/vllm/pull/8811",
+        "author": "heheda12345",
+        "mergedAt": "2024-09-25T20:29:33Z",
+        "createdAt": "2024-09-25T17:53:27Z",
+        "changedFiles": 24,
+        "additions": 1647,
+        "deletions": 45,
+        "commits": 82,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds support for the Llama3.2's vision models.\nCurrently, we are blocked by a HuggingFace Transformers release after huggingface/transformers#33703\nWe will make a release as soon as this PR is merged.\nCloses #8812",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8817,
+        "title": "[Doc] Update doc for Transformers 4.45",
+        "url": "https://github.com/vllm-project/vllm/pull/8817",
+        "author": "ywang96",
+        "mergedAt": "2024-09-25T20:29:48Z",
+        "createdAt": "2024-09-25T19:25:02Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Update documentation for transformers 4.45 release. This PR should be merged after #8811\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This helps vLLM maintain the code quality and i",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8822,
+        "title": "[Misc] Support quantization of MllamaForCausalLM",
+        "url": "https://github.com/vllm-project/vllm/pull/8822",
+        "author": "mgoin",
+        "mergedAt": "2024-09-25T21:46:22Z",
+        "createdAt": "2024-09-25T21:03:03Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Tested using https://huggingface.co/mgoin/Llama-3.2-11B-Vision-Instruct-FP8-Dynamic with only the language_model modules quantized. The multi_modal_projector and vision_model structures were ignored.\nHere is the output from examples/offline_inference_vision_language.py the with the model replaced wi",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

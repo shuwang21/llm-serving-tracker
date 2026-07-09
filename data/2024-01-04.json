@@ -1,0 +1,30 @@
+{
+  "date": "2024-01-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-04T08:00:00+00:00",
+  "utc_end": "2024-01-05T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:22.989446+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2237,
+        "title": "Build docker image with shared objects from \"build\" step",
+        "url": "https://github.com/vllm-project/vllm/pull/2237",
+        "author": "payoto",
+        "mergedAt": "2024-01-04T17:35:18Z",
+        "createdAt": "2023-12-21T16:16:51Z",
+        "changedFiles": 2,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR makes sure that any .so files present in the local directory are not copied to the docker container where they would overwrite the result of the build stage.\nThis can happen if you have previously run pip install -e . in the same folder",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

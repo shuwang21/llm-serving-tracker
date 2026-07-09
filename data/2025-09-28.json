@@ -1,0 +1,576 @@
+{
+  "date": "2025-09-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-09-28T07:00:00+00:00",
+  "utc_end": "2025-09-29T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:21:22.688479+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 11009,
+        "title": "Fix CI failure of TypeError: RotaryEmbedding.forward_cpu() got an unexpected keyword argument 'fused_set_kv_buffer_arg'",
+        "url": "https://github.com/sgl-project/sglang/pull/11009",
+        "author": "yanbing-j",
+        "mergedAt": "2025-09-28T07:31:08Z",
+        "createdAt": "2025-09-28T07:08:34Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nXeon CI appears the failure TypeError: RotaryEmbedding.forward_cpu() got an unexpected keyword argument 'fused_set_kv_buffer_arg', which is caused by #10749 (This PR is lack of Xeon test).\nThis PR is to fix this failure by adding fused_set_kv_buffer_arg in forward_cpu.\nModifications\n\nAcc",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10964,
+        "title": "[bugfix]Add empty_context import to two_batch_overlap.py",
+        "url": "https://github.com/sgl-project/sglang/pull/10964",
+        "author": "wejoncy",
+        "mergedAt": "2025-09-28T08:26:20Z",
+        "createdAt": "2025-09-26T11:17:11Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10555,
+        "title": "prepare for sglang+verl",
+        "url": "https://github.com/sgl-project/sglang/pull/10555",
+        "author": "lbk-sys",
+        "mergedAt": "2025-09-28T08:39:17Z",
+        "createdAt": "2025-09-17T07:17:13Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 6,
+        "labels": [
+          "npu",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nrun sglang for verl\nAt that time, the NPU commercial law version was unable to support the adaptation of the current UUID scheme, so the change was temporarily avoided. It is expected that a replacement scheme will be available by the end of October.\n\nModifications\nAt present, this PR is ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10543,
+        "title": "[sgl-kernel] Optimize concat_mla_k kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/10543",
+        "author": "yuan-luo",
+        "mergedAt": "2025-09-28T15:04:22Z",
+        "createdAt": "2025-09-17T03:14:59Z",
+        "changedFiles": 3,
+        "additions": 309,
+        "deletions": 41,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nInspired by #10473, try to improve concat_mla_k kernel's performance and add benchmark test.\n\u279c  sglang_dev git:(refactor_concat_mla_absorb) \u2717 python benchmark_concat_mla.py\nW0925 03:04:04.925000 322 torch/fx/experimental/symbolic_shapes.py:6823] [0/0] _maybe_guard_rel() was called on non",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11013,
+        "title": "[HiCache] bug: fix mooncake store batch set v1",
+        "url": "https://github.com/sgl-project/sglang/pull/11013",
+        "author": "stmatengss",
+        "mergedAt": "2025-09-28T15:18:48Z",
+        "createdAt": "2025-09-28T08:09:14Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIncorrect parameters used in put_batch_zero_copy_impl.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write do",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11003,
+        "title": "Fix FusedSetKVBufferArg  in RotaryEmbedding",
+        "url": "https://github.com/sgl-project/sglang/pull/11003",
+        "author": "merrymercy",
+        "mergedAt": "2025-09-28T18:17:28Z",
+        "createdAt": "2025-09-28T04:06:46Z",
+        "changedFiles": 2,
+        "additions": 32,
+        "deletions": 9,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11017,
+        "title": "Update GLM-4.5 Model Doc",
+        "url": "https://github.com/sgl-project/sglang/pull/11017",
+        "author": "zRzRzRzRzRzRzR",
+        "mergedAt": "2025-09-28T18:21:28Z",
+        "createdAt": "2025-09-28T09:56:45Z",
+        "changedFiles": 5,
+        "additions": 11,
+        "deletions": 12,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is a update of GLM-4.5 Doc, including format and model change",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11033,
+        "title": "[router] migrate to rust python module for pythonic parser",
+        "url": "https://github.com/sgl-project/sglang/pull/11033",
+        "author": "slin1237",
+        "mergedAt": "2025-09-28T18:48:59Z",
+        "createdAt": "2025-09-28T17:21:42Z",
+        "changedFiles": 4,
+        "additions": 284,
+        "deletions": 780,
+        "commits": 4,
+        "labels": [
+          "router",
+          "benchmark",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "migrate to https://github.com/RustPython/Parser for pythonic parser\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark resul",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10986,
+        "title": "fix: show failed models in nightly ci",
+        "url": "https://github.com/sgl-project/sglang/pull/10986",
+        "author": "mickqian",
+        "mergedAt": "2025-09-28T19:38:29Z",
+        "createdAt": "2025-09-27T09:21:14Z",
+        "changedFiles": 5,
+        "additions": 39,
+        "deletions": 32,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11038,
+        "title": "[router][tool call] Support normal content extraction before tool call (streaming)",
+        "url": "https://github.com/sgl-project/sglang/pull/11038",
+        "author": "CatherineSue",
+        "mergedAt": "2025-09-29T02:46:06Z",
+        "createdAt": "2025-09-29T00:54:45Z",
+        "changedFiles": 8,
+        "additions": 157,
+        "deletions": 28,
+        "commits": 3,
+        "labels": [
+          "router",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis PR adds the extraction of normal content before tool call in tool-call parsers\n\nModifications\n\ngpt-oss-parser is ignored. By design\npythonic parser uses parse_complete. So we can ignore it.\nFor other parsers: add check for normal texts before the tool call. Return as StreamResult::No",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11036,
+        "title": "[router] add harmony tool parser base structure and interface",
+        "url": "https://github.com/sgl-project/sglang/pull/11036",
+        "author": "slin1237",
+        "mergedAt": "2025-09-29T02:46:38Z",
+        "createdAt": "2025-09-28T23:15:37Z",
+        "changedFiles": 5,
+        "additions": 143,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Changes\nIntroduce TokenToolParser trait in sgl-router/src/tool_parser/traits.rs\n\nProvide default blanket implementations that detokenize via the router\u2019s tokenizer utilities and defer to the existing string methods so current parsers remain unchanged.\nImplement the trait only for GPT-OSS Harmony; ot",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10701,
+        "title": "Unify SGL Kernel Releases",
+        "url": "https://github.com/sgl-project/sglang/pull/10701",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-09-29T02:48:28Z",
+        "createdAt": "2025-09-21T03:35:03Z",
+        "changedFiles": 3,
+        "additions": 241,
+        "deletions": 30,
+        "commits": 20,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nDynamically load common_ops module for SM90 (compiled with fast math) and SM 100 (without fast math) during initialization based on compute architecture so that one SGLang kernel binary can cover all versions with different configurations.\nCMake will compile two common_ops libraries and ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10940,
+        "title": "[1/2] Support FA4 for MHA Prefill in sgl-kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/10940",
+        "author": "lifuhuang",
+        "mergedAt": "2025-09-29T02:59:14Z",
+        "createdAt": "2025-09-26T06:49:54Z",
+        "changedFiles": 5,
+        "additions": 41,
+        "deletions": 5,
+        "commits": 6,
+        "labels": [
+          "high priority",
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Part 1 of #10937",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11015,
+        "title": "fix: check if weights are already local before downloading",
+        "url": "https://github.com/sgl-project/sglang/pull/11015",
+        "author": "mickqian",
+        "mergedAt": "2025-09-29T03:11:33Z",
+        "createdAt": "2025-09-28T09:21:12Z",
+        "changedFiles": 1,
+        "additions": 95,
+        "deletions": 2,
+        "commits": 10,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Note: simply checking if a local directory exists may lead to problems like, weights incomplete\nMotivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n ",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10591,
+        "title": "[HiCacheStorage] mooncake store support page_first_direct layout",
+        "url": "https://github.com/sgl-project/sglang/pull/10591",
+        "author": "huangtingwei9988",
+        "mergedAt": "2025-09-29T03:45:48Z",
+        "createdAt": "2025-09-18T02:48:45Z",
+        "changedFiles": 4,
+        "additions": 30,
+        "deletions": 7,
+        "commits": 21,
+        "labels": [
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11010,
+        "title": "[speculative decoding] rename lookahead to ngram",
+        "url": "https://github.com/sgl-project/sglang/pull/11010",
+        "author": "a4zhangfei",
+        "mergedAt": "2025-09-29T04:06:59Z",
+        "createdAt": "2025-09-28T07:11:05Z",
+        "changedFiles": 22,
+        "additions": 154,
+        "deletions": 181,
+        "commits": 1,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 9614,
+        "title": "Fix gemma 3 launch with `transformers:` the error: `AttributeError: 'TransformersForCausalLM' object has no attribute 'tp_size'`",
+        "url": "https://github.com/sgl-project/sglang/pull/9614",
+        "author": "vincentzed",
+        "mergedAt": "2025-09-29T06:18:29Z",
+        "createdAt": "2025-08-25T22:01:15Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\nFix loading Gemma3 models with --model-impl transformers\nbefore fix, gemma3 register the class to hf automodel,, so automodel from config returns sglang instead of hf, and the signatures are different (so it breaks).. so we have the two missing args, and without automodel, ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 24937,
+        "title": "Fix random dataset mismatched token length with config.",
+        "url": "https://github.com/vllm-project/vllm/pull/24937",
+        "author": "weireweire",
+        "mergedAt": "2025-09-28T08:23:44Z",
+        "createdAt": "2025-09-16T04:48:07Z",
+        "changedFiles": 1,
+        "additions": 118,
+        "deletions": 27,
+        "commits": 12,
+        "labels": [
+          "performance",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFix wrong token length when using random dataset.\nBecause sometime seq != tokenizer.decode(tokenizer.encode(seq)), we need to iterate and fix the length until it match.\nTest Plan\nvllm bench serve --backend vllm --host 0.0.0.0 --port 8000 --model /home/model/gpt-oss-120b --num-prompts 640 --t",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25830,
+        "title": "Update GLM-4.5 Doc transformers version",
+        "url": "https://github.com/vllm-project/vllm/pull/25830",
+        "author": "zRzRzRzRzRzRzR",
+        "mergedAt": "2025-09-28T12:05:51Z",
+        "createdAt": "2025-09-28T10:09:13Z",
+        "changedFiles": 4,
+        "additions": 7,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready",
+          "tool-calling"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Update for GLM-4.5 Doc transformers version",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25838,
+        "title": "[Bugfix] fix Qwen3VLMoe load when pp > 1",
+        "url": "https://github.com/vllm-project/vllm/pull/25838",
+        "author": "JJJYmmm",
+        "mergedAt": "2025-09-28T17:56:12Z",
+        "createdAt": "2025-09-28T14:23:03Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nfix QwenLM/Qwen3-VL#1523\nTest Plan\ntest with command\npython3 -m vllm.entrypoints.openai.api_server   \n  --model  /path/to/Qwen3-VL-235B-A22B-Instruct   \n  --served-model-name Qwen3-VL-235B-A22B-Instruct   \n  --tensor-parallel-size 4\n  --pipeline-parallel-size 2   \n  --mm-encoder-tp-mode data",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25841,
+        "title": "Remove redundant cudagraph dispatcher warning",
+        "url": "https://github.com/vllm-project/vllm/pull/25841",
+        "author": "mgoin",
+        "mergedAt": "2025-09-28T21:12:42Z",
+        "createdAt": "2025-09-28T17:46:39Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nstop emitting a warning when cudagraph dispatch keys have not been initialized yet\ndrop the unused logger initialization in the dispatcher module\n\nTesting\n\nnot run\n\n\nhttps://chatgpt.com/codex/tasks/task_e_68d972cd488c8329ac1f2d414766678c",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25825,
+        "title": "[Misc] fix tests failure by using current_platform",
+        "url": "https://github.com/vllm-project/vllm/pull/25825",
+        "author": "kingsmad",
+        "mergedAt": "2025-09-29T04:18:57Z",
+        "createdAt": "2025-09-28T07:28:43Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix the local unit test error by using standard platform detection method in vllm\nPurpose\nFix the failing UTs.  Error msg:\n        TILE_SIZE = min(2048, triton.next_power_of_2(n))\n>       if torch.version.hip or torch.version.xpu:\nE       AttributeError: module 'torch.version' has no attribute 'xpu'",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25844,
+        "title": "[P/D] NIXL Updates",
+        "url": "https://github.com/vllm-project/vllm/pull/25844",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-09-29T04:46:30Z",
+        "createdAt": "2025-09-28T21:26:49Z",
+        "changedFiles": 2,
+        "additions": 11,
+        "deletions": 3,
+        "commits": 17,
+        "labels": [
+          "ready",
+          "v1",
+          "kv-connector"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nwith 0.6 release, the parallel posting is now in mainline nixl. We need to opt into this in the final API. Using parallel posting improves post performance\nupdate to ignore \"double frees\" in cases where requests are canceled\n\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR De",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25832,
+        "title": "Add Phi4FlashForCausalLM to _PREVIOUSLY_SUPPORTED_MODELS",
+        "url": "https://github.com/vllm-project/vllm/pull/25832",
+        "author": "tdoublep",
+        "mergedAt": "2025-09-29T05:08:18Z",
+        "createdAt": "2025-09-28T11:56:28Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "new-model",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nSince we stripped out V0, the model Phi4FlashForCausalLM is no longer supported. There is an issue (#23957) open to track the work for porting this model to V1.\nThis PR adds the model to the _PREVIOUSLY_SUPPORTED_MODELS with the last version of vLLM that supported it.\ncc @youkaichao\nTest Pla",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25847,
+        "title": "[XPU]Fix xpu spec decoding UTs, avoid using cuda graph",
+        "url": "https://github.com/vllm-project/vllm/pull/25847",
+        "author": "jikunshang",
+        "mergedAt": "2025-09-29T05:15:10Z",
+        "createdAt": "2025-09-29T01:28:19Z",
+        "changedFiles": 3,
+        "additions": 7,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "speculative-decoding",
+          "ready",
+          "ci/build",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nthis PR fix xpu spec decoding UTs, by avoid using cuda graph for xpu platform.\nTest Plan\nUT:\npytest -v -s v1/spec_decode --ignore=v1/spec_decode/test_max_len.py --ignore=v1/spec_decode/test_tree_attention.py\nTest Result\npass\n\n\n Essential Elements of an Effective PR Description Checklist \n\n T",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25851,
+        "title": "[Bugfix] Fallback ViT attn backend to SDPA for blackwell",
+        "url": "https://github.com/vllm-project/vllm/pull/25851",
+        "author": "ywang96",
+        "mergedAt": "2025-09-29T06:03:51Z",
+        "createdAt": "2025-09-29T04:01:47Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 9,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n#25788 Fixed the issue for Qwen3-VL - while we don't know if xformers is going to work with other head sizes, it's not officially supported yet according to facebookresearch/xformers#1317 (comment). Therefore it's probably safer for us to force ViT backend to SDPA for all models on blackwell",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25331,
+        "title": "[V0 Deprecation][Models] Remove all V0 condition for mm embeddings merge",
+        "url": "https://github.com/vllm-project/vllm/pull/25331",
+        "author": "Isotr0py",
+        "mergedAt": "2025-09-29T06:09:19Z",
+        "createdAt": "2025-09-21T04:35:20Z",
+        "changedFiles": 42,
+        "additions": 13,
+        "deletions": 809,
+        "commits": 6,
+        "labels": [
+          "ready",
+          "llama",
+          "qwen",
+          "deepseek"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\n#25328 has removed all v0 model runners. So we can remove all v0 conditions in model implementation now.\n\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

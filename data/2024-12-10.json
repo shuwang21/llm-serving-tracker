@@ -1,0 +1,335 @@
+{
+  "date": "2024-12-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-10T08:00:00+00:00",
+  "utc_end": "2024-12-11T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:10:36.323032+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2433,
+        "title": "feat: support sgl-kernel PyPI",
+        "url": "https://github.com/sgl-project/sglang/pull/2433",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-10T22:06:19Z",
+        "createdAt": "2024-12-10T22:03:59Z",
+        "changedFiles": 4,
+        "additions": 97,
+        "deletions": 10,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2434,
+        "title": "fix: use manylinux2014_x86_64 tag",
+        "url": "https://github.com/sgl-project/sglang/pull/2434",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-10T22:17:42Z",
+        "createdAt": "2024-12-10T22:17:33Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2435,
+        "title": "fix: compatible with PEP 440",
+        "url": "https://github.com/sgl-project/sglang/pull/2435",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-10T22:48:47Z",
+        "createdAt": "2024-12-10T22:48:28Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 9199,
+        "title": "Add example of helm chart for vllm deployment on k8s",
+        "url": "https://github.com/vllm-project/vllm/pull/9199",
+        "author": "mfournioux",
+        "mergedAt": "2024-12-10T09:19:27Z",
+        "createdAt": "2024-10-09T16:20:34Z",
+        "changedFiles": 20,
+        "additions": 1206,
+        "deletions": 0,
+        "commits": 90,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds an example of helm chart to deploy vllm on Kubernetes cluster. The goal of this PR is to have a deployment example in order to have the best configuration for k8s.\nThis example implements an autonomous deployment for vllm with k8s probes (startup, readiness, liveness) which will wait fo",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11039,
+        "title": "[Bugfix] Handle <|tool_call|> token in granite tool parser",
+        "url": "https://github.com/vllm-project/vllm/pull/11039",
+        "author": "tjohnson31415",
+        "mergedAt": "2024-12-10T10:27:11Z",
+        "createdAt": "2024-12-09T22:24:55Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Small tweak to the granite tool parser to support handle the <|tool_call|> token that can be generated, eg.\n<|start of role|>user<|end of role|>What is temperature in Boston?<|end of text|>\n<|start of role|>assistant<|end of role|><|tool call|>[{\u201cname\u201d: \u201cget temp\u201d, ...}]<|end of text|>\n<|start of ro",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11003,
+        "title": "[Misc][LoRA] Add PEFTHelper  for LoRA ",
+        "url": "https://github.com/vllm-project/vllm/pull/11003",
+        "author": "jeejeelee",
+        "mergedAt": "2024-12-10T11:12:01Z",
+        "createdAt": "2024-12-09T03:42:54Z",
+        "changedFiles": 4,
+        "additions": 160,
+        "deletions": 28,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis PR introduces a new PEFTHelper class to  LoRA  feature management , include:\n\nBuilt-in validation for unsupported feature (RSLoRA, DoRA and so on) , and  enhances error handling by explicitly throwing exceptions for unsupported features.\nMake it easier to integrate future PEFT featur",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11036,
+        "title": "[Bugfix] Backport request id validation to v0",
+        "url": "https://github.com/vllm-project/vllm/pull/11036",
+        "author": "joerunde",
+        "mergedAt": "2024-12-10T16:38:23Z",
+        "createdAt": "2024-12-09T21:59:48Z",
+        "changedFiles": 2,
+        "additions": 5,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR:\n\nBackports the request id uniqueness validation from the v1 engine to the v0 engine. This prevents the engine from hanging on requests with duplicate request ids and failing to shutdown without kill -9\nChanges the KeyError to a ValueError for one of the two places where the request id valid",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11022,
+        "title": "[BUG] Remove token param #10921",
+        "url": "https://github.com/vllm-project/vllm/pull/11022",
+        "author": "flaviabeo",
+        "mergedAt": "2024-12-10T17:38:16Z",
+        "createdAt": "2024-12-09T15:18:55Z",
+        "changedFiles": 1,
+        "additions": 29,
+        "deletions": 34,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Set the HF_TOKEN environment variable as recommended\n\nFIX #10921",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10576,
+        "title": "[Core] Update to outlines >= 0.1.8",
+        "url": "https://github.com/vllm-project/vllm/pull/10576",
+        "author": "russellb",
+        "mergedAt": "2024-12-10T20:08:16Z",
+        "createdAt": "2024-11-22T15:36:18Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR updates to the latest release of outlines that works with vllm.\nIt is a draft while we wait for 0.1.8 to be on pypi.\nFIX #3794\nFIX #10489\n279ccc9dd [Core] Update to outlines >= 0.1.8\ncommit 279ccc9ddd20094b8ac94e245718d534515ac6b9\nAuthor: Russell Bryant rbryant@redhat.com\nDate:   Thu Nov 21 ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11059,
+        "title": "[torch.compile] add a flag to track batchsize statistics",
+        "url": "https://github.com/vllm-project/vllm/pull/11059",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-10T20:40:52Z",
+        "createdAt": "2024-12-10T09:21:03Z",
+        "changedFiles": 4,
+        "additions": 37,
+        "deletions": 1,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I find that #11031 only records the statistics from the engine level, which is not enough.\nwe need to record the forward batchsize for every model forward, including using cudagraph or not.\nthen we can have accurate statistics of batchsizes, and can optimize the shapes we want to compile.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11061,
+        "title": "[V1][Bugfix] Always set enable_chunked_prefill = True for V1",
+        "url": "https://github.com/vllm-project/vllm/pull/11061",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-12-10T22:41:23Z",
+        "createdAt": "2024-12-10T10:18:41Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 9,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a bug in initializing the OpenAI server with V1: Currently, the server fails for some models with the error message: ValueError: max_num_batched_tokens (2048) is smaller than max_model_len (8192). This is because enable_chunked_prefill is not properly set.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11071,
+        "title": "[Bugfix] Fix Mamba multistep",
+        "url": "https://github.com/vllm-project/vllm/pull/11071",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2024-12-11T00:16:22Z",
+        "createdAt": "2024-12-10T21:17:57Z",
+        "changedFiles": 2,
+        "additions": 66,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Implements advance_step for PlaceholderAttention so that Mamba and other attention-free models function with multistep scheduling.\nFixes the following error in buildkite\nValueError: Multi-Step not supported for attention backend: NO_ATTENTION. Set VLLM_ATTENTION_BACKEND to a value from [\u2018FLASH_ATTN\u2019",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9057,
+        "title": "[Misc] LoRA + Chunked Prefill",
+        "url": "https://github.com/vllm-project/vllm/pull/9057",
+        "author": "aurickq",
+        "mergedAt": "2024-12-11T02:09:20Z",
+        "createdAt": "2024-10-03T23:08:10Z",
+        "changedFiles": 12,
+        "additions": 49,
+        "deletions": 20,
+        "commits": 16,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Make LoRA work with chunked prefill, taking the same approach as #4994 but updated to latest code.\nAlso needed to modify the request sorting by the scheduler so prefill sequences always precede decoding sequences.\nFIX #xxxx (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ T",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10992,
+        "title": "[Model] PP support for Mamba-like models",
+        "url": "https://github.com/vllm-project/vllm/pull/10992",
+        "author": "mzusman",
+        "mergedAt": "2024-12-11T02:53:37Z",
+        "createdAt": "2024-12-08T15:52:18Z",
+        "changedFiles": 11,
+        "additions": 229,
+        "deletions": 81,
+        "commits": 31,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Adds PP support for Mamba-like models (Jamba, Mamba, MambaFalcon, etc..)\nCC @tlrmchlsmth",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11069,
+        "title": "Fix streaming for granite tool call when <|tool_call|> is present",
+        "url": "https://github.com/vllm-project/vllm/pull/11069",
+        "author": "maxdebayser",
+        "mergedAt": "2024-12-11T04:51:40Z",
+        "createdAt": "2024-12-10T18:02:24Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is a follow up for the streaming case for this PR: #11039\ncc: @tjohnson31415 , @DarkLight1337",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10991,
+        "title": "[CI/Build] Check transformers v4.47",
+        "url": "https://github.com/vllm-project/vllm/pull/10991",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-11T05:02:02Z",
+        "createdAt": "2024-12-08T13:24:43Z",
+        "changedFiles": 3,
+        "additions": 3,
+        "deletions": 12,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "See if it's safe to update to transformers v4.47 by running our CI on the new version.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

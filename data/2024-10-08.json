@@ -1,0 +1,349 @@
+{
+  "date": "2024-10-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-08T07:00:00+00:00",
+  "utc_end": "2024-10-09T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:04:05.208212+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1605,
+        "title": "Release v0.3.3",
+        "url": "https://github.com/sgl-project/sglang/pull/1605",
+        "author": "merrymercy",
+        "mergedAt": "2024-10-08T19:58:42Z",
+        "createdAt": "2024-10-07T21:31:15Z",
+        "changedFiles": 3,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1615,
+        "title": "[Minor] Fix logging typo",
+        "url": "https://github.com/sgl-project/sglang/pull/1615",
+        "author": "amosyou",
+        "mergedAt": "2024-10-09T04:11:19Z",
+        "createdAt": "2024-10-09T03:27:09Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "minor typo in logging the MLA optimization setting.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 9131,
+        "title": "[Core][Frontend] Add Support for Inference Time mm_processor_kwargs",
+        "url": "https://github.com/vllm-project/vllm/pull/9131",
+        "author": "alex-jw-brooks",
+        "mergedAt": "2024-10-08T14:12:56Z",
+        "createdAt": "2024-10-07T16:39:08Z",
+        "changedFiles": 21,
+        "additions": 443,
+        "deletions": 121,
+        "commits": 18,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #8742\nThis PR adds support for allowing mm_processor_kwargs provided at inference time. This is a follow-up to the PR which added support for them at initialization time: #8657; with this, we can pass a mm_processor_kwargs dict at inference time, whose keys take precendence over the init time mm",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9151,
+        "title": "[Frontend] Add Early Validation For Chat Template / Tool Call Parser",
+        "url": "https://github.com/vllm-project/vllm/pull/9151",
+        "author": "alex-jw-brooks",
+        "mergedAt": "2024-10-08T14:31:26Z",
+        "createdAt": "2024-10-08T08:25:22Z",
+        "changedFiles": 5,
+        "additions": 155,
+        "deletions": 72,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds some validation for quick checks that can be done prior to loading the model when starting the server. Currently, we do validate, but not until after the model is loaded, which can take a little while\nFIX #7780\nExamples:\n\nChat template\n\npython -m vllm.entrypoints.openai.api_server \\\n   ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8758,
+        "title": "[CI/Build] Add examples folder into Docker image so that we can leverage the templates*.jinja when serving models",
+        "url": "https://github.com/vllm-project/vllm/pull/8758",
+        "author": "panpan0000",
+        "mergedAt": "2024-10-08T16:37:34Z",
+        "createdAt": "2024-09-24T02:45:47Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #NA (link existing issues this PR will resolve)\nFor lots of open source models, we will have to do as below\ndocker run \n    vllm/vllm-openai:latest \\\n    --model xxxx\n    --chat-template template-xxx.jinja\n\nsince there already some template in examples folders , we can put them into the docker i",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8537,
+        "title": "[Bugfix] fix OpenAI API server startup with --disable-frontend-multiprocessing",
+        "url": "https://github.com/vllm-project/vllm/pull/8537",
+        "author": "dtrifiro",
+        "mergedAt": "2024-10-08T16:38:41Z",
+        "createdAt": "2024-09-17T14:37:31Z",
+        "changedFiles": 2,
+        "additions": 63,
+        "deletions": 5,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "#8491 this causes the http server to always error out when --disable-frontend-multiprocessing is enabled (for example when using embedding models):\nERROR:    [Errno 98] error while attempting to bind on address ('0.0.0.0', 8000): address already in use\n\nBy passing the socket fd to uvicorn, we solve ",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9155,
+        "title": "[Doc] Update vlm.rst to include an example on videos",
+        "url": "https://github.com/vllm-project/vllm/pull/9155",
+        "author": "sayakpaul",
+        "mergedAt": "2024-10-08T18:12:29Z",
+        "createdAt": "2024-10-08T12:31:41Z",
+        "changedFiles": 1,
+        "additions": 27,
+        "deletions": 0,
+        "commits": 7,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "As discussed in #9128 (comment).",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9132,
+        "title": "[Doc] Improve contributing and installation documentation",
+        "url": "https://github.com/vllm-project/vllm/pull/9132",
+        "author": "rafvasq",
+        "mergedAt": "2024-10-08T20:22:08Z",
+        "createdAt": "2024-10-07T17:18:20Z",
+        "changedFiles": 3,
+        "additions": 94,
+        "deletions": 88,
+        "commits": 10,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR tries to improve documentation for potential new developers/contributors. Maybe at some point, there would be a separation between user-installation and developer-installation documentation, but for now I just started by improving the organization and readability of the installation doc and ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9086,
+        "title": "[Bugfix] Try to handle older versions of pytorch",
+        "url": "https://github.com/vllm-project/vllm/pull/9086",
+        "author": "bnellnm",
+        "mergedAt": "2024-10-08T21:28:12Z",
+        "createdAt": "2024-10-05T00:55:21Z",
+        "changedFiles": 3,
+        "additions": 41,
+        "deletions": 21,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Use impl_abstract if register_fake doesn't exist.\ncc @youkaichao , @SageMoore , @ProExpertProg , @gshtras\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This helps vLLM maintain the c",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9162,
+        "title": "mypy: check additional directories",
+        "url": "https://github.com/vllm-project/vllm/pull/9162",
+        "author": "russellb",
+        "mergedAt": "2024-10-08T22:08:23Z",
+        "createdAt": "2024-10-08T17:38:42Z",
+        "changedFiles": 4,
+        "additions": 41,
+        "deletions": 26,
+        "commits": 12,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR turns on checking with mypy for additional parts of the vllm source\ntree. It also refactors how mypy is run to keep the checking consistent between\nthe local dev workflow (format.sh) and the mypy github workflow for CI.\nThis PR is the low hanging fruit to check additional places that do not ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9161,
+        "title": "Add `lm-eval` directly to requirements-test.txt",
+        "url": "https://github.com/vllm-project/vllm/pull/9161",
+        "author": "mgoin",
+        "mergedAt": "2024-10-09T01:22:31Z",
+        "createdAt": "2024-10-08T15:35:08Z",
+        "changedFiles": 5,
+        "additions": 4,
+        "deletions": 6,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We were installing lm-eval without a fixed version, inline during CI tests, so this PR tries to move it to the global test deps and lock onto lm-eval==0.4.4.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9148,
+        "title": "support bitsandbytes quantization with more models",
+        "url": "https://github.com/vllm-project/vllm/pull/9148",
+        "author": "chenqianfzh",
+        "mergedAt": "2024-10-09T01:52:19Z",
+        "createdAt": "2024-10-08T05:21:25Z",
+        "changedFiles": 10,
+        "additions": 164,
+        "deletions": 27,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR made bitsandbytes quantization available with more models.\nThe model verified in my tests are:\n\nFalcon\n\ntiiuae/falcon-7B, quantized in flight with TP = 1 (TP =2 is not supported as the head size is 71, which is indivisible by 2)\nprequant 4bit, alokabhishek/falcon-7b-instruct-bnb-4bit\n\n\nopt\n\n",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9171,
+        "title": "Add classifiers in setup.py",
+        "url": "https://github.com/vllm-project/vllm/pull/9171",
+        "author": "terrytangyuan",
+        "mergedAt": "2024-10-09T02:30:48Z",
+        "createdAt": "2024-10-09T01:25:42Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This will make the package more discoverable on PyPI.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9173,
+        "title": "Update link to KServe deployment guide",
+        "url": "https://github.com/vllm-project/vllm/pull/9173",
+        "author": "terrytangyuan",
+        "mergedAt": "2024-10-09T03:58:49Z",
+        "createdAt": "2024-10-09T01:47:21Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This would be the new overview guide for deploying vLLM via KServe's Hugging Face Runtime (vLLM engine is the default).",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9167,
+        "title": "[Misc] Improve validation errors around best_of and n",
+        "url": "https://github.com/vllm-project/vllm/pull/9167",
+        "author": "tjohnson31415",
+        "mergedAt": "2024-10-09T04:54:48Z",
+        "createdAt": "2024-10-08T20:54:50Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "In the OpenAI server, vLLM supports both the best_of and n sampling parameters. The internal validation of incoming greedy requests currently only checks the value of best_of to see if it is not greater than 1. best_of must be greater than or equal to n, so this effectively validates n as well; howe",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9159,
+        "title": "[Bugfix][Doc] Report neuron error in output",
+        "url": "https://github.com/vllm-project/vllm/pull/9159",
+        "author": "joerowell",
+        "mergedAt": "2024-10-09T05:43:34Z",
+        "createdAt": "2024-10-08T13:37:13Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The current version of setup.py has the wrong error message when the neuron version isn't detected.\nFIX #xxxx (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contri",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9174,
+        "title": "[Model] Remap FP8 kv_scale in CommandR and DBRX",
+        "url": "https://github.com/vllm-project/vllm/pull/9174",
+        "author": "hliuca",
+        "mergedAt": "2024-10-09T06:43:07Z",
+        "createdAt": "2024-10-09T02:09:45Z",
+        "changedFiles": 2,
+        "additions": 14,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FP8 models have kv_scale, k_scale and v_scale. This PR adds the remap to handle kv_scale.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      }
+    ]
+  }
+}

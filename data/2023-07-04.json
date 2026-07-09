@@ -1,0 +1,48 @@
+{
+  "date": "2023-07-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-04T07:00:00+00:00",
+  "utc_end": "2023-07-05T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:09.009142+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 357,
+        "title": "[Server] use get_conversation_template to make model template",
+        "url": "https://github.com/vllm-project/vllm/pull/357",
+        "author": "akxxsb",
+        "mergedAt": "2023-07-05T04:39:59Z",
+        "createdAt": "2023-07-04T09:37:11Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 17,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "we can use get_conversation_template method, then we don't need to specified chat_template,  when new models add,\nwe don't need to change our code, because the get_conversation_template method will first find the correct model adapter\n,then use it's get_default_conv_template to get conv template. wh",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 300,
+        "title": "[PyPI] Bump the version up to v0.1.2",
+        "url": "https://github.com/vllm-project/vllm/pull/300",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-07-05T04:41:53Z",
+        "createdAt": "2023-06-28T21:23:59Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Should be merged after #273",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

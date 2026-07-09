@@ -1,0 +1,836 @@
+{
+  "date": "2025-10-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-10-19T07:00:00+00:00",
+  "utc_end": "2025-10-20T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:24:48.219369+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 11091,
+        "title": "support tokenized batch request",
+        "url": "https://github.com/sgl-project/sglang/pull/11091",
+        "author": "narutolhy",
+        "mergedAt": "2025-10-19T07:05:02Z",
+        "createdAt": "2025-09-30T04:26:46Z",
+        "changedFiles": 1,
+        "additions": 33,
+        "deletions": 6,
+        "commits": 17,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe previous PR #9436 only supported batched requests when the inputs were provided as text.\nThis PR adds support for batched requests when all inputs are input_ids, so the execution path is consistent with the text input case and avoids unnecessary per-request overhead.\n\nModifications\n\nA",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11808,
+        "title": "Tiny add hints when users send requests to wrong place",
+        "url": "https://github.com/sgl-project/sglang/pull/11808",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-19T08:10:21Z",
+        "createdAt": "2025-10-18T09:59:58Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nsee people asking this for so many times... thus pr this\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11804,
+        "title": "Make single-batch overlap compatible with NextN",
+        "url": "https://github.com/sgl-project/sglang/pull/11804",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-19T08:10:45Z",
+        "createdAt": "2025-10-18T08:55:57Z",
+        "changedFiles": 3,
+        "additions": 9,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11786,
+        "title": "Support not officially supported high sgl-kernel version with low srt version",
+        "url": "https://github.com/sgl-project/sglang/pull/11786",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-19T08:11:59Z",
+        "createdAt": "2025-10-18T00:15:11Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nclose #11763\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5162,
+        "title": "Avoid generation gets hanging when user specifies multiple event loops",
+        "url": "https://github.com/sgl-project/sglang/pull/5162",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-19T08:12:49Z",
+        "createdAt": "2025-04-08T13:40:24Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 3,
+        "commits": 8,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nSome users told me that SGLang has a bug that the code hangs, and later I find that it is because the user uses two event loops.\nHere is a min reproducible code I made:\nimport asyncio\n\nfrom sglang import Engine\n\n\ndef run():\n    engine = Engine(model_path=\"Qwen/Qwen2-0.5B-Instruct\", mem_fr",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11805,
+        "title": "Change bf16 to fp8 for some gemms in attention for DeepSeek ckpt v2",
+        "url": "https://github.com/sgl-project/sglang/pull/11805",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-19T08:15:13Z",
+        "createdAt": "2025-10-18T08:58:17Z",
+        "changedFiles": 2,
+        "additions": 107,
+        "deletions": 12,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11827,
+        "title": "Revert \"Fix: Dynamic RoPE Cache Expansion to Prevent Position-ID Out-of-Bounds in EAGLE + Long-Sequence Workloads\"",
+        "url": "https://github.com/sgl-project/sglang/pull/11827",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-19T11:44:06Z",
+        "createdAt": "2025-10-19T11:41:48Z",
+        "changedFiles": 4,
+        "additions": 0,
+        "deletions": 103,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reverts #10788\nThis breaks python -m unittest test_eagle_infer_b.TestEAGLEServer.test_gsm8k. Please fix it @YAMY1234",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11819,
+        "title": "[overlap-spec] fix stop condition and trimming",
+        "url": "https://github.com/sgl-project/sglang/pull/11819",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-19T14:00:20Z",
+        "createdAt": "2025-10-19T05:31:08Z",
+        "changedFiles": 3,
+        "additions": 97,
+        "deletions": 50,
+        "commits": 10,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "sglang/python/sglang/srt/speculative/eagle_info.py\n    \n    \n        Lines 360 to 382\n      in\n      950504d\n    \n  \n  \n    \n\n        \n          \n           # Iterate every accepted token and check if req has finished after append the token \n        \n\n        \n          \n           # should be check",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11652,
+        "title": "[Spec Decoding] Support MTP for dsv3.2",
+        "url": "https://github.com/sgl-project/sglang/pull/11652",
+        "author": "Paiiiiiiiiiiiiii",
+        "mergedAt": "2025-10-19T15:44:22Z",
+        "createdAt": "2025-10-15T05:09:52Z",
+        "changedFiles": 6,
+        "additions": 445,
+        "deletions": 79,
+        "commits": 12,
+        "labels": [
+          "high priority",
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\n\nBased on #11109\nWe have implemented MTP support for DS v3.2 and cuda graph in our in-house maintained version of sglang.\nSince the community has completed the MTP modification, we are ready to contribute this feature back to the community.\npython -m sglang.launch_server --model deepseek",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11834,
+        "title": "[CI] always print back trace in `retry()`",
+        "url": "https://github.com/sgl-project/sglang/pull/11834",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-19T17:12:49Z",
+        "createdAt": "2025-10-19T15:33:04Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The exception traces in CI are always broken. This tries to always print the full stack trace.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11833,
+        "title": "[Test] Add basic matched stop for beta eagle",
+        "url": "https://github.com/sgl-project/sglang/pull/11833",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-19T17:17:00Z",
+        "createdAt": "2025-10-19T15:16:04Z",
+        "changedFiles": 4,
+        "additions": 201,
+        "deletions": 222,
+        "commits": 14,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow-up PR for #11819",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11147,
+        "title": "Deterministic Mode: Add 1-stage triton kernel for prefill",
+        "url": "https://github.com/sgl-project/sglang/pull/11147",
+        "author": "hebiao064",
+        "mergedAt": "2025-10-19T17:47:36Z",
+        "createdAt": "2025-10-01T21:57:19Z",
+        "changedFiles": 5,
+        "additions": 879,
+        "deletions": 46,
+        "commits": 13,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nPart of this Issue: #10278\nRelated PR: #10721\nInspired from @ispobock\nCo-authored with @zminglei @byjiang1996\nBefore this PR:\n              K (Keys, total 9 tokens)\n        \u2554\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2566\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2550\u2557\n        \u2551   Prefix (0-4)    \u2551  Extend (5-8)   \u2551\n        \u2551   [from cache]    ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10994,
+        "title": "[logprobs] Enable local deterministic logrprobs testing with strict threshold",
+        "url": "https://github.com/sgl-project/sglang/pull/10994",
+        "author": "PrinsYin",
+        "mergedAt": "2025-10-19T20:30:39Z",
+        "createdAt": "2025-09-27T18:01:46Z",
+        "changedFiles": 2,
+        "additions": 257,
+        "deletions": 55,
+        "commits": 24,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nNumerical logprobs are highly sensitive to GPU type, kernel backend, PyTorch version, and even kernel launch order. This makes CI-based validation unreliable and noisy.\nThis PR introduces a local, developer-run logprobs test that ensures:\n\nbitwise consistency of logprobs under determinist",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11835,
+        "title": "[CI] Add CI test for DeepSeek V3.2 MTP",
+        "url": "https://github.com/sgl-project/sglang/pull/11835",
+        "author": "Fridge003",
+        "mergedAt": "2025-10-20T00:00:25Z",
+        "createdAt": "2025-10-19T16:22:16Z",
+        "changedFiles": 4,
+        "additions": 112,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11606,
+        "title": "[NVIDIA] FA3/FA4 Fix ",
+        "url": "https://github.com/sgl-project/sglang/pull/11606",
+        "author": "johnnynunez",
+        "mergedAt": "2025-10-20T00:10:10Z",
+        "createdAt": "2025-10-14T10:32:54Z",
+        "changedFiles": 10,
+        "additions": 381,
+        "deletions": 218,
+        "commits": 48,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix FA3/FA4 with latest changes",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11815,
+        "title": "[DeepseekV32] Add fast_topk_transform_ragged_fused kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/11815",
+        "author": "hlu1",
+        "mergedAt": "2025-10-20T00:13:39Z",
+        "createdAt": "2025-10-19T00:21:52Z",
+        "changedFiles": 6,
+        "additions": 201,
+        "deletions": 20,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nAdd a fused kernel for fast_topk_transform_ragged_fused. The difference between this kernel and  fast_topk_transform_fused is that fast_topk_transform_fused outputs indices into the paged kvcache and fast_topk_transform_ragged_fused outputs indices into the ragged kv that's the input to t",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11831,
+        "title": "Fix triton_kernels import error on some hardwares",
+        "url": "https://github.com/sgl-project/sglang/pull/11831",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-20T00:14:47Z",
+        "createdAt": "2025-10-19T14:07:57Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 4,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11810,
+        "title": "Tiny bump DeepEP version in ARM blackwell",
+        "url": "https://github.com/sgl-project/sglang/pull/11810",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-20T00:15:14Z",
+        "createdAt": "2025-10-18T13:58:59Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nnot tested yet\ntested\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11612,
+        "title": "[BugFix] replace the input_to_float8 used in dsv2",
+        "url": "https://github.com/sgl-project/sglang/pull/11612",
+        "author": "Liu-congo",
+        "mergedAt": "2025-10-20T00:34:13Z",
+        "createdAt": "2025-10-14T12:53:01Z",
+        "changedFiles": 1,
+        "additions": 17,
+        "deletions": 18,
+        "commits": 7,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nthis pr is a follow-up for #11272 and #11360\nin previous pr, i fix the ci failure using input_to_float8, after some further exploration, i find that the failure is caused by the improvement in #5549\nthe function was first proposed in #5370 ,\nin it's raw implementation:it create a \"x_s = t",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11778,
+        "title": "[Doc] Update documents for FA4",
+        "url": "https://github.com/sgl-project/sglang/pull/11778",
+        "author": "Fridge003",
+        "mergedAt": "2025-10-20T00:40:38Z",
+        "createdAt": "2025-10-17T19:42:43Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nDepends on #11606\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11832,
+        "title": "fix(ci): Fix CI Monitor limit parameter and add CI Analysis to summary",
+        "url": "https://github.com/sgl-project/sglang/pull/11832",
+        "author": "BBuf",
+        "mergedAt": "2025-10-20T01:08:34Z",
+        "createdAt": "2025-10-19T14:45:22Z",
+        "changedFiles": 3,
+        "additions": 138,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR fixes the CI Monitor workflow and improves its summary report.\nChanges\n1. Fix limit parameter issue\n\nChanged ${{ github.event.inputs.limit || '1000' }} to ${{ inputs.limit || '1000' }} in workflow\nProblem: After manual runs, scheduled runs weren't using the default limit (1000), caus",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11787,
+        "title": "Fix version bump script to handle TOML files with outdated versions",
+        "url": "https://github.com/sgl-project/sglang/pull/11787",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-10-20T01:10:26Z",
+        "createdAt": "2025-10-18T00:17:23Z",
+        "changedFiles": 2,
+        "additions": 46,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The script previously failed to update pyproject_xpu.toml and pyproject_cpu.toml because it used simple string replacement that only worked when files contained the exact current version.\nThis ensures all platform-specific pyproject files stay synchronized regardless of their current version state.\n",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11508,
+        "title": "Improve Kernel Build Time",
+        "url": "https://github.com/sgl-project/sglang/pull/11508",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-10-20T01:11:48Z",
+        "createdAt": "2025-10-12T17:00:53Z",
+        "changedFiles": 2,
+        "additions": 306,
+        "deletions": 4,
+        "commits": 11,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Modifications\n\n\nUse CCACHE to store all build results on runner local path\nAdd profiles for both CMake and Ninja\nAdd a setup script for new CPU runners that would just execute the build actions\nAdd time spent on each build action\n\nBenchmarking and Profiling\n\nBefore (without cache):\n[116/394 419.382s",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10510,
+        "title": "check  master server for mooncake store",
+        "url": "https://github.com/sgl-project/sglang/pull/10510",
+        "author": "huangtingwei9988",
+        "mergedAt": "2025-10-20T01:37:09Z",
+        "createdAt": "2025-09-16T09:19:45Z",
+        "changedFiles": 1,
+        "additions": 57,
+        "deletions": 0,
+        "commits": 19,
+        "labels": [
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nWhen deploying Mooncake Store online, the startup order of Mooncake Store master and sglang may not be guaranteed. Therefore, a check server is added. When Mooncake Store Master has not yet been fully started successfully, sglang waits for the master for 10 minutes to prevent rapid failur",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11733,
+        "title": "chore: bump sgl-kernel version to 0.3.16.post3",
+        "url": "https://github.com/sgl-project/sglang/pull/11733",
+        "author": "sglang-bot",
+        "mergedAt": "2025-10-20T02:44:15Z",
+        "createdAt": "2025-10-16T22:04:14Z",
+        "changedFiles": 4,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 6,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR bumps the sgl-kernel version to 0.3.16.post3 across all relevant files.\nFiles Updated\n\nsgl-kernel/pyproject.toml\nsgl-kernel/pyproject_cpu.toml\nsgl-kernel/pyproject_rocm.toml\nsgl-kernel/python/sgl_kernel/version.py\n\n\ud83e\udd16 Generated with GitHub Actions",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11780,
+        "title": "Recapture cuda graph after model weight update to resolve IMA error ",
+        "url": "https://github.com/sgl-project/sglang/pull/11780",
+        "author": "harrisonlimh",
+        "mergedAt": "2025-10-20T02:50:03Z",
+        "createdAt": "2025-10-17T20:44:15Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\n#11289 - resolve cuda illegal memory access error that occurs after model weight update\n\nModifications\n\nAdd cuda graph reinitializtion step in update_weights_from_disk()\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11594,
+        "title": "[Feature] Use current greenctx stream to communicate in PD-Multiplexing.",
+        "url": "https://github.com/sgl-project/sglang/pull/11594",
+        "author": "ykcombat",
+        "mergedAt": "2025-10-20T02:58:21Z",
+        "createdAt": "2025-10-14T07:13:34Z",
+        "changedFiles": 2,
+        "additions": 48,
+        "deletions": 20,
+        "commits": 6,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIn order to make sure prefill and decode communication are on the right stream with specified SM resouce, pynccl communicator is enabled for PD-Multiplexing.\n\nModifications\n\nAdd resolve stream function to get correct stream for communicating.\nEnable pynccl communicator.\n\n\nChecklist\n\n Form",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11722,
+        "title": "Support mrope triton kernel and add unit test",
+        "url": "https://github.com/sgl-project/sglang/pull/11722",
+        "author": "yuan-luo",
+        "mergedAt": "2025-10-20T03:51:07Z",
+        "createdAt": "2025-10-16T13:33:53Z",
+        "changedFiles": 4,
+        "additions": 630,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIntroduce triton mrope kernel in rotary embedding.\nBefore:\n\nAfter:\n\nAdapted from vLLM.\n\nUnit test passed:\n\n$python -m pytest test_mrope.py\n============================================================================================= test session starts ====================================",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10801,
+        "title": "[PD] Improve eagle acceptance rate by transferring draft model hidden states",
+        "url": "https://github.com/sgl-project/sglang/pull/10801",
+        "author": "ZeldaHuang",
+        "mergedAt": "2025-10-20T03:52:18Z",
+        "createdAt": "2025-09-23T11:58:40Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 16,
+        "commits": 5,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nRef #10059 , This PR transfer the draft model hidden states in spec_info rather than target model  hidden states in pd + eagle, to improve the eagle/mtp acceptance rate in first decode draft forward.\nDepends on #10616\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\nRef #10059 (",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11747,
+        "title": "Tiny clean up for PD module and doc",
+        "url": "https://github.com/sgl-project/sglang/pull/11747",
+        "author": "ShangmingCai",
+        "mergedAt": "2025-10-20T03:52:42Z",
+        "createdAt": "2025-10-17T04:56:24Z",
+        "changedFiles": 4,
+        "additions": 23,
+        "deletions": 5,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nSome minor clean up:\n\nFix missing prefill server port for PD doc\nFix the error caused by empty bootstrap infos after specifying an incorrect PD bootstrap port.\n\n[2025-10-16\u00a014:12:50\u00a0DP1\u00a0TP15\u00a0EP15]\u00a0Scheduler\u00a0hit\u00a0an\u00a0exception:\u00a0Traceback\u00a0(most\u00a0recent\u00a0call\u00a0last):\n\u00a0\u00a0File\u00a0\"/usr/local/lib/python",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11846,
+        "title": "Revert \"[CI Monitor] Ci monitor only deal with main branch in default\"",
+        "url": "https://github.com/sgl-project/sglang/pull/11846",
+        "author": "BBuf",
+        "mergedAt": "2025-10-20T05:06:40Z",
+        "createdAt": "2025-10-20T04:08:22Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 35,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reverts #11538",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11396,
+        "title": "[Model] Add Olmo 3 model support",
+        "url": "https://github.com/sgl-project/sglang/pull/11396",
+        "author": "2015aroras",
+        "mergedAt": "2025-10-20T06:59:16Z",
+        "createdAt": "2025-10-09T18:54:25Z",
+        "changedFiles": 8,
+        "additions": 169,
+        "deletions": 4,
+        "commits": 7,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nOlmo3 will be released soon and has support in other libraries like transformers and vllm. This PR adds support for Olmo3 to sglang.\n@zhaochenyang20\nModifications\n\nThis PR modifies the Olmo2 implementation to support Olmo3. This approach matches what was done for vllm, since the architec",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 27159,
+        "title": "output type conversion fix",
+        "url": "https://github.com/vllm-project/vllm/pull/27159",
+        "author": "jianyuh",
+        "mergedAt": "2025-10-19T08:10:07Z",
+        "createdAt": "2025-10-19T01:10:26Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The original code assumes the output type is FP16. When using BF16 / FP32 output type, it has accuracy issues.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27164,
+        "title": "[Chore] Separate out `vllm.utils.network_utils`",
+        "url": "https://github.com/vllm-project/vllm/pull/27164",
+        "author": "iAmir97",
+        "mergedAt": "2025-10-19T10:06:32Z",
+        "createdAt": "2025-10-19T04:11:40Z",
+        "changedFiles": 37,
+        "additions": 516,
+        "deletions": 487,
+        "commits": 7,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "v1",
+          "multi-modality",
+          "kv-connector"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Part of #26900\n\nvllm.utils.close_sockets -> vllm.utils.network_utils.close_sockets\nvllm.utils.get_ip -> vllm.utils.network_utils.get_ip\nvllm.utils.test_loopback_bind -> vllm.utils.network_utils.test_loopback_bind\nvllm.utils.get_loopback_ip -> vllm.utils.network_utils.get_loopback_ip\nvllm.utils.is_va",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27169,
+        "title": "[Misc] Move utils to avoid conflicts with stdlib, and move tests",
+        "url": "https://github.com/vllm-project/vllm/pull/27169",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-19T12:20:55Z",
+        "createdAt": "2025-10-19T10:13:03Z",
+        "changedFiles": 52,
+        "additions": 246,
+        "deletions": 237,
+        "commits": 4,
+        "labels": [
+          "performance",
+          "frontend",
+          "tpu",
+          "ready",
+          "v1",
+          "multi-modality",
+          "tool-calling",
+          "qwen",
+          "deepseek"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nvllm.utils.asyncio -> vllm.utils.async_utils\nvllm.utils.collections -> vllm.utils.collection_utils\nvllm.utils.functools -> vllm.utils.func_utils\n\nAlso split out tests from tests/test_utils.py.\nBased on #27022 (comment)\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Descripti",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26586,
+        "title": "[Bugfix] Fix error with penalties when speculative decoding and structural output are enabled",
+        "url": "https://github.com/vllm-project/vllm/pull/26586",
+        "author": "southfreebird",
+        "mergedAt": "2025-10-19T19:24:46Z",
+        "createdAt": "2025-10-10T13:18:21Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix an error that appears after #19482 when logit processors (such as penalties) are enabled together with speculative decoding and structural output. The example of the error:\nFile \"/vllm/model_executor/layers/utils.py\", line 45, in get_token_bin_counts_and_mask\n     bin_counts.scatter_add_(1, toke",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27166,
+        "title": "Fix typo in ValueError message: use `kv_role` instead of `kv_disagg_role`",
+        "url": "https://github.com/vllm-project/vllm/pull/27166",
+        "author": "hyongtao-code",
+        "mergedAt": "2025-10-19T19:47:19Z",
+        "createdAt": "2025-10-19T06:16:06Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nCorrect field name in ValueError message to match the actual parameter kv_role.\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n[\u221a] The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as prov",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27012,
+        "title": "[Model][VLM] Support Bee-8B Model",
+        "url": "https://github.com/vllm-project/vllm/pull/27012",
+        "author": "uyzhang",
+        "mergedAt": "2025-10-20T02:31:26Z",
+        "createdAt": "2025-10-16T10:20:52Z",
+        "changedFiles": 7,
+        "additions": 228,
+        "deletions": 0,
+        "commits": 10,
+        "labels": [
+          "documentation",
+          "new-model",
+          "ready",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nSupport Bee-8B-RL and Bee-8B-SFT\nExample Serving Command\nvllm serve \\\n    Open-Bee/Bee-8B-RL \\\n    --served-model-name bee-8b-rl \\\n    --tensor-parallel-size 8 \\\n    --gpu-memory-utilization 0.8 \\\n    --host 0.0.0.0 \\\n    --port 8000 \\\n    --trust-remote-code\nExample Offline Inference\nimport",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25914,
+        "title": "[LoRA] LoRA cuda graph specialization",
+        "url": "https://github.com/vllm-project/vllm/pull/25914",
+        "author": "andylolu2",
+        "mergedAt": "2025-10-20T04:21:10Z",
+        "createdAt": "2025-09-30T00:15:42Z",
+        "changedFiles": 9,
+        "additions": 122,
+        "deletions": 34,
+        "commits": 17,
+        "labels": [
+          "ready",
+          "v1",
+          "llama"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nCurrently when enabling LoRA (with cuda graphs, which is necessary for reasonable speed) adds overhead to the normal inference path, even if there are no active LoRA adapters. This is because we currently only capture cuda graphs with LoRA operations included.\nIn this PR, I make some small c",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26746,
+        "title": "[Kernel] Accelerate solve_tril with TMA",
+        "url": "https://github.com/vllm-project/vllm/pull/26746",
+        "author": "ZJY0516",
+        "mergedAt": "2025-10-20T05:39:03Z",
+        "createdAt": "2025-10-14T01:12:09Z",
+        "changedFiles": 3,
+        "additions": 412,
+        "deletions": 301,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\ncherry-pick the optimization from fla-org/flash-linear-attention#550: accelerate solve_tril with TMA\nTest Plan\nvllm serve Qwen/Qwen3-Next-80B-A3B-Instruct -tp 4 --served-model-name qwen3-next\n\nvllm bench serve \\\n--model qwen3-next \\\n--dataset-name random \\\n--tokenizer Qwen/Qwen3-Next-80B-A3B",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

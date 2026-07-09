@@ -1,0 +1,30 @@
+{
+  "date": "2023-02-24",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-02-24T08:00:00+00:00",
+  "utc_end": "2023-02-25T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:22:01.377500+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1,
+        "title": "Fix a bug in tying OPT embeddings",
+        "url": "https://github.com/vllm-project/vllm/pull/1",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-02-25T00:29:37Z",
+        "createdAt": "2023-02-25T00:27:11Z",
+        "changedFiles": 2,
+        "additions": 25,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a bug in supporting OPT-350m/OPT-6.7b/OPT-13b and OPT-IML models.\nThe bug happened because our model code didn't include some methods that were required to tie the input and output embeddings.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

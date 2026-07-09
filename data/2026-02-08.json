@@ -1,0 +1,611 @@
+{
+  "date": "2026-02-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2026-02-08T08:00:00+00:00",
+  "utc_end": "2026-02-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T22:56:20.534318+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 18161,
+        "title": "[diffusion] feat: support efficient sequence shard",
+        "url": "https://github.com/sgl-project/sglang/pull/18161",
+        "author": "nono-Sang",
+        "mergedAt": "2026-02-08T13:09:40Z",
+        "createdAt": "2026-02-03T08:41:24Z",
+        "changedFiles": 3,
+        "additions": 103,
+        "deletions": 16,
+        "commits": 6,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nFor video models, when SGLang enables SP (Sequence Parallelism), it uses frame-level partitioning. The number of frames needs to be adjusted to meet the divisibility condition, and the number of padding tokens is pad_frames * latent_H * latent_W. However, we can directly partition along ",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 18189,
+        "title": "[ModelOpt] Fix broken Qwen3-235B-A22B-Instruct-2507-NVFP4 launch",
+        "url": "https://github.com/sgl-project/sglang/pull/18189",
+        "author": "vincentzed",
+        "mergedAt": "2026-02-08T14:35:28Z",
+        "createdAt": "2026-02-03T17:22:01Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nSupport https://huggingface.co/nvidia/Qwen3-235B-A22B-Instruct-2507-NVFP4\nPreviously it failed to launch on SGLang.\nHowever, the 30B NVFP4 always worked.\nhttps://huggingface.co/nvidia/Qwen3-30B-A3B-NVFP4/blob/main/hf_quant_config.json\nRoot cause\nQwen3-235B-A22B-Instruct-2507-NVFP4 (Broken",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 18438,
+        "title": "[diffusion] refactor: group component loaders under the component_loaders/ directory",
+        "url": "https://github.com/sgl-project/sglang/pull/18438",
+        "author": "mickqian",
+        "mergedAt": "2026-02-08T15:02:27Z",
+        "createdAt": "2026-02-08T05:01:36Z",
+        "changedFiles": 13,
+        "additions": 36,
+        "deletions": 13,
+        "commits": 5,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 18396,
+        "title": "Fix TRT-LLM MLA backend applying k_scale to BF16 KV cache in BMM1",
+        "url": "https://github.com/sgl-project/sglang/pull/18396",
+        "author": "debo3",
+        "mergedAt": "2026-02-08T15:11:16Z",
+        "createdAt": "2026-02-07T06:13:21Z",
+        "changedFiles": 1,
+        "additions": 36,
+        "deletions": 12,
+        "commits": 4,
+        "labels": [
+          "blackwell",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "When a model checkpoint contains KV cache scaling factors (k_scale/v_scale) but the KV cache dtype is BF16 (not FP8), the TRT-LLM MLA backend unconditionally applies k_scale in the BMM1 attention score computation. This is incorrect because k_scale is a quantization compensation factor that should o",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 18446,
+        "title": "[diffusion] chore: revise process title",
+        "url": "https://github.com/sgl-project/sglang/pull/18446",
+        "author": "mickqian",
+        "mergedAt": "2026-02-08T16:14:06Z",
+        "createdAt": "2026-02-08T13:47:19Z",
+        "changedFiles": 1,
+        "additions": 29,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "after this PR, the setting of --num-gpus=4 --ulysses-degree=2 --enable-cfg-parallel would look like this in nvidia-smi:\n|    3   N/A  N/A         3356502      C   sgl_diffusion::scheduler_U0_C0         6148MiB |\n|    4   N/A  N/A         3356503      C   sgl_diffusion::scheduler_U1_C0         6148Mi",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17777,
+        "title": "Add tensor parallelism support to LFM2 ShortConv layers",
+        "url": "https://github.com/sgl-project/sglang/pull/17777",
+        "author": "tugot17",
+        "mergedAt": "2026-02-08T16:52:47Z",
+        "createdAt": "2026-01-26T18:21:53Z",
+        "changedFiles": 2,
+        "additions": 48,
+        "deletions": 60,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I just realised that the LFM models do not support the the tensor parallelsim. This is because we used the nn.Linear for in/out projections in ShortConv\nThis PR fixes this.\nChanges\n\nUse MergedColumnParallelLinear for in_proj to shard B, C, x projections separately.\nUse RowParallelLinear with input_i",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 18440,
+        "title": "[Kimi-K2.5] Fix missing `quant_config` in `KimiK25`",
+        "url": "https://github.com/sgl-project/sglang/pull/18440",
+        "author": "mmangkad",
+        "mergedAt": "2026-02-08T20:02:45Z",
+        "createdAt": "2026-02-08T07:26:30Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix missing quant_config in KimiK25 causing nvidia/Kimi-K2.5-NVFP4 to use bf16 KV cache instead of fp8.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit t",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 18453,
+        "title": "Update author information in pyproject.toml",
+        "url": "https://github.com/sgl-project/sglang/pull/18453",
+        "author": "merrymercy",
+        "mergedAt": "2026-02-08T20:22:55Z",
+        "createdAt": "2026-02-08T19:59:31Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "dependencies",
+          "sgl-kernel",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 18224,
+        "title": "[ModelOPT] Support Qwen 3 Next Coder NVFP4",
+        "url": "https://github.com/sgl-project/sglang/pull/18224",
+        "author": "vincentzed",
+        "mergedAt": "2026-02-08T22:29:07Z",
+        "createdAt": "2026-02-04T04:55:15Z",
+        "changedFiles": 1,
+        "additions": 35,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis branch include important bugfix for qwen 3 coder next nvfp4\nB300\nsglang serve --model vincentzed-hf/Qwen3-Coder-Next-NVFP4 --quantization modelopt_fp4\nWe provide cmd to reproduce the same checkpoint in ModelOpt in the model card above.\nhttps://huggingface.co/vincentzed-hf/Qwen3-Coder",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 17810,
+        "title": "Refactoring Mooncake TE as a shared distributed component",
+        "url": "https://github.com/sgl-project/sglang/pull/17810",
+        "author": "ShangmingCai",
+        "mergedAt": "2026-02-09T02:53:11Z",
+        "createdAt": "2026-01-27T08:50:13Z",
+        "changedFiles": 8,
+        "additions": 121,
+        "deletions": 37,
+        "commits": 10,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation and Modifications\nBy migrating the Mooncake transfer engine from the disaggregation module to the distributed module, various advanced features such as PD, HiCache, and EPD can reuse the same transfer engine instance, instead of initializing and using different instances in different modu",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17483,
+        "title": "[BugFix][PD]Fix metadata_buffer_index leak when aborted in PD",
+        "url": "https://github.com/sgl-project/sglang/pull/17483",
+        "author": "ZhengWG",
+        "mergedAt": "2026-02-09T03:34:30Z",
+        "createdAt": "2026-01-21T09:15:54Z",
+        "changedFiles": 2,
+        "additions": 30,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIn PD mode, when requests are aborted via abort_request(), the metadata_buffer_index allocated in pop_bootstrapped() is not freed, causing a memory leak. This happens when requests in the waiting_queue have already been allocated a metadata_buffer_index but are aborted before entering the",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 18105,
+        "title": "fix: fix the wrong return value type of draft model runner",
+        "url": "https://github.com/sgl-project/sglang/pull/18105",
+        "author": "acelyc111",
+        "mergedAt": "2026-02-09T04:51:35Z",
+        "createdAt": "2026-02-02T08:22:26Z",
+        "changedFiles": 3,
+        "additions": 16,
+        "deletions": 9,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nFix #15207 (comment), the conflict is introduced by #15400.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Wr",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 18455,
+        "title": "fix: use --no-build-isolation for human-eval install",
+        "url": "https://github.com/sgl-project/sglang/pull/18455",
+        "author": "harvenstar",
+        "mergedAt": "2026-02-09T05:48:03Z",
+        "createdAt": "2026-02-08T23:25:58Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nsetuptools>=81 removed pkg_resources, causing pip install -e . to fail for human-eval in isolated build env\nAdd --no-build-isolation to skip isolated build env and use system setuptools\n\nFixes https://github.com/sgl-project/sglang/actions/runs/21799185200/job/62898578639?pr=18273",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 18423,
+        "title": "[AMD] Update aiter to v0.1.10.post2",
+        "url": "https://github.com/sgl-project/sglang/pull/18423",
+        "author": "bingxche",
+        "mergedAt": "2026-02-09T06:08:25Z",
+        "createdAt": "2026-02-07T16:55:19Z",
+        "changedFiles": 15,
+        "additions": 79,
+        "deletions": 41,
+        "commits": 6,
+        "labels": [
+          "amd",
+          "Multi-modal",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nUpgrades the AITER from v0.1.9.post1 to v0.1.10.post2\n\nModifications\n\nDockerfile:  Bumps the AITER_COMMIT tag in rocm.Dockerfile and updates the pip uninstall package name from aiter to amd-aiter.\nAttention backend API update (aiter_backend.py): Adapts to a new AITER API\nWarmup script rew",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 18452,
+        "title": "[AMD] CI - Fix AMD daily image release and install dependency",
+        "url": "https://github.com/sgl-project/sglang/pull/18452",
+        "author": "yctseng0211",
+        "mergedAt": "2026-02-09T06:20:09Z",
+        "createdAt": "2026-02-08T17:20:54Z",
+        "changedFiles": 2,
+        "additions": 6,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "amd",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\n\nFix AMD daily image release (20260208)\nhttps://github.com/sgl-project/sglang/actions/runs/21798843095/job/62890817535\n\n\nFix scripts/ci/amd/amd_ci_install_dependency.sh,\n\n\n\nModifications\n\nAccuracy Tests\nhttps://github.com/sgl-project/sglang/actions/runs/21802205582/job/62899552763\nBenchm",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 18171,
+        "title": "[DLLM] Add JointThreshold algorithm for joint M2T and T2T decoding",
+        "url": "https://github.com/sgl-project/sglang/pull/18171",
+        "author": "edwardzjl",
+        "mergedAt": "2026-02-09T06:20:46Z",
+        "createdAt": "2026-02-03T12:34:05Z",
+        "changedFiles": 2,
+        "additions": 164,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis PR introduces the JointThreshold algorithm, which enables the model to simultaneously fill in masks and refine previously generated tokens in a single iterative loop.\nModifications\nAdded JointThreshold Algorithm: Implemented a new DLLM algorithm that supports both Mask-to-Token (M2T)",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 17828,
+        "title": "Make compressed-tensors MoEs support ignored layers",
+        "url": "https://github.com/sgl-project/sglang/pull/17828",
+        "author": "LHXuuu",
+        "mergedAt": "2026-02-09T06:37:33Z",
+        "createdAt": "2026-01-27T12:41:35Z",
+        "changedFiles": 2,
+        "additions": 80,
+        "deletions": 22,
+        "commits": 5,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nWhen the MoE layer is not fully quantized, certain layers must be ignored during weight loading.\n\nModifications\n\nExtract the common function get_scheme_dict to provide a unified interface for both Linear and FusedMoE layers, determining whether a rollback is needed and matching the approp",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 32493,
+        "title": "Add embedding input functionality for disabled modalities [remake]",
+        "url": "https://github.com/vllm-project/vllm/pull/32493",
+        "author": "reaganjlee",
+        "mergedAt": "2026-02-08T12:57:17Z",
+        "createdAt": "2026-01-16T23:28:17Z",
+        "changedFiles": 10,
+        "additions": 226,
+        "deletions": 77,
+        "commits": 17,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "v1",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Cleaner remake of #31506.\nPurpose\nResolves part of #21943. Previously, a change was made to implicitly make a model language-model only (#22299) when all modalities had limits set to 0. However, some users may want to input embeddings as an input while still saving on memory from the unused encoder.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 33771,
+        "title": "[Revert] Fix performance regression for GLM-4.7-GPTQ decode and MTP acceptance rate",
+        "url": "https://github.com/vllm-project/vllm/pull/33771",
+        "author": "aabbccddwasd",
+        "mergedAt": "2026-02-08T16:13:24Z",
+        "createdAt": "2026-02-04T06:25:57Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFix performance regressions introduced by two recent commits:\n\ne0327c9db (#31773) - Decode performance regression\n- 654a71fc3 (#32805) - MTP (Multi-Token Prediction) acceptance rate regression\n\nAffected Model: GLM-4.7-GPTQ-INT4-INT8MIX\n\nModel body: int4/int8 mixed quantization\nMTP module (la",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 34088,
+        "title": "[BugFix] Change support no act and mul for marlin",
+        "url": "https://github.com/vllm-project/vllm/pull/34088",
+        "author": "TomerBN-Nvidia",
+        "mergedAt": "2026-02-08T17:18:22Z",
+        "createdAt": "2026-02-08T13:57:39Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "bug",
+          "ready",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nEnable _supports_no_act_and_mul for Marlin MoE experts.\nThe Marlin fused MoE kernel already supports the no-act-and-mul path, but the _supports_no_act_and_mul() flag in MarlinExpertsBase was set to False. This PR flips it to True to reflect the existing support.\n\n\n Essential Elements of an E",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 33735,
+        "title": "[torch.compile] Add an option to force-enable the MOE cold start optimization",
+        "url": "https://github.com/vllm-project/vllm/pull/33735",
+        "author": "zou3519",
+        "mergedAt": "2026-02-08T18:42:56Z",
+        "createdAt": "2026-02-03T21:43:16Z",
+        "changedFiles": 3,
+        "additions": 18,
+        "deletions": 12,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previously when speculative decoding was enabled, we would force disable the MOE cold start optimization. I have some spec decoding models where I'm sure the optimization applies, so I wanted a flag to force-enable this.\nThis does not change the default behavior: the default behavior is still \"on du",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 32958,
+        "title": "glm 4.6 fused tuned inference config for B200",
+        "url": "https://github.com/vllm-project/vllm/pull/32958",
+        "author": "navmarri14",
+        "mergedAt": "2026-02-08T18:55:48Z",
+        "createdAt": "2026-01-23T19:02:49Z",
+        "changedFiles": 1,
+        "additions": 163,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds a tuned fused MoE kernel configuration for the GLM-4.6 MoE architecture on NVIDIA B200 GPUs using FP8 quantization.\nSpecifically, it targets the configuration:\nExperts (E): 160\nSharded size N=384 for TP=4\nDevice: NVIDIA B200\nDtype: fp8_w8a8\nPreviously, vLLM lacked a static configuration",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 33786,
+        "title": "Add support for ModelOpt MXFP8 dense models",
+        "url": "https://github.com/vllm-project/vllm/pull/33786",
+        "author": "danisereb",
+        "mergedAt": "2026-02-08T19:16:48Z",
+        "createdAt": "2026-02-04T10:36:11Z",
+        "changedFiles": 6,
+        "additions": 375,
+        "deletions": 14,
+        "commits": 9,
+        "labels": [
+          "documentation",
+          "ready",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAdd support for ModelOpt MXFP8 dense models.\nNo support for MoE yet.\nRelated PRs\nNVIDIA/Model-Optimizer#736\nTest Plan\nUse this LLM model (BF16):\nhttps://huggingface.co/nvidia/OpenMath2-Llama3.1-8B\nConvert the model to MXFP8 using ModelOpt:\nexport MODEL_PATH=/my_home/hf_models/nvidia/OpenMath",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 30525,
+        "title": "[Release 2.10] Update to Torch 2.10 - final release",
+        "url": "https://github.com/vllm-project/vllm/pull/30525",
+        "author": "atalman",
+        "mergedAt": "2026-02-08T21:51:09Z",
+        "createdAt": "2025-12-11T23:52:48Z",
+        "changedFiles": 17,
+        "additions": 130,
+        "deletions": 78,
+        "commits": 19,
+        "labels": [
+          "documentation",
+          "rocm",
+          "ci/build",
+          "v1",
+          "cpu",
+          "gpt-oss",
+          "nvidia",
+          "ready-run-all-tests"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "NoteCursor Bugbot is generating a summary for commit 37af14c52963e6d528866dded7f51985a1fcef7e. Configure here.\n\n\nNoteUpgrade to PyTorch 2.10.0 across the project\n\nBumps torch/torchaudio/torchvision to 2.10.0 (and torchvision 0.25.0), updates CMake supported torch versions to 2.10.0, and refreshes re",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 34027,
+        "title": "[bug-fix] supported_tasks is breaking backward compatibility at init_app_state",
+        "url": "https://github.com/vllm-project/vllm/pull/34027",
+        "author": "kouroshHakha",
+        "mergedAt": "2026-02-09T01:46:46Z",
+        "createdAt": "2026-02-06T23:26:09Z",
+        "changedFiles": 1,
+        "additions": 26,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "bug",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "init_app_state has now added supported_task as a mandatory input which breaks applications that integrate with vllm at this layer.\nengine_client is the source of truth for supported_tasks and it's already a parameter to the init_app_state helper. This PR makes supported_tasks param optional and in c",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 34103,
+        "title": "[Tiny] Rename encoder budget file to more specific name ",
+        "url": "https://github.com/vllm-project/vllm/pull/34103",
+        "author": "reaganjlee",
+        "mergedAt": "2026-02-09T03:48:19Z",
+        "createdAt": "2026-02-08T21:20:13Z",
+        "changedFiles": 5,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n#33559 (comment)\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 31127,
+        "title": "[Frontend][last/5] Make pooling entrypoints request schema consensus. ",
+        "url": "https://github.com/vllm-project/vllm/pull/31127",
+        "author": "noooop",
+        "mergedAt": "2026-02-09T06:42:38Z",
+        "createdAt": "2025-12-22T07:16:28Z",
+        "changedFiles": 24,
+        "additions": 658,
+        "deletions": 612,
+        "commits": 17,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "ci/build",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nMake pooling entrypoints request schema consensus.\nFix #33813\nTest Plan\nvllm/entrypoints/pooling/\nTest Result\npass\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, su",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 34070,
+        "title": "[BugFix] Fix `fastsafetensors` TP all procs using all GPUs",
+        "url": "https://github.com/vllm-project/vllm/pull/34070",
+        "author": "njhill",
+        "mergedAt": "2026-02-09T07:15:46Z",
+        "createdAt": "2026-02-08T00:46:02Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "bug",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently when used with multi-GPU deployments, fastsafetensors will result in all worker processes initializing a cuda context on all devices, resulting in a significant amount of wasted GPU memory (~ 680MB * (world_size - 1)) per GPU.\n\nThis can be avoided with both of:\n\nDisabling GDS mode for dist",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,453 @@
+{
+  "date": "2026-05-31",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2026-05-31T07:00:00+00:00",
+  "utc_end": "2026-06-01T07:00:00+00:00",
+  "generated_at": "2026-07-08T23:44:25.083257+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 26831,
+        "title": "Fix multi-tokenizer batch request output routing (health stuck at 503)",
+        "url": "https://github.com/sgl-project/sglang/pull/26831",
+        "author": "whybeyoung",
+        "mergedAt": "2026-05-31T07:31:24Z",
+        "createdAt": "2026-05-31T07:12:06Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "In multi-http-worker mode (--tokenizer-worker-num > 1), generate_request called _init_req_state(obj) before _attach_multi_http_worker_info(obj).\nFor a batch request, _init_req_state accesses obj[i], and GenerateReqInput.getitem builds and CACHES the per-index sub-objects (in _sub_obj_cache), copying",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 26797,
+        "title": "[core] Compute token_type_ids in ForwardBatch.init_new",
+        "url": "https://github.com/sgl-project/sglang/pull/26797",
+        "author": "hnyls2002",
+        "mergedAt": "2026-05-31T07:54:50Z",
+        "createdAt": "2026-05-31T01:02:56Z",
+        "changedFiles": 2,
+        "additions": 40,
+        "deletions": 42,
+        "commits": 4,
+        "labels": [
+          "run-ci",
+          "run-ci-extra"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Move the cross-encoder token_type_ids device-tensor build out of ScheduleBatch.prepare_for_extend into ForwardBatch.init_new, so the H2D runs on the forward stream and SB no longer carries a forward-only field. Build expression is unchanged; same data-driven gate (any(r.token_type_ids)).\n\n\nCI States",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26838,
+        "title": "Skip flaky mamba extra_buffer disagg test",
+        "url": "https://github.com/sgl-project/sglang/pull/26838",
+        "author": "ispobock",
+        "mergedAt": "2026-05-31T07:59:04Z",
+        "createdAt": "2026-05-31T07:57:41Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTestDisaggregationHybridAttentionMambaExtraBuffer.test_gsm8k is flaky and blocks unrelated PRs. The regression is upstream and tracked at #15829 (comment) (repro shows score collapses to 0.82 \u2192 0.70 on retry when the test runs after another class in the same Python process; isolated runs ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 26675,
+        "title": "[mem_cache][1/N] refactor: split allocator.py into allocator/ subpackage",
+        "url": "https://github.com/sgl-project/sglang/pull/26675",
+        "author": "alphabetc1",
+        "mergedAt": "2026-05-31T12:31:30Z",
+        "createdAt": "2026-05-29T06:52:03Z",
+        "changedFiles": 4,
+        "additions": 212,
+        "deletions": 148,
+        "commits": 1,
+        "labels": [
+          "run-ci",
+          "run-ci-extra"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFirst PR of the issue #25371 (parent: #24335) allocator-promotion series. Splits allocator.py into a dedicated allocator/ subpackage with one file per family, per the parent issue's design rule.\nFollow-up PRs in this series will move SWATokenToKVPoolAllocator/HiSparse allocator/mamba allo",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 26569,
+        "title": "[bugfix] mooncake store double-tag bug fix",
+        "url": "https://github.com/sgl-project/sglang/pull/26569",
+        "author": "huangtingwei9988",
+        "mergedAt": "2026-05-31T22:15:38Z",
+        "createdAt": "2026-05-28T10:41:28Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nSpeed Tests and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark res",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26682,
+        "title": "[CI] Bump xeon PR test unit tests timeout to 60 minutes",
+        "url": "https://github.com/sgl-project/sglang/pull/26682",
+        "author": "1pikachu",
+        "mergedAt": "2026-06-01T01:13:10Z",
+        "createdAt": "2026-05-29T07:09:00Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "intel",
+          "ci",
+          "run-ci",
+          "run-ci-extra"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The Run unit tests step in pr-test-xeon.yml occasionally hits the 36-minute step timeout on the xeon-gnr runner, causing spurious CI failures unrelated to test correctness. Bump the timeout to 60 minutes.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26725,
+        "title": "\u3010NPU\u3011add MiniMax2.5 best practice docs",
+        "url": "https://github.com/sgl-project/sglang/pull/26725",
+        "author": "shadowxz109",
+        "mergedAt": "2026-06-01T02:09:12Z",
+        "createdAt": "2026-05-29T13:24:10Z",
+        "changedFiles": 1,
+        "additions": 923,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "npu",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nadd MiniMax2.5 best practice docs\n\nModifications\n\nAccuracy Tests\n\nSpeed Tests and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provid",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 26481,
+        "title": "Fixed incorrect indexing for slot 0 compatibility",
+        "url": "https://github.com/sgl-project/sglang/pull/26481",
+        "author": "ck-intel",
+        "mergedAt": "2026-06-01T02:46:21Z",
+        "createdAt": "2026-05-27T10:48:21Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "intel",
+          "run-ci",
+          "run-ci-extra"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFixes bench_one_batch.py to work correctly with the slot 0 padding scheme introduced in commit cb8fbd5 (PR #24243).\nModifications\nFixed 2 issues:\n\nFixed TypeError\n\n # Line 386: Fix TypeError\n # Before: req.fill_ids += input_ids[i][bench_args.cut_len :]\n # After: req.fill_ids.extend(input_",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26824,
+        "title": "[attn backend] Make spec_v2 seq_lens_cpu optional in trtllm_mla backend",
+        "url": "https://github.com/sgl-project/sglang/pull/26824",
+        "author": "Qiaolin-Yu",
+        "mergedAt": "2026-06-01T03:29:50Z",
+        "createdAt": "2026-05-31T03:34:56Z",
+        "changedFiles": 1,
+        "additions": 21,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "high priority",
+          "blackwell",
+          "run-ci",
+          "bypass-fastfail"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\nAfter\n\n\nAccuracy Tests\n\nSpeed Tests and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchm",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26714,
+        "title": "fix test cases failed in nightly pipeline",
+        "url": "https://github.com/sgl-project/sglang/pull/26714",
+        "author": "liuxianglong17",
+        "mergedAt": "2026-06-01T03:33:47Z",
+        "createdAt": "2026-05-29T10:04:05Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "npu",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\ntest_ascend_minimax_m2.py\nThe test case fails because the service startup time exceeds the assertion time.\ntest_npu_original_logprobs.py\ntest_npu_bge_reranker_v2_m3.py\nThe test cases fails because the cleanup process times out.\nModifications\nAdd a longer waiting time for the service to st",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 24000,
+        "title": "[tokenizer] Surface scheduler load info (num_running_reqs / num_waiting_reqs) in meta_info",
+        "url": "https://github.com/sgl-project/sglang/pull/24000",
+        "author": "brucechanglongxu",
+        "mergedAt": "2026-06-01T03:45:36Z",
+        "createdAt": "2026-04-29T04:29:07Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe scheduler already piggy-backs per-DP-rank load metrics (GetLoadsReqOutput) on every BatchStrOutput / BatchTokenIDOutput via the recv_obj.load field, but TokenizerManager._handle_batch_output forwards that info only to the dp-balance WatchLoadUpdateReq path. The per-request meta_info d",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 26862,
+        "title": "Add random-ids dataset, round-robin expert simulation, and kill_process_tree logging",
+        "url": "https://github.com/sgl-project/sglang/pull/26862",
+        "author": "merrymercy",
+        "mergedAt": "2026-06-01T03:50:30Z",
+        "createdAt": "2026-05-31T22:27:03Z",
+        "changedFiles": 4,
+        "additions": 59,
+        "deletions": 9,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nAdd random-ids as a supported dataset option in bench_one_batch_server_internal for benchmarking with pre-generated token IDs.\nAdd SGLANG_SIMULATE_ROUND_ROBIN_EXPERTS env var for deterministic expert assignment in MoE layers, useful for reproducible benchmarking with dummy/random weights. M",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 26530,
+        "title": "[diffusion] CI: Infer diffusion test sampling params from task type",
+        "url": "https://github.com/sgl-project/sglang/pull/26530",
+        "author": "mickqian",
+        "mergedAt": "2026-06-01T03:57:41Z",
+        "createdAt": "2026-05-28T02:54:52Z",
+        "changedFiles": 4,
+        "additions": 98,
+        "deletions": 66,
+        "commits": 7,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nAllow diffusion test cases to omit sampling_params and infer the shared test sampling template from ModelTaskType.\nResolve explicit --pipeline-class-name before model registry lookup, so custom pipeline cases use the correct task type.\nLet ltx_2_3_hq_pipeline infer TI2V_sampling_params inst",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26863,
+        "title": "Fix weights_checker checksum for 0-dim tensors and multi-GPU",
+        "url": "https://github.com/sgl-project/sglang/pull/26863",
+        "author": "merrymercy",
+        "mergedAt": "2026-06-01T04:27:03Z",
+        "createdAt": "2026-05-31T22:29:43Z",
+        "changedFiles": 8,
+        "additions": 85,
+        "deletions": 14,
+        "commits": 3,
+        "labels": [
+          "Multi-modal",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nFix _as_uint32_words and tensor_hash to use .reshape(-1) before .view(torch.uint8) so 0-dim tensors don't raise errors.\nAdd per_gpu_checksum field to ChecksumInfo for a single overall hash per GPU, computed from sorted parameter checksums.\nAggregate per-GPU checksums into per_engine_checksu",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 26883,
+        "title": "[PP][Bugfix] Handle input_ids assignment in prepare_for_extend",
+        "url": "https://github.com/sgl-project/sglang/pull/26883",
+        "author": "ShangmingCai",
+        "mergedAt": "2026-06-01T06:43:51Z",
+        "createdAt": "2026-06-01T04:45:29Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "high priority"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix CPP bug (missing change of PR: #25945)\n\nAdd handling for deferred H2D in prepare_for_extend\n\n\nModifications\n\nAccuracy Tests\n\nSpeed Tests and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 44118,
+        "title": "docs: fix MLA attention docstring examples",
+        "url": "https://github.com/vllm-project/vllm/pull/44118",
+        "author": "nightcityblade",
+        "mergedAt": "2026-05-31T19:28:38Z",
+        "createdAt": "2026-05-31T15:12:30Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 7,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "verified"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #43309.\nPurpose\nFix misleading examples in the MLA attention module docstring:\n\nuse q_nope in the ql_nope example instead of undefined q\nremove the incorrect @ self.num_heads from the documented return expression\nclarify the Sq / Skv ratio wording for prefill vs. decode\n\nTest Plan\nRun ruff on ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 36254,
+        "title": "[Misc] Use VLLMValidationError consistently in chat completion and completion protocol validators",
+        "url": "https://github.com/vllm-project/vllm/pull/36254",
+        "author": "umut-polat",
+        "mergedAt": "2026-06-01T04:04:12Z",
+        "createdAt": "2026-03-06T13:31:43Z",
+        "changedFiles": 3,
+        "additions": 100,
+        "deletions": 24,
+        "commits": 2,
+        "labels": [
+          "frontend",
+          "ready",
+          "tool-calling"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nReplaces ValueError with VLLMValidationError in chat completion and completion protocol validators, adding parameter fields for better error diagnostics.\nAlso fixes unreachable dead code in check_structured_outputs_count: the second condition used count > 1 (already caught by the first check",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 44078,
+        "title": "[MRV2] Remove Eagle's dedicated CUDA graph pool",
+        "url": "https://github.com/vllm-project/vllm/pull/44078",
+        "author": "LucasWilkinson",
+        "mergedAt": "2026-06-01T05:00:33Z",
+        "createdAt": "2026-05-30T21:15:37Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 26,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The initial MRV2 eagle support (#29559) used a separate graph pool for eagle from the main model.\n#35959 carried that behavior forward (with a somewhat misleading comment)\nThis doesnt actually appear to be required; we can save memory by making the main model and eagle share a graph memory pool\nTest",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 44035,
+        "title": "[BugFix] Fix `_has_module` to verify native deps via trial import",
+        "url": "https://github.com/vllm-project/vllm/pull/44035",
+        "author": "jeffreywang88",
+        "mergedAt": "2026-06-01T05:06:34Z",
+        "createdAt": "2026-05-29T23:45:13Z",
+        "changedFiles": 2,
+        "additions": 110,
+        "deletions": 5,
+        "commits": 5,
+        "labels": [
+          "bug",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nOriginal PR: #39873.\n\n_has_module relied solely on importlib.util.find_spec(), which only confirms a module's spec exists on disk \u2014 not that it can actually be imported.\nFor native-extension packages with missing shared libraries (e.g. nixl_ep without libcudart.so.12), find_spec returns a va",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 44159,
+        "title": "[Docs] Replace broken video url in examples",
+        "url": "https://github.com/vllm-project/vllm/pull/44159",
+        "author": "Isotr0py",
+        "mergedAt": "2026-06-01T06:01:11Z",
+        "createdAt": "2026-06-01T04:15:54Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nhttp://commondatastorage.googleapis.com/gtv-videos-bucket/sample/ForBiggerFun.mp4 is broken with 403 bad gateway error.\nReplace it with our VideoAsset ones: https://huggingface.co/datasets/raushan-testing-hf/videos-test/resolve/main/sample_demo_1.mp4\n\nTest Plan\nTest Result\n\n\n Essential Elem",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 42730,
+        "title": "[CPU][RISC-V] Add missing RVV cpu_types helpers for WNA16",
+        "url": "https://github.com/vllm-project/vllm/pull/42730",
+        "author": "wcynb1023",
+        "mergedAt": "2026-06-01T06:56:42Z",
+        "createdAt": "2026-05-15T10:19:33Z",
+        "changedFiles": 3,
+        "additions": 59,
+        "deletions": 1,
+        "commits": 4,
+        "labels": [
+          "ready",
+          "ci/build",
+          "cpu"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR fills missing RISC-V RVV cpu_types helpers that are required by the CPU WNA16 path.\nThe x86 CPU vector types already provide helpers used by WNA16 dequantization and AMX/VEC dispatch paths. The RISC-V RVV implementation was missing equivalent support, which prevented GPTQ/WNA16 CPU e",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

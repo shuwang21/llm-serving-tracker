@@ -1,0 +1,30 @@
+{
+  "date": "2023-03-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-13T07:00:00+00:00",
+  "utc_end": "2023-03-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:22:58.506579+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8,
+        "title": "Add miscellaneous updates",
+        "url": "https://github.com/vllm-project/vllm/pull/8",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-13T20:48:39Z",
+        "createdAt": "2023-03-13T20:48:11Z",
+        "changedFiles": 7,
+        "additions": 44,
+        "deletions": 22,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR contains several miscellaneous updates to the system, with two notable changes:\n\nThe size of the CPU KV cache is now calculated based on the swap_space size provided by the user (defaulting to 20 GiB).\nThe default value for max_num_batched_tokens has been increased from 2048 to 2560.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

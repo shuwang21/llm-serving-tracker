@@ -1,0 +1,30 @@
+{
+  "date": "2024-01-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-05T08:00:00+00:00",
+  "utc_end": "2024-01-06T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:26.522958+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2347,
+        "title": "Ensure metrics are logged regardless of requests",
+        "url": "https://github.com/vllm-project/vllm/pull/2347",
+        "author": "ichernev",
+        "mergedAt": "2024-01-05T13:24:42Z",
+        "createdAt": "2024-01-04T17:39:29Z",
+        "changedFiles": 3,
+        "additions": 28,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Metrics are currently logged at the end of each step, but if there are no requests there are no new logs/metrics, so the last values are reported to prometheus indefinitely.\nAlso, for some reason, it always reports one running request.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2023-11-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-23T08:00:00+00:00",
+  "utc_end": "2023-11-24T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:45.955963+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1624,
+        "title": "[build] Avoid building too many extensions",
+        "url": "https://github.com/vllm-project/vllm/pull/1624",
+        "author": "ymwangg",
+        "mergedAt": "2023-11-24T00:31:19Z",
+        "createdAt": "2023-11-11T04:38:58Z",
+        "changedFiles": 25,
+        "additions": 206,
+        "deletions": 272,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR lets vllm only build one extension and reduces the build time by 75% (from ~5.5min to ~1.5min) based on my test.",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1764,
+        "title": "[Minor] Fix model docstrings",
+        "url": "https://github.com/vllm-project/vllm/pull/1764",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-11-24T07:04:44Z",
+        "createdAt": "2023-11-24T01:31:40Z",
+        "changedFiles": 14,
+        "additions": 14,
+        "deletions": 70,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

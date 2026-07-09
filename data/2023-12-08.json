@@ -1,0 +1,48 @@
+{
+  "date": "2023-12-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-08T08:00:00+00:00",
+  "utc_end": "2023-12-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:39:41.825777+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1987,
+        "title": "Fix Baichuan2-7B-Chat",
+        "url": "https://github.com/vllm-project/vllm/pull/1987",
+        "author": "firebook",
+        "mergedAt": "2023-12-08T17:38:37Z",
+        "createdAt": "2023-12-08T11:15:54Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fix Baichuan2-7B-Chat model, use \"ROPE\" instead of \"ALIBI\" when load Baichuan2-7B-Chat model\nrelate issue: #1561 #1092 #1085\nbefore fix:\ncurl http://127.0.0.1:8080/v1/completions \\\n> -H \"Content-Type: application/json\" \\\n> -d '{\n>     \"model\": \"Baichuan2-7B-Chat\",\n>     \"prompt\": \"<reserved_",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1950,
+        "title": "[Docker] Add cuda arch list as build option",
+        "url": "https://github.com/vllm-project/vllm/pull/1950",
+        "author": "simon-mo",
+        "mergedAt": "2023-12-08T17:53:47Z",
+        "createdAt": "2023-12-06T19:55:24Z",
+        "changedFiles": 2,
+        "additions": 13,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This should close #1936 and prevent future regressions.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

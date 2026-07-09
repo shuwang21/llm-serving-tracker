@@ -1,0 +1,421 @@
+{
+  "date": "2025-03-21",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-03-21T07:00:00+00:00",
+  "utc_end": "2025-03-22T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:22:55.758307+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 4654,
+        "title": "[PD] Release initial code",
+        "url": "https://github.com/sgl-project/sglang/pull/4654",
+        "author": "ByronHsu",
+        "mergedAt": "2025-03-21T21:47:47Z",
+        "createdAt": "2025-03-21T19:22:06Z",
+        "changedFiles": 10,
+        "additions": 1410,
+        "deletions": 9,
+        "commits": 4,
+        "labels": [
+          "high priority"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Attention\nThe KV transfer part is mocked now. See the roadmap at #4655\n\nMotivation\n\nSee #4655\nRelease initial code of PD for collab on trasnfer engine in the community\nCo-authors:\nCo-authored-by: SangBin Cho\nCo-authored-by: makro\nCo-authored-by: dhou-xai\nCo-authored-by: Ying1123\nCo-authored-by: merr",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 4582,
+        "title": "fix: fix ipython running error for Engine due to outlines nest_asyncio",
+        "url": "https://github.com/sgl-project/sglang/pull/4582",
+        "author": "minleminzui",
+        "mergedAt": "2025-03-22T02:11:16Z",
+        "createdAt": "2025-03-19T11:44:39Z",
+        "changedFiles": 4,
+        "additions": 37,
+        "deletions": 14,
+        "commits": 14,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nfix the bug in #4478\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Writing Documentation.\n Provide throughp",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 4664,
+        "title": "update news for README",
+        "url": "https://github.com/sgl-project/sglang/pull/4664",
+        "author": "zhyncs",
+        "mergedAt": "2025-03-22T06:25:59Z",
+        "createdAt": "2025-03-22T06:21:26Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutorials as needed, according to Writing Documentation.\n Provide throughput / latency benchma",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 14855,
+        "title": "[Feature] specify model in config.yaml ",
+        "url": "https://github.com/vllm-project/vllm/pull/14855",
+        "author": "wayzeng",
+        "mergedAt": "2025-03-21T07:26:03Z",
+        "createdAt": "2025-03-15T06:22:31Z",
+        "changedFiles": 7,
+        "additions": 102,
+        "deletions": 30,
+        "commits": 14,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "CLOSES #14819\nRun CLI:\n\nvllm serve --config config.yaml with model in yaml.\nvllm serve SOME_MODEL --config config.yaml: model_tag in CLI, takes precedence over model in config file.\nIf missing model in CLI and config file, will raise error.\n\nTests:\nUnit tests:\n\u2717 pytest test_utils.py\n/tmp-nvme/vllm/l",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15260,
+        "title": "[Bugfix] Add int8 torch dtype for KVCache",
+        "url": "https://github.com/vllm-project/vllm/pull/15260",
+        "author": "shen-shanshan",
+        "mergedAt": "2025-03-21T08:58:28Z",
+        "createdAt": "2025-03-21T02:07:47Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Some attention backend requires int8 kvcache dtype (e.g., quantization). It is used in initialization of CacheConfig:\nif cache_config.cache_dtype == \"auto\":\n    self.dtype = model_config.dtype\nelse:\n    self.dtype = STR_DTYPE_TO_TORCH_DTYPE[cache_config.cache_dtype]\nBut there are no int8 dtype in ST",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 15273,
+        "title": "[Misc] Add attention mask pre-computation optimization back to Qwen2.5-VL",
+        "url": "https://github.com/vllm-project/vllm/pull/15273",
+        "author": "Isotr0py",
+        "mergedAt": "2025-03-21T10:32:33Z",
+        "createdAt": "2025-03-21T06:51:45Z",
+        "changedFiles": 2,
+        "additions": 35,
+        "deletions": 16,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "#15200 actually disabled the seqlens pre-computation for Qwen2.5-VL by mistake, because seqlens are computed for each layer again.\nThis PR adds the optimization introduced in #14377 back with correct implementation.\nDetermined that the regression test can still pass with this implementation.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15279,
+        "title": "[Bugfix] Fix incorrect resolving order for transformers fallback",
+        "url": "https://github.com/vllm-project/vllm/pull/15279",
+        "author": "Isotr0py",
+        "mergedAt": "2025-03-21T10:54:08Z",
+        "createdAt": "2025-03-21T08:21:42Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Make sure transformers fallback are always resolved at last. (#15023 (comment))",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15280,
+        "title": "[V1] Fix wrong import path of get_flash_attn_version",
+        "url": "https://github.com/vllm-project/vllm/pull/15280",
+        "author": "lhtin",
+        "mergedAt": "2025-03-21T10:54:12Z",
+        "createdAt": "2025-03-21T08:22:36Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #15265",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15282,
+        "title": "[Bugfix] Fix broken kernel test due to missing rename for v1 Triton backend",
+        "url": "https://github.com/vllm-project/vllm/pull/15282",
+        "author": "Isotr0py",
+        "mergedAt": "2025-03-21T11:42:07Z",
+        "createdAt": "2025-03-21T08:30:15Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix broken kernel test due to missing renaming when rebasing #14071",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15074,
+        "title": "[Misc] Add cProfile helpers",
+        "url": "https://github.com/vllm-project/vllm/pull/15074",
+        "author": "russellb",
+        "mergedAt": "2025-03-21T11:56:10Z",
+        "createdAt": "2025-03-19T02:30:37Z",
+        "changedFiles": 2,
+        "additions": 97,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This change aims to make it a little easier to profile sections of vLLM\nPython code.\nTwo helpers for profiling: a decorator and context manager:\nimport vllm.utils\n\n@vllm.utils.cprofile(\"my_func.prof\")\ndef my_func():\n    # expensive code\n    return\n\ndef other_code():\n    # more expensive code\n    ret",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 14079,
+        "title": "[v1] Refactor KVCacheConfig",
+        "url": "https://github.com/vllm-project/vllm/pull/14079",
+        "author": "heheda12345",
+        "mergedAt": "2025-03-21T11:56:27Z",
+        "createdAt": "2025-03-01T13:24:58Z",
+        "changedFiles": 10,
+        "additions": 320,
+        "deletions": 112,
+        "commits": 12,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR makes the following changes to KVCacheConfig\n\nchange the meaning of KVCacheSpec from the spec of the model to the spec of one layer\nKVCacheConfig class:\n2. save the kv_cache_spec for each kv cache group instead of each layer\nThe logic to make the same KVCacheConfig for all workers (EngineCor",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 15285,
+        "title": "[Bugfix][VLM] fix llava processor",
+        "url": "https://github.com/vllm-project/vllm/pull/15285",
+        "author": "MengqingCao",
+        "mergedAt": "2025-03-21T12:14:37Z",
+        "createdAt": "2025-03-21T09:53:13Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "fix llava processor.\nfix #13690\ncc @DarkLight1337",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15293,
+        "title": "Revert \"[Feature] specify model in config.yaml  (#14855)\"",
+        "url": "https://github.com/vllm-project/vllm/pull/15293",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-03-21T15:30:23Z",
+        "createdAt": "2025-03-21T15:29:08Z",
+        "changedFiles": 7,
+        "additions": 30,
+        "deletions": 102,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "frontend"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This reverts commit 0fa3970.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15288,
+        "title": "[TPU][V1] MHA Pallas backend",
+        "url": "https://github.com/vllm-project/vllm/pull/15288",
+        "author": "NickLucche",
+        "mergedAt": "2025-03-21T15:50:39Z",
+        "createdAt": "2025-03-21T11:24:32Z",
+        "changedFiles": 2,
+        "additions": 117,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "tpu",
+          "ready",
+          "v1",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The torch sdpa F.scaled_dot_product_attention impl is particularly inefficient on TPU.\nIt's both slow and also causes issues when XLA compiling as reported here #15051, which is a major obstacle in multimodal adoption on TPU.\nThis PR adds a Pallas branch to the vanilla MHA module used in most ViTs.\n",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15305,
+        "title": "[Build/CI] Fix env var typo",
+        "url": "https://github.com/vllm-project/vllm/pull/15305",
+        "author": "russellb",
+        "mergedAt": "2025-03-21T22:28:47Z",
+        "createdAt": "2025-03-21T20:40:13Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The env var is VLLM_LOGGING_LEVEL, not VLLM_LOG_LEVEL. I just\nhappened to spot this while searching the code for log level references\nfor another reason.\nSigned-off-by: Russell Bryant rbryant@redhat.com",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15301,
+        "title": "[Misc] Increase RayDistributedExecutor RAY_CGRAPH_get_timeout",
+        "url": "https://github.com/vllm-project/vllm/pull/15301",
+        "author": "ruisearch42",
+        "mergedAt": "2025-03-22T05:25:44Z",
+        "createdAt": "2025-03-21T18:55:02Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Execution in DeepSeek may take a long time, this PR sets a larger default (300s, rather than 10s) for RAY_CGRAPH_get_timeout, but still allows user to override it.\nFIX #15199",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 15259,
+        "title": "[Bugfix][V0] Multi-sequence logprobs streaming edge case",
+        "url": "https://github.com/vllm-project/vllm/pull/15259",
+        "author": "andylolu2",
+        "mergedAt": "2025-03-22T05:35:37Z",
+        "createdAt": "2025-03-21T01:51:46Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "There's a bug when using logprobs with multi-sequence with RequestOutputKind.DELTA. When a sequence finishes before the others, it's output_token_ids on the subsequent steps will be an empty array, until every sequence finishes. This cases an [-0:] slice into the logprobs array, which returns the en",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 14959,
+        "title": "[FEAT] [ROCm]:  Add AITER RMS Norm (Layer Norm) Feature",
+        "url": "https://github.com/vllm-project/vllm/pull/14959",
+        "author": "tjtanaa",
+        "mergedAt": "2025-03-22T05:36:14Z",
+        "createdAt": "2025-03-17T13:54:54Z",
+        "changedFiles": 5,
+        "additions": 173,
+        "deletions": 29,
+        "commits": 12,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR integrates the RMS Norm layer functionality from AITER (AI Tensor Engine for ROCm) into vLLM.\nThis PR is to introduce AITER RMS Norm layer kernel so that any up-coming optimization in AITER kernel could be directly use and evaluated within vLLM framework.\nRMS Norm Layer Implementation\nThe rm",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 14804,
+        "title": "[Doc] add load_format items in docs",
+        "url": "https://github.com/vllm-project/vllm/pull/14804",
+        "author": "wwl2755",
+        "mergedAt": "2025-03-22T05:36:44Z",
+        "createdAt": "2025-03-14T07:21:19Z",
+        "changedFiles": 2,
+        "additions": 14,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add some missing load_format items in the documentation.\nRelated to #14532",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 15278,
+        "title": "[Bugfix] Fix torch.compile raise FileNotFoundError",
+        "url": "https://github.com/vllm-project/vllm/pull/15278",
+        "author": "jeejeelee",
+        "mergedAt": "2025-03-22T05:49:34Z",
+        "createdAt": "2025-03-21T07:39:05Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #15276",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

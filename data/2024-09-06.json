@@ -1,0 +1,231 @@
+{
+  "date": "2024-09-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-06T07:00:00+00:00",
+  "utc_end": "2024-09-07T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:01:03.783970+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8191,
+        "title": "[Frontend] Add --logprobs argument to `benchmark_serving.py`",
+        "url": "https://github.com/vllm-project/vllm/pull/8191",
+        "author": "afeldman-nm",
+        "mergedAt": "2024-09-06T16:01:14Z",
+        "createdAt": "2024-09-05T13:14:36Z",
+        "changedFiles": 3,
+        "additions": 19,
+        "deletions": 1,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "(1) benchmarks/benchmark_serving.py now supports a --logprobs CLI argument, and (2) the value of the --logprobs CLI argument configures the underlying logprobs argument to the completion requests generated during benchmarking.\npython benchmarks/benchmark_serving.py     --backend vllm      --model Ja",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7938,
+        "title": "[Misc] Use ray[adag] dependency instead of cuda",
+        "url": "https://github.com/vllm-project/vllm/pull/7938",
+        "author": "ruisearch42",
+        "mergedAt": "2024-09-06T16:18:35Z",
+        "createdAt": "2024-08-28T04:43:46Z",
+        "changedFiles": 5,
+        "additions": 19,
+        "deletions": 12,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure th",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8203,
+        "title": "[CI/Build] Increasing timeout for multiproc worker tests",
+        "url": "https://github.com/vllm-project/vllm/pull/8203",
+        "author": "akondrat-amd",
+        "mergedAt": "2024-09-06T18:51:03Z",
+        "createdAt": "2024-09-05T17:25:05Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "On ROCm we have to use spawn instead of fork and it creates an overhead, so five seconds might not be enough to create and destroy eight worker processes.\nPlease note, increasing the timeout to 60 seconds will not impact the test execution time unless there is a problem.\nFIX #xxxx (link existing iss",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8248,
+        "title": "[Kernel] [Triton] Memory optimization for awq_gemm and awq_dequantize, 2x throughput",
+        "url": "https://github.com/vllm-project/vllm/pull/8248",
+        "author": "rasmith",
+        "mergedAt": "2024-09-06T22:26:09Z",
+        "createdAt": "2024-09-06T18:19:01Z",
+        "changedFiles": 1,
+        "additions": 23,
+        "deletions": 11,
+        "commits": 2,
+        "labels": [
+          "rocm",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This optimization reduces the number of loads from memory that the awq_gemm and awq_dequantize need to do, resulting in 2x throughput from previous implementation. The following benchmark is attached:\npython benchmarks/benchmark_throughput.py --input-len 2048 --output-len 128 --quantization awq --mo",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8220,
+        "title": "[Misc] Remove `SqueezeLLM`",
+        "url": "https://github.com/vllm-project/vllm/pull/8220",
+        "author": "dsikka",
+        "mergedAt": "2024-09-06T22:29:03Z",
+        "createdAt": "2024-09-06T01:48:12Z",
+        "changedFiles": 12,
+        "additions": 6,
+        "deletions": 389,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summry\n\nRemove SqueezeLLM",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8168,
+        "title": "[Model] Allow loading from original Mistral format",
+        "url": "https://github.com/vllm-project/vllm/pull/8168",
+        "author": "patrickvonplaten",
+        "mergedAt": "2024-09-06T23:02:05Z",
+        "createdAt": "2024-09-04T21:29:13Z",
+        "changedFiles": 7,
+        "additions": 291,
+        "deletions": 81,
+        "commits": 33,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Mistral models are usually uploaded in two formats:\n\n\nThe original consolidated format:\nconsolidated.safetensors\nparams.json\n\n\nA bit later the HF format is usually also uploaded:\nmodel-00001-of-00003.safetensors\nconfig.json\n\n\nThis PR allows to load directly from the original consolidated format whic",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7943,
+        "title": "[misc] [doc] [frontend] LLM torch profiler support",
+        "url": "https://github.com/vllm-project/vllm/pull/7943",
+        "author": "SolitaryThinker",
+        "mergedAt": "2024-09-07T00:48:48Z",
+        "createdAt": "2024-08-28T07:37:39Z",
+        "changedFiles": 6,
+        "additions": 74,
+        "deletions": 3,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "follow up to #7451\ncc @comaniac @DamonFool\nthanks for the tips from @sfc-gh-mkeralapura",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8256,
+        "title": "[Bugfix] Fix Hermes tool call chat template bug",
+        "url": "https://github.com/vllm-project/vllm/pull/8256",
+        "author": "K-Mistele",
+        "mergedAt": "2024-09-07T02:49:01Z",
+        "createdAt": "2024-09-07T01:44:24Z",
+        "changedFiles": 1,
+        "additions": 16,
+        "deletions": 15,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The Hermes tool calling chat template had a bug where a curly brace } was placed after the function's name , rather than after the arguments. This was not caught due to low-temperature tests, but results in inconsistent results at higher temperatures.\ncc @mgoin @interstellarninja\nBEFORE SUBMITTING, ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8238,
+        "title": "[Model] Multi-input support for LLaVA and fix embedding inputs for multi-image models",
+        "url": "https://github.com/vllm-project/vllm/pull/8238",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-09-07T02:57:25Z",
+        "createdAt": "2024-09-06T12:57:27Z",
+        "changedFiles": 10,
+        "additions": 176,
+        "deletions": 45,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR extends the vLLM support for multi-image input from LLaVA-NeXT to LLaVA. Note that LLaVA from the original authors hasn't been trained on multi-image inputs, so this is mostly useful for custom trained models.\nI also found and fixed a hidden bug where embeddings cannot be inputted for models",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8241,
+        "title": "Enable Random Prefix Caching in Serving Profiling Tool (benchmark_serving.py)",
+        "url": "https://github.com/vllm-project/vllm/pull/8241",
+        "author": "wschin",
+        "mergedAt": "2024-09-07T03:18:17Z",
+        "createdAt": "2024-09-06T16:59:43Z",
+        "changedFiles": 1,
+        "additions": 23,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Prefix-caching is an important feature but not supported in vllm's serving profiler. This PR extends random data generator in benchmark_serving.py to create requests with fixed prefix context. The newly added --random-prefix-len specifies the prefix in every random request; the total context length ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8260,
+        "title": "[tpu][misc] fix typo",
+        "url": "https://github.com/vllm-project/vllm/pull/8260",
+        "author": "youkaichao",
+        "mergedAt": "2024-09-07T05:40:46Z",
+        "createdAt": "2024-09-07T05:35:37Z",
+        "changedFiles": 3,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

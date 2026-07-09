@@ -1,0 +1,67 @@
+{
+  "date": "2024-01-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-08T08:00:00+00:00",
+  "utc_end": "2024-01-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:37.366495+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1,
+        "title": "Add flashinfer && Oultines",
+        "url": "https://github.com/sgl-project/sglang/pull/1",
+        "author": "hnyls2002",
+        "mergedAt": "2024-01-08T16:26:18Z",
+        "createdAt": "2024-01-08T05:29:51Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2377,
+        "title": "Fix eager mode performance",
+        "url": "https://github.com/vllm-project/vllm/pull/2377",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-01-08T18:11:07Z",
+        "createdAt": "2024-01-08T08:06:33Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes the performance issue when using eager mode in a high-throughput setting. It turns out the performance bottleneck is because we pad the block tables excessively for every iteration.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2384,
+        "title": "[Minor] Remove unused code in attention",
+        "url": "https://github.com/vllm-project/vllm/pull/2384",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-01-08T21:13:08Z",
+        "createdAt": "2024-01-08T21:06:23Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      }
+    ]
+  }
+}

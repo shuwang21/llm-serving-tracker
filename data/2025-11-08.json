@@ -1,0 +1,711 @@
+{
+  "date": "2025-11-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-11-08T08:00:00+00:00",
+  "utc_end": "2025-11-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T22:27:56.486530+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 12868,
+        "title": "[Docs][DeepseekV3.2] Update deepseekv3.2 docs for mha short seq prefill",
+        "url": "https://github.com/sgl-project/sglang/pull/12868",
+        "author": "YAMY1234",
+        "mergedAt": "2025-11-08T08:11:02Z",
+        "createdAt": "2025-11-08T04:00:14Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "documentation",
+          "deepseek",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nUpdate DeepSeek V3.2 documentation to document the adaptive MHA short-sequence prefill mechanism, helping users understand the new attention pathway selection logic.\nModifications\n\nUpdate docs/basic_usage/deepseek_v32.md\n\nAdd a new bullet point \"Short-sequence MHA prefill (adaptive)\" exp",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12798,
+        "title": "Support capturing aux_hidden_states for minimax m2.",
+        "url": "https://github.com/sgl-project/sglang/pull/12798",
+        "author": "pyc96",
+        "mergedAt": "2025-11-08T09:54:22Z",
+        "createdAt": "2025-11-07T00:07:00Z",
+        "changedFiles": 1,
+        "additions": 34,
+        "deletions": 3,
+        "commits": 6,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nSupport capturing aux_hidden_states for Minimax M2 for EAGLE3 model training.\nModifications\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provid",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12886,
+        "title": "[CI] Tiny adjust CI esitmation time",
+        "url": "https://github.com/sgl-project/sglang/pull/12886",
+        "author": "hnyls2002",
+        "mergedAt": "2025-11-08T15:02:20Z",
+        "createdAt": "2025-11-08T15:02:01Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12843,
+        "title": "[DP-Attn] Clarify MLP sync / idle batch preparation logic",
+        "url": "https://github.com/sgl-project/sglang/pull/12843",
+        "author": "hnyls2002",
+        "mergedAt": "2025-11-08T15:23:14Z",
+        "createdAt": "2025-11-07T19:35:19Z",
+        "changedFiles": 7,
+        "additions": 229,
+        "deletions": 177,
+        "commits": 9,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR:\n\nMove the MLP sync logic into a mixin class.\nOrganize the preparation info.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12832,
+        "title": "Fix sending all requests to the first rank in DP attention",
+        "url": "https://github.com/sgl-project/sglang/pull/12832",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-11-08T16:18:53Z",
+        "createdAt": "2025-11-07T12:28:50Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12888,
+        "title": "Apply moe_reduce_sum kernel for fused_marlin_moe",
+        "url": "https://github.com/sgl-project/sglang/pull/12888",
+        "author": "ispobock",
+        "mergedAt": "2025-11-08T17:31:05Z",
+        "createdAt": "2025-11-08T17:08:08Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "sgl-kernel",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nbefore apply (bs1): 4.6\u03bcs\n\nafter apply (bs1): 1.5\u03bcs",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12811,
+        "title": "use fast stream instead of torch.cuda.current_stream in llama 4 shared experts overlap",
+        "url": "https://github.com/sgl-project/sglang/pull/12811",
+        "author": "b8zhong",
+        "mergedAt": "2025-11-08T23:04:37Z",
+        "createdAt": "2025-11-07T04:23:52Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Don't use torch.cuda.current_stream, use get_current_device_stream_fast(), just like #12524\npython3 -m sglang.launch_server \\\n  --model-path=/opt/dlami/nvme/models/Llama-4-Scout-17B-16E-Instruct/ \\\n  --tp=8 \\\n  --trust-remote-code \\\n  --mem-fraction-static=0.7 \\\n  --context-length=131072 \\\n  --kv-ca",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12361,
+        "title": "[Fix] Fix trtllm-mla backend when chunked prefix cache is disabled",
+        "url": "https://github.com/sgl-project/sglang/pull/12361",
+        "author": "Fridge003",
+        "mergedAt": "2025-11-08T23:10:25Z",
+        "createdAt": "2025-10-30T01:07:09Z",
+        "changedFiles": 1,
+        "additions": 19,
+        "deletions": 3,
+        "commits": 10,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12870,
+        "title": "Refs/heads/add nightly test multi gpu configs",
+        "url": "https://github.com/sgl-project/sglang/pull/12870",
+        "author": "alisonshao",
+        "mergedAt": "2025-11-08T23:14:51Z",
+        "createdAt": "2025-11-08T06:25:13Z",
+        "changedFiles": 3,
+        "additions": 59,
+        "deletions": 12,
+        "commits": 15,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12889,
+        "title": "chore: bump sgl-kernel version to 0.3.16.post6",
+        "url": "https://github.com/sgl-project/sglang/pull/12889",
+        "author": "sglang-bot",
+        "mergedAt": "2025-11-09T01:16:28Z",
+        "createdAt": "2025-11-08T17:32:56Z",
+        "changedFiles": 4,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "amd",
+          "dependencies",
+          "sgl-kernel",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR bumps the sgl-kernel version to 0.3.16.post6 across all relevant files.\nFiles Updated\n\nsgl-kernel/pyproject.toml\nsgl-kernel/pyproject_cpu.toml\nsgl-kernel/pyproject_rocm.toml\nsgl-kernel/python/sgl_kernel/version.py\n\n\ud83e\udd16 Generated with GitHub Actions",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12897,
+        "title": "Update CODEOWNERS",
+        "url": "https://github.com/sgl-project/sglang/pull/12897",
+        "author": "ispobock",
+        "mergedAt": "2025-11-09T01:37:11Z",
+        "createdAt": "2025-11-09T01:34:03Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nUpdate for multimodal_gen path.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12891,
+        "title": "Tiny simplify `can_run_dp_cuda_graph` gather logic",
+        "url": "https://github.com/sgl-project/sglang/pull/12891",
+        "author": "hnyls2002",
+        "mergedAt": "2025-11-09T03:15:37Z",
+        "createdAt": "2025-11-08T20:10:55Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12896,
+        "title": "Fix spec decoding acc length for dpsk-r1-fp4 tp8",
+        "url": "https://github.com/sgl-project/sglang/pull/12896",
+        "author": "Qiaolin-Yu",
+        "mergedAt": "2025-11-09T03:55:45Z",
+        "createdAt": "2025-11-09T00:47:11Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nBefore this pr,\nSGLANG_ENABLE_SPEC_V2=1 python3 -m sglang.launch_server --model-path nvidia/DeepSeek-R1-0528-FP4-v2 --trust-remote-code --quantization modelopt_fp4 --tp 8  --speculative-algorithm=EAGLE  --port 40020   --kv-cache-dtype fp8_e4m3\n\nThis command will get a really low acc lengt",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12900,
+        "title": "Revert \"Fix spec decoding acc length for dpsk-r1-fp4 tp8\"",
+        "url": "https://github.com/sgl-project/sglang/pull/12900",
+        "author": "Qiaolin-Yu",
+        "mergedAt": "2025-11-09T04:42:42Z",
+        "createdAt": "2025-11-09T04:38:55Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reverts #12896",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12865,
+        "title": "Add Deepseek models into nightly tests",
+        "url": "https://github.com/sgl-project/sglang/pull/12865",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-11-09T05:17:49Z",
+        "createdAt": "2025-11-08T03:11:01Z",
+        "changedFiles": 18,
+        "additions": 854,
+        "deletions": 473,
+        "commits": 6,
+        "labels": [
+          "documentation",
+          "amd",
+          "deepseek",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\n\nAdd Deepseek specific nightly tests for 8 GPU B200 tests\nMove nightly tests to a separate folder\nRefactor nightly tests to create a shared util class for profiler\nRefactor publish_trace file to accept trace dir as input\nFixed a bug in scheduler profiler to use the correct",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12904,
+        "title": "Fix empty server args in marlin moe test",
+        "url": "https://github.com/sgl-project/sglang/pull/12904",
+        "author": "ispobock",
+        "mergedAt": "2025-11-09T05:30:47Z",
+        "createdAt": "2025-11-09T05:30:25Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix error reported here:\nValueError: Global server args is not set yet!",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12905,
+        "title": "Fix duplicate nightly test name",
+        "url": "https://github.com/sgl-project/sglang/pull/12905",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-11-09T05:38:49Z",
+        "createdAt": "2025-11-09T05:38:42Z",
+        "changedFiles": 2,
+        "additions": 11,
+        "deletions": 9,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12895,
+        "title": "Add HF cleanup logic in ci_install_dependency.sh",
+        "url": "https://github.com/sgl-project/sglang/pull/12895",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-11-09T06:56:25Z",
+        "createdAt": "2025-11-08T23:53:48Z",
+        "changedFiles": 2,
+        "additions": 50,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12911,
+        "title": "fallback to triton mm_persistent kernel when deepGemm fail",
+        "url": "https://github.com/sgl-project/sglang/pull/12911",
+        "author": "zminglei",
+        "mergedAt": "2025-11-09T07:42:27Z",
+        "createdAt": "2025-11-09T07:16:45Z",
+        "changedFiles": 1,
+        "additions": 14,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nlaunch Qwen3-Next model with enabling deterministic would fail without this fix\npython3 -m sglang.launch_server --model-path /shared/public/elr-models/Qwen/Qwen3-Next-80B-A3B-Instruct/ --tp 4 --context-length 262144 --mem-fraction-static 0.7 --enable-deterministic-inference\nWithout the fi",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 27752,
+        "title": "`reasoning_content` -> `reasoning`",
+        "url": "https://github.com/vllm-project/vllm/pull/27752",
+        "author": "hmellor",
+        "mergedAt": "2025-11-08T12:15:08Z",
+        "createdAt": "2025-10-29T15:54:19Z",
+        "changedFiles": 46,
+        "additions": 428,
+        "deletions": 438,
+        "commits": 8,
+        "labels": [
+          "documentation",
+          "structured-output",
+          "frontend",
+          "ready",
+          "v1",
+          "tool-calling",
+          "qwen",
+          "deepseek",
+          "gpt-oss"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "reasoning_content is only named this way for historical reasons (this is what deepseek originally used)\nWith the release of GPT-OSS, OpenAI provided guidance that reasoning content should be returned in reasoning for the Chat Completions API (even though there is no official spec for handling this i",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 28349,
+        "title": "[Bugfix] Update device name for H200 detection",
+        "url": "https://github.com/vllm-project/vllm/pull/28349",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-11-08T19:01:11Z",
+        "createdAt": "2025-11-08T16:42:25Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nconfig lookup is broken due to #23642\nfix it\n\nTest Plan\nlaunch:\nVLLM_DISABLE_SHARED_EXPERTS_STREAM=1 VLLM_TORCH_PROFILER_DIR=$(pwd)/profiles VLLM_USE_DEEP_GEMM=0 vllm serve {{MODEL}} --tensor-parallel-size 8 --speculative-config '{\"num_speculative_tokens\": 1, \"method\":\"deepseek_mtp\"}' --no-",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 28298,
+        "title": "[Bugfix] Spec decode + structured output + spec model max len edge case",
+        "url": "https://github.com/vllm-project/vllm/pull/28298",
+        "author": "andylolu2",
+        "mergedAt": "2025-11-08T19:44:26Z",
+        "createdAt": "2025-11-07T14:30:59Z",
+        "changedFiles": 3,
+        "additions": 36,
+        "deletions": 8,
+        "commits": 3,
+        "labels": [
+          "bug",
+          "structured-output",
+          "speculative-decoding",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFixes #27210\nError:\n  File \"/home/ubuntu/vllm/vllm/v1/core/sched/scheduler.py\", line 897, in get_grammar_bitmask\n    bitmask = self.structured_output_manager.grammar_bitmask(\n              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/home/ubuntu/vllm/vllm/v1/structured_output/__i",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26696,
+        "title": "[DCP] Support dcp kv_cache interleave size > 1",
+        "url": "https://github.com/vllm-project/vllm/pull/26696",
+        "author": "zhangsicheng5",
+        "mergedAt": "2025-11-08T19:45:27Z",
+        "createdAt": "2025-10-13T09:44:14Z",
+        "changedFiles": 12,
+        "additions": 202,
+        "deletions": 79,
+        "commits": 13,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n1. cp_kv_cache_interleave_size support\nIn dcp scenario, kv_cache is split across dcp ranks, current implementation (#23734) split kv_cache with a token-level interleave style: token_idx i is stored on GPU whose dcp_rank == i % dcp_world_size.\nFor the convenience of pd disaggregate support, w",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 28328,
+        "title": "Enhance run_cluster.sh for multi-NIC support",
+        "url": "https://github.com/vllm-project/vllm/pull/28328",
+        "author": "evberrypi",
+        "mergedAt": "2025-11-08T22:04:17Z",
+        "createdAt": "2025-11-07T23:09:04Z",
+        "changedFiles": 1,
+        "additions": 24,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAdded support for multi-NIC configurations by parsing VLLM_HOST_IP from additional arguments. Built Ray IP environment variables to ensure correct network interface binding.\nTest Plan\nRun on device with multiple interfaces (such as DGX Spark) . The desired behavior is that the IP address of ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27841,
+        "title": "[Feat] Drop-in Torch CUDA Profiler",
+        "url": "https://github.com/vllm-project/vllm/pull/27841",
+        "author": "benchislett",
+        "mergedAt": "2025-11-08T22:07:38Z",
+        "createdAt": "2025-10-30T21:56:49Z",
+        "changedFiles": 5,
+        "additions": 76,
+        "deletions": 29,
+        "commits": 6,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "v1",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR adds a CUDA profiler via torch.cuda.profiler, which integrates natively with the existing start_profile infrastructure.\nIt is very easy to use. On NVIDIA GPUs:\nexport VLLM_TORCH_CUDA_PROFILE=1\nnsys profile -o report.nsys-rep \\\n  --trace-fork-before-exec=true \\\n  --cuda-graph-trace=no",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 28337,
+        "title": "Remove setuptools upper bound constraint (<80)",
+        "url": "https://github.com/vllm-project/vllm/pull/28337",
+        "author": "ColeMurray",
+        "mergedAt": "2025-11-08T22:30:19Z",
+        "createdAt": "2025-11-08T01:22:51Z",
+        "changedFiles": 8,
+        "additions": 8,
+        "deletions": 8,
+        "commits": 2,
+        "labels": [
+          "rocm",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #28336\nSummary\nRemoves the <80.0.0 upper bound constraint on setuptools to resolve dependency conflicts with packages that require setuptools 80+.\nChanges\n\nUpdated pyproject.toml: Changed setuptools>=77.0.3,<80.0.0 to setuptools>=77.0.3\nUpdated requirements/build.txt: Changed setuptools>=77.0.",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27865,
+        "title": "[Bugfix] Fix test fused quant layernorm tests",
+        "url": "https://github.com/vllm-project/vllm/pull/27865",
+        "author": "ElizaWszola",
+        "mergedAt": "2025-11-08T22:31:33Z",
+        "createdAt": "2025-10-31T07:56:37Z",
+        "changedFiles": 2,
+        "additions": 28,
+        "deletions": 10,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix optional vs. bool type issue in test_fused_quant_layernorm.py. This allows int8 tests to run correctly.\nTODO: fix unit test failures",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 28345,
+        "title": "[Performance][gpt-oss] Revert gpt-oss max cudagraph size to 1024",
+        "url": "https://github.com/vllm-project/vllm/pull/28345",
+        "author": "mmangkad",
+        "mergedAt": "2025-11-08T22:50:11Z",
+        "createdAt": "2025-11-08T10:21:11Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "performance",
+          "ready",
+          "gpt-oss"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nNow that #27840 is merged, can we also revert gpt-oss max cudagraph size to 1024? Basically reverts #25508.\ncc @mgoin\nTest Plan\nTested\nTest Result\nWorks\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 28351,
+        "title": "[chore] Move some wikimedia images to S3",
+        "url": "https://github.com/vllm-project/vllm/pull/28351",
+        "author": "khluu",
+        "mergedAt": "2025-11-09T01:58:26Z",
+        "createdAt": "2025-11-08T21:25:55Z",
+        "changedFiles": 4,
+        "additions": 28,
+        "deletions": 28,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "speculative-decoding",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "So they don't get rate limited...",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 28339,
+        "title": "fix: close issue 28338 by fixed python version",
+        "url": "https://github.com/vllm-project/vllm/pull/28339",
+        "author": "yihong0618",
+        "mergedAt": "2025-11-09T05:07:27Z",
+        "createdAt": "2025-11-08T03:37:44Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nfixed the python version in pip-compile also fix a dep version\nFixes #28338\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing t",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 28178,
+        "title": "[Misc] fix typo and add detailed log",
+        "url": "https://github.com/vllm-project/vllm/pull/28178",
+        "author": "andyxning",
+        "mergedAt": "2025-11-09T05:33:46Z",
+        "createdAt": "2025-11-06T03:19:41Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nfix typo\nadd detailed log info to make clear it is about memory.\n\nTest Plan\nNA\nTest Result\nNA\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 28321,
+        "title": "[ROCm] Add env to enable/disable aiter triton gemm",
+        "url": "https://github.com/vllm-project/vllm/pull/28321",
+        "author": "shinoss",
+        "mergedAt": "2025-11-09T06:27:00Z",
+        "createdAt": "2025-11-07T19:54:34Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "rocm",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n#26969 added usage of AITER gemm_a16w16 for GEMM ops on AMD for valid shapes. However, it passes a bias term to gemm_a16w16 that was only added to AITER in ROCm/aiter#1148 (merged Oct 28).\nSome are still using an older version of AITER. For backward compatibility, we should have an option to",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 28267,
+        "title": "[Misc] Add some comments in qwen3-next",
+        "url": "https://github.com/vllm-project/vllm/pull/28267",
+        "author": "ZJY0516",
+        "mergedAt": "2025-11-09T07:59:24Z",
+        "createdAt": "2025-11-07T05:09:01Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAs discussed in #28182, we should not use torch.empty to allocate attention output buffer in qwen3 Qwen3NextGatedDeltaNet\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test p",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

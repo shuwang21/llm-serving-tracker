@@ -1,0 +1,48 @@
+{
+  "date": "2023-04-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-02T07:00:00+00:00",
+  "utc_end": "2023-04-03T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:07.708207+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 15,
+        "title": "Merge QKV into one linear layer",
+        "url": "https://github.com/vllm-project/vllm/pull/15",
+        "author": "zhuohan123",
+        "mergedAt": "2023-04-02T07:23:30Z",
+        "createdAt": "2023-03-30T17:04:35Z",
+        "changedFiles": 2,
+        "additions": 90,
+        "deletions": 83,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "@WoosukKwon Feel free to merge this after your review.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 20,
+        "title": "Optimize data movement",
+        "url": "https://github.com/vllm-project/vllm/pull/20",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-02T07:30:18Z",
+        "createdAt": "2023-04-02T00:30:14Z",
+        "changedFiles": 17,
+        "additions": 275,
+        "deletions": 135,
+        "commits": 19,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Should be merged after #15 .\nThe changes in this PR eliminate the need for redundant data movements such as torch.cat, torch.stack, and torch.contiguous, which were previously used to align input and output shapes. The PR modifies existing kernels and adds new kernels to accommodate non-contiguous t",
+        "category": "Other",
+        "highImpact": true
+      }
+    ]
+  }
+}

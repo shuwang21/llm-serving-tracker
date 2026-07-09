@@ -1,0 +1,48 @@
+{
+  "date": "2023-11-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-08T08:00:00+00:00",
+  "utc_end": "2023-11-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:37:49.140828+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1527,
+        "title": "Upgrade to CUDA 12",
+        "url": "https://github.com/vllm-project/vllm/pull/1527",
+        "author": "zhuohan123",
+        "mergedAt": "2023-11-08T22:17:49Z",
+        "createdAt": "2023-10-31T22:20:10Z",
+        "changedFiles": 5,
+        "additions": 15,
+        "deletions": 7,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "I can successfully build vllm with:\nCUDA 12.2\nPytorch 2.1.0 (built with CUDA 12.1)\nxformers 0.0.22.post7\nNote that vllm cannot be successfully built on CUDA 12.1 because of this issue. This can be solved after pytorch upgrade its pybind dependecy.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1546,
+        "title": "[Worker] Fix input_metadata.selected_token_indices in worker",
+        "url": "https://github.com/vllm-project/vllm/pull/1546",
+        "author": "ymwangg",
+        "mergedAt": "2023-11-08T22:19:13Z",
+        "createdAt": "2023-11-02T04:08:00Z",
+        "changedFiles": 2,
+        "additions": 47,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a bug when sequences have different prompt lens.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

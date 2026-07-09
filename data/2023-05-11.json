@@ -1,0 +1,30 @@
+{
+  "date": "2023-05-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-11T07:00:00+00:00",
+  "utc_end": "2023-05-12T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:26:21.035701+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 96,
+        "title": "Enhance SamplingParams",
+        "url": "https://github.com/vllm-project/vllm/pull/96",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-11T22:45:30Z",
+        "createdAt": "2023-05-11T08:45:57Z",
+        "changedFiles": 7,
+        "additions": 36,
+        "deletions": 54,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR renames variables in SamplingParams so that it is more compatible with the OpenAI API. In addition, the PR adds the default values to the constructor parameters and removes the from_dict method.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": true
+      }
+    ]
+  }
+}

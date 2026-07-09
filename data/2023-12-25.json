@@ -1,0 +1,48 @@
+{
+  "date": "2023-12-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-25T08:00:00+00:00",
+  "utc_end": "2023-12-26T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:40:46.261028+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2260,
+        "title": "Add \"About\" Heading to README.md",
+        "url": "https://github.com/vllm-project/vllm/pull/2260",
+        "author": "blueceiling",
+        "mergedAt": "2023-12-26T00:37:07Z",
+        "createdAt": "2023-12-25T20:49:26Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add About heading to clearly distinguish the \"Latest News\" from the basic info listed below it.\nThe heading contains all the content from \"vLLM is a fast and easy-to-use library...\" to \"Install vLLM with pip or from source:\"",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2258,
+        "title": "[BUGFIX] Do not return ignored sentences twice in async llm engine",
+        "url": "https://github.com/vllm-project/vllm/pull/2258",
+        "author": "zhuohan123",
+        "mergedAt": "2023-12-26T05:41:10Z",
+        "createdAt": "2023-12-25T09:29:55Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 22,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previously, vLLM would return the ignored sequence twice in the async llm engine. This PR fixes the issue and simplifies the code a little bit.",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ]
+  }
+}

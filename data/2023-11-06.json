@@ -1,0 +1,50 @@
+{
+  "date": "2023-11-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-06T08:00:00+00:00",
+  "utc_end": "2023-11-07T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:37:42.491601+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1567,
+        "title": "Support Yi model",
+        "url": "https://github.com/vllm-project/vllm/pull/1567",
+        "author": "esmeetu",
+        "mergedAt": "2023-11-06T23:26:04Z",
+        "createdAt": "2023-11-05T10:32:44Z",
+        "changedFiles": 6,
+        "additions": 496,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #1554\nModel info: https://huggingface.co/01-ai/Yi-6B\nThis PR support based llama model arch. And only layernorm name is different(ln1, ln2).",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1261,
+        "title": "ChatGLM2 Support",
+        "url": "https://github.com/vllm-project/vllm/pull/1261",
+        "author": "GoHomeToMacDonal",
+        "mergedAt": "2023-11-07T00:09:34Z",
+        "createdAt": "2023-10-04T22:19:59Z",
+        "changedFiles": 7,
+        "additions": 490,
+        "deletions": 4,
+        "commits": 8,
+        "labels": [
+          "new-model"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "An implementation of ChatGLM 2 based on vLLM. This implementation adapts PagedAttentionWithRoPE and ParallelLinear layers for model inference.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,165 @@
+{
+  "date": "2024-09-21",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-21T07:00:00+00:00",
+  "utc_end": "2024-09-22T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:02:29.678288+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1481,
+        "title": "fix incorrect links in documentation",
+        "url": "https://github.com/sgl-project/sglang/pull/1481",
+        "author": "rchen19",
+        "mergedAt": "2024-09-21T12:36:23Z",
+        "createdAt": "2024-09-21T00:46:16Z",
+        "changedFiles": 3,
+        "additions": 12,
+        "deletions": 12,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nSome links on current Documenation contains links that are actually file path in the repository, e.g., https://sglang.readthedocs.io/en/latest/backend.html#docs/en/custom_chat_template.md, which should be pointing to the file docs/en/custom_chat_template.md in the repo, but on the website",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1486,
+        "title": "doc: update backend",
+        "url": "https://github.com/sgl-project/sglang/pull/1486",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-21T14:05:12Z",
+        "createdAt": "2024-09-21T14:05:05Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8689,
+        "title": "[Doc] Fix typo in AMD installation guide",
+        "url": "https://github.com/vllm-project/vllm/pull/8689",
+        "author": "Imss27",
+        "mergedAt": "2024-09-21T07:24:12Z",
+        "createdAt": "2024-09-21T07:17:53Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix typo in AMD installation docs\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This helps vLLM m",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8646,
+        "title": "[Kernel][Triton][AMD] Remove tl.atomic_add from awq_gemm_kernel, 2-5x speedup MI300, minor improvement for MI250",
+        "url": "https://github.com/vllm-project/vllm/pull/8646",
+        "author": "rasmith",
+        "mergedAt": "2024-09-21T09:20:54Z",
+        "createdAt": "2024-09-20T00:27:29Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 6,
+        "commits": 7,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The use of tl.atomic_add in the awq_gemm kernel causes massive slow-down on MI300.  Removing the use of tl.atomic_add improves performance significantly for MI300.  Very minor improvement for MI250.  No slow-downs anywhere else.\npython benchmarks/benchmark_throughput.py  --input-len 2048 --output-le",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8518,
+        "title": "[dbrx] refactor dbrx experts to extend FusedMoe class",
+        "url": "https://github.com/vllm-project/vllm/pull/8518",
+        "author": "divakar-amd",
+        "mergedAt": "2024-09-21T21:09:40Z",
+        "createdAt": "2024-09-16T19:50:58Z",
+        "changedFiles": 1,
+        "additions": 51,
+        "deletions": 69,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR refactors DbrxExperts to use FusedMoe as the base class with custom weight loader. This is useful to expose the existing features of FusedMoe class for this model.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8643,
+        "title": "[Kernel][Bugfix] Delete some more useless code in marlin_moe_ops.cu",
+        "url": "https://github.com/vllm-project/vllm/pull/8643",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2024-09-21T23:45:02Z",
+        "createdAt": "2024-09-19T20:01:08Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 3,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "As @ElizaWszola points out, I missed something in #8573, and there's a bit more code that can be deleted.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8656,
+        "title": "[Bugfix] Refactor composite weight loading logic",
+        "url": "https://github.com/vllm-project/vllm/pull/8656",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-22T04:33:28Z",
+        "createdAt": "2024-09-20T07:44:43Z",
+        "changedFiles": 7,
+        "additions": 70,
+        "deletions": 61,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\n\nThis PR adds a check before applying components weights loading.\nThis check can catch unexpected weights in loaded weights, especially for some models with manually changed config file like #7984\n\nBEFORE SUBMITTIN",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8699,
+        "title": "[ci][build] fix vllm-flash-attn",
+        "url": "https://github.com/vllm-project/vllm/pull/8699",
+        "author": "youkaichao",
+        "mergedAt": "2024-09-22T06:24:58Z",
+        "createdAt": "2024-09-21T22:04:28Z",
+        "changedFiles": 3,
+        "additions": 18,
+        "deletions": 0,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

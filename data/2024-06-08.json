@@ -1,0 +1,103 @@
+{
+  "date": "2024-06-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-06-08T07:00:00+00:00",
+  "utc_end": "2024-06-09T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:52:46.115016+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 518,
+        "title": "Improve doc strings",
+        "url": "https://github.com/sgl-project/sglang/pull/518",
+        "author": "merrymercy",
+        "mergedAt": "2024-06-08T09:06:52Z",
+        "createdAt": "2024-06-08T08:47:26Z",
+        "changedFiles": 22,
+        "additions": 48,
+        "deletions": 13,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 5357,
+        "title": "[CI/Test] improve robustness of test by replacing del with context manager (vllm_runner)",
+        "url": "https://github.com/vllm-project/vllm/pull/5357",
+        "author": "youkaichao",
+        "mergedAt": "2024-06-08T08:59:21Z",
+        "createdAt": "2024-06-08T06:07:22Z",
+        "changedFiles": 28,
+        "additions": 455,
+        "deletions": 494,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "fixes #5337 .",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 5353,
+        "title": "[Misc][Breaking] Change FP8 checkpoint format from act_scale -> input_scale",
+        "url": "https://github.com/vllm-project/vllm/pull/5353",
+        "author": "mgoin",
+        "mergedAt": "2024-06-08T17:54:05Z",
+        "createdAt": "2024-06-07T22:12:56Z",
+        "changedFiles": 2,
+        "additions": 23,
+        "deletions": 23,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "In tandem with neuralmagic/AutoFP8#11.\nBREAKING CHANGE: Because there can be input and output scales (kv_scale is an example of an \"output\" scale for k_proj+v_proj), the current usage of act_scale is quite vague. We would like to be explicit here to properly support future formats, so we are proposi",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 5074,
+        "title": "[Core][CUDA Graph] add output buffer for cudagraph to reduce memory footprint",
+        "url": "https://github.com/vllm-project/vllm/pull/5074",
+        "author": "youkaichao",
+        "mergedAt": "2024-06-09T02:14:43Z",
+        "createdAt": "2024-05-27T22:19:37Z",
+        "changedFiles": 1,
+        "additions": 20,
+        "deletions": 4,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently, each cudagraph for one batch size will incur additional memory cost of TP * BATCH_SIZE * HIDDEN_SIZE . Then the total memory footprint for all cudagraphs are TP * SUM(BATCH_SIZES) * HIDDEN_SIZE.\nIf we create output buffer too, the total memory footprint for all cudagraphs are TP * MAX(BAT",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 5361,
+        "title": "[mis][ci/test] fix flaky test in tests/test_sharded_state_loader.py",
+        "url": "https://github.com/vllm-project/vllm/pull/5361",
+        "author": "youkaichao",
+        "mergedAt": "2024-06-09T03:50:14Z",
+        "createdAt": "2024-06-09T02:20:30Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This flaky test is observed in https://buildkite.com/vllm/ci/builds/9517#018ff9e8-1c4b-4fac-b3c5-af50946523d8 . torch.empty tensor can contain NaN values.",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

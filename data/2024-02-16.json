@@ -1,0 +1,85 @@
+{
+  "date": "2024-02-16",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-16T08:00:00+00:00",
+  "utc_end": "2024-02-17T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:19.529734+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 196,
+        "title": "Pin outlines version",
+        "url": "https://github.com/sgl-project/sglang/pull/196",
+        "author": "comaniac",
+        "mergedAt": "2024-02-16T21:01:40Z",
+        "createdAt": "2024-02-16T21:01:26Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "close #194",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 200,
+        "title": "Adjust outlines version.",
+        "url": "https://github.com/sgl-project/sglang/pull/200",
+        "author": "hnyls2002",
+        "mergedAt": "2024-02-17T05:40:39Z",
+        "createdAt": "2024-02-17T05:13:58Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2517,
+        "title": "Prefix Caching- fix t4 triton error",
+        "url": "https://github.com/vllm-project/vllm/pull/2517",
+        "author": "caoshiyi",
+        "mergedAt": "2024-02-16T22:17:55Z",
+        "createdAt": "2024-01-20T09:20:32Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #2513, need a smaller block size for Turing GPUs",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2887,
+        "title": "Bump up to v0.3.1",
+        "url": "https://github.com/vllm-project/vllm/pull/2887",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-02-16T23:05:18Z",
+        "createdAt": "2024-02-15T22:30:11Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #2859",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

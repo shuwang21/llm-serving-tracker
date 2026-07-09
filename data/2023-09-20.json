@@ -1,0 +1,48 @@
+{
+  "date": "2023-09-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-20T07:00:00+00:00",
+  "utc_end": "2023-09-21T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:46.118090+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 983,
+        "title": "Add documentation to Triton server tutorial",
+        "url": "https://github.com/vllm-project/vllm/pull/983",
+        "author": "tanmayv25",
+        "mergedAt": "2023-09-20T17:32:40Z",
+        "createdAt": "2023-09-07T21:17:33Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "There has been a growing interest in how to deploy vLLM within Triton. Adding this documentation would make it easier for vLLM to find Triton as a serving platform. #541 (comment)",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1096,
+        "title": "rope_theta and max_position_embeddings from config",
+        "url": "https://github.com/vllm-project/vllm/pull/1096",
+        "author": "Yard1",
+        "mergedAt": "2023-09-20T20:35:12Z",
+        "createdAt": "2023-09-19T04:47:13Z",
+        "changedFiles": 9,
+        "additions": 140,
+        "deletions": 62,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR lets rope_theta and max_position_embeddings to be read from model configs instead of hardcoding them. Notably, this allows codellama to work without issues with longer contexts.\nFixes #904",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

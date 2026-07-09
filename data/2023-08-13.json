@@ -1,0 +1,30 @@
+{
+  "date": "2023-08-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-13T07:00:00+00:00",
+  "utc_end": "2023-08-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:32:30.034751+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 748,
+        "title": "Fix baichuan doc style",
+        "url": "https://github.com/vllm-project/vllm/pull/748",
+        "author": "UranusSeven",
+        "mergedAt": "2023-08-14T03:57:32Z",
+        "createdAt": "2023-08-12T15:33:15Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix the style issue of baichuan in the supported models page.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

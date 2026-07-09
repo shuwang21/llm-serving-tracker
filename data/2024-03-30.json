@@ -1,0 +1,68 @@
+{
+  "date": "2024-03-30",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-30T07:00:00+00:00",
+  "utc_end": "2024-03-31T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:47:25.266815+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3662,
+        "title": "[Kernel] Layernorm performance optimization",
+        "url": "https://github.com/vllm-project/vllm/pull/3662",
+        "author": "mawong-amd",
+        "mergedAt": "2024-03-30T21:26:38Z",
+        "createdAt": "2024-03-27T18:09:09Z",
+        "changedFiles": 4,
+        "additions": 285,
+        "deletions": 47,
+        "commits": 6,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR primarily creates optimized specializations of fused_add_rms_norm_kernel, used in many layernorms. It also includes a slightly optimized version of blockReduceSum/warpReduceSum which slightly reduce the number of shuffles done when the max block size is <=512 and known at compile time.\nIt is",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 3746,
+        "title": "[Doc] Update installation doc for build from source and explain the dependency on torch/cuda version",
+        "url": "https://github.com/vllm-project/vllm/pull/3746",
+        "author": "youkaichao",
+        "mergedAt": "2024-03-30T23:34:38Z",
+        "createdAt": "2024-03-30T16:55:52Z",
+        "changedFiles": 1,
+        "additions": 21,
+        "deletions": 12,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Recently we received multiple issues for installing from source, and the situation becomes even worse when we change to cmake build system #2830 , where pytorch cmake explicitly search for CUDA_HOME.\nThis PR adds instructions for users to install full cudatoolkit. And it also explains that wheel ins",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3753,
+        "title": "[CI/Build] Make Marlin Tests Green",
+        "url": "https://github.com/vllm-project/vllm/pull/3753",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2024-03-31T02:18:34Z",
+        "createdAt": "2024-03-31T00:07:44Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "CI has been failing on the Marlin tests.\nFor Marlin, we test against the GPTQ version of the same model. There is not bitwise correctness between exllama kernels and marlin kernels (and Marlin is non-deterministic as it uses locks internally which impacts the non-associative nature of floating point",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

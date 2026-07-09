@@ -1,0 +1,48 @@
+{
+  "date": "2023-06-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-07T07:00:00+00:00",
+  "utc_end": "2023-06-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:28:25.107295+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 141,
+        "title": "Support FP32",
+        "url": "https://github.com/vllm-project/vllm/pull/141",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-07T07:40:21Z",
+        "createdAt": "2023-06-06T01:52:29Z",
+        "changedFiles": 8,
+        "additions": 65,
+        "deletions": 54,
+        "commits": 21,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #72\nThis PR removes the support for some head and block sizes to enhance the compilation speed. The removed sizes are not used for the models we currently support. In addition, removing them allows us to support FP32. On my machine, the compilation time got reduced from 7.5 mins to 1.5 mins e",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 142,
+        "title": "Add docstrings for LLMServer and related classes and examples",
+        "url": "https://github.com/vllm-project/vllm/pull/142",
+        "author": "zhuohan123",
+        "mergedAt": "2023-06-07T10:25:21Z",
+        "createdAt": "2023-06-07T03:55:36Z",
+        "changedFiles": 10,
+        "additions": 216,
+        "deletions": 22,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #74.",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      }
+    ]
+  }
+}

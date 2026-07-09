@@ -1,0 +1,30 @@
+{
+  "date": "2023-09-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-09T07:00:00+00:00",
+  "utc_end": "2023-09-10T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:06.301473+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 996,
+        "title": "Fix wrong dtype in PagedAttentionWithALiBi bias",
+        "url": "https://github.com/vllm-project/vllm/pull/996",
+        "author": "Yard1",
+        "mergedAt": "2023-09-09T21:58:35Z",
+        "createdAt": "2023-09-08T21:09:40Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes dtype not being set correctly as it was derived from the default dtype before (which will now always be float32).\nCloses #995\ncc @WoosukKwon @chu-tianxiang",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

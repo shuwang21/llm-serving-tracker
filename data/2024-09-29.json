@@ -1,0 +1,263 @@
+{
+  "date": "2024-09-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-29T07:00:00+00:00",
+  "utc_end": "2024-09-30T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:03:16.022492+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1534,
+        "title": "Improve process creation",
+        "url": "https://github.com/sgl-project/sglang/pull/1534",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-29T09:36:12Z",
+        "createdAt": "2024-09-29T05:35:07Z",
+        "changedFiles": 15,
+        "additions": 269,
+        "deletions": 676,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Simplify the process creation process\nRename controller to scheduler\nUse LimitedCapacityDict in DetokenizerManager\nTemporarily disable data parallelism",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 1537,
+        "title": "fix ipv6 url when warm up model",
+        "url": "https://github.com/sgl-project/sglang/pull/1537",
+        "author": "cauyxy",
+        "mergedAt": "2024-09-29T18:02:41Z",
+        "createdAt": "2024-09-29T10:02:26Z",
+        "changedFiles": 2,
+        "additions": 14,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nBUG i encountered:\nFile \"/home/tiger/.local/lib/python3.11/site-packages/requests/models.py\", line 435, in prepare_url\nraise InvalidURL(*e.args)\nrequests.exceptions.InvalidURL: Failed to parse: http://fdbd:dc05:8:8::24:10052/get_model_info\nModifications\n\nChecklist\n\n[ x ] Format your code ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1538,
+        "title": "Move scheduler code from tp_worker.py to scheduler.py",
+        "url": "https://github.com/sgl-project/sglang/pull/1538",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-30T00:42:45Z",
+        "createdAt": "2024-09-29T18:33:15Z",
+        "changedFiles": 8,
+        "additions": 933,
+        "deletions": 870,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "We want to make a cleaner separation between the scheduler and the model worker, so we move most scheduling code from tp_worker.py to scheduler.py",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 1539,
+        "title": "Process image in parallel",
+        "url": "https://github.com/sgl-project/sglang/pull/1539",
+        "author": "hnyls2002",
+        "mergedAt": "2024-09-30T01:52:43Z",
+        "createdAt": "2024-09-29T20:55:53Z",
+        "changedFiles": 2,
+        "additions": 204,
+        "deletions": 147,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nThe current multi-image process is not truly parallelized.\nModifications\n\nModel: lmms-lab/llava-onevision-qwen2-0.5b-ov, image num: 10\nBefore: process time: 1.92s, e2e time: 2.53s\nAfter: process time: 0.34s, e2e time: 0.99s\nThis PR also moves the image process into a dependent module and",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1541,
+        "title": "Let ModelRunner take InputMetadata as input, instead of ScheduleBatch",
+        "url": "https://github.com/sgl-project/sglang/pull/1541",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-30T03:28:45Z",
+        "createdAt": "2024-09-30T00:54:56Z",
+        "changedFiles": 12,
+        "additions": 143,
+        "deletions": 158,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Let ModelRunner take InputMetadata as input, instead of ScheduleBatch. This makes a better separation between scheduling and model forward pass.\nDelete the deprecated position_ids_offsets",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8870,
+        "title": "[BugFix] Fix seeded random sampling with encoder-decoder models",
+        "url": "https://github.com/vllm-project/vllm/pull/8870",
+        "author": "njhill",
+        "mergedAt": "2024-09-29T09:43:14Z",
+        "createdAt": "2024-09-26T21:45:29Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently providing the seed parameter with encoder-decoder models including the llama-3.2-vision ones will crash the server.\nPlanning to follow up with some better test coverage and hopefully some changes to make the implementation less fragile, but would be good to get this fix in quickly.\nThanks ",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8944,
+        "title": "[Misc] Fix typo in BlockSpaceManagerV1",
+        "url": "https://github.com/vllm-project/vllm/pull/8944",
+        "author": "juncheoll",
+        "mergedAt": "2024-09-29T15:05:55Z",
+        "createdAt": "2024-09-29T12:23:15Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "It's just fix the typo in BlockSpaceManagerV1._allocate_last_physical_block()",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8942,
+        "title": "[Frontend] Added support for HF's new `continue_final_message` parameter",
+        "url": "https://github.com/vllm-project/vllm/pull/8942",
+        "author": "danieljannai21",
+        "mergedAt": "2024-09-29T17:59:47Z",
+        "createdAt": "2024-09-29T10:31:39Z",
+        "changedFiles": 7,
+        "additions": 105,
+        "deletions": 31,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure th",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8533,
+        "title": "[Kernel][Model] Varlen prefill + Prefill chunking support for mamba kernels and Jamba model",
+        "url": "https://github.com/vllm-project/vllm/pull/8533",
+        "author": "mzusman",
+        "mergedAt": "2024-09-29T21:35:58Z",
+        "createdAt": "2024-09-17T07:34:16Z",
+        "changedFiles": 13,
+        "additions": 1176,
+        "deletions": 894,
+        "commits": 53,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR contains variable length and prefill chunking enablement for the mamba kernels (causal_conv1d.cu and mamba_ssm.cu):\n\nCausal conv1d and mamba ssm prefill kernels now accept 3 new arguments :\n\n\ncu_seq_len  - cumulative sequence lenghts, indicates the bos and eos of each sequence in the unpadde",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8856,
+        "title": "[Model] support input embeddings for qwen2vl",
+        "url": "https://github.com/vllm-project/vllm/pull/8856",
+        "author": "whyiug",
+        "mergedAt": "2024-09-30T03:16:10Z",
+        "createdAt": "2024-09-26T15:25:51Z",
+        "changedFiles": 3,
+        "additions": 136,
+        "deletions": 71,
+        "commits": 15,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #8857\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This help",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8951,
+        "title": "[Misc][CI/Build] Include `cv2` via `mistral_common[opencv]` ",
+        "url": "https://github.com/vllm-project/vllm/pull/8951",
+        "author": "ywang96",
+        "mergedAt": "2024-09-30T04:28:26Z",
+        "createdAt": "2024-09-30T01:30:56Z",
+        "changedFiles": 2,
+        "additions": 1,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR includes opencv-python as part of common requirement via mistral_common[opencv] of vllm for out-of-box support of Pixtral with our python package and docker image.\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure t",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8943,
+        "title": "[Model][LoRA]LoRA support added for MiniCPMV2.6",
+        "url": "https://github.com/vllm-project/vllm/pull/8943",
+        "author": "jeejeelee",
+        "mergedAt": "2024-09-30T04:31:55Z",
+        "createdAt": "2024-09-29T10:55:44Z",
+        "changedFiles": 3,
+        "additions": 49,
+        "deletions": 880,
+        "commits": 33,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "ping @DarkLight1337\ncc @HwwwwwwwH   I replaced 2.6's vision encoder, could you  please help check if there are any issues? Although I've already tested it locally",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8946,
+        "title": "[Model] Expose InternVL2 max_dynamic_patch as a mm_processor_kwarg",
+        "url": "https://github.com/vllm-project/vllm/pull/8946",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-30T05:01:20Z",
+        "createdAt": "2024-09-29T13:51:30Z",
+        "changedFiles": 2,
+        "additions": 90,
+        "deletions": 61,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\n\nFix the bug mentioned in #6514 (comment)\nExpose InternVL2 max_dynamic_patch as required in #6514 (comment)\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLL",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

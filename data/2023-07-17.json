@@ -1,0 +1,48 @@
+{
+  "date": "2023-07-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-17T07:00:00+00:00",
+  "utc_end": "2023-07-18T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:54.787701+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 365,
+        "title": "Add support for baichuan",
+        "url": "https://github.com/vllm-project/vllm/pull/365",
+        "author": "codethazine",
+        "mergedAt": "2023-07-17T20:50:55Z",
+        "createdAt": "2023-07-04T21:55:32Z",
+        "changedFiles": 6,
+        "additions": 361,
+        "deletions": 0,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #303\nShould be merged after #364 - as the model requires its remote tokenizer to run correctly",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 489,
+        "title": "fix max seq len",
+        "url": "https://github.com/vllm-project/vllm/pull/489",
+        "author": "LiuXiaoxuanPKU",
+        "mergedAt": "2023-07-18T06:20:21Z",
+        "createdAt": "2023-07-18T06:14:43Z",
+        "changedFiles": 4,
+        "additions": 8,
+        "deletions": 8,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR tries to remove the definition of max sequence length. A response is capped only when it's longer than max_model_len. A request is ignored if the input prompt is longer than min(max_model_len, max_num_batched_tokens).  This should fix #446.",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

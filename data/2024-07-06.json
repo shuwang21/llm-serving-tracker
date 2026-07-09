@@ -1,0 +1,103 @@
+{
+  "date": "2024-07-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-07-06T07:00:00+00:00",
+  "utc_end": "2024-07-07T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:55:05.533149+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 594,
+        "title": "Fix Llava model",
+        "url": "https://github.com/sgl-project/sglang/pull/594",
+        "author": "wisclmy0611",
+        "mergedAt": "2024-07-06T07:58:46Z",
+        "createdAt": "2024-07-06T07:39:45Z",
+        "changedFiles": 5,
+        "additions": 18,
+        "deletions": 13,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 586,
+        "title": "* fix(detokenizer_manager.py): fix truncated decoded output",
+        "url": "https://github.com/sgl-project/sglang/pull/586",
+        "author": "Titan-p",
+        "mergedAt": "2024-07-06T21:53:22Z",
+        "createdAt": "2024-07-04T03:20:57Z",
+        "changedFiles": 4,
+        "additions": 17,
+        "deletions": 10,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "ignore \ufffd character\n#580\nThis PR fixes #580, which moves the find_printable_text into the backend and introduces an incomplete_text field in the HTTP response.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 599,
+        "title": "Add `--enable-p2p-check` option",
+        "url": "https://github.com/sgl-project/sglang/pull/599",
+        "author": "hnyls2002",
+        "mergedAt": "2024-07-07T06:34:10Z",
+        "createdAt": "2024-07-07T05:14:32Z",
+        "changedFiles": 4,
+        "additions": 13,
+        "deletions": 9,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Not only 4090, there are a lot of old GPUs that cannot support p2p access and we cannot always skip the  p2p checking process.\nThe RTX 40 hack can also be discarded as we can use --enable-p2p-check now.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 6168,
+        "title": "[Doc] Move guide for multimodal model and other improvements",
+        "url": "https://github.com/vllm-project/vllm/pull/6168",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-07-06T09:18:59Z",
+        "createdAt": "2024-07-06T06:13:58Z",
+        "changedFiles": 8,
+        "additions": 61,
+        "deletions": 67,
+        "commits": 11,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR primarily moves the multimodal model guide under \"Models\" section for more visibility. Some other changes:\n\nClean up the input processing and multimodal docs.\nReduce nesting of \"Developer Documentation\" in the main page since it's a bit spammy.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 5189,
+        "title": "[Model] Add PaliGemma",
+        "url": "https://github.com/vllm-project/vllm/pull/5189",
+        "author": "ywang96",
+        "mergedAt": "2024-07-07T01:25:50Z",
+        "createdAt": "2024-06-02T00:50:50Z",
+        "changedFiles": 6,
+        "additions": 557,
+        "deletions": 2,
+        "commits": 41,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add support for PaliGemma - Google's Cutting-Edge Open Vision Language Model.\nFIX #4833",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

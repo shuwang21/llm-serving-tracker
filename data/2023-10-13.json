@@ -1,0 +1,66 @@
+{
+  "date": "2023-10-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-13T07:00:00+00:00",
+  "utc_end": "2023-10-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:36:11.590218+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1338,
+        "title": "Improve detokenization performance",
+        "url": "https://github.com/vllm-project/vllm/pull/1338",
+        "author": "Yard1",
+        "mergedAt": "2023-10-13T16:59:07Z",
+        "createdAt": "2023-10-13T00:34:02Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Two main changes:\n\nif we are using a fast tokenizer, we do not enter the slow _convert_tokens_to_string_with_added_encoders loop as the fast tokenizers do not use it in base transformers\nUse cached properties for added_tokens_encoder and all_special_tokens.\n\nThose 2 changes improved detokenization s",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1254,
+        "title": "Bump up transformers version & Remove MistralConfig",
+        "url": "https://github.com/vllm-project/vllm/pull/1254",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-10-13T17:05:26Z",
+        "createdAt": "2023-10-03T15:26:50Z",
+        "changedFiles": 6,
+        "additions": 4,
+        "deletions": 81,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Now that MistralConfig is officially supported by the stable release of HF transformers, we can remove our MistralConfig.",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1339,
+        "title": "Fix the issue for AquilaChat2-* models",
+        "url": "https://github.com/vllm-project/vllm/pull/1339",
+        "author": "lu-wang-dl",
+        "mergedAt": "2023-10-13T18:51:29Z",
+        "createdAt": "2023-10-13T02:39:33Z",
+        "changedFiles": 3,
+        "additions": 10,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The architectures  of BAAI/AquilaChat2-34B and BAAI/AquilaChat2-7B are AquilaForCausalLM. When loading the model, it will show error:\nValueError: Model architectures ['AquilaForCausalLM'] are not supported for now. Supported architectures: ['AquilaModel', 'BaiChuanForCausalLM', 'BaichuanForCausalLM'",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

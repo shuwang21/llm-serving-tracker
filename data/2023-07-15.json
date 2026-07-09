@@ -1,0 +1,30 @@
+{
+  "date": "2023-07-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-15T07:00:00+00:00",
+  "utc_end": "2023-07-16T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:47.983713+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 467,
+        "title": "Offload port selection to OS",
+        "url": "https://github.com/vllm-project/vllm/pull/467",
+        "author": "zhangir-azerbayev",
+        "mergedAt": "2023-07-16T06:11:02Z",
+        "createdAt": "2023-07-14T20:59:32Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "In machine learning, it is a common workflow to run two programs that make the sequence of random choices with the same random seed on the same machine at the same time. For example, this happens when you run the same eval suite on two different language models.\nCurrently, the doing the above won't ",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,663 @@
+{
+  "date": "2025-10-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-10-01T07:00:00+00:00",
+  "utc_end": "2025-10-02T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:21:48.161317+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 11075,
+        "title": "docker: x86 dev builds for hopper and blackwell",
+        "url": "https://github.com/sgl-project/sglang/pull/11075",
+        "author": "ishandhanani",
+        "mergedAt": "2025-10-01T07:06:38Z",
+        "createdAt": "2025-09-29T18:17:29Z",
+        "changedFiles": 4,
+        "additions": 27,
+        "deletions": 27,
+        "commits": 14,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This allows you to do docker pull lmsysorg:sglang:dev and depending on your machine it will \"just run\". Also edit runner names and fix some typos",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11128,
+        "title": "Refactor AMD CI.",
+        "url": "https://github.com/sgl-project/sglang/pull/11128",
+        "author": "saienduri",
+        "mergedAt": "2025-10-01T08:12:29Z",
+        "createdAt": "2025-10-01T05:40:46Z",
+        "changedFiles": 2,
+        "additions": 15,
+        "deletions": 39,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis PR cleans up AMD CI.\nModifications\nMore efficiently shard tests.\nShare gfx942 resources between tests instead of redundant, inefficient testing for the same architecture.\nAlso disable flaky tests temporarily that are tracked here: #11127\nAccuracy Tests\n\nBenchmarking and Profiling\n\nCh",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10760,
+        "title": "feat: add fast_decode_plan from flashinfer, flashinfer to 0.4.0rc3",
+        "url": "https://github.com/sgl-project/sglang/pull/10760",
+        "author": "yyihuang",
+        "mergedAt": "2025-10-01T09:56:14Z",
+        "createdAt": "2025-09-22T21:05:27Z",
+        "changedFiles": 4,
+        "additions": 49,
+        "deletions": 191,
+        "commits": 17,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nWe maintain fast_decode_plan at FI side. C++ API changes wont break sgl on fast_decode_plan function with this PR. Might be removed after we adopt GPU-based planning.\n#10634\nflashinfer-ai/flashinfer#1720\nflashinfer-ai/flashinfer#1745\nflashinfer-ai/flashinfer#1757\nModifications\n\nAccuracy T",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11005,
+        "title": "[HiCache]bug fix: fixed blank item in host_mem_release_queue",
+        "url": "https://github.com/sgl-project/sglang/pull/11005",
+        "author": "zhangzuo21",
+        "mergedAt": "2025-10-01T13:42:37Z",
+        "createdAt": "2025-09-28T04:32:15Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 3,
+        "commits": 9,
+        "labels": [
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "After enabling HiCache L3 and running with multiple tensor parallelism (TP) processes, the sglang server would eventually hang under sustained high-intensity workloads. The issue arises because the append_host_mem_release function may receive an empty host_indices tensor. However, splitting an empty",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10271,
+        "title": "[Feature] Add EIC as sglang HiCache Storage backend",
+        "url": "https://github.com/sgl-project/sglang/pull/10271",
+        "author": "mss1213",
+        "mergedAt": "2025-10-01T13:43:34Z",
+        "createdAt": "2025-09-10T12:28:35Z",
+        "changedFiles": 6,
+        "additions": 927,
+        "deletions": 2,
+        "commits": 8,
+        "labels": [
+          "high priority",
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Description\nEIC(Elastic Instant Cache) is a distributed database designed for LLM KV Cache. It supports RDMA, GDR and has the capabilities of distributed disaster tolerance and expansion.\nFeature\n\nsupport both 'page_first' for zero copy  and 'layer_first' for generic copy cache layout.\nuse load bala",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10512,
+        "title": "[HiCache] Configurable and Dynamic Prefetch Timeout",
+        "url": "https://github.com/sgl-project/sglang/pull/10512",
+        "author": "ykwd",
+        "mergedAt": "2025-10-01T13:44:11Z",
+        "createdAt": "2025-09-16T09:28:14Z",
+        "changedFiles": 2,
+        "additions": 75,
+        "deletions": 21,
+        "commits": 9,
+        "labels": [
+          "high priority",
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nIn real-world deployments, timeout serves as a practical prefetch policy. On the one hand, prefetch latency depends on factors such as hardware conditions, the model, and the number of tokens to prefetch. On the other hand, the prefetch deadline is constrained by the SLO. Therefore, allo",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11120,
+        "title": "[router] add pd service in grpc router for pd",
+        "url": "https://github.com/sgl-project/sglang/pull/11120",
+        "author": "slin1237",
+        "mergedAt": "2025-10-01T15:09:21Z",
+        "createdAt": "2025-10-01T00:28:11Z",
+        "changedFiles": 2,
+        "additions": 50,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "add pd argument for grpc server\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark results according to Test the accuracy an",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11143,
+        "title": "[router] Add multi-turn tool calling loop support for MCP integration",
+        "url": "https://github.com/sgl-project/sglang/pull/11143",
+        "author": "key4ng",
+        "mergedAt": "2025-10-01T19:50:21Z",
+        "createdAt": "2025-10-01T18:41:41Z",
+        "changedFiles": 3,
+        "additions": 791,
+        "deletions": 238,
+        "commits": 6,
+        "labels": [
+          "router",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nSupport multi-turn tool calling loop\nReturn incomplete message if it hits max_tool_calls limits\n\n\nModifications\n\nMcpLoopConfig - Internal config struct with max_iterations: 10 safety limit and per-tool timeout\nToolLoopState - State tracking for loop iterations, total calls, and conversat",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11123,
+        "title": "Fix metrics and request tracing (TimeStats)",
+        "url": "https://github.com/sgl-project/sglang/pull/11123",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-01T20:03:07Z",
+        "createdAt": "2025-10-01T04:50:11Z",
+        "changedFiles": 13,
+        "additions": 462,
+        "deletions": 393,
+        "commits": 10,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11145,
+        "title": "Remove debug print statement from scheduler output",
+        "url": "https://github.com/sgl-project/sglang/pull/11145",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-01T20:37:05Z",
+        "createdAt": "2025-10-01T20:04:01Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10720,
+        "title": "Intoduce cpu tensor as metadata to avoid blocking gpu kernel launch",
+        "url": "https://github.com/sgl-project/sglang/pull/10720",
+        "author": "AHEADer",
+        "mergedAt": "2025-10-02T02:51:25Z",
+        "createdAt": "2025-09-22T02:00:55Z",
+        "changedFiles": 8,
+        "additions": 114,
+        "deletions": 43,
+        "commits": 25,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nWe observe some .item() operations in kv cache allocator, which will do cuda sync and block gpu kernel launching and make generation steps slower. We remove these operations by introducing some metadata tensor on cpu.\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11135,
+        "title": "Fix ngram spec with page size > 1",
+        "url": "https://github.com/sgl-project/sglang/pull/11135",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-02T04:34:24Z",
+        "createdAt": "2025-10-01T14:03:38Z",
+        "changedFiles": 5,
+        "additions": 32,
+        "deletions": 10,
+        "commits": 5,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "depends on #10720; will rebase it later.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10559,
+        "title": "[ROCm] To reduce the compiling time when using torch compile.",
+        "url": "https://github.com/sgl-project/sglang/pull/10559",
+        "author": "sogalin",
+        "mergedAt": "2025-10-02T06:53:14Z",
+        "createdAt": "2025-09-17T08:18:46Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 1,
+        "commits": 10,
+        "labels": [
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTo reduce compiling time for torch compile\nModifications\nSet dynamic shape to True if SGLANG_TORCH_DYNAMIC_SHAPE was set.\nAccuracy Tests\nAccuracy of DSv3, GPT-oss, and Grok2 models are passed.\nBenchmarking and Profiling\nThere are no obvious difference with python -m sglang.bench_serving -",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11149,
+        "title": "Fix DeepSeek chunked prefill memory issue",
+        "url": "https://github.com/sgl-project/sglang/pull/11149",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-02T06:56:59Z",
+        "createdAt": "2025-10-01T23:39:57Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\ntry to save 8G on someone's case\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provid",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 26004,
+        "title": "[BugFix][MM] Fix Nonetype error when video is cache in qwen2.5-omni-thinker",
+        "url": "https://github.com/vllm-project/vllm/pull/26004",
+        "author": "wwl2755",
+        "mergedAt": "2025-10-01T08:03:26Z",
+        "createdAt": "2025-10-01T06:15:15Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #25970\nWhen omni is handling the cached video, it will produced mm_kwargs: {'video': [None]}. Then the error will occur when accessing item[\"use_audio_in_video\"].data since item is None\nCC: @ywang96 @DarkLight1337 @Isotr0py\nTest script:\nfrom PIL import Image\nfrom vllm import LLM, SamplingParams\n",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26003,
+        "title": "[Misc] Factor out common `_apply_feature_select_strategy`",
+        "url": "https://github.com/vllm-project/vllm/pull/26003",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-01T08:31:03Z",
+        "createdAt": "2025-10-01T05:56:02Z",
+        "changedFiles": 4,
+        "additions": 40,
+        "deletions": 39,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFollow-up to #25938\nTest Plan\nUnblock all MM model tests\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test result",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25951,
+        "title": "[CI] Only capture a single CUDA graph size in CI by default",
+        "url": "https://github.com/vllm-project/vllm/pull/25951",
+        "author": "hmellor",
+        "mergedAt": "2025-10-01T09:03:45Z",
+        "createdAt": "2025-09-30T12:27:13Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Should reduce the time taken for all tests which don't specify enforce_eager=True or their own compilation_config",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25829,
+        "title": "[MISC] Fix misleading batch_size_capture_list when cuda_graph_sizes < 4",
+        "url": "https://github.com/vllm-project/vllm/pull/25829",
+        "author": "billishyahao",
+        "mergedAt": "2025-10-01T12:39:45Z",
+        "createdAt": "2025-09-28T09:56:06Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nPreviously, the logic for generating batch_size_capture_list always included [1, 2, 4] by default. Refer to \n  \n    \n      vllm/vllm/config/__init__.py\n    \n    \n        Lines 619 to 622\n      in\n      f4e4088\n    \n  \n  \n    \n\n        \n          \n           if len(cuda_graph_sizes) == 1: \n  ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26007,
+        "title": "[Benchmark] Finish documented v0.11.0 deprecation of --endpoint-type",
+        "url": "https://github.com/vllm-project/vllm/pull/26007",
+        "author": "natoscott",
+        "mergedAt": "2025-10-01T12:41:57Z",
+        "createdAt": "2025-10-01T08:23:49Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 24,
+        "commits": 1,
+        "labels": [
+          "performance",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nRemove the vllm bench --endpoint-type option, as described in the deprecation message for some time.\nTest Plan\nRan multiple benchmarks as normal with code removed.\nTest Result\nNo issues observed.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26005,
+        "title": "[Bugfix] Apply same sampling parameters for both `n=1` and `n>1`",
+        "url": "https://github.com/vllm-project/vllm/pull/26005",
+        "author": "kmaehashi",
+        "mergedAt": "2025-10-01T14:37:35Z",
+        "createdAt": "2025-10-01T07:18:55Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nCloses #26002.\nFIX #23438\nFIX #23251\nTest Plan\nUse the reproducer in the original issue.\nTest Result\nConfirmed that same sampling parameters are used for both n=1 and n>1 cases.\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 24673,
+        "title": "[NVIDIA] Blackwell Family",
+        "url": "https://github.com/vllm-project/vllm/pull/24673",
+        "author": "johnnynunez",
+        "mergedAt": "2025-10-01T17:50:54Z",
+        "createdAt": "2025-09-11T15:54:14Z",
+        "changedFiles": 5,
+        "additions": 66,
+        "deletions": 22,
+        "commits": 34,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "https://developer.nvidia.com/blog/nvidia-blackwell-and-nvidia-cuda-12-9-introduce-family-specific-architecture-features/\ncc @simon-mo",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 25995,
+        "title": "Fix test_mamba_ssm_ssd.py due to missing _query_start_loc_to_chunk_indices_offsets",
+        "url": "https://github.com/vllm-project/vllm/pull/25995",
+        "author": "hl475",
+        "mergedAt": "2025-10-01T18:18:36Z",
+        "createdAt": "2025-09-30T21:47:00Z",
+        "changedFiles": 2,
+        "additions": 118,
+        "deletions": 63,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1",
+          "ci-failure"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n#24683 removed the helper function _query_start_loc_to_chunk_indices_offsets and breaks the tests/kernels/mamba/test_mamba_ssm_ssd.py (sample job https://buildkite.com/vllm/ci/builds/32891/steps/canvas?sid=019998c8-1682-4e2d-8161-55a772c16cde) from v1.attention.backends.mamba2_attn as part o",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26030,
+        "title": "[CI] Tweaks to GPT-OSS Eval (Blackwell) for stability",
+        "url": "https://github.com/vllm-project/vllm/pull/26030",
+        "author": "mgoin",
+        "mergedAt": "2025-10-01T19:02:17Z",
+        "createdAt": "2025-10-01T16:00:41Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "ci/build",
+          "gpt-oss"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nUsing TP was slowing down inference greatly for gpt-oss-20b and reducing thread count helps stability\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26026,
+        "title": "[BugFix][DP/EP] Fix CUTLASS MLA hang under load",
+        "url": "https://github.com/vllm-project/vllm/pull/26026",
+        "author": "LucasWilkinson",
+        "mergedAt": "2025-10-01T19:30:00Z",
+        "createdAt": "2025-10-01T14:03:59Z",
+        "changedFiles": 1,
+        "additions": 32,
+        "deletions": 32,
+        "commits": 2,
+        "labels": [
+          "bug",
+          "ready",
+          "deepseek"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The early return in compute( calls arrive:\n      cutlass::arch::NamedBarrier(\n          (kNumComputeWarps + kNumLoadWarps) * NumThreadsPerWarp,\n          kNamedBarrierEpilogue\n      ).arrive();\n\nbut didn't have any barrier before looping around and calling it again causing a deadlock when the load w",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25908,
+        "title": "[ROCm][Build] Add support for AMD Ryzen AI MAX / AI 300 Series",
+        "url": "https://github.com/vllm-project/vllm/pull/25908",
+        "author": "hyoon1",
+        "mergedAt": "2025-10-01T21:39:50Z",
+        "createdAt": "2025-09-29T21:34:49Z",
+        "changedFiles": 3,
+        "additions": 5,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "rocm",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAdded support for AMD Ryzen AI MAX / AI 300 Series\nUpdated 'CMakeLists.txt' and 'Dockerfile.rocm_base' to include gfx1150 and gfx1151\nCLOSE #25634\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link exis",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25683,
+        "title": "[Bug] Fix Negative Cuda Memory Usage",
+        "url": "https://github.com/vllm-project/vllm/pull/25683",
+        "author": "yewentao256",
+        "mergedAt": "2025-10-01T22:16:26Z",
+        "createdAt": "2025-09-25T15:42:08Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n2025-09-24T04:15:29.297966219Z (EngineCore_DP4 pid=1673) INFO 09-24 00:15:29 [v1/worker/gpu_model_runner.py:3380] Graph capturing finished in 79 secs, took -9.96 GiB\n2025-09-24T04:15:29.298151199Z (EngineCore_DP4 pid=1673) DEBUG 09-24 00:15:29 [v1/worker/gpu_worker.py:401] Free memory on dev",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26034,
+        "title": "[BugFix] ChunkedLocalAttention is currently not CG compatible",
+        "url": "https://github.com/vllm-project/vllm/pull/26034",
+        "author": "LucasWilkinson",
+        "mergedAt": "2025-10-01T23:28:00Z",
+        "createdAt": "2025-10-01T16:17:03Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "bug",
+          "ready",
+          "llama"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "potential fix for: #25960",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 23014,
+        "title": "Support RL online quantization with torchao",
+        "url": "https://github.com/vllm-project/vllm/pull/23014",
+        "author": "jerryzh168",
+        "mergedAt": "2025-10-01T23:39:29Z",
+        "createdAt": "2025-08-15T23:53:32Z",
+        "changedFiles": 6,
+        "additions": 465,
+        "deletions": 16,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary:\nThis is to enable online quant for verl. The PR\nadded support for initializing a TorchAOConfig object in vllm\nthrough a serialized json file that specifies the type of quantization\npeople want. Or a json serialized TorchAOConfig object\nCode for serializing the config to json:\nfrom torchao.q",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26029,
+        "title": "[ROCm][Bugfix] Add missing parameter to ROCm backend",
+        "url": "https://github.com/vllm-project/vllm/pull/26029",
+        "author": "gshtras",
+        "mergedAt": "2025-10-02T02:23:14Z",
+        "createdAt": "2025-10-01T15:05:29Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "rocm",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow up to #25896 that skipped ROCm attention backend when adding the new parameter to get_kv_cache_shape",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26032,
+        "title": "[Misc] Make handling of SamplingParams clearer in n>1 case",
+        "url": "https://github.com/vllm-project/vllm/pull/26032",
+        "author": "njhill",
+        "mergedAt": "2025-10-02T02:31:39Z",
+        "createdAt": "2025-10-01T16:16:15Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow-on to #26005.\nMake the logic clearer and less fragile.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 24909,
+        "title": "Run:ai model streamer add GCS package support",
+        "url": "https://github.com/vllm-project/vllm/pull/24909",
+        "author": "pwschuurman",
+        "mergedAt": "2025-10-02T03:59:13Z",
+        "createdAt": "2025-09-15T20:19:37Z",
+        "changedFiles": 6,
+        "additions": 54,
+        "deletions": 9,
+        "commits": 3,
+        "labels": [
+          "documentation",
+          "rocm",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nInstall the runai-model-streamer[gcs] pip package by default, to enable GCS support in the nightly / published image.\n\nTest Plan / Test Result\nValidated locally by building docker image and running locally (see updated documentation).",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

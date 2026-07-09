@@ -1,0 +1,48 @@
+{
+  "date": "2023-10-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-07T07:00:00+00:00",
+  "utc_end": "2023-10-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:35:47.330090+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1288,
+        "title": "API server support ipv4 / ipv6 dualstack",
+        "url": "https://github.com/vllm-project/vllm/pull/1288",
+        "author": "yunfeng-scale",
+        "mergedAt": "2023-10-07T22:15:54Z",
+        "createdAt": "2023-10-07T17:54:09Z",
+        "changedFiles": 3,
+        "additions": 3,
+        "deletions": 6,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "using localhost for host resulted in\nERROR:    [Errno 99] error while attempting to bind on address ('::1', 8000, 0, 0): cannot assign requested address\n\nmore details in Kludex/uvicorn#1529 (reply in thread)\nrelated to #217",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1259,
+        "title": "Move bfloat16 check to worker",
+        "url": "https://github.com/vllm-project/vllm/pull/1259",
+        "author": "Yard1",
+        "mergedAt": "2023-10-08T05:10:44Z",
+        "createdAt": "2023-10-04T17:53:04Z",
+        "changedFiles": 2,
+        "additions": 14,
+        "deletions": 9,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The bfloat16 check requires CUDA initialization. If using Ray workers (eg. for tensor parallelism), this will lead to Ray being unable to set the correct environment variables, leading to exceptions later. Moving this check to the worker after it has been initialized solves the issue.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

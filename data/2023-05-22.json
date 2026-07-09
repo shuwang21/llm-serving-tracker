@@ -1,0 +1,48 @@
+{
+  "date": "2023-05-22",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-22T07:00:00+00:00",
+  "utc_end": "2023-05-23T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:26:59.308406+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 120,
+        "title": "Add initial sphinx docs",
+        "url": "https://github.com/vllm-project/vllm/pull/120",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-23T00:02:45Z",
+        "createdAt": "2023-05-22T08:13:08Z",
+        "changedFiles": 9,
+        "additions": 200,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the boilerplate code and some placeholders for sphinx docs.\nThe docs look like the following:\n\nNOTE: the current contents are place holders. The actual contents will be added in the next PRs.",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 118,
+        "title": "Fix latency benchmark script",
+        "url": "https://github.com/vllm-project/vllm/pull/118",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-23T00:03:40Z",
+        "createdAt": "2023-05-22T03:32:16Z",
+        "changedFiles": 2,
+        "additions": 43,
+        "deletions": 31,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes the benchmark_latency.py script using the new LLM class.",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2023-12-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-05T08:00:00+00:00",
+  "utc_end": "2023-12-06T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:39:30.510756+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1932,
+        "title": "support ChatGLMForConditionalGeneration",
+        "url": "https://github.com/vllm-project/vllm/pull/1932",
+        "author": "dancingpipi",
+        "mergedAt": "2023-12-05T18:52:48Z",
+        "createdAt": "2023-12-05T09:52:11Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Since the architectures in the config.json saved after chatglm2 training are ChatGLMForConditionalGeneration, model_loader.py needs to be compatible with ChatGLMForConditionalGeneration.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1871,
+        "title": "Save pytorch profiler output for latency benchmark",
+        "url": "https://github.com/vllm-project/vllm/pull/1871",
+        "author": "Yard1",
+        "mergedAt": "2023-12-06T04:55:55Z",
+        "createdAt": "2023-12-01T00:07:08Z",
+        "changedFiles": 1,
+        "additions": 25,
+        "deletions": 9,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #1854\nThe saved trace file can be viewed with eg. https://ui.perfetto.dev/ or tensorboard.",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

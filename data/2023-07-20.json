@@ -1,0 +1,30 @@
+{
+  "date": "2023-07-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-20T07:00:00+00:00",
+  "utc_end": "2023-07-21T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:31:06.319683+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 505,
+        "title": "Add support for LLaMA-2",
+        "url": "https://github.com/vllm-project/vllm/pull/505",
+        "author": "zhuohan123",
+        "mergedAt": "2023-07-20T18:38:27Z",
+        "createdAt": "2023-07-18T22:04:25Z",
+        "changedFiles": 7,
+        "additions": 67,
+        "deletions": 38,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #501\nUpdate: this PR has some correctness issues on 70B models. Will look into it.\n@WoosukKwon This PR is ready to go. Please review and let's merge it!",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

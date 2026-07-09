@@ -1,0 +1,30 @@
+{
+  "date": "2023-09-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-29T07:00:00+00:00",
+  "utc_end": "2023-09-30T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:35:19.938968+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1226,
+        "title": "fixing typo in `tiiuae/falcon-rw-7b` model name",
+        "url": "https://github.com/vllm-project/vllm/pull/1226",
+        "author": "0ssamaak0",
+        "mergedAt": "2023-09-29T20:40:25Z",
+        "createdAt": "2023-09-29T12:21:25Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "in supported models page in doucmentation, I remove extra tick from tiiuae/falcon-rw-7b model name",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,167 @@
+{
+  "date": "2024-10-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-01T07:00:00+00:00",
+  "utc_end": "2024-10-02T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:03:26.530983+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1552,
+        "title": "Simplify flashinfer dispatch",
+        "url": "https://github.com/sgl-project/sglang/pull/1552",
+        "author": "hnyls2002",
+        "mergedAt": "2024-10-01T07:28:42Z",
+        "createdAt": "2024-10-01T06:50:39Z",
+        "changedFiles": 5,
+        "additions": 97,
+        "deletions": 76,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1549,
+        "title": "[Refactor] Simplify io_struct and tokenizer_manager",
+        "url": "https://github.com/sgl-project/sglang/pull/1549",
+        "author": "Ying1123",
+        "mergedAt": "2024-10-01T17:25:32Z",
+        "createdAt": "2024-10-01T01:16:57Z",
+        "changedFiles": 2,
+        "additions": 132,
+        "deletions": 167,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Cleanup / Refactor",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8986,
+        "title": "[Bugfix] Fix Fuyu tensor parallel inference",
+        "url": "https://github.com/vllm-project/vllm/pull/8986",
+        "author": "Isotr0py",
+        "mergedAt": "2024-10-01T09:51:41Z",
+        "createdAt": "2024-10-01T04:23:28Z",
+        "changedFiles": 3,
+        "additions": 15,
+        "deletions": 12,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #8983 (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure th",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8991,
+        "title": "[Bugfix] Fix Token IDs Reference for MiniCPM-V When Images are Provided With No Placeholders",
+        "url": "https://github.com/vllm-project/vllm/pull/8991",
+        "author": "alex-jw-brooks",
+        "mergedAt": "2024-10-01T09:52:44Z",
+        "createdAt": "2024-10-01T06:22:48Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #8990\nSuper small change to move the llm_inputs.get(\"prompt_token_ids\") out of the conditional for when the prompt is None so that if len(image_tags) == 0, it doesn't throw from token_ids being undefined.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8965,
+        "title": "[Core] [Frontend] Priority scheduling for embeddings and in the OpenAI-API",
+        "url": "https://github.com/vllm-project/vllm/pull/8965",
+        "author": "schoennenbeck",
+        "mergedAt": "2024-10-01T09:58:06Z",
+        "createdAt": "2024-09-30T12:41:38Z",
+        "changedFiles": 8,
+        "additions": 53,
+        "deletions": 5,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This makes the new priority scheduling available to users of the OpenAI-API (and fixes some missing priority-handling for embedding-related methods).\n\nAdded priority field to CompletionRequest, ChatCompletionRequest, and EmbeddingRequest with description\nAdded priority to the generate- and encode-me",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8987,
+        "title": "[Doc] Update list of supported models",
+        "url": "https://github.com/vllm-project/vllm/pull/8987",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-10-01T16:35:40Z",
+        "createdAt": "2024-10-01T04:57:49Z",
+        "changedFiles": 2,
+        "additions": 21,
+        "deletions": 8,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the missing DeepSeek, DeepSeek-V2 and Granite models to the Supported Models page.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8997,
+        "title": "Update benchmark_serving.py to read and write json-datasets, results in UTF8, for better compatibility with Windows",
+        "url": "https://github.com/vllm-project/vllm/pull/8997",
+        "author": "vlsav",
+        "mergedAt": "2024-10-01T18:07:07Z",
+        "createdAt": "2024-10-01T09:54:19Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Update benchmark_serving.py to read and write json-datasets, results in UTF8, for better compatibility with Windows\n[Bugfix] for bug fixes.\nBenchmarking script doesn't work under windows, because typically Windows codepage in not UTF-8, but this codepage used to when dataset files opened or results ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8839,
+        "title": "[Spec Decode] (1/2) Remove batch expansion",
+        "url": "https://github.com/vllm-project/vllm/pull/8839",
+        "author": "LiuXiaoxuanPKU",
+        "mergedAt": "2024-10-01T23:04:42Z",
+        "createdAt": "2024-09-26T07:29:49Z",
+        "changedFiles": 29,
+        "additions": 531,
+        "deletions": 99,
+        "commits": 33,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is a clean up PR for #5691 because that PR is stale. RFC\nSome constraints:\n\nThis PR current does not support cuda graph. It will be addressed in the follow up PR.\nMQA scorer is only enabled for flash attention backend.\nIt does not support ngram because MQA scorer does not handle mixed batches.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

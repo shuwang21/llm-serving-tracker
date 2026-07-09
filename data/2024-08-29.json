@@ -1,0 +1,308 @@
+{
+  "date": "2024-08-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-08-29T07:00:00+00:00",
+  "utc_end": "2024-08-30T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:00:20.350848+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1260,
+        "title": "fix: multimodal_config in monkey_patch_vllm_dummy_weight_loader",
+        "url": "https://github.com/sgl-project/sglang/pull/1260",
+        "author": "lxww302",
+        "mergedAt": "2024-08-30T06:43:41Z",
+        "createdAt": "2024-08-29T23:45:37Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nfixes #1259 using dummy weight with vllm 0.5.5.\nModifications\nfix monkey_patch_vllm_dummy_weight_loader\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example t",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1261,
+        "title": "Transpose mla weight offline",
+        "url": "https://github.com/sgl-project/sglang/pull/1261",
+        "author": "ispobock",
+        "mergedAt": "2024-08-30T06:45:40Z",
+        "createdAt": "2024-08-30T00:40:27Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 7,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis change will boost performance slightly and reduce runtime cuda memory usage.\nModifications\nPreprocess weight after weight loading.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 7921,
+        "title": "[Core] Combine async postprocessor and multi-step",
+        "url": "https://github.com/vllm-project/vllm/pull/7921",
+        "author": "alexm-redhat",
+        "mergedAt": "2024-08-29T18:18:26Z",
+        "createdAt": "2024-08-27T17:52:31Z",
+        "changedFiles": 8,
+        "additions": 215,
+        "deletions": 65,
+        "commits": 9,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR combines async postprocessor with the multi-step execution. The key idea to run sampler pythonization + process_model_outputs of the previous step concurrently with the GPU forward pass (which avoid running a postprocessor at the end of the multi-step for all generated steps at once and bein",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7985,
+        "title": "[Core][Kernels] Enable FP8 KV Cache with Flashinfer backend.  + BugFix for kv_cache_dtype=auto",
+        "url": "https://github.com/vllm-project/vllm/pull/7985",
+        "author": "pavanimajety",
+        "mergedAt": "2024-08-29T18:53:11Z",
+        "createdAt": "2024-08-29T06:46:57Z",
+        "changedFiles": 3,
+        "additions": 250,
+        "deletions": 12,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previous PR with dicussions: #7798\nRevert PR due to bug with --kv-cache-dtype=auto : #7982\n--kv-cache-dtype=fp8\nmodel_str=\"neuralmagic/Meta-Llama-3-8B-Instruct-FP8\"\nmodel = LLM(model=model_str, quantization=\"fp8\",kv_cache_dtype=\"fp8\")\nprompts = [\n    \"Hello, my name is\",\n    \"The president of the Un",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7894,
+        "title": "extend cuda graph size for H200",
+        "url": "https://github.com/vllm-project/vllm/pull/7894",
+        "author": "kushanam",
+        "mergedAt": "2024-08-29T19:15:04Z",
+        "createdAt": "2024-08-27T04:00:55Z",
+        "changedFiles": 1,
+        "additions": 31,
+        "deletions": 7,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nAdding batch size 512, 768 to the CUDA graph capture list. This will enable efficient use of kv cache for models of size <= llama 70B. This is specifically enabled with H200 cap in mind.\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION AB",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7954,
+        "title": "[Bugfix] Fix incorrect vocal embedding shards for GGUF model in tensor parallelism",
+        "url": "https://github.com/vllm-project/vllm/pull/7954",
+        "author": "Isotr0py",
+        "mergedAt": "2024-08-29T19:54:49Z",
+        "createdAt": "2024-08-28T15:45:36Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #7880 (link existing issues this PR will resolve)\n\nThis PR aims to fix the incorrect logits' calculation for gguf model when using tensor parallelism.\nThis PR fixes the forgotten weight sharding for GGUF model vocal embedding when tp_size>1 in #7520. \ud83d\ude22\n\nBEFORE SUB",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7973,
+        "title": "[misc] update tpu int8 to use new vLLM Parameters",
+        "url": "https://github.com/vllm-project/vllm/pull/7973",
+        "author": "dsikka",
+        "mergedAt": "2024-08-29T20:46:55Z",
+        "createdAt": "2024-08-28T22:19:26Z",
+        "changedFiles": 2,
+        "additions": 13,
+        "deletions": 11,
+        "commits": 1,
+        "labels": [
+          "tpu",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nUpdate TPU Int 8 to use new vLLM Parameters",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7885,
+        "title": "[Neuron] Adding support for context-lenght, token-gen buckets.",
+        "url": "https://github.com/vllm-project/vllm/pull/7885",
+        "author": "hbikki",
+        "mergedAt": "2024-08-29T20:58:15Z",
+        "createdAt": "2024-08-26T23:15:03Z",
+        "changedFiles": 2,
+        "additions": 33,
+        "deletions": 11,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This change request helps us control the context length and token generation buckets using environment variables. Based on the environment variable, multiple XLA HLO graphs are compiled, and the closest XLA HLO graph is selected for latency optimization on the Neuron device, depending on the sequenc",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7445,
+        "title": "support bitsandbytes 8-bit and FP4 quantized models",
+        "url": "https://github.com/vllm-project/vllm/pull/7445",
+        "author": "chenqianfzh",
+        "mergedAt": "2024-08-29T23:09:08Z",
+        "createdAt": "2024-08-12T23:23:37Z",
+        "changedFiles": 6,
+        "additions": 437,
+        "deletions": 191,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR does the following:\n\nsupport quantized bitsandbytes 8-bit models, such as meta-llama/Llama-Guard-3-8B-INT8\nsupport quantized bitsandbytes 4-bit FP4 models, such as PrunaAI/Einstein-v6.1-Llama3-8B-bnb-4bit-smashed\nAdd comments about enforcing eager-mode in bnb quantization, as I identified it",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7759,
+        "title": "Add more percentiles and latencies",
+        "url": "https://github.com/vllm-project/vllm/pull/7759",
+        "author": "wschin",
+        "mergedAt": "2024-08-29T23:48:12Z",
+        "createdAt": "2024-08-21T21:59:43Z",
+        "changedFiles": 1,
+        "additions": 94,
+        "deletions": 38,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "99-precentile can be far away from median, average, and sometimes even 95-percentile. This PR adds more latency percentiles and end-to-end latency for profiling throughput.\nExample usage (see --percentile-metrics and --metric-percentiles):\nmodel_name=\"meta-llama/Meta-Llama-3.1-70B-Instruct\"\npython3 ",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7998,
+        "title": "[VLM] Disallow overflowing `max_model_len` for multimodal models",
+        "url": "https://github.com/vllm-project/vllm/pull/7998",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-08-30T00:49:04Z",
+        "createdAt": "2024-08-29T14:48:05Z",
+        "changedFiles": 2,
+        "additions": 35,
+        "deletions": 3,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently, the placeholder tokens are silently truncated if they exceed the context length, causing confusing errors when later assigning multimodal features to the placeholder tokens inside the model. (e.g. #6176)\nThis PR avoids such problems by checking the length of the processed prompt beforehan",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7652,
+        "title": "[Core] Logprobs support in Multi-step",
+        "url": "https://github.com/vllm-project/vllm/pull/7652",
+        "author": "afeldman-nm",
+        "mergedAt": "2024-08-30T02:19:08Z",
+        "createdAt": "2024-08-19T13:44:26Z",
+        "changedFiles": 103,
+        "additions": 874,
+        "deletions": 378,
+        "commits": 49,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "NOTE: because SamplerOutput was refactored from sequence.py into sampler.py, this PR makes a large number of trivial import changes to all files which use SamplerOutput (i.e. many of the model files.) The only files you need to review are:\n\ntests/multi-step/test_correctness.py\nvllm/model_executor/la",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8011,
+        "title": "[TPU] Async output processing for TPU",
+        "url": "https://github.com/vllm-project/vllm/pull/8011",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-08-30T02:35:29Z",
+        "createdAt": "2024-08-29T19:58:51Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 4,
+        "commits": 5,
+        "labels": [
+          "tpu"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7995,
+        "title": "[Kernel] changing fused moe kernel chunk size default to 32k",
+        "url": "https://github.com/vllm-project/vllm/pull/7995",
+        "author": "avshalomman",
+        "mergedAt": "2024-08-30T04:11:40Z",
+        "createdAt": "2024-08-29T13:27:41Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR changes the default value of VLLM_FUSED_MOE_CHUNK_SIZE from 64k to 32k, which lowers memory consumption during the forward pass.\nWe've measured the effects on kernel latency and found them to be minimal (see table below).\nThese numbers are for A100 80GB, we also tested on an H100 and found s",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7819,
+        "title": "[MODEL] add Exaone model support",
+        "url": "https://github.com/vllm-project/vllm/pull/7819",
+        "author": "nayohan",
+        "mergedAt": "2024-08-30T06:34:20Z",
+        "createdAt": "2024-08-23T14:42:40Z",
+        "changedFiles": 6,
+        "additions": 820,
+        "deletions": 5,
+        "commits": 15,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Recently, The new model exaone released. I  would love to contribute the new model to vLLM as well.\n\nPaper: EXAONE 3.0 7.8B Instruction Tuned Language Model\nHuggingFace: LGAI-EXAONE/EXAONE-3.0-7.8B-Instruct\nGithub: LG-AI-EXAONE/EXAONE-3.0\n\nIn this PR, I have provided the implementation of EXAONE-3.0",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

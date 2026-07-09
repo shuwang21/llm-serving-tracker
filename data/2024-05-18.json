@@ -1,0 +1,67 @@
+{
+  "date": "2024-05-18",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-05-18T07:00:00+00:00",
+  "utc_end": "2024-05-19T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:51:13.623136+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 451,
+        "title": "Fix the broken `--disable-radix-cache`",
+        "url": "https://github.com/sgl-project/sglang/pull/451",
+        "author": "hnyls2002",
+        "mergedAt": "2024-05-19T05:00:12Z",
+        "createdAt": "2024-05-19T04:59:56Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 250,
+        "title": "openai chat speculative execution",
+        "url": "https://github.com/sgl-project/sglang/pull/250",
+        "author": "ChuyueSun",
+        "mergedAt": "2024-05-19T05:23:53Z",
+        "createdAt": "2024-03-01T22:38:28Z",
+        "changedFiles": 11,
+        "additions": 316,
+        "deletions": 45,
+        "commits": 15,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Example usages:\nexamples/usage/openaichat_speculative.py # for model with a chat-only interface (e.x. gpt-4-turbo)\nexamples/usage/openai_speculative.py # for completion (e.x. gpt-3.5-turbo-instruct)\n\nTests passed:\ntest/lang/test_openai_backend.py\ntest/lang/test_srt_backend.py",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 4787,
+        "title": "[Lora] Support long context lora ",
+        "url": "https://github.com/vllm-project/vllm/pull/4787",
+        "author": "rkooo567",
+        "mergedAt": "2024-05-18T07:05:23Z",
+        "createdAt": "2024-05-13T13:25:45Z",
+        "changedFiles": 25,
+        "additions": 999,
+        "deletions": 72,
+        "commits": 29,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently we need to call rotary embedding kernel for each LoRA, which makes it hard to serve multiple long context length LoRA. Add batched rotary embedding kernel and pipe it through.\nIt replaces the rotary embedding layer to the one that is aware of multiple cos-sin-cache per scaling factors.\nFol",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

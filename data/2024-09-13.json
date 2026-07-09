@@ -1,0 +1,283 @@
+{
+  "date": "2024-09-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-13T07:00:00+00:00",
+  "utc_end": "2024-09-14T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:01:44.453944+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1412,
+        "title": "Update pr-test.yml",
+        "url": "https://github.com/sgl-project/sglang/pull/1412",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-13T07:37:14Z",
+        "createdAt": "2024-09-13T07:30:00Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1414,
+        "title": "ci: fix finish",
+        "url": "https://github.com/sgl-project/sglang/pull/1414",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-13T15:01:31Z",
+        "createdAt": "2024-09-13T15:01:24Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1392,
+        "title": "Optimize conflicts between CUDA graph and vocab mask tensors",
+        "url": "https://github.com/sgl-project/sglang/pull/1392",
+        "author": "hnyls2002",
+        "mergedAt": "2024-09-14T03:27:53Z",
+        "createdAt": "2024-09-11T21:09:56Z",
+        "changedFiles": 32,
+        "additions": 103,
+        "deletions": 224,
+        "commits": 11,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nThis PR moves the sampler out of the CUDA graph and removes the synchronization in the cuda graph replay.\n\nVocab mask, penalties calculation are done between model forward and sampling\nMake sampling a part of model_runner.\n\nModifications\n\nChecklist\n\n Format your code according to the Con",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 1418,
+        "title": "Add torchao quant for mixtral and qwen_moe",
+        "url": "https://github.com/sgl-project/sglang/pull/1418",
+        "author": "jerryzh168",
+        "mergedAt": "2024-09-14T06:46:56Z",
+        "createdAt": "2024-09-14T00:03:33Z",
+        "changedFiles": 4,
+        "additions": 50,
+        "deletions": 20,
+        "commits": 8,
+        "labels": [
+          "quant"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary:\nSimilar to #1341 we add torchao quantization to mixtral model\nTest Plan:\nNote: compile is not working yet, and I can't install torchnightly locally and make it work either. I'll wait for pytorch 2.5 release which happens in mid Oct, or check that again later\npython3 -m sglang.bench_latency ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8442,
+        "title": "[Misc] Skip loading extra bias for Qwen2-VL GPTQ-Int8",
+        "url": "https://github.com/vllm-project/vllm/pull/8442",
+        "author": "jeejeelee",
+        "mergedAt": "2024-09-13T07:58:28Z",
+        "createdAt": "2024-09-13T05:48:47Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX  #8406\nping @DarkLight1337\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the followin",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8449,
+        "title": "[misc][ci] fix quant test",
+        "url": "https://github.com/vllm-project/vllm/pull/8449",
+        "author": "youkaichao",
+        "mergedAt": "2024-09-13T09:20:14Z",
+        "createdAt": "2024-09-13T07:35:40Z",
+        "changedFiles": 2,
+        "additions": 21,
+        "deletions": 15,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "these will init cuda and make tp tests fail.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8456,
+        "title": "[Installation] Gate FastAPI version for Python 3.8",
+        "url": "https://github.com/vllm-project/vllm/pull/8456",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-09-13T16:02:27Z",
+        "createdAt": "2024-09-13T09:28:21Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Upgrading FastAPI and Pydantic fails to solve #8212 for Python 3.8 users. To avoid this, this PR updates the dependencies to use an older version of FastAPI for Python 3.8.\nFIX #8450",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8445,
+        "title": "[plugin][torch.compile] allow to add custom compile backend",
+        "url": "https://github.com/vllm-project/vllm/pull/8445",
+        "author": "youkaichao",
+        "mergedAt": "2024-09-13T16:32:42Z",
+        "createdAt": "2024-09-13T06:05:05Z",
+        "changedFiles": 2,
+        "additions": 16,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7820,
+        "title": "[CI/Build] Reorganize models tests",
+        "url": "https://github.com/vllm-project/vllm/pull/7820",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-09-13T17:20:06Z",
+        "createdAt": "2024-08-23T15:03:03Z",
+        "changedFiles": 55,
+        "additions": 415,
+        "deletions": 498,
+        "commits": 70,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "To avoid timeout error, split up the models tests as per #7439 (comment).\nAlso, I have moved the distributed basic correctness and model tests into the respective files for single-GPU case to avoid fragmentation of the test logic.\nNote: The core_model flag isn't used in CI yet.\ncc @khluu",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8467,
+        "title": "[Doc] Add oneDNN installation to CPU backend documentation",
+        "url": "https://github.com/vllm-project/vllm/pull/8467",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-13T18:06:30Z",
+        "createdAt": "2024-09-13T14:51:18Z",
+        "changedFiles": 1,
+        "additions": 14,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #8460 (link existing issues this PR will resolve)\n\nThis PR adds missing oneDNN installation to cpu backend installation instruction.\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8468,
+        "title": "[HotFix] Fix final output truncation with stop string + streaming",
+        "url": "https://github.com/vllm-project/vllm/pull/8468",
+        "author": "njhill",
+        "mergedAt": "2024-09-13T18:31:12Z",
+        "createdAt": "2024-09-13T16:09:44Z",
+        "changedFiles": 2,
+        "additions": 24,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Regression in 0.6.1.post1 from #7381\nDiscovered by @AlpinDale",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8473,
+        "title": "bump version to v0.6.1.post2",
+        "url": "https://github.com/vllm-project/vllm/pull/8473",
+        "author": "simon-mo",
+        "mergedAt": "2024-09-13T18:35:00Z",
+        "createdAt": "2024-09-13T18:32:35Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8365,
+        "title": "[Hardware][intel GPU] bump up ipex version to 2.3",
+        "url": "https://github.com/vllm-project/vllm/pull/8365",
+        "author": "jikunshang",
+        "mergedAt": "2024-09-13T23:54:34Z",
+        "createdAt": "2024-09-11T09:53:22Z",
+        "changedFiles": 6,
+        "additions": 60,
+        "deletions": 87,
+        "commits": 10,
+        "labels": [
+          "intel-gpu"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nipex-xpu release 2.3 version recently, this pr update ipex-xpu dependency to latest. Also fix below issues:\n\nsupport Arc graphic grad.\nsupport GQA model like llama3-8B\nsupport some new kernels like gelu_quick\nupdate oneAPI version to 2024.2.1\n\nBEFORE SUBMITTING, PLEAS",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8310,
+        "title": "[Kernel][Hardware][Amd]Custom paged attention kernel for rocm",
+        "url": "https://github.com/vllm-project/vllm/pull/8310",
+        "author": "charlifu",
+        "mergedAt": "2024-09-14T00:01:11Z",
+        "createdAt": "2024-09-10T00:57:00Z",
+        "changedFiles": 8,
+        "additions": 1371,
+        "deletions": 16,
+        "commits": 22,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds custom paged attention kernel support for rocm.\n\nadd a separate folder for rocm kernel, which enables more specialized kernels for rocm in the future.\nadd custom paged attention for rocm\nenable rocm custom paged attention kernel for specific size and dtype.\nadd unit test\n\nTodo:\n\nadd fp8",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

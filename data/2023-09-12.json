@@ -1,0 +1,48 @@
+{
+  "date": "2023-09-12",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-12T07:00:00+00:00",
+  "utc_end": "2023-09-13T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:16.779326+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 991,
+        "title": "add option to shorten prompt print in log",
+        "url": "https://github.com/vllm-project/vllm/pull/991",
+        "author": "leiwen83",
+        "mergedAt": "2023-09-12T22:10:14Z",
+        "createdAt": "2023-09-08T12:40:04Z",
+        "changedFiles": 2,
+        "additions": 20,
+        "deletions": 2,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "For now, model get big context support, and there is scenario that prompt would be very long, if we also want to kept a eye over the incoming traffic, then there will be huge log created.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 972,
+        "title": "Make `max_model_len` configurable",
+        "url": "https://github.com/vllm-project/vllm/pull/972",
+        "author": "Yard1",
+        "mergedAt": "2023-09-12T23:29:20Z",
+        "createdAt": "2023-09-07T00:43:56Z",
+        "changedFiles": 2,
+        "additions": 22,
+        "deletions": 1,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Allows the user to override derived max_model_len if they so desire.\nWe can also warn the user if the max_model_len is set above what vLLM has derived - lmk if you think that's a good idea!",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

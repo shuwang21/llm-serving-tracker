@@ -1,0 +1,48 @@
+{
+  "date": "2023-11-12",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-12T08:00:00+00:00",
+  "utc_end": "2023-11-13T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:04.204905+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1631,
+        "title": "Fix #1474 - gptj AssertionError : assert param_slice.shape == loaded_weight.shape",
+        "url": "https://github.com/vllm-project/vllm/pull/1631",
+        "author": "lihuahua123",
+        "mergedAt": "2023-11-12T23:53:12Z",
+        "createdAt": "2023-11-12T07:23:01Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #1474\npython  ./entrypoints/api_server.py --model /home/server/models/gptj6b --tensor-parallel-size 2\nFile \"/usr/local/lib/python3.8/dist-packages/vllm/engine/ray_utils.py\", line 29, in execute_method\n    return executor(*args, **kwargs)\n  File \"/usr/local/lib/python3.8/dist-packages/vllm/worker",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1633,
+        "title": "[Minor] Move RoPE selection logic to `get_rope`",
+        "url": "https://github.com/vllm-project/vllm/pull/1633",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-11-13T00:04:50Z",
+        "createdAt": "2023-11-12T21:31:51Z",
+        "changedFiles": 2,
+        "additions": 47,
+        "deletions": 34,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

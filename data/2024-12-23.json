@@ -1,0 +1,273 @@
+{
+  "date": "2024-12-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-23T08:00:00+00:00",
+  "utc_end": "2024-12-24T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:11:45.826044+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2563,
+        "title": "Reorg moe code",
+        "url": "https://github.com/sgl-project/sglang/pull/2563",
+        "author": "ispobock",
+        "mergedAt": "2024-12-23T17:10:22Z",
+        "createdAt": "2024-12-23T16:42:30Z",
+        "changedFiles": 88,
+        "additions": 338,
+        "deletions": 344,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nReorg moe code and reuse common part.\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2566,
+        "title": "[Bench] Flush cache before benchmarking",
+        "url": "https://github.com/sgl-project/sglang/pull/2566",
+        "author": "Ying1123",
+        "mergedAt": "2024-12-24T03:21:21Z",
+        "createdAt": "2024-12-24T02:25:28Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11425,
+        "title": "[misc][perf] remove old code",
+        "url": "https://github.com/vllm-project/vllm/pull/11425",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-23T08:01:08Z",
+        "createdAt": "2024-12-23T06:02:58Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 51,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "the code should be removed in 0.6.0 , sorry that we didn't delete it early.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11418,
+        "title": "mypy type checking for vllm/worker",
+        "url": "https://github.com/vllm-project/vllm/pull/11418",
+        "author": "lucas-tucker",
+        "mergedAt": "2024-12-23T13:55:49Z",
+        "createdAt": "2024-12-22T20:46:48Z",
+        "changedFiles": 3,
+        "additions": 9,
+        "deletions": 9,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "A few mypy type hints for vllm/worker\n#3680",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11389,
+        "title": "[Bugfix] Fix CFGGuide and use outlines for grammars that can't convert to GBNF",
+        "url": "https://github.com/vllm-project/vllm/pull/11389",
+        "author": "mgoin",
+        "mergedAt": "2024-12-23T15:06:20Z",
+        "createdAt": "2024-12-21T02:24:55Z",
+        "changedFiles": 5,
+        "additions": 103,
+        "deletions": 86,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "@afeldman-nm found this issue while trying the offline and online structured output examples like python examples/offline_inference_structured_outputs.py. We were failing to convert the sql lark grammar into gbnf format for xgrammar and had that check+conversion in the wrong place to fallback to ano",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11423,
+        "title": "[Bugfix] torch nightly version in ROCm installation guide",
+        "url": "https://github.com/vllm-project/vllm/pull/11423",
+        "author": "terrytangyuan",
+        "mergedAt": "2024-12-23T17:20:23Z",
+        "createdAt": "2024-12-23T04:17:49Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This fixes the following error when using this guide:\nLooking in indexes: https://download.pytorch.org/whl/nightly/rocm6.2\nERROR: Could not find a version that satisfies the requirement torch==2.6.0.dev20240918 (from versions: 2.6.0.dev20241024+rocm6.2, 2.6.0.dev20241026+rocm6.2, 2.6.0.dev20241027+r",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11388,
+        "title": "[Misc] Add assertion and helpful message for marlin24 compressed models",
+        "url": "https://github.com/vllm-project/vllm/pull/11388",
+        "author": "dsikka",
+        "mergedAt": "2024-12-23T18:23:38Z",
+        "createdAt": "2024-12-21T01:47:06Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nA common reported issue for users when running marlin24 compressed models\nAdd an assertion and helpful message about setting the dtype",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11075,
+        "title": "[Misc] add w8a8 asym models",
+        "url": "https://github.com/vllm-project/vllm/pull/11075",
+        "author": "dsikka",
+        "mergedAt": "2024-12-23T18:33:20Z",
+        "createdAt": "2024-12-10T22:13:43Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 6,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add models for W8A8 int8 asym/sym and static per tensor activation quantization cases",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11048,
+        "title": "[CI] Expand OpenAI test_chat.py guided decoding tests",
+        "url": "https://github.com/vllm-project/vllm/pull/11048",
+        "author": "mgoin",
+        "mergedAt": "2024-12-23T18:35:38Z",
+        "createdAt": "2024-12-10T01:46:42Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 17,
+        "commits": 12,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "These are easier to enable than test_completions.py, that will come next.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11269,
+        "title": "[Bugfix] Add kv cache scales to gemma2.py",
+        "url": "https://github.com/vllm-project/vllm/pull/11269",
+        "author": "mgoin",
+        "mergedAt": "2024-12-23T19:30:45Z",
+        "createdAt": "2024-12-17T21:24:18Z",
+        "changedFiles": 1,
+        "additions": 17,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Trying to load a gemma2 models with calibrated kv cache scales from llmcompressor/compressed-tensors will fail to load the scales\nTested with:\nVLLM_ATTENTION_BACKEND=FLASHINFER vllm serve nm-testing/gemma-2-9b-it-FP8-dynamic-KV --kv-cache-dtype fp8",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11440,
+        "title": "[Doc] Fix typo in the help message of '--guided-decoding-backend'",
+        "url": "https://github.com/vllm-project/vllm/pull/11440",
+        "author": "yansh97",
+        "mergedAt": "2024-12-23T20:20:46Z",
+        "createdAt": "2024-12-23T16:16:08Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Added a space, otherwise the effect is as shown in the picture below.",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11145,
+        "title": "[Docs] Convert rST to MyST (Markdown)",
+        "url": "https://github.com/vllm-project/vllm/pull/11145",
+        "author": "rafvasq",
+        "mergedAt": "2024-12-23T22:35:38Z",
+        "createdAt": "2024-12-12T19:38:54Z",
+        "changedFiles": 167,
+        "additions": 7870,
+        "deletions": 8138,
+        "commits": 33,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR migrates the existing documentation from reStructuredText to MyST Markdown, a flavour of Markdown extended for use with Sphinx.\n\nAdd .md template to gitignore\nUpgrade myst-parser to 3.0.1\nConverts .rst docs into .md, preserving content and formatting\nUpdate filename references to docs from .",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11107,
+        "title": "[V1] TP Ray executor",
+        "url": "https://github.com/vllm-project/vllm/pull/11107",
+        "author": "ruisearch42",
+        "mergedAt": "2024-12-23T23:00:12Z",
+        "createdAt": "2024-12-11T16:27:24Z",
+        "changedFiles": 5,
+        "additions": 617,
+        "deletions": 3,
+        "commits": 19,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Support Ray Compiled Graphs based executor in V1\nPerf results on L4 GPU:\n(Turned off prefix caching for both there is an issue in main branch which is being fixed right now).\nPerf is at parity, Ray is about ~0.7% slower.\nVLLM_USE_V1=1 python3 benchmarks/benchmark_latency.py --model meta-llama/Llama-",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

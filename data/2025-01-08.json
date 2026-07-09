@@ -1,0 +1,463 @@
+{
+  "date": "2025-01-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-08T08:00:00+00:00",
+  "utc_end": "2025-01-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:13:18.428526+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2773,
+        "title": "Docs: Rewrite docs for LLama 405B and ModelSpace",
+        "url": "https://github.com/sgl-project/sglang/pull/2773",
+        "author": "minleminzui",
+        "mergedAt": "2025-01-08T08:02:59Z",
+        "createdAt": "2025-01-07T11:17:57Z",
+        "changedFiles": 4,
+        "additions": 46,
+        "deletions": 43,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nCompleted this issue #2743\nModifications\n\nI rewrote docs for LLama 405B and ModelSpace.\nI checked the code in the docs/references/example_run_llama_3.1_405b.md and  docs/references/use_models_from_modelscope.md , and they do work correctly.\n\nChecklist\n\n Format your code according to the C",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2789,
+        "title": "Update the style of llma 3.1 405B docs",
+        "url": "https://github.com/sgl-project/sglang/pull/2789",
+        "author": "zhaochenyang20",
+        "mergedAt": "2025-01-08T09:07:54Z",
+        "createdAt": "2025-01-08T09:06:12Z",
+        "changedFiles": 3,
+        "additions": 12,
+        "deletions": 10,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nImprove the style and order of references.\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2792,
+        "title": "Update modelopt config and fix running issue",
+        "url": "https://github.com/sgl-project/sglang/pull/2792",
+        "author": "ispobock",
+        "mergedAt": "2025-01-08T10:04:30Z",
+        "createdAt": "2025-01-08T10:02:54Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nUse config in srt\nFix issue RuntimeError: value cannot be converted to type at::BFloat16 without overflow\n\ncc: @Edwardf0t1",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11696,
+        "title": "[Hardware][Apple] Native support for macOS Apple Silicon",
+        "url": "https://github.com/vllm-project/vllm/pull/11696",
+        "author": "wallashss",
+        "mergedAt": "2025-01-08T08:35:49Z",
+        "createdAt": "2025-01-02T21:27:11Z",
+        "changedFiles": 11,
+        "additions": 209,
+        "deletions": 29,
+        "commits": 8,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add some adjustments on ARM/CPU build scripts to build and run directly on Mac Os with Apple Chip.\nSummary:\n\nAdded some conditional setup on build to consider Mac Os as a valid device\nAdjusted some intrinsics implementation to proper work with Clang\nSet NUMA as optional for build on CPU and automati",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11614,
+        "title": "[torch.compile] consider relevant code in compilation cache",
+        "url": "https://github.com/vllm-project/vllm/pull/11614",
+        "author": "youkaichao",
+        "mergedAt": "2025-01-08T10:46:43Z",
+        "createdAt": "2024-12-30T05:05:46Z",
+        "changedFiles": 4,
+        "additions": 99,
+        "deletions": 35,
+        "commits": 11,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "example output:\n$ vllm serve meta-llama/Meta-Llama-3-8B -O3\n...\nDEBUG 12-29 21:04:52 backends.py:495] Traced files (to be considered for compilation cache):\nDEBUG 12-29 21:04:52 backends.py:495] /data/youkaichao/uv_envs/py310/lib/python3.10/site-packages/torch/nn/modules/container.py\nDEBUG 12-29 21:",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11812,
+        "title": "[VLM] Reorganize profiling/processing-related code",
+        "url": "https://github.com/vllm-project/vllm/pull/11812",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-08T10:59:58Z",
+        "createdAt": "2025-01-07T17:07:45Z",
+        "changedFiles": 23,
+        "additions": 833,
+        "deletions": 760,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR further reorganizes code related to multi-modal profiling and processing.\n\nProcessingMixin has been merged with ProfilingInfo, no longer a mixin, and renamed to ProcessingInfo.\nA separate class, BaseDummyInputsBuilder, has been created to set up the dummy processor inputs. It contains an ins",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11840,
+        "title": "[Doc] Move examples into categories",
+        "url": "https://github.com/vllm-project/vllm/pull/11840",
+        "author": "hmellor",
+        "mergedAt": "2025-01-08T13:09:53Z",
+        "createdAt": "2025-01-08T10:50:32Z",
+        "changedFiles": 116,
+        "additions": 153,
+        "deletions": 124,
+        "commits": 15,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow up PR for #11782\n\nMove all examples into one of the three categories (Offline Inference, Online Serving, Other)\nIncorporates the shell scripts into the examples too",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11843,
+        "title": "[Doc][4/N] Reorganize API Reference",
+        "url": "https://github.com/vllm-project/vllm/pull/11843",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-08T13:34:45Z",
+        "createdAt": "2025-01-08T12:14:03Z",
+        "changedFiles": 24,
+        "additions": 38,
+        "deletions": 67,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR renames API Reference pages from /dev/... to /api/..., with the following additional changes:\n\nMoved Multi-Modality page from Design Documents to API Reference\n\nRemoved the deprecated Multi Modal Plugin page.\n\n\nMerged Sampling Parameters and Pooling Parameters into a single page.\nFixed links",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11836,
+        "title": "[CI/Build][Bugfix] Fix CPU CI image clean up",
+        "url": "https://github.com/vllm-project/vllm/pull/11836",
+        "author": "bigPYJ1151",
+        "mergedAt": "2025-01-08T15:18:28Z",
+        "createdAt": "2025-01-08T09:17:25Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 6,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11823,
+        "title": "[Bugfix][XPU] fix silu_and_mul",
+        "url": "https://github.com/vllm-project/vllm/pull/11823",
+        "author": "yma11",
+        "mergedAt": "2025-01-08T16:11:50Z",
+        "createdAt": "2025-01-08T01:02:01Z",
+        "changedFiles": 2,
+        "additions": 4,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The order of input args matters for xpu silu_and_mul call, so use the op wrapper in _ipex_ops instead.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11848,
+        "title": "[Misc] Move some model utils into vision file",
+        "url": "https://github.com/vllm-project/vllm/pull/11848",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-08T17:04:47Z",
+        "createdAt": "2025-01-08T14:47:26Z",
+        "changedFiles": 8,
+        "additions": 94,
+        "deletions": 92,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR moves get_vit_attn_backend and resolve_visual_encoder_inputs to vision.py to reduce clutter inside utils.py. (Note: merge_multimodal_embeddings is not moved because it covers audio as well)",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11852,
+        "title": "[Doc] Expand Multimodal API Reference",
+        "url": "https://github.com/vllm-project/vllm/pull/11852",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-08T17:14:14Z",
+        "createdAt": "2025-01-08T15:16:03Z",
+        "changedFiles": 9,
+        "additions": 139,
+        "deletions": 71,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR expands the API Reference for multi-modality so that upcoming tutorials can refer to them.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11847,
+        "title": "[Misc]add some explanations for BlockHashType",
+        "url": "https://github.com/vllm-project/vllm/pull/11847",
+        "author": "WangErXiao",
+        "mergedAt": "2025-01-08T18:21:31Z",
+        "createdAt": "2025-01-08T14:24:53Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add some explanations for BlockHashType.  Hash collisions can still theoretically occur, albeit with an extremely low probability.\n#11829",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11785,
+        "title": "[TPU][Quantization] TPU `W8A8`",
+        "url": "https://github.com/vllm-project/vllm/pull/11785",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-08T19:33:30Z",
+        "createdAt": "2025-01-07T00:06:27Z",
+        "changedFiles": 18,
+        "additions": 565,
+        "deletions": 190,
+        "commits": 73,
+        "labels": [
+          "documentation",
+          "tpu",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nsupport TPU for compressed-tensors w8a8 models.\nTo run, just load a W8A8 model:\n\nfrom vllm import LLM\nmodel = LLM(\"neuralmagic/Meta-Llama-3.1-8B-Instruct-quantized.w8a8\", max_model_len=2048)\nmodel.generate(\"Hello my name is\")\nTESTING:\n\n verified accuracy on TPU for Llama-8B on TP=1 (exact ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11698,
+        "title": "[Kernel][Triton][AMD] Use block size heuristic for avg 2.8x speedup for int8 models",
+        "url": "https://github.com/vllm-project/vllm/pull/11698",
+        "author": "rasmith",
+        "mergedAt": "2025-01-08T20:23:15Z",
+        "createdAt": "2025-01-03T00:31:01Z",
+        "changedFiles": 1,
+        "additions": 16,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Use the heuristic from scaled_mm_c3x_sm90_int8_dispatch.cuh:116 to choose block-size for triton_scaled_mm instead of always using 32x32x32 for better performance.  This results in average 2.8x speedup.\nI ran:\npython benchmarks/benchmark_latency.py --dtype bfloat16 --enable-chunked-prefill False --lo",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11864,
+        "title": "[Docs] Add Google Cloud Meetup",
+        "url": "https://github.com/vllm-project/vllm/pull/11864",
+        "author": "simon-mo",
+        "mergedAt": "2025-01-08T20:38:28Z",
+        "createdAt": "2025-01-08T20:37:48Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add a section promoting meetup",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10864,
+        "title": "[CI] Turn on basic correctness tests for V1",
+        "url": "https://github.com/vllm-project/vllm/pull/10864",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2025-01-09T02:20:44Z",
+        "createdAt": "2024-12-03T14:55:56Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 1,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Ran into some OOM issues in #9856. Turning on this test to see if the problems happen without the TP changes.",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11815,
+        "title": "treat do_lower_case in the same way as the sentence-transformers library",
+        "url": "https://github.com/vllm-project/vllm/pull/11815",
+        "author": "maxdebayser",
+        "mergedAt": "2025-01-09T03:05:44Z",
+        "createdAt": "2025-01-07T19:19:31Z",
+        "changedFiles": 5,
+        "additions": 13,
+        "deletions": 5,
+        "commits": 7,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #11184\nIn PR #9506 we assumed that the do_lower_case flag in the sentence_bert_config.json file was meant to be passed as argument to the parameter of the same name in the tokenizer's init method. However, what the sentence transformer library actually does is to call lower() in the prompt bef",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11849,
+        "title": "[Doc] Recommend uv and python 3.12 for quickstart guide",
+        "url": "https://github.com/vllm-project/vllm/pull/11849",
+        "author": "mgoin",
+        "mergedAt": "2025-01-09T03:37:48Z",
+        "createdAt": "2025-01-08T14:53:27Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11514",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11298,
+        "title": "[Misc] Move `print_*_once` from utils to logger",
+        "url": "https://github.com/vllm-project/vllm/pull/11298",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-09T04:48:12Z",
+        "createdAt": "2024-12-18T10:36:16Z",
+        "changedFiles": 21,
+        "additions": 129,
+        "deletions": 72,
+        "commits": 25,
+        "labels": [
+          "frontend",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Clean up the vllm.utils file a bit by moving the print_*_once functions to the logger itself.\nI'm planning further changes to the vllm.utils file. It has become quite disorganized over time.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11878,
+        "title": "[Doc] Intended links Python multiprocessing library",
+        "url": "https://github.com/vllm-project/vllm/pull/11878",
+        "author": "guspan-tanadi",
+        "mergedAt": "2025-01-09T05:39:39Z",
+        "createdAt": "2025-01-09T03:27:19Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11870,
+        "title": "[perf]fix current stream",
+        "url": "https://github.com/vllm-project/vllm/pull/11870",
+        "author": "youkaichao",
+        "mergedAt": "2025-01-09T07:18:22Z",
+        "createdAt": "2025-01-09T02:00:36Z",
+        "changedFiles": 4,
+        "additions": 46,
+        "deletions": 15,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "fix the performance regression reported from #11744 (comment)\non my local benchmark:\npython benchmarks/benchmark_latency.py --model meta-llama/Meta-Llama-3-70B --load-format dummy --enforce-eager -tp 4\nmain branch:\nAvg latency: 2.945735554069203 seconds\n10% percentile latency: 2.924619035271462 seco",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

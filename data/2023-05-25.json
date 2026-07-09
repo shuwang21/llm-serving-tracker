@@ -1,0 +1,30 @@
+{
+  "date": "2023-05-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-25T07:00:00+00:00",
+  "utc_end": "2023-05-26T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:27:10.378773+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 126,
+        "title": "Add activation registry",
+        "url": "https://github.com/vllm-project/vllm/pull/126",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-25T07:09:07Z",
+        "createdAt": "2023-05-25T02:45:48Z",
+        "changedFiles": 5,
+        "additions": 22,
+        "deletions": 13,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Small refactoring. + This PR adds gelu_fast which is used for EleutherAI/gpt-neox-20b.",
+        "category": "Cleanup / Refactor",
+        "highImpact": false
+      }
+    ]
+  }
+}

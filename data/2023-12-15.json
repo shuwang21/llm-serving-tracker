@@ -1,0 +1,86 @@
+{
+  "date": "2023-12-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-15T08:00:00+00:00",
+  "utc_end": "2023-12-16T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:40:09.065430+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1976,
+        "title": "Add a flag to include stop string in output text",
+        "url": "https://github.com/vllm-project/vllm/pull/1976",
+        "author": "yunfeng-scale",
+        "mergedAt": "2023-12-15T08:45:59Z",
+        "createdAt": "2023-12-08T01:38:05Z",
+        "changedFiles": 2,
+        "additions": 32,
+        "deletions": 24,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #1973\ntested by running server locally",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 916,
+        "title": "Add GPTQ support",
+        "url": "https://github.com/vllm-project/vllm/pull/916",
+        "author": "chu-tianxiang",
+        "mergedAt": "2023-12-15T11:04:22Z",
+        "createdAt": "2023-08-31T04:08:32Z",
+        "changedFiles": 35,
+        "additions": 1781,
+        "deletions": 81,
+        "commits": 27,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add GPTQ support to vllm.\nUpdate(0925): the previous implementation is hardly compatible with recent introduced AWQ interface. So I moved the previous implementation to gptq_hf_old branch and reimplemented most parts. Kernel files are copied from AutoGPTQ which itself is modified from exllama-v1\nUnf",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2135,
+        "title": "[Docs] Add quantization support to docs",
+        "url": "https://github.com/vllm-project/vllm/pull/2135",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-15T21:29:22Z",
+        "createdAt": "2023-12-15T21:22:01Z",
+        "changedFiles": 2,
+        "additions": 4,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2138,
+        "title": "[ROCm] Temporarily remove GPTQ ROCm support",
+        "url": "https://github.com/vllm-project/vllm/pull/2138",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-16T01:13:58Z",
+        "createdAt": "2023-12-16T01:11:31Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #2137\nLet's add ROCm support once it is tested.",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

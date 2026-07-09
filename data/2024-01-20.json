@@ -1,0 +1,85 @@
+{
+  "date": "2024-01-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-20T08:00:00+00:00",
+  "utc_end": "2024-01-21T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:42:25.271698+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 63,
+        "title": "Disk FSM cache and adjust code.",
+        "url": "https://github.com/sgl-project/sglang/pull/63",
+        "author": "hnyls2002",
+        "mergedAt": "2024-01-21T05:26:11Z",
+        "createdAt": "2024-01-21T02:37:14Z",
+        "changedFiles": 8,
+        "additions": 207,
+        "deletions": 299,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "A disk cache mechanism was applied, caching the most time-consuming part in the local storage.\nI removed the unused code in tokenizer.py and built TransformersTokenizer at the beginning of ModelRpcServer to avoid some checking errors in the outlines code.\nAligned the fsm.py with outlines==0.0.24",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 64,
+        "title": "Fix select",
+        "url": "https://github.com/sgl-project/sglang/pull/64",
+        "author": "merrymercy",
+        "mergedAt": "2024-01-21T07:20:35Z",
+        "createdAt": "2024-01-21T07:20:30Z",
+        "changedFiles": 2,
+        "additions": 12,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2522,
+        "title": "Add `group` as an argument in broadcast ops",
+        "url": "https://github.com/vllm-project/vllm/pull/2522",
+        "author": "GindaChen",
+        "mergedAt": "2024-01-21T00:00:26Z",
+        "createdAt": "2024-01-20T22:02:48Z",
+        "changedFiles": 1,
+        "additions": 36,
+        "deletions": 17,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow up with #2501.\nChanges\nIn communication_ops.py, add group as an argument in the broadcast auxiliary function family. This helps designate the group to communicate (for example, a designated tensor-parallel group, or pipeline-parallel group) in the future.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2523,
+        "title": "[Fix] Keep `scheduler.running` as deque",
+        "url": "https://github.com/vllm-project/vllm/pull/2523",
+        "author": "njhill",
+        "mergedAt": "2024-01-21T06:36:10Z",
+        "createdAt": "2024-01-20T23:56:19Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "#2290 changed the scheduler seq group lists to be deques for more efficient updates, but missed one place where the running deque gets converted back to a list.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

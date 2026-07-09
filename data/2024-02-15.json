@@ -1,0 +1,49 @@
+{
+  "date": "2024-02-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-15T08:00:00+00:00",
+  "utc_end": "2024-02-16T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:15.671726+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 189,
+        "title": "Refactor decoding logprob and add completion_tokens_wo_jump_forward",
+        "url": "https://github.com/sgl-project/sglang/pull/189",
+        "author": "comaniac",
+        "mergedAt": "2024-02-15T18:54:20Z",
+        "createdAt": "2024-02-14T22:05:21Z",
+        "changedFiles": 4,
+        "additions": 35,
+        "deletions": 15,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Introduce return_text_in_logprobs to GenerateReqInput, so that even /generate could return token logprob in (text, logprob) format instead of (token id, logprob).\nFix a bug in OpenAI completion.\nIntroduce completion_tokens_wo_jump_forward to metric.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2885,
+        "title": "[ROCm] Dockerfile fix for flash-attention build",
+        "url": "https://github.com/vllm-project/vllm/pull/2885",
+        "author": "hongxiayang",
+        "mergedAt": "2024-02-15T18:22:40Z",
+        "createdAt": "2024-02-15T16:02:05Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This pull request fixes Dockerfile for flash-attention build on ROCm.",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,127 @@
+{
+  "date": "2024-08-31",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-08-31T07:00:00+00:00",
+  "utc_end": "2024-09-01T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:00:31.748271+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1276,
+        "title": "fix: resolve the fp8 bug introduced by vLLM 0.5.5",
+        "url": "https://github.com/sgl-project/sglang/pull/1276",
+        "author": "zhyncs",
+        "mergedAt": "2024-08-31T14:44:29Z",
+        "createdAt": "2024-08-31T14:43:32Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1282,
+        "title": "[doc] fix quick start link",
+        "url": "https://github.com/sgl-project/sglang/pull/1282",
+        "author": "ByronHsu",
+        "mergedAt": "2024-09-01T05:54:34Z",
+        "createdAt": "2024-09-01T05:37:53Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1262,
+        "title": "Optimize the update flashinfer indices",
+        "url": "https://github.com/sgl-project/sglang/pull/1262",
+        "author": "xiaobochen123",
+        "mergedAt": "2024-09-01T06:40:28Z",
+        "createdAt": "2024-08-30T00:40:47Z",
+        "changedFiles": 2,
+        "additions": 137,
+        "deletions": 23,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "When running a large batch, sglang also have the CPU bottleneck. One of the bottleneck occurs when updating the flashinfer kv indices. The naive pytorch implement slow when batch is very large.\n\nHardware: 1xH800\nModel: Llama-3-8B\n\n// launch server\npython3 -m sglang.launch_server    \\\n    --trust-rem",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8037,
+        "title": "[Bugfix] Fix ModelScope models in v0.5.5",
+        "url": "https://github.com/vllm-project/vllm/pull/8037",
+        "author": "NickLucche",
+        "mergedAt": "2024-08-31T07:27:58Z",
+        "createdAt": "2024-08-30T16:43:46Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #7986\nThis recent PR #7710 introduced support for some huggingface-specific code which needs to be handled differently when the model come from ModelScope, where as far I know, there is no preprocessor_config.json standard for image models (please correct me if I am wrong).\nAs an initial draft, ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8059,
+        "title": "[BugFix][Core] Multistep Fix Crash on Request Cancellation",
+        "url": "https://github.com/vllm-project/vllm/pull/8059",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2024-08-31T19:44:03Z",
+        "createdAt": "2024-08-31T17:23:42Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 1,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nassertion in multi-step scheduler that request is in RUNNING state\nif a client disconnects, it triggers an engine.abort(request_id) call, which moves the sequence_group into FINISHED_ABORTED state, which crashes the server since the assertion is no longer true\nverified that aborting reques",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8049,
+        "title": "[Frontend][VLM] Add support for multiple multi-modal items in the OpenAI frontend",
+        "url": "https://github.com/vllm-project/vllm/pull/8049",
+        "author": "ywang96",
+        "mergedAt": "2024-08-31T23:35:53Z",
+        "createdAt": "2024-08-31T01:17:54Z",
+        "changedFiles": 8,
+        "additions": 524,
+        "deletions": 136,
+        "commits": 11,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is an iteration of #7923 and in particular simplifies the multimodal placeholder padding logic.\nNote that now we use a dictionary to keep track of unique placeholders and their counts, and the order of insertion is still preserved when we add them to the input prompt if they're missing. This",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-06-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-04T07:00:00+00:00",
+  "utc_end": "2023-06-05T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:27:44.229519+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 137,
+        "title": "Add docstrings for LLM",
+        "url": "https://github.com/vllm-project/vllm/pull/137",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-04T19:52:42Z",
+        "createdAt": "2023-06-03T23:31:58Z",
+        "changedFiles": 4,
+        "additions": 66,
+        "deletions": 10,
+        "commits": 13,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      }
+    ]
+  }
+}

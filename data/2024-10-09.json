@@ -1,0 +1,310 @@
+{
+  "date": "2024-10-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-09T07:00:00+00:00",
+  "utc_end": "2024-10-10T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:04:10.610153+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8831,
+        "title": "[Frontend] Log the maximum supported concurrency",
+        "url": "https://github.com/vllm-project/vllm/pull/8831",
+        "author": "AlpinDale",
+        "mergedAt": "2024-10-09T07:03:14Z",
+        "createdAt": "2024-09-26T02:32:48Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR logs the maximum concurrency vLLM can handle, given all requests containing max_model_len number of tokens for each prompt. This is very useful for cases where you need to immediately get a rough estimate for your theoritical max batch size.\nCurrently calculating this as num_gpu_blocks * blo",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9160,
+        "title": "[Bugfix] Optimize composite weight loading and fix EAGLE weight loading",
+        "url": "https://github.com/vllm-project/vllm/pull/9160",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-10-09T07:36:55Z",
+        "createdAt": "2024-10-08T14:43:38Z",
+        "changedFiles": 15,
+        "additions": 244,
+        "deletions": 364,
+        "commits": 19,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR consolidates and updates the weight loading logic to be more memory efficient, while also automatically detecting child modules and parameters. It also fixes issues with loading EAGLE models due to lm_head not existing in the weights.\nThis should resolve the CI failures related to LoRA and s",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9165,
+        "title": "[ci][test] use load dummy for testing",
+        "url": "https://github.com/vllm-project/vllm/pull/9165",
+        "author": "youkaichao",
+        "mergedAt": "2024-10-09T07:38:40Z",
+        "createdAt": "2024-10-08T19:12:31Z",
+        "changedFiles": 3,
+        "additions": 20,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "this can skip the model download and model loading time",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9170,
+        "title": "[Doc] Fix VLM prompt placeholder sample bug",
+        "url": "https://github.com/vllm-project/vllm/pull/9170",
+        "author": "ycool",
+        "mergedAt": "2024-10-09T08:59:43Z",
+        "createdAt": "2024-10-08T23:17:55Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 7,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix VLM prompt placeholder sample bug\nThe original prompt placeholder format can be found at https://huggingface.co/microsoft/Phi-3.5-vision-instruct\nTested in local env.\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank yo",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9179,
+        "title": "[Bugfix] Fix lora loading for Compressed Tensors in #9120",
+        "url": "https://github.com/vllm-project/vllm/pull/9179",
+        "author": "fahadh4ilyas",
+        "mergedAt": "2024-10-09T12:10:45Z",
+        "createdAt": "2024-10-09T05:17:03Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #9120 (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure th",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9188,
+        "title": "[Bugfix] Access `get_vocab` instead of `vocab` in tool parsers",
+        "url": "https://github.com/vllm-project/vllm/pull/9188",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-10-09T14:59:57Z",
+        "createdAt": "2024-10-09T09:24:59Z",
+        "changedFiles": 3,
+        "additions": 11,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #8358\nFIX #9187\ncc @K-Mistele",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1217,
+        "title": "Add Dependabot configuration for GitHub Actions updates",
+        "url": "https://github.com/vllm-project/vllm/pull/1217",
+        "author": "EwoutH",
+        "mergedAt": "2024-10-09T15:16:26Z",
+        "createdAt": "2023-09-28T14:31:19Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add a Dependabot configuration that checks once a week if the GitHub Actions are still using the latest version. If not, it opens a PR to update them.\nIt will open few PRs, since only major versions are specified (like v3), so only on a major release (like v4) it will update and open a PR. This way ",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7515,
+        "title": "[Hardware][CPU] Support AWQ for CPU backend",
+        "url": "https://github.com/vllm-project/vllm/pull/7515",
+        "author": "bigPYJ1151",
+        "mergedAt": "2024-10-09T16:28:08Z",
+        "createdAt": "2024-08-14T10:54:46Z",
+        "changedFiles": 9,
+        "additions": 214,
+        "deletions": 7,
+        "commits": 7,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR added a new ipex_quant configuration to support various weight-only quantization method with IPEX for the CPU backend.\nAWQ is supported for now, a basic test is included.\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please en",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9194,
+        "title": "[CI/Build] mypy: check vllm/entrypoints",
+        "url": "https://github.com/vllm-project/vllm/pull/9194",
+        "author": "russellb",
+        "mergedAt": "2024-10-09T17:15:28Z",
+        "createdAt": "2024-10-09T14:42:29Z",
+        "changedFiles": 2,
+        "additions": 6,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Resolve mypy warnings under vllm/entrypoints and turn on mypy\nchecks for this directory in format.sh and in CI.\npart of issue #3680\nSigned-off-by: Russell Bryant rbryant@redhat.com",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9130,
+        "title": "[CI/Build] Update Dockerfile install+deploy image to ubuntu 22.04",
+        "url": "https://github.com/vllm-project/vllm/pull/9130",
+        "author": "mgoin",
+        "mergedAt": "2024-10-09T18:51:47Z",
+        "createdAt": "2024-10-07T16:12:45Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We need to build the vLLM wheel using ubuntu 20.04 in order to make a widely usable wheel (ref: #6517), but the final deployment image where we install the wheel can use a newer version with LTS. Several users have been reporting that it would be helpful for a variety of reasons (security, package v",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9201,
+        "title": "[Core] Fix invalid args to _process_request",
+        "url": "https://github.com/vllm-project/vllm/pull/9201",
+        "author": "russellb",
+        "mergedAt": "2024-10-10T04:10:09Z",
+        "createdAt": "2024-10-09T18:09:47Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I spotted this while working on expanding coverage with mypy. This\ncall to _process_request passed priority in the positional\nargument location for prompt_adapter_request.\nSigned-off-by: Russell Bryant rbryant@redhat.com",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9208,
+        "title": "[misc] improve model support check in another process",
+        "url": "https://github.com/vllm-project/vllm/pull/9208",
+        "author": "youkaichao",
+        "mergedAt": "2024-10-10T04:58:27Z",
+        "createdAt": "2024-10-09T22:32:42Z",
+        "changedFiles": 2,
+        "additions": 36,
+        "deletions": 32,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "previous approach of checking if the last line of the output contains a magic string is error-prone, if the process produces some logging, warning.\nchanging it to use the same technique as \n  \n    \n      vllm/vllm/distributed/device_communicators/custom_all_reduce_utils.py\n    \n    \n         Line 25",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9213,
+        "title": "[Bugfix] Fix Weight Loading Multiple GPU Test - Large Models",
+        "url": "https://github.com/vllm-project/vllm/pull/9213",
+        "author": "mgoin",
+        "mergedAt": "2024-10-10T06:15:41Z",
+        "createdAt": "2024-10-10T02:52:49Z",
+        "changedFiles": 2,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The weight loading multiple gpu \"large\" test has been failing on main (link) due to the DeepSeek-Coder-V2-Lite-Instruct model being too small for TP=2 with fp8 marlin. Let's try moving the model to the regular set of models to avoid A100.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9212,
+        "title": "[Bugfix] Machete garbage results for some models (large K dim)",
+        "url": "https://github.com/vllm-project/vllm/pull/9212",
+        "author": "LucasWilkinson",
+        "mergedAt": "2024-10-10T06:16:17Z",
+        "createdAt": "2024-10-10T02:42:20Z",
+        "changedFiles": 2,
+        "additions": 16,
+        "deletions": 12,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Machete had a bug were the shape of the scales passed to the TMA was being set as:\nmake_shape(M, args.group_size, L)\n\nwhen it should have been:\nmake_shape(M, scale_k, L)\n\nthis meant that when num_groups > group_size we would get garbage results (basically for for all groups with id > group_size the ",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9149,
+        "title": "[Core] Add an environment variable which needs to be set explicitly to allow BlockSpaceManagerV1",
+        "url": "https://github.com/vllm-project/vllm/pull/9149",
+        "author": "sroy745",
+        "mergedAt": "2024-10-10T06:17:17Z",
+        "createdAt": "2024-10-08T06:09:55Z",
+        "changedFiles": 14,
+        "additions": 94,
+        "deletions": 8,
+        "commits": 80,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR introduces an environment variable that must be explicitly set to enable BlockSpaceManagerV1. This requirement informs users who have set use_v2_block_manager to False that BlockSpaceManagerV1 is being deprecated in favor of BlockSpaceManagerV2. As a result, users can test and transition to ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

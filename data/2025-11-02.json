@@ -1,0 +1,428 @@
+{
+  "date": "2025-11-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-11-02T07:00:00+00:00",
+  "utc_end": "2025-11-03T08:00:00+00:00",
+  "generated_at": "2026-07-08T22:26:59.363626+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 11917,
+        "title": "[FEAT]  Shared mem pool based cuda ipc for multi-modal data transport",
+        "url": "https://github.com/sgl-project/sglang/pull/11917",
+        "author": "kousakawang",
+        "mergedAt": "2025-11-02T09:46:37Z",
+        "createdAt": "2025-10-21T14:19:11Z",
+        "changedFiles": 8,
+        "additions": 424,
+        "deletions": 20,
+        "commits": 55,
+        "labels": [
+          "high priority",
+          "performance",
+          "Multi-modal",
+          "run-ci",
+          "vlm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nresolves #11464\nas this issue mentioned,  try to use cuda-ipc handle to get multimodal data (e.g. images, vedieos) from tokenizer process can avoid the pickle dump and send data via socket cost. However, due to pytorch's limitation,  if we get a tensor's ipc-handle, we can never release i",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12506,
+        "title": "Add prefix for torch symm mem",
+        "url": "https://github.com/sgl-project/sglang/pull/12506",
+        "author": "yuan-luo",
+        "mergedAt": "2025-11-02T19:23:05Z",
+        "createdAt": "2025-11-02T02:28:23Z",
+        "changedFiles": 6,
+        "additions": 87,
+        "deletions": 69,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nPer suggested by @merrymercy , add a torch prefix to symm_mem to differentiate the torch_symm_mem all-reduce operation from the nccl_symm_mem all-reduce operation.\nTODO:\nPerformance compare between torch symm mem and nccl symm mem.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profilin",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12481,
+        "title": "[ServerArgs] allow --mamba-ssm-dtype extend",
+        "url": "https://github.com/sgl-project/sglang/pull/12481",
+        "author": "hanming-lu",
+        "mergedAt": "2025-11-02T19:50:04Z",
+        "createdAt": "2025-11-01T02:44:48Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12453,
+        "title": "[Fix] `concat_mla_absorb_q_kernel` fails for long inputs",
+        "url": "https://github.com/sgl-project/sglang/pull/12453",
+        "author": "bingps",
+        "mergedAt": "2025-11-02T19:52:06Z",
+        "createdAt": "2025-10-31T09:22:28Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\n#12250\nModifications\n\nThis is caused by int32 overflow in addressing like BBufType* base_addr = reinterpret_cast<BBufType*>(out + idx_0 * out_stride_0 + idx_1 * out_stride_1 + A_LAST_DIM);.\nSpecifically, the out_stride_0 can be 128*576=73728, for S=30000, the  idx_0 * out_stride_0 can be",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12515,
+        "title": "Super tiny fix naming in bench serving scripts",
+        "url": "https://github.com/sgl-project/sglang/pull/12515",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-11-02T20:43:10Z",
+        "createdAt": "2025-11-02T13:28:51Z",
+        "changedFiles": 1,
+        "additions": 19,
+        "deletions": 19,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\ndid not realize this when reviewing #11116...\n\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documenta",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12521,
+        "title": "move all get_stream in sgl_kernel to c++ to reduce the launch overhead",
+        "url": "https://github.com/sgl-project/sglang/pull/12521",
+        "author": "merrymercy",
+        "mergedAt": "2025-11-02T21:15:05Z",
+        "createdAt": "2025-11-02T19:50:40Z",
+        "changedFiles": 20,
+        "additions": 60,
+        "deletions": 93,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "move all get_stream in sgl_kernel to c++ to reduce the launch overhead\ndeprecate USE_VLLM_CUSTOM_ALLREDUCE",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12502,
+        "title": "[Refact] Remove hardcoded KV cache dimension in MLATokenToKVPool",
+        "url": "https://github.com/sgl-project/sglang/pull/12502",
+        "author": "Johnsonms",
+        "mergedAt": "2025-11-03T03:49:53Z",
+        "createdAt": "2025-11-01T20:11:28Z",
+        "changedFiles": 1,
+        "additions": 17,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nRemove the hardcode MLA KV Cache for NSATokenToKVPool\n\nModifications\nThe MLATokenToKVPool class contained a hardcoded value 656 for kv_cache_dim when using NSA (Neural Sparse Attention) with FP8 quantization. This hardcoded value made the code inflexible and error-prone when:\n\nUsing diffe",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12367,
+        "title": "[Bug] Fix Intern-S1 model accuracy and support /generate interface with input_ids",
+        "url": "https://github.com/sgl-project/sglang/pull/12367",
+        "author": "hhaAndroid",
+        "mergedAt": "2025-11-03T04:22:33Z",
+        "createdAt": "2025-10-30T02:25:38Z",
+        "changedFiles": 3,
+        "additions": 8,
+        "deletions": 41,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The version of pixel_shuffle used in intern-s1 is incorrect and the ps_version parameter needs to be removed\nThe image processing models in intern-s1 and internv1 do not support passing input_ids through the generation interface, which needs to be fixed.\nIn the RL scenario, weight updates are increm",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12523,
+        "title": "chore: upgrade flashinfer 0.5.0",
+        "url": "https://github.com/sgl-project/sglang/pull/12523",
+        "author": "zhyncs",
+        "mergedAt": "2025-11-03T04:54:13Z",
+        "createdAt": "2025-11-02T23:11:33Z",
+        "changedFiles": 6,
+        "additions": 12,
+        "deletions": 5,
+        "commits": 3,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12530,
+        "title": "[hotfix] Remove flashinfer-jit-cache from pyproject",
+        "url": "https://github.com/sgl-project/sglang/pull/12530",
+        "author": "Fridge003",
+        "mergedAt": "2025-11-03T06:11:05Z",
+        "createdAt": "2025-11-03T05:36:36Z",
+        "changedFiles": 2,
+        "additions": 1,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nflashinfer-jit-cache cannot be installed without extra-url-index, which might hurt user experience\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12532,
+        "title": "fix: move dummy format loader check before quantization checks",
+        "url": "https://github.com/sgl-project/sglang/pull/12532",
+        "author": "cicirori",
+        "mergedAt": "2025-11-03T07:41:30Z",
+        "createdAt": "2025-11-03T05:54:23Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Sometimes need to quickly start the server for debugging purposes without worrying about model loading.\nHowever, the DeepSeek FP4 model will raise an error before:\n[2025-11-03 05:48:42 TP0] Scheduler hit an exception: Traceback (most recent call last):\n  File \"**/sglang/python/sglang/srt/managers/sc",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 27925,
+        "title": "Performance fix MistralTokenizer: cache special ids and tokens",
+        "url": "https://github.com/vllm-project/vllm/pull/27925",
+        "author": "juliendenize",
+        "mergedAt": "2025-11-02T09:48:34Z",
+        "createdAt": "2025-11-01T20:05:17Z",
+        "changedFiles": 1,
+        "additions": 32,
+        "deletions": 34,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThe PR #26358 to refactor the MistralTokenizer brought a performance issue due to the lack of caching of special tokens: https://github.com/vllm-project/vllm/pull/26358/files#diff-7b4368a1d7d34fa1071838db6d63fea4911f32e60ac065829979b327ad539649R410\nThe problem of performance makes it about 1",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26377,
+        "title": "[V1] [Hybrid] Mamba1 Automatic Prefix Caching",
+        "url": "https://github.com/vllm-project/vllm/pull/26377",
+        "author": "Josephasafg",
+        "mergedAt": "2025-11-02T12:16:23Z",
+        "createdAt": "2025-10-07T19:22:56Z",
+        "changedFiles": 16,
+        "additions": 442,
+        "deletions": 153,
+        "commits": 56,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR enables prefix caching for Mamba1 models. It depends on the great work done in this PR for Mamba2 and its part of this feature\nThis PR adds support for block-wise computation in the SSM kernel using mamba_block_size.\nInstead of calculating across the entire sequence of tokens at once",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27939,
+        "title": "[Misc] Provide Siglip2 chat template",
+        "url": "https://github.com/vllm-project/vllm/pull/27939",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-11-02T13:42:38Z",
+        "createdAt": "2025-11-02T11:42:31Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThe default chat template in https://huggingface.co/google/siglip2-base-patch16-224/blob/main/tokenizer_config.json is incorrect because the model is not an instruction-tuned model\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27420,
+        "title": "[Bugfix][llm]: Abort orphaned requests when llm.chat() batch fails",
+        "url": "https://github.com/vllm-project/vllm/pull/27420",
+        "author": "Flink-ddd",
+        "mergedAt": "2025-11-02T16:24:02Z",
+        "createdAt": "2025-10-23T15:02:35Z",
+        "changedFiles": 2,
+        "additions": 75,
+        "deletions": 14,
+        "commits": 2,
+        "labels": [
+          "bug",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFixes #26081\nThis PR addresses a bug where llm.chat() pollutes the scheduler queue if a batch of requests fails validation mid-way.\nThe Bug:\nWhen a batch (e.g., 4 requests) is sent to llm.chat() and one request (3) is invalid (too long), the engine enqueues the valid requests (1, 2) and then",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27728,
+        "title": "[BugFix][LoRA] use adapter_id instead of id field of lora_request",
+        "url": "https://github.com/vllm-project/vllm/pull/27728",
+        "author": "biswapanda",
+        "mergedAt": "2025-11-03T02:08:09Z",
+        "createdAt": "2025-10-29T08:05:03Z",
+        "changedFiles": 2,
+        "additions": 64,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR fixes a bug in the KV cache block storage system where the code was incorrectly trying to access request.lora_request.id instead of the correct request.lora_request.adapter_id property.\nRoot Cause:\nThe LoRARequest class in vllm/lora/request.py does not have an id field. Instead, it h",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 25054,
+        "title": "[Frontend] Align finish_reason when tool is called with OpenAI",
+        "url": "https://github.com/vllm-project/vllm/pull/25054",
+        "author": "n0gu-furiosa",
+        "mergedAt": "2025-11-03T04:21:18Z",
+        "createdAt": "2025-09-17T07:52:43Z",
+        "changedFiles": 1,
+        "additions": 18,
+        "deletions": 8,
+        "commits": 9,
+        "labels": [
+          "frontend",
+          "ready",
+          "tool-calling"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThere is a slight mismatch between OpenAI\u2019s chat completions API and vllm serve: the finish_reason returned differs in some cases depending on whether the tool choice is required or named.\n\n\n\n\u00a0(tool_choice, stream)\nOpenAI\nvllm serve\n\n\n\n\nrequired, False\ntool_calls\nstop\n\n\nrequired, True\ntool_c",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27753,
+        "title": "[Hybrid] Pass kernel block size to builders",
+        "url": "https://github.com/vllm-project/vllm/pull/27753",
+        "author": "tdoublep",
+        "mergedAt": "2025-11-03T05:48:04Z",
+        "createdAt": "2025-10-29T15:58:40Z",
+        "changedFiles": 4,
+        "additions": 62,
+        "deletions": 27,
+        "commits": 5,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nSolves #27264 and #26936\nThis PR makes two changes:\n\nThe GPU model runner will now pass the kernel block size to the metadata builders, fixing a pretty bad bug that exists on main.\nI also restrict the kernel block sizes for the FlashAttention backend based on the discussion in #27264. This i",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26263,
+        "title": "[Bugfix] Padded Eagle Specdec with Chunked Prefill",
+        "url": "https://github.com/vllm-project/vllm/pull/26263",
+        "author": "Flechman",
+        "mergedAt": "2025-11-03T07:22:46Z",
+        "createdAt": "2025-10-05T22:39:11Z",
+        "changedFiles": 1,
+        "additions": 21,
+        "deletions": 7,
+        "commits": 11,
+        "labels": [
+          "speculative-decoding",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis adds test to #26231\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27964,
+        "title": "[XPU]Refine Dockerfile.xpu, avoid oneccl dependency issue",
+        "url": "https://github.com/vllm-project/vllm/pull/27964",
+        "author": "jikunshang",
+        "mergedAt": "2025-11-03T07:36:59Z",
+        "createdAt": "2025-11-03T06:31:51Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR remove oneccl (installed with torch-xpu) after nixl installed.\nTest Plan\nCI\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing tes",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

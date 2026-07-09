@@ -1,0 +1,66 @@
+{
+  "date": "2023-12-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-09T08:00:00+00:00",
+  "utc_end": "2023-12-10T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:39:45.840627+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1978,
+        "title": "Fix for KeyError on Loading LLaMA",
+        "url": "https://github.com/vllm-project/vllm/pull/1978",
+        "author": "imgaojun",
+        "mergedAt": "2023-12-09T23:59:57Z",
+        "createdAt": "2023-12-08T03:49:09Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR addresses the issue where loading LLaMA model parameters into vLLM results in a KeyError due to the presence of rotary_emb.cos_cached and rotary_emb.sin_cached. These cached values from LLaMA are not required or directly managed by vLLM, leading to compatibility issues.\nRelated issue #1977\nC",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2003,
+        "title": "[Minor] Fix code style for baichuan",
+        "url": "https://github.com/vllm-project/vllm/pull/2003",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-10T03:24:30Z",
+        "createdAt": "2023-12-10T03:10:50Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1996,
+        "title": "Fix OpenAI server completion_tokens referenced before assignment",
+        "url": "https://github.com/vllm-project/vllm/pull/1996",
+        "author": "js8544",
+        "mergedAt": "2023-12-10T05:01:22Z",
+        "createdAt": "2023-12-09T04:08:29Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "When a models return an empty result, the OpenAI server will report an error: local variable completion_tokens referenced before assignment.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2023-09-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-10T07:00:00+00:00",
+  "utc_end": "2023-09-11T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:09.618224+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 992,
+        "title": "fix: CUDA error when inferencing with Falcon-40B base model",
+        "url": "https://github.com/vllm-project/vllm/pull/992",
+        "author": "kyujin-cho",
+        "mergedAt": "2023-09-10T08:39:03Z",
+        "createdAt": "2023-09-08T18:03:06Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR resolves #767. As described on #767 (comment), referencing model_type instance variable results in wrongly determining model variant. Until there's some movement to fix this behavior on huggingface side, this patch will be a simple workaround to get rid of the CUDA error.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1005,
+        "title": "[Docs] Update installation page",
+        "url": "https://github.com/vllm-project/vllm/pull/1005",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-10T21:23:31Z",
+        "createdAt": "2023-09-10T08:55:46Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 19,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR updates the installation page in the doc, stating that vLLM is now shipped with pre-compiled CUDA code. Thanks to the pre-compiled binaries, vLLM now doesn't need to be aligned with the CUDA sdk installed in user machine.",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1006,
+        "title": "Update setup.py",
+        "url": "https://github.com/vllm-project/vllm/pull/1006",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-11T06:42:46Z",
+        "createdAt": "2023-09-10T09:18:04Z",
+        "changedFiles": 1,
+        "additions": 35,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR includes miscellaneous updates on setup.py.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

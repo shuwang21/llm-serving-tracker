@@ -1,0 +1,85 @@
+{
+  "date": "2024-02-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-08T08:00:00+00:00",
+  "utc_end": "2024-02-09T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:43:48.031393+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 170,
+        "title": "Fix BaseCache metric",
+        "url": "https://github.com/sgl-project/sglang/pull/170",
+        "author": "comaniac",
+        "mergedAt": "2024-02-09T01:23:09Z",
+        "createdAt": "2024-02-09T01:23:03Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As title.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 168,
+        "title": "import outlines",
+        "url": "https://github.com/sgl-project/sglang/pull/168",
+        "author": "hnyls2002",
+        "mergedAt": "2024-02-09T02:13:03Z",
+        "createdAt": "2024-02-08T16:06:39Z",
+        "changedFiles": 12,
+        "additions": 27,
+        "deletions": 1464,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2471,
+        "title": "[Ray] Integration compiled DAG off by default",
+        "url": "https://github.com/vllm-project/vllm/pull/2471",
+        "author": "rkooo567",
+        "mergedAt": "2024-02-08T17:57:25Z",
+        "createdAt": "2024-01-17T22:53:40Z",
+        "changedFiles": 2,
+        "additions": 73,
+        "deletions": 7,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the experimental compiled DAG API support for VLLM NCCL opimization. It improves the benchmark_latency.py or 70B * 8 A100 GPUs' throughput benchmark around 5~7%.\nThe feature is off by default, and it can be enabled using an env var (VLLM_USE_RAY_COMPILED_DAG=1). There are some rough edg",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2808,
+        "title": "Disable custom all reduce by default",
+        "url": "https://github.com/vllm-project/vllm/pull/2808",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-02-08T17:58:03Z",
+        "createdAt": "2024-02-07T23:37:22Z",
+        "changedFiles": 1,
+        "additions": 18,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR temporarily disables the custom all-reduce kernels. We will enable them once the stability issues are resolved.",
+        "category": "Other",
+        "highImpact": true
+      }
+    ]
+  }
+}

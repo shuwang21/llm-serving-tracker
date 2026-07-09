@@ -1,0 +1,48 @@
+{
+  "date": "2023-10-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-20T07:00:00+00:00",
+  "utc_end": "2023-10-21T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:36:40.647431+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1427,
+        "title": "Fix type hints",
+        "url": "https://github.com/vllm-project/vllm/pull/1427",
+        "author": "lxrite",
+        "mergedAt": "2023-10-20T15:50:47Z",
+        "createdAt": "2023-10-20T11:44:45Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1408,
+        "title": "remove useless statements",
+        "url": "https://github.com/vllm-project/vllm/pull/1408",
+        "author": "WrRan",
+        "mergedAt": "2023-10-20T15:52:08Z",
+        "createdAt": "2023-10-18T09:28:02Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Because self.num_generation_tokens = context_lens.shape[0], the removed statement is useless.",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      }
+    ]
+  }
+}

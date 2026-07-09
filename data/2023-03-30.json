@@ -1,0 +1,48 @@
+{
+  "date": "2023-03-30",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-30T07:00:00+00:00",
+  "utc_end": "2023-03-31T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:23:56.450092+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 14,
+        "title": "Implement custom kernel for LLaMA rotary embedding",
+        "url": "https://github.com/vllm-project/vllm/pull/14",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-30T18:04:21Z",
+        "createdAt": "2023-03-30T10:27:36Z",
+        "changedFiles": 10,
+        "additions": 318,
+        "deletions": 69,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements a custom CUDA kernel for rotary embedding, which is used in LLaMA. The kernel is responsible for the entire process of applying rotary embedding to query and key, and is thus much more efficient than the PyTorch implementation.\nTested models:\n\nLLaMA-7B\nLLaMA-13B\n\nTested GPUs:\n\nA10",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12,
+        "title": "Implement preemption via recomputation & Refactor scheduling logic",
+        "url": "https://github.com/vllm-project/vllm/pull/12",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-30T21:51:47Z",
+        "createdAt": "2023-03-28T07:29:48Z",
+        "changedFiles": 7,
+        "additions": 279,
+        "deletions": 126,
+        "commits": 22,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements a new preemption (eviction) mechanism \"recomputation\". In our benchmark results, recomputation is more efficient than swapping, because swapping incurs significant overheads due to numerous small data transfers between CPU and GPU. Thus, we use recomputation for our default preemp",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

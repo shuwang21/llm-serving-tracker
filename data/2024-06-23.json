@@ -1,0 +1,66 @@
+{
+  "date": "2024-06-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-06-23T07:00:00+00:00",
+  "utc_end": "2024-06-24T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:54:00.954679+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 5744,
+        "title": "[BugFix] [Kernel] Add Cutlass2x fallback kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/5744",
+        "author": "varun-sundar-rabindranath",
+        "mergedAt": "2024-06-23T21:07:11Z",
+        "createdAt": "2024-06-21T13:28:45Z",
+        "changedFiles": 2,
+        "additions": 54,
+        "deletions": 6,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Bug : In cases when the GPU isn't able to accommodate the Shared Memory requirements of some Cutlass Gemm Op, Cutlass fails with a RuntimeError: Error Internal.\nAt the moment main fails the tests/kernels/test_cutlass.py  on a A4000 GPU.\nFix: This PR adds a mechanism to fallback to a lenient Gemm Op ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 5719,
+        "title": "[Distributed] Add send and recv helpers",
+        "url": "https://github.com/vllm-project/vllm/pull/5719",
+        "author": "andoorve",
+        "mergedAt": "2024-06-23T21:42:28Z",
+        "createdAt": "2024-06-20T17:45:52Z",
+        "changedFiles": 6,
+        "additions": 278,
+        "deletions": 24,
+        "commits": 14,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This adds send and recv helpers.\ncc: @youkaichao @stephanie-wang @simon-mo",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 5772,
+        "title": "[Bugfix] Add phi3v resize for dynamic shape and fix torchvision requirement",
+        "url": "https://github.com/vllm-project/vllm/pull/5772",
+        "author": "Isotr0py",
+        "mergedAt": "2024-06-24T04:11:53Z",
+        "createdAt": "2024-06-23T11:36:38Z",
+        "changedFiles": 5,
+        "additions": 72,
+        "deletions": 5,
+        "commits": 16,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #5767 (link existing issues this PR will resolve)\nFIX #5736\n\nAdd image resize for phi3v to avoid error when passing dynamic shape image input (ref: #5767)\nAdd torchvision to cuda/cpu requirements.txt to prevent make user confused (ref: #5736)\n\nBEFORE SUBMITTING, P",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

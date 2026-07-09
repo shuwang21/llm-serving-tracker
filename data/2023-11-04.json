@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-04T07:00:00+00:00",
+  "utc_end": "2023-11-05T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:37:35.398841+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1235,
+        "title": "Add Quantization and AutoAWQ to docs",
+        "url": "https://github.com/vllm-project/vllm/pull/1235",
+        "author": "casper-hansen",
+        "mergedAt": "2023-11-05T05:43:39Z",
+        "createdAt": "2023-09-30T19:21:07Z",
+        "changedFiles": 2,
+        "additions": 75,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "I have added examples of how to use AutoAWQ models in combination with vLLM. Please review and merge at your convenience @WoosukKwon @zhuohan123",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

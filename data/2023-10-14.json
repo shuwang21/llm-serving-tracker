@@ -1,0 +1,30 @@
+{
+  "date": "2023-10-14",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-14T07:00:00+00:00",
+  "utc_end": "2023-10-15T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:36:15.405872+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1239,
+        "title": "Fix error message on `TORCH_CUDA_ARCH_LIST`",
+        "url": "https://github.com/vllm-project/vllm/pull/1239",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-10-14T21:47:43Z",
+        "createdAt": "2023-10-01T04:54:38Z",
+        "changedFiles": 1,
+        "additions": 25,
+        "deletions": 12,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #1225\nThis PR fixes the error message when the TORCH_CUDA_ARCH_LIST includes an unsupported CUDA architecture.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

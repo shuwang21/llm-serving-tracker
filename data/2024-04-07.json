@@ -1,0 +1,30 @@
+{
+  "date": "2024-04-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-04-07T07:00:00+00:00",
+  "utc_end": "2024-04-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:48:00.222414+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3883,
+        "title": "[Bugfix] Fix Llava inference with Tensor Parallelism.",
+        "url": "https://github.com/vllm-project/vllm/pull/3883",
+        "author": "Isotr0py",
+        "mergedAt": "2024-04-07T14:54:13Z",
+        "createdAt": "2024-04-06T11:07:16Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix Llava inference with tensor_parallel_size > 1, because vision_language_config wasn't passed to the worker in RayGPUExecutor before.\nFIX #3882:\n\n#3882\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contr",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      }
+    ]
+  }
+}

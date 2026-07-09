@@ -1,0 +1,48 @@
+{
+  "date": "2023-03-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-01T08:00:00+00:00",
+  "utc_end": "2023-03-02T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:22:18.636317+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3,
+        "title": "Implement `single_query_cached_kv_attention` kernel",
+        "url": "https://github.com/vllm-project/vllm/pull/3",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-01T23:02:20Z",
+        "createdAt": "2023-03-01T21:40:49Z",
+        "changedFiles": 12,
+        "additions": 2140,
+        "deletions": 60,
+        "commits": 14,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds the single_query_cached_kv_attention kernel.\nSupported data types:\n\nhalf\nfloat\n\nTested models:\n\nOPT-125M\nOPT-350M\nOPT-1.3B\nOPT-2.7B\nOPT-6.7B\nOPT-13B\n\nTested GPUs:\n\nA100",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 4,
+        "title": "Use FlashAttention for `multi_query_kv_attention`",
+        "url": "https://github.com/vllm-project/vllm/pull/4",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-02T05:13:08Z",
+        "createdAt": "2023-03-02T05:05:56Z",
+        "changedFiles": 4,
+        "additions": 108,
+        "deletions": 34,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is to use FlashAttention kernels for multi_query_kv_attention, which performs masked attention for the prompt inputs.\nPros\n\nFlashAttention is fast and memory-efficient.\nFlashAttention supports 1D inputs and only invokes a single kernel to handle multiple sequences with variable lengths.\n\nCon",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2024-03-16",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-16T07:00:00+00:00",
+  "utc_end": "2024-03-17T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:46:21.572113+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3444,
+        "title": "[Misc] fix line length for entire codebase",
+        "url": "https://github.com/vllm-project/vllm/pull/3444",
+        "author": "simon-mo",
+        "mergedAt": "2024-03-16T07:36:29Z",
+        "createdAt": "2024-03-16T05:31:59Z",
+        "changedFiles": 9,
+        "additions": 174,
+        "deletions": 128,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "PR Checklist (Click to expand. Please read before submitting.) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR meets the following criteria. This helps vLLM maintain the code quality and improve the efficiency of the review process.\nPR Title and Cla",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3211,
+        "title": "Support arbitrary json_object in OpenAI and Context Free Grammar",
+        "url": "https://github.com/vllm-project/vllm/pull/3211",
+        "author": "simon-mo",
+        "mergedAt": "2024-03-16T20:35:27Z",
+        "createdAt": "2024-03-05T22:39:13Z",
+        "changedFiles": 5,
+        "additions": 178,
+        "deletions": 51,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #3148\nCloses #1229",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2671,
+        "title": "Fix setup.py neuron-ls issue",
+        "url": "https://github.com/vllm-project/vllm/pull/2671",
+        "author": "simon-mo",
+        "mergedAt": "2024-03-16T23:00:25Z",
+        "createdAt": "2024-01-30T20:34:31Z",
+        "changedFiles": 1,
+        "additions": 24,
+        "deletions": 19,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This should fix #2661",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

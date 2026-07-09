@@ -1,0 +1,110 @@
+{
+  "date": "2025-01-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-01T08:00:00+00:00",
+  "utc_end": "2025-01-02T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:12:39.475164+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2697,
+        "title": "[Docs] Add Support for Structured Output Format",
+        "url": "https://github.com/sgl-project/sglang/pull/2697",
+        "author": "shuaills",
+        "mergedAt": "2025-01-01T23:08:44Z",
+        "createdAt": "2025-01-01T22:08:04Z",
+        "changedFiles": 4,
+        "additions": 174,
+        "deletions": 122,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nrelated to #2696",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2663,
+        "title": "[feat] Add math eval to CI nightly run",
+        "url": "https://github.com/sgl-project/sglang/pull/2663",
+        "author": "XiaotongJiang",
+        "mergedAt": "2025-01-01T23:29:35Z",
+        "createdAt": "2024-12-30T07:55:16Z",
+        "changedFiles": 4,
+        "additions": 64,
+        "deletions": 8,
+        "commits": 17,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix forward for #2652\nHow did i test:\n\ntested by temp moving the nightly test suites to per-commit",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11666,
+        "title": "[Doc] Fix typo",
+        "url": "https://github.com/vllm-project/vllm/pull/11666",
+        "author": "serihiro",
+        "mergedAt": "2025-01-01T08:10:10Z",
+        "createdAt": "2025-01-01T05:47:33Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "What\nI corrected the spell of FlashInfer on a comment and a log message as follows;\n\nuse_falshinfer -> use_flashinfer\nFalshInfer -> FlashInfer",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11635,
+        "title": "[V1] Implement Cascade Attention",
+        "url": "https://github.com/vllm-project/vllm/pull/11635",
+        "author": "WoosukKwon",
+        "mergedAt": "2025-01-01T12:56:47Z",
+        "createdAt": "2024-12-30T16:14:23Z",
+        "changedFiles": 10,
+        "additions": 693,
+        "deletions": 16,
+        "commits": 23,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements a simple version of Cascade Attention. Cascade attention can save the HBM bandwidth for reading KV cache when requests share the same prefix.\nNOTE: For simplicity, this PR only uses cascade attention when every running request shares the same KV cache. If one or more requests do n",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11669,
+        "title": "[VLM] Move supported limits and max tokens to merged multi-modal processor",
+        "url": "https://github.com/vllm-project/vllm/pull/11669",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-01T15:44:42Z",
+        "createdAt": "2025-01-01T10:45:19Z",
+        "changedFiles": 16,
+        "additions": 340,
+        "deletions": 350,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR moves the following code to merged multi-modal processor to enable checking the consistency between those two:\n\nMaximum number of placeholder tokens per item (originally in multi-modal registry)\nMaximum number of supported items (originally in multi-modal data parser)\n\nAlso, this PR adds typ",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

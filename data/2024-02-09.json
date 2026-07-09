@@ -1,0 +1,30 @@
+{
+  "date": "2024-02-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-09T08:00:00+00:00",
+  "utc_end": "2024-02-10T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:43:51.744020+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 174,
+        "title": "Fix token usage with jump forward",
+        "url": "https://github.com/sgl-project/sglang/pull/174",
+        "author": "comaniac",
+        "mergedAt": "2024-02-10T04:06:15Z",
+        "createdAt": "2024-02-09T18:59:50Z",
+        "changedFiles": 2,
+        "additions": 11,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "close #173\nThis PR fixes the incorrect token usage when jump forward is enabled. Specifically, we introduce a new field orig_prompt_tokens, which will be set when the first jump forward happens so that we could know the original number of prompt tokens. When returning a response (a chunk in streamin",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ],
+    "vllm": []
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "date": "2023-05-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-28T07:00:00+00:00",
+  "utc_end": "2023-05-29T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:27:20.665633+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 132,
+        "title": "Enable LLaMA fast tokenizer",
+        "url": "https://github.com/vllm-project/vllm/pull/132",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-28T09:51:42Z",
+        "createdAt": "2023-05-28T09:42:29Z",
+        "changedFiles": 2,
+        "additions": 11,
+        "deletions": 7,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #80\nI found that the llama fast tokenizer in https://huggingface.co/hf-internal-testing/llama-tokenizer does not cause the protobuf errors. This PR uses this tokenizer to eliminate the tokenizer overhead in LLaMA.\n# Before this PR\nllama-13b latency (bs 8, input len 32, output len 128): 3.75 ms",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 133,
+        "title": "Add throughput benchmarking script",
+        "url": "https://github.com/vllm-project/vllm/pull/133",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-28T10:20:06Z",
+        "createdAt": "2023-05-28T10:15:51Z",
+        "changedFiles": 12,
+        "additions": 145,
+        "deletions": 257,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": true
+      }
+    ]
+  }
+}

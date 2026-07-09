@@ -1,0 +1,189 @@
+{
+  "date": "2024-10-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-15T07:00:00+00:00",
+  "utc_end": "2024-10-16T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:04:42.911120+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1674,
+        "title": "Fix memory leak during abort",
+        "url": "https://github.com/sgl-project/sglang/pull/1674",
+        "author": "merrymercy",
+        "mergedAt": "2024-10-15T15:15:10Z",
+        "createdAt": "2024-10-15T15:13:46Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "TODO: add a unit test for abort.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1681,
+        "title": "Fix filter_batch function call",
+        "url": "https://github.com/sgl-project/sglang/pull/1681",
+        "author": "hnyls2002",
+        "mergedAt": "2024-10-16T05:59:26Z",
+        "createdAt": "2024-10-16T05:50:00Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The filter_batch function call in the code has been fixed to use the correct argument name keep_indices instead of sorted_indices. This ensures that the function is called correctly and the desired filtering behavior is achieved.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 9349,
+        "title": "pass ignore_eos parameter to all benchmark_serving calls",
+        "url": "https://github.com/vllm-project/vllm/pull/9349",
+        "author": "gracehonv",
+        "mergedAt": "2024-10-15T20:30:44Z",
+        "createdAt": "2024-10-14T21:13:44Z",
+        "changedFiles": 1,
+        "additions": 18,
+        "deletions": 20,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently ignore_eos parameter set by the user isn't passed into the profiler and actual benchmark run sections of benchmark_serving, but only in the first promopt run section. This means the output sequence length of different backends tested with benchmark_serving may be different,  since ignore_e",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8909,
+        "title": "[Misc] Directly use compressed-tensors for checkpoint definitions",
+        "url": "https://github.com/vllm-project/vllm/pull/8909",
+        "author": "mgoin",
+        "mergedAt": "2024-10-15T22:40:26Z",
+        "createdAt": "2024-09-27T15:12:12Z",
+        "changedFiles": 10,
+        "additions": 15,
+        "deletions": 115,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reuse existing implementations of compression and quantization configs defined by compressed-tensors by adding as a dependency\nThe reused classes are\n\nCompressionFormat\nQuantizationArgs\nQuantizationStrategy\nQuantizationType\nActivationOrdering",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9034,
+        "title": "[Bugfix] Fix vLLM UsageInfo and logprobs None AssertionError with empty token_ids",
+        "url": "https://github.com/vllm-project/vllm/pull/9034",
+        "author": "CatherineSue",
+        "mergedAt": "2024-10-15T22:40:43Z",
+        "createdAt": "2024-10-03T02:51:10Z",
+        "changedFiles": 4,
+        "additions": 140,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "When there is no new tokens generated, Sequence.get_output_token_ids_to_return should return empty list.\nFILL IN THE PR DESCRIPTION HERE\nFIX #8988  (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9386,
+        "title": "[Bugfix][CI/Build] Fix CUDA 11.8 Build",
+        "url": "https://github.com/vllm-project/vllm/pull/9386",
+        "author": "LucasWilkinson",
+        "mergedAt": "2024-10-16T00:15:21Z",
+        "createdAt": "2024-10-15T18:44:32Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Dont build 9.0a for scaled_mm_c2x since it's outside of cuda 12.0 guard and won't help perf that much that anyways.\nThe issue here was that for CUDA 11.8 if we were building for 9.0 we wouldn't build scaled_mm_c3x so we would instead try to build scaled_mm_c2x for all versions, i.e. \"7.5;8.0;8.6;8.9",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9397,
+        "title": "[Bugfix] Molmo text-only input bug fix",
+        "url": "https://github.com/vllm-project/vllm/pull/9397",
+        "author": "mrsalehi",
+        "mergedAt": "2024-10-16T04:56:09Z",
+        "createdAt": "2024-10-16T00:55:51Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 3,
+        "commits": 14,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "[Bugfix] If the user queries text-only examples, molmo throws an AttributeError: 'NoneType' object has no attribute 'get' error, which is caused by this line: \n  \n    \n      vllm/vllm/model_executor/models/molmo.py\n    \n    \n         Line 951\n      in\n      717a5f8\n    \n  \n  \n    \n\n        \n        ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9250,
+        "title": "[Misc] Standardize RoPE handling for Qwen2-VL",
+        "url": "https://github.com/vllm-project/vllm/pull/9250",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-10-16T05:56:17Z",
+        "createdAt": "2024-10-10T14:38:31Z",
+        "changedFiles": 16,
+        "additions": 102,
+        "deletions": 200,
+        "commits": 14,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "huggingface/transformers#33401 has been fixed in Transformers v4.45.2, but the devs have clarified that M-ROPE is intended to be configured as rope_type=\"default\". To avoid future compatibility issues, this PR updates the RoPE code in vLLM to follow their specification.",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9303,
+        "title": "[Model] VLM2Vec, the first multimodal embedding model in vLLM",
+        "url": "https://github.com/vllm-project/vllm/pull/9303",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-10-16T06:31:00Z",
+        "createdAt": "2024-10-12T00:35:03Z",
+        "changedFiles": 16,
+        "additions": 465,
+        "deletions": 261,
+        "commits": 13,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Support VLM2Vec embedding model by TIGER-Lab.\nThis is a low-hanging fruit as the model architecture is exactly the same as Phi3V.\nFuture works, in order of priority:\n\nAdd CLI option to specify whether to use a model for generation or embedding so we don't have to hardcode the model name when the sam",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

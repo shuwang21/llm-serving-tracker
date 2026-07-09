@@ -1,0 +1,148 @@
+{
+  "date": "2025-01-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-11T08:00:00+00:00",
+  "utc_end": "2025-01-12T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:13:36.284700+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2840,
+        "title": "chore: bump v0.4.1.post5",
+        "url": "https://github.com/sgl-project/sglang/pull/2840",
+        "author": "zhyncs",
+        "mergedAt": "2025-01-11T15:10:02Z",
+        "createdAt": "2025-01-11T14:31:40Z",
+        "changedFiles": 6,
+        "additions": 13,
+        "deletions": 11,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nref #2837\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2841,
+        "title": "docs: update README",
+        "url": "https://github.com/sgl-project/sglang/pull/2841",
+        "author": "zhyncs",
+        "mergedAt": "2025-01-11T15:11:38Z",
+        "createdAt": "2025-01-11T15:11:28Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2843,
+        "title": "Improve: Token-In Token-Out Usage for RLHF",
+        "url": "https://github.com/sgl-project/sglang/pull/2843",
+        "author": "shuaills",
+        "mergedAt": "2025-01-11T23:14:27Z",
+        "createdAt": "2025-01-11T18:48:04Z",
+        "changedFiles": 12,
+        "additions": 168,
+        "deletions": 130,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIdentified issues in the tutorial or test case added in the feature.",
+        "category": "CI / Tests",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11951,
+        "title": "[Doc] Basic guide for writing unit tests for new models",
+        "url": "https://github.com/vllm-project/vllm/pull/11951",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-11T13:27:25Z",
+        "createdAt": "2025-01-11T06:59:51Z",
+        "changedFiles": 6,
+        "additions": 81,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The PR adds a page that explains how to write unit tests for new models.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11940,
+        "title": "[Bugfix] Fix RobertaModel loading",
+        "url": "https://github.com/vllm-project/vllm/pull/11940",
+        "author": "NickLucche",
+        "mergedAt": "2025-01-11T14:05:09Z",
+        "createdAt": "2025-01-10T18:35:23Z",
+        "changedFiles": 3,
+        "additions": 67,
+        "deletions": 12,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #11821.\nAdditionally,  I test support for https://huggingface.co/sentence-transformers/stsb-roberta-base-v2 as an alternative model that can be used for embedding.\nI wanted to include it because I found some inconsistencies in the naming of some popular Roberta's variants layers on the web, some",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11742,
+        "title": "[Model] Add cogagent model support vLLM",
+        "url": "https://github.com/vllm-project/vllm/pull/11742",
+        "author": "sixsixcoder",
+        "mergedAt": "2025-01-11T19:05:56Z",
+        "createdAt": "2025-01-05T06:52:59Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 5,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add THUDM/CogAgent model support vLLM\nAdded new rotation position encoding method\n\ntest demo\nfrom PIL import Image\nfrom vllm import LLM, SamplingParams\n\nmodel_name = \"THUDM/cogagent-9b-20241220\"\n\ndef procress_inputs():\n    task = \"\u5c06\u90ae\u4ef6\u6807\u8bb0\u4e3a\u5df2\u8bfb\"\n    platform_str = \"(Platform: Mac)\\n\"\n    history_str = \"\\",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11963,
+        "title": "[V1] Avoid sending text prompt to core engine",
+        "url": "https://github.com/vllm-project/vllm/pull/11963",
+        "author": "ywang96",
+        "mergedAt": "2025-01-12T06:36:39Z",
+        "createdAt": "2025-01-12T02:57:52Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The original text prompt is already tokenized in the processing process and thus should not be needed in the core engine (since everything is done with token IDs on the engine).\nI ran a mini benchmark with an extreme case to see the perf impact:\nfrom vllm.v1.engine import EngineCoreRequest\nfrom vllm",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ]
+  }
+}

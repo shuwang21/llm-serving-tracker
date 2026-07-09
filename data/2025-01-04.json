@@ -1,0 +1,148 @@
+{
+  "date": "2025-01-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-04T08:00:00+00:00",
+  "utc_end": "2025-01-05T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:12:55.597999+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2731,
+        "title": "Revert the GLOO_SOCKET_IFNAME change",
+        "url": "https://github.com/sgl-project/sglang/pull/2731",
+        "author": "merrymercy",
+        "mergedAt": "2025-01-05T04:13:16Z",
+        "createdAt": "2025-01-05T04:12:59Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2733,
+        "title": "fix lint",
+        "url": "https://github.com/sgl-project/sglang/pull/2733",
+        "author": "zhyncs",
+        "mergedAt": "2025-01-05T06:45:42Z",
+        "createdAt": "2025-01-05T06:45:06Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 13,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11717,
+        "title": "[VLM] Merged multi-modal processors for LLaVA-NeXT-Video and LLaVA-OneVision",
+        "url": "https://github.com/vllm-project/vllm/pull/11717",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-04T11:40:54Z",
+        "createdAt": "2025-01-03T10:47:34Z",
+        "changedFiles": 31,
+        "additions": 1114,
+        "deletions": 983,
+        "commits": 19,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements merged multi-modal processors for the remaining LLaVA-series models.\nThis enables the fixed image size tests to be moved from e2e to processor tests.\nNote: To properly profile video inputs, I have added seq_len argument to get_mm_max_tokens_per_item and _get_dummy_mm_inputs. I hav",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11735,
+        "title": "[Bugfix] Fix precision error in LLaVA-NeXT feature size calculation",
+        "url": "https://github.com/vllm-project/vllm/pull/11735",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-04T15:45:57Z",
+        "createdAt": "2025-01-04T11:51:49Z",
+        "changedFiles": 3,
+        "additions": 26,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Our current calculations are done using Python floats which are in float64. In some edge cases, this may cause some inconsistency with HF's output. It seems that using float32 fixes the problem (not really sure why).\nFIX #11704",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11736,
+        "title": "[Model] Remove unnecessary weight initialization logic",
+        "url": "https://github.com/vllm-project/vllm/pull/11736",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-04T15:46:21Z",
+        "createdAt": "2025-01-04T11:56:58Z",
+        "changedFiles": 3,
+        "additions": 5,
+        "deletions": 22,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "There is no need for custom initialization as those weights will be overwritten by the model checkpoint anyway.",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11738,
+        "title": "[Bugfix][V1] Fix test_kv_cache_utils.py",
+        "url": "https://github.com/vllm-project/vllm/pull/11738",
+        "author": "jeejeelee",
+        "mergedAt": "2025-01-04T16:07:59Z",
+        "createdAt": "2025-01-04T14:49:11Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "After merging #11646 , #11513  was not synced with main, which introduced this bug.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11730,
+        "title": "[MISC] Replace c10::optional with std::optional",
+        "url": "https://github.com/vllm-project/vllm/pull/11730",
+        "author": "houseroad",
+        "mergedAt": "2025-01-05T01:20:34Z",
+        "createdAt": "2025-01-04T01:48:19Z",
+        "changedFiles": 24,
+        "additions": 136,
+        "deletions": 136,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "In PyTorch, c10::optional is just an alias of std::optional for a while, and we would like to completely eliminate all the usage of c10::optional.\nContext: in PyTorch repo, c10::optional's usage is (almost) gone, see https://github.com/search?q=repo%3Apytorch%2Fpytorch%20c10%3A%3Aoptional&type=code.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

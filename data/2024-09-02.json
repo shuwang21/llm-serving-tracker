@@ -1,0 +1,163 @@
+{
+  "date": "2024-09-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-02T07:00:00+00:00",
+  "utc_end": "2024-09-03T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:00:42.236506+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1304,
+        "title": "feat: update nightly gsm8k eval",
+        "url": "https://github.com/sgl-project/sglang/pull/1304",
+        "author": "zhyncs",
+        "mergedAt": "2024-09-02T15:18:41Z",
+        "createdAt": "2024-09-02T12:42:46Z",
+        "changedFiles": 3,
+        "additions": 100,
+        "deletions": 38,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 1306,
+        "title": "Fix bugs in sampler with CUDA graph / torch.compile",
+        "url": "https://github.com/sgl-project/sglang/pull/1306",
+        "author": "hnyls2002",
+        "mergedAt": "2024-09-02T23:18:48Z",
+        "createdAt": "2024-09-02T22:08:10Z",
+        "changedFiles": 4,
+        "additions": 48,
+        "deletions": 26,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTo fix #1301 and the min p sampling with CUDA graph.\n\nModifications\n\nWhen min p sampling is required, do not use CUDA graph.\nAbolish torch sampler but use flashinfer's sampler, wrapping it into a torch custom operator to make it compatible with torch.compile.\n\n\nPerformance\n\nBefore: 155.51",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 1308,
+        "title": "[Fix] Reduce memory usage for loading llava model & Remove EntryClassRemapping",
+        "url": "https://github.com/sgl-project/sglang/pull/1308",
+        "author": "merrymercy",
+        "mergedAt": "2024-09-03T04:44:45Z",
+        "createdAt": "2024-09-03T02:55:29Z",
+        "changedFiles": 17,
+        "additions": 104,
+        "deletions": 157,
+        "commits": 17,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reduce the CPU memory usage when loading llava model\nRename python/sglang/srt/models/llama2.py -> python/sglang/srt/models/llama.py\nRemove EntryClassRemappling. We can favor explicit inherence.\nImprove docs",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 1299,
+        "title": "Support Phi3 mini and medium",
+        "url": "https://github.com/sgl-project/sglang/pull/1299",
+        "author": "janimo",
+        "mergedAt": "2024-09-03T04:49:40Z",
+        "createdAt": "2024-09-02T09:25:56Z",
+        "changedFiles": 2,
+        "additions": 11,
+        "deletions": 7,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Tested with all Phi-3 mini and medium variants and Phi-3.5 mini.\nFixes #1283\nIt requires the recent #1281 fix for supporting non n^2 attention head sizes.\nMotivation\nSupport for Phi-3 and Phi-3.5 mini and medium models.\nModifications\nIt is using the Llama 2 architecture so just like vllm have it han",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8056,
+        "title": "[Core][Bugfix] Accept GGUF model without .gguf extension",
+        "url": "https://github.com/vllm-project/vllm/pull/8056",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-02T12:43:26Z",
+        "createdAt": "2024-08-31T11:10:54Z",
+        "changedFiles": 4,
+        "additions": 23,
+        "deletions": 5,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\n\nFIX #7993  (link existing issues this PR will resolve)\nUse GGUF magic number instead of filename suffix to check if a file is a gguf model.\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8055,
+        "title": "[Bugfix] Fix internlm2 tensor parallel inference",
+        "url": "https://github.com/vllm-project/vllm/pull/8055",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-02T15:48:56Z",
+        "createdAt": "2024-08-31T10:28:28Z",
+        "changedFiles": 1,
+        "additions": 34,
+        "deletions": 13,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\n\nFIX #8017 (link existing issues this PR will resolve)\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 7874,
+        "title": "[Bugfix] Fix #7592 vllm 0.5.4 enable_chunked_prefill throughput is slightly lower than 0.5.3~0.5.0.",
+        "url": "https://github.com/vllm-project/vllm/pull/7874",
+        "author": "noooop",
+        "mergedAt": "2024-09-02T21:20:12Z",
+        "createdAt": "2024-08-26T14:29:16Z",
+        "changedFiles": 2,
+        "additions": 13,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\nvllm 0.5.4 enable_chunked_prefill throughput is slightly lower than 0.5.3~0.5.0.\nPrioritizing prefill causes and aggravate system thrashing.\nFILL IN THE PR DESCRIPTION HERE\nFIX #7592\nby definition\n\nBy default, vLLM scheduler prioritizes prefills ...\nOnce chunked prefill is enabled, the poli",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7881,
+        "title": "[Bugfix] Fix single output condition in output processor",
+        "url": "https://github.com/vllm-project/vllm/pull/7881",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-09-03T03:35:42Z",
+        "createdAt": "2024-08-26T20:35:58Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "#7049 (comment)",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

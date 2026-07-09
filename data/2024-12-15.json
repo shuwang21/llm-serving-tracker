@@ -1,0 +1,131 @@
+{
+  "date": "2024-12-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-15T08:00:00+00:00",
+  "utc_end": "2024-12-16T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:11:05.458894+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11213,
+        "title": "[Bugfix] Fix error handling of unsupported sliding window",
+        "url": "https://github.com/vllm-project/vllm/pull/11213",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-15T17:59:42Z",
+        "createdAt": "2024-12-15T14:36:35Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix an issue where sliding_window is undefined in the else branch.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11197,
+        "title": "[Doc] add documentation for disaggregated prefilling",
+        "url": "https://github.com/vllm-project/vllm/pull/11197",
+        "author": "KuntaiDu",
+        "mergedAt": "2024-12-15T19:31:16Z",
+        "createdAt": "2024-12-14T07:49:50Z",
+        "changedFiles": 4,
+        "additions": 70,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add documentation for disaggregated prefilling.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10884,
+        "title": "[Core] Support disaggregated prefill with Mooncake Transfer Engine",
+        "url": "https://github.com/vllm-project/vllm/pull/10884",
+        "author": "ShangmingCai",
+        "mergedAt": "2024-12-15T21:28:18Z",
+        "createdAt": "2024-12-04T03:01:40Z",
+        "changedFiles": 4,
+        "additions": 352,
+        "deletions": 31,
+        "commits": 25,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We really appreciate @KuntaiDu for his remarkable work in supporting the disaggregated prefill feature in vLLM. Since PR #10502 has been merged. After rebase, we switch the mooncake integration from PR #10728 to here.\nThis PR is related to #10727, as well as a continuation of PR #10502, which uses M",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11214,
+        "title": "[V1][Minor] Cache np arange to reduce input preparation overhead",
+        "url": "https://github.com/vllm-project/vllm/pull/11214",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-12-15T21:33:00Z",
+        "createdAt": "2024-12-15T18:57:40Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10922,
+        "title": "Update deploying_with_k8s.rst",
+        "url": "https://github.com/vllm-project/vllm/pull/10922",
+        "author": "AlexHe99",
+        "mergedAt": "2024-12-16T00:33:58Z",
+        "createdAt": "2024-12-05T08:46:45Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The model id should same align as the mode defined in the deployment.yaml",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10938,
+        "title": "fix block-size description",
+        "url": "https://github.com/vllm-project/vllm/pull/10938",
+        "author": "chenqianfzh",
+        "mergedAt": "2024-12-16T00:38:40Z",
+        "createdAt": "2024-12-06T01:26:26Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Per vllm official doc in https://docs.vllm.ai/en/stable/models/engine_args.html, the parameter of --block-size can take the value of {8,16,32,64,128}. However, I hit error \"RuntimeError: Unsupported block size: 128\" when I tried out \"--block-size 128\"\nI hunted the code and saw the following logic in",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ]
+  }
+}

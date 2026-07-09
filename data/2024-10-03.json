@@ -1,0 +1,249 @@
+{
+  "date": "2024-10-03",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-10-03T07:00:00+00:00",
+  "utc_end": "2024-10-04T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:03:36.897211+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1559,
+        "title": "[FP8 KV Cache] Avoid KeyError at loading pre-quantized FP8 model with kv_scale",
+        "url": "https://github.com/sgl-project/sglang/pull/1559",
+        "author": "HaiShaw",
+        "mergedAt": "2024-10-03T08:52:26Z",
+        "createdAt": "2024-10-03T08:19:35Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nReuse some FP8 quantized models, just skip/ignore kv_scale for now.\nE.g. amd/Meta-Llama-3.1-405B-Instruct-FP8-KV has kv_scale embedded, enable following command to ignore them for now.\npython -m sglang.bench_latency --model amd/Meta-Llama-3.1-405B-Instruct-FP8-KV --tp 8 --batch-size 32 --",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 1562,
+        "title": "Organize sampling batch info better",
+        "url": "https://github.com/sgl-project/sglang/pull/1562",
+        "author": "merrymercy",
+        "mergedAt": "2024-10-04T01:29:49Z",
+        "createdAt": "2024-10-03T23:51:27Z",
+        "changedFiles": 8,
+        "additions": 43,
+        "deletions": 35,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Put necessary fields in the SamplingBatchInfo in the beginning.\nUse write as the only interface to update ReqToTokenPool.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 9020,
+        "title": "[BugFix] Enforce Mistral ToolCall id constraint when using the Mistral tool call parser",
+        "url": "https://github.com/vllm-project/vllm/pull/9020",
+        "author": "gcalmettes",
+        "mergedAt": "2024-10-03T08:44:52Z",
+        "createdAt": "2024-10-02T12:17:20Z",
+        "changedFiles": 3,
+        "additions": 22,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR introduces a dedicated MistralToolCall object (directly inheriting from ToolCall) to enforce the random alphanumeric string of size 9 to be used for tool calls parsed with Mistral tool call parser.\nFIX #9019",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8678,
+        "title": "[Core] Make BlockSpaceManagerV2 the default BlockManager to use.",
+        "url": "https://github.com/vllm-project/vllm/pull/8678",
+        "author": "sroy745",
+        "mergedAt": "2024-10-03T16:44:21Z",
+        "createdAt": "2024-09-20T19:23:17Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 5,
+        "commits": 61,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We plan to deprecate BlockManager V1 in favor of BlockManager V2. As part of that deprecation process we want to make BlockSpaceManager V2 the default. In this pr we make BlockSpaceManagerV2 the default instead of BlockSpaceManagerV1. Those who want to use BlockSpaceManagerV1 can still use it by set",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8959,
+        "title": "[Frontend] [Neuron] Parse literals out of override-neuron-config",
+        "url": "https://github.com/vllm-project/vllm/pull/8959",
+        "author": "xendo",
+        "mergedAt": "2024-10-03T18:02:08Z",
+        "createdAt": "2024-09-30T08:29:11Z",
+        "changedFiles": 2,
+        "additions": 37,
+        "deletions": 20,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "For now it was only possible to add string parameters, if a bool or a number was passed, the neuron initialization failed. The parsing was also inconsistent with how other composite configs were passed (see --mm-processor-kwargs).\nThis is not a backward compatible change, but considering that --over",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 9029,
+        "title": "[misc] add forward context for attention",
+        "url": "https://github.com/vllm-project/vllm/pull/9029",
+        "author": "youkaichao",
+        "mergedAt": "2024-10-03T19:09:42Z",
+        "createdAt": "2024-10-02T20:22:37Z",
+        "changedFiles": 8,
+        "additions": 250,
+        "deletions": 334,
+        "commits": 11,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "one step of #8821",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9054,
+        "title": "Fix failing spec decode test",
+        "url": "https://github.com/vllm-project/vllm/pull/9054",
+        "author": "sroy745",
+        "mergedAt": "2024-10-03T23:07:29Z",
+        "createdAt": "2024-10-03T21:53:51Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 53,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Force the test to run with BlockManagerV1 and verify that it fails since Spec Decode doesn't support BlockManagerV1",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9042,
+        "title": "[Bugfix] Weight loading fix for OPT model",
+        "url": "https://github.com/vllm-project/vllm/pull/9042",
+        "author": "domenVres",
+        "mergedAt": "2024-10-03T23:53:29Z",
+        "createdAt": "2024-10-03T11:36:51Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes weight loading for versions of OPT models that does not have tied embedding and lm_head weights. One such example is: https://huggingface.co/cjvt/OPT_GaMS-1B\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure t",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8405,
+        "title": "[Frontend][Feature] support tool calling for internlm/internlm2_5-7b-chat model",
+        "url": "https://github.com/vllm-project/vllm/pull/8405",
+        "author": "sydnash",
+        "mergedAt": "2024-10-04T02:36:39Z",
+        "createdAt": "2024-09-12T08:28:56Z",
+        "changedFiles": 13,
+        "additions": 533,
+        "deletions": 46,
+        "commits": 25,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "support tool calling for internlm/internlm2_5-7b-chat model\nadd ToolParserManager to manage the tool parsers\nadd a command line which used to specific a customize tool parser which can be used in the --tool-call-parser\nadd a parallel test skip config for models which dose not support parallel tool c",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8845,
+        "title": "[CI/Build] Per file CUDA Archs (improve wheel size and dev build times)",
+        "url": "https://github.com/vllm-project/vllm/pull/8845",
+        "author": "LucasWilkinson",
+        "mergedAt": "2024-10-04T02:55:25Z",
+        "createdAt": "2024-09-26T08:51:40Z",
+        "changedFiles": 22,
+        "additions": 828,
+        "deletions": 370,
+        "commits": 15,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Improve dev build times and reduce wheel size by setting which compute capabilities we compile for on a per file basis instead of globally.\nAlso moved some of the torch library impl registrations into associated files (out of torch_bindings.cpp) this allows us to completely leave the implementation ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 9047,
+        "title": "[Misc] Enable multi-step output streaming by default",
+        "url": "https://github.com/vllm-project/vllm/pull/9047",
+        "author": "mgoin",
+        "mergedAt": "2024-10-04T02:55:42Z",
+        "createdAt": "2024-10-03T17:12:57Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I think we should consider enabling it by default for the so we have good ITL metrics with multi-step. There is a small performance penalty of ~7% in the PR that implemented this #8335, but we still have the flag in place to disable if needed, using --multi-step-stream-outputs=False.\nReposting perfo",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 7168,
+        "title": "[Models] Add remaining model PP support",
+        "url": "https://github.com/vllm-project/vllm/pull/7168",
+        "author": "andoorve",
+        "mergedAt": "2024-10-04T02:56:58Z",
+        "createdAt": "2024-08-05T18:09:41Z",
+        "changedFiles": 69,
+        "additions": 2583,
+        "deletions": 1342,
+        "commits": 62,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add all other possible models for PP\nFIX #7684\nFIX #8923",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

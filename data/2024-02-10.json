@@ -1,0 +1,51 @@
+{
+  "date": "2024-02-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-10T08:00:00+00:00",
+  "utc_end": "2024-02-11T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:43:55.335658+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 172,
+        "title": "Support extra field regex in OpenAI API",
+        "url": "https://github.com/sgl-project/sglang/pull/172",
+        "author": "comaniac",
+        "mergedAt": "2024-02-11T01:21:33Z",
+        "createdAt": "2024-02-09T17:56:11Z",
+        "changedFiles": 3,
+        "additions": 33,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "close #171\nThis PR adds an extra field regex in OpenAI protocols. Since OpenAI SDK 2.0, it allows arbitrary fields to be specified in the following approaches:\n\nOpenAI SDK:\n\nresponse = client.chat.completions.create(\n    ...\n    extra_body={\"more_param\": more_param_value},\n)\n\nCURL:\n\ncurl http://loca",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2768,
+        "title": "[ROCm] support Radeon\u2122 7900 series (gfx1100) without using flash-attention",
+        "url": "https://github.com/vllm-project/vllm/pull/2768",
+        "author": "hongxiayang",
+        "mergedAt": "2024-02-11T07:14:37Z",
+        "createdAt": "2024-02-05T18:28:26Z",
+        "changedFiles": 4,
+        "additions": 60,
+        "deletions": 5,
+        "commits": 4,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This pull request adds vllm support for AMD Radeon\u2122 7900 series GPU (gfx1100) without using flash-attention.\nCurrently, flash-attention does not fully support gfx1100. So, we used vllm reference implementation instead.\nNote:\nWhen building the docker image, pass --build-arg BUILD_FA=\"0\" to the docker",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

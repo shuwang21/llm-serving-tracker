@@ -1,0 +1,30 @@
+{
+  "date": "2023-03-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-28T07:00:00+00:00",
+  "utc_end": "2023-03-29T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:23:49.804979+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 10,
+        "title": "FastAPI-based working frontend",
+        "url": "https://github.com/vllm-project/vllm/pull/10",
+        "author": "zhuohan123",
+        "mergedAt": "2023-03-29T06:48:56Z",
+        "createdAt": "2023-03-27T06:19:00Z",
+        "changedFiles": 15,
+        "additions": 536,
+        "deletions": 146,
+        "commits": 14,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add a FastAPI-based frontend to cacheflow while keeping the old script working.\nRemaining TODOs:\n\n Add a README for the FastAPI frontend.\n Rename the old script.\n Add a gradio demo web frontend.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

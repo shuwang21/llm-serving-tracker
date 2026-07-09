@@ -1,0 +1,66 @@
+{
+  "date": "2024-03-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-03-05T08:00:00+00:00",
+  "utc_end": "2024-03-06T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:45:33.821233+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3166,
+        "title": "Store `eos_token_id` in `Sequence` for easy access",
+        "url": "https://github.com/vllm-project/vllm/pull/3166",
+        "author": "njhill",
+        "mergedAt": "2024-03-05T23:35:43Z",
+        "createdAt": "2024-03-03T16:24:00Z",
+        "changedFiles": 6,
+        "additions": 44,
+        "deletions": 49,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Store eos_token_id in Sequence since it's accessed so frequently.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3207,
+        "title": "[Fix] Avoid pickling entire LLMEngine for Ray workers",
+        "url": "https://github.com/vllm-project/vllm/pull/3207",
+        "author": "njhill",
+        "mergedAt": "2024-03-06T00:17:21Z",
+        "createdAt": "2024-03-05T17:14:23Z",
+        "changedFiles": 1,
+        "additions": 14,
+        "deletions": 7,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "self references have been inadvertently introduced into the closure used to initialize the Ray workers, which is causing the whole LLMEngine object to be pickled with it.\nThis fixes it to reference the lora_config and kv_cache_dtype directly.",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 3108,
+        "title": "[Tests] Add block manager and scheduler tests",
+        "url": "https://github.com/vllm-project/vllm/pull/3108",
+        "author": "rkooo567",
+        "mergedAt": "2024-03-06T02:23:34Z",
+        "createdAt": "2024-02-29T10:21:01Z",
+        "changedFiles": 5,
+        "additions": 462,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This upstream unit tests inside Anyscale that test block manager and scheduler. Several new features that will be upstreamed will update this file (e.g., chunked prefill).",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      }
+    ]
+  }
+}

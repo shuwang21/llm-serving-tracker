@@ -1,0 +1,50 @@
+{
+  "date": "2024-02-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-25T08:00:00+00:00",
+  "utc_end": "2024-02-26T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:56.343277+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2730,
+        "title": "Port metrics from `aioprometheus` to `prometheus_client`",
+        "url": "https://github.com/vllm-project/vllm/pull/2730",
+        "author": "hmellor",
+        "mergedAt": "2024-02-25T19:54:01Z",
+        "createdAt": "2024-02-02T16:26:36Z",
+        "changedFiles": 9,
+        "additions": 133,
+        "deletions": 87,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As mentioned in #2316 (comment), prometheus_client:\n\nIs the official Prometheus Python client\nIs more actively maintained than aioprometheus\nHas >23x more stars than aioprometheus\n\nThis PR ports the metrics from aioprometheus to prometheus_client.\nNotable changes:\n\nThe Prometheus metrics are no long",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2918,
+        "title": "Add LogProbs for Chat Completions in OpenAI",
+        "url": "https://github.com/vllm-project/vllm/pull/2918",
+        "author": "jlcmoore",
+        "mergedAt": "2024-02-26T02:39:34Z",
+        "createdAt": "2024-02-19T03:48:39Z",
+        "changedFiles": 3,
+        "additions": 57,
+        "deletions": 14,
+        "commits": 18,
+        "labels": [
+          "frontend"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "I added the option to request log probabilities in the chat completions endpoint, fixing issue #2276. Most of this code is simply copied over from vllm/entrypoints/openai/serving_completion.py to vllm/entrypoints/openai/serving_chat.py. I also had to update the protocol.\nNo tests that do not already",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

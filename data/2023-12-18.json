@@ -1,0 +1,68 @@
+{
+  "date": "2023-12-18",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-18T08:00:00+00:00",
+  "utc_end": "2023-12-19T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:40:21.867890+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2180,
+        "title": "[ROCm] Fixes for GPTQ on ROCm",
+        "url": "https://github.com/vllm-project/vllm/pull/2180",
+        "author": "kliuae",
+        "mergedAt": "2023-12-18T18:41:05Z",
+        "createdAt": "2023-12-18T15:15:05Z",
+        "changedFiles": 4,
+        "additions": 23,
+        "deletions": 16,
+        "commits": 5,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Some minor fixes are applied to support GPTQ on ROCm. Tested with ROCm 5.7 environments and the Dockerfile.rocm can be built.\nLoading of safetensors load format is enabled for ROCm as quite a few GPTQ models come with such weights.\nThe amd-installation doc is also updated to include hipBLAS as a pre",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2183,
+        "title": "Update Help Text for --gpu-memory-utilization Argument",
+        "url": "https://github.com/vllm-project/vllm/pull/2183",
+        "author": "SuhongMoon",
+        "mergedAt": "2023-12-18T19:33:24Z",
+        "createdAt": "2023-12-18T19:30:07Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Updated help text for the --gpu-memory-utilization argument in our command-line parser to make it consistent with the vllm documentation.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2182,
+        "title": "[Minor] Add warning on CUDA graph memory usage",
+        "url": "https://github.com/vllm-project/vllm/pull/2182",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-12-19T02:16:17Z",
+        "createdAt": "2023-12-18T19:25:23Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR informs users that using CUDA graphs may lead to OOM, and it provides a solution to this.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

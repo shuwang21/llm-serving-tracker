@@ -1,0 +1,49 @@
+{
+  "date": "2024-02-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-02T08:00:00+00:00",
+  "utc_end": "2024-02-03T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:43:24.257864+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 132,
+        "title": "Fix `is_multimodal_model` judge",
+        "url": "https://github.com/sgl-project/sglang/pull/132",
+        "author": "hnyls2002",
+        "mergedAt": "2024-02-03T03:48:01Z",
+        "createdAt": "2024-02-03T03:47:09Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "if isinstance(model, str):\n    return \"llava\" or \"yi-vl\" in model\nThe above logic is wrong, when model is llama-7b, it returns \"llava\" but not True or False.\nTraceback (most recent call last):\n  File \"<frozen runpy>\", line 198, in _run_module_as_main\n  File \"<frozen runpy>\", line 88, in _run_code\n  ",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2696,
+        "title": "Add one example to run batch inference distributed on Ray",
+        "url": "https://github.com/vllm-project/vllm/pull/2696",
+        "author": "c21",
+        "mergedAt": "2024-02-02T23:41:42Z",
+        "createdAt": "2024-02-01T00:02:25Z",
+        "changedFiles": 1,
+        "additions": 70,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is to add an example to run vLLM batch inference in a multi-nodes environment.\nRay Data is used here to orchestrate the workflow:\n\nRead from multiple input files on cloud storage.\nStart vLLM engines on multiple nodes, run inference on all input in parallel.\nWrite the result and prompt back t",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      }
+    ]
+  }
+}

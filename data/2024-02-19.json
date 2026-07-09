@@ -1,0 +1,51 @@
+{
+  "date": "2024-02-19",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-19T08:00:00+00:00",
+  "utc_end": "2024-02-20T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:31.256217+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 207,
+        "title": "Update README.md",
+        "url": "https://github.com/sgl-project/sglang/pull/207",
+        "author": "eltociear",
+        "mergedAt": "2024-02-19T17:09:03Z",
+        "createdAt": "2024-02-19T15:47:24Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "offical -> official",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2792,
+        "title": "[ROCm] include gfx908 as supported",
+        "url": "https://github.com/vllm-project/vllm/pull/2792",
+        "author": "jamestwhedbee",
+        "mergedAt": "2024-02-20T01:59:00Z",
+        "createdAt": "2024-02-06T21:03:28Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "rocm"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "ROCm/flash-attention supports the gfx908 architecture.\nWithout this change, vLLM appears to build successfully for me, but serving an LLM on an MI100 results in gibberish output.\nWith this change, everything works as expected.",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

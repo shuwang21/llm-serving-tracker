@@ -1,0 +1,30 @@
+{
+  "date": "2023-08-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-25T07:00:00+00:00",
+  "utc_end": "2023-08-26T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:12.152510+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 854,
+        "title": "Add support for CodeLlama",
+        "url": "https://github.com/vllm-project/vllm/pull/854",
+        "author": "Yard1",
+        "mergedAt": "2023-08-25T19:44:08Z",
+        "createdAt": "2023-08-24T18:10:50Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Needs huggingface/transformers#25740 to land first",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

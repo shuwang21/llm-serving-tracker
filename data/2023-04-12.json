@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-12",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-12T07:00:00+00:00",
+  "utc_end": "2023-04-13T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:41.712830+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 30,
+        "title": "Add a script for serving experiments & Collect system stats in scheduler",
+        "url": "https://github.com/vllm-project/vllm/pull/30",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-12T22:03:49Z",
+        "createdAt": "2023-04-06T09:46:25Z",
+        "changedFiles": 12,
+        "additions": 830,
+        "deletions": 3,
+        "commits": 36,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Example usage:\n\nGenerating a single completion: python benchmark/benchmark_text_completion.py --dataset alpaca_opt_text_completion.pkl  --model facebook/opt-13b --request-rate 1.0 --duration 3600 --n1 1.0\nGenerating two completions in parallel: python benchmark/benchmark_text_completion.py --dataset",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      }
+    ]
+  }
+}

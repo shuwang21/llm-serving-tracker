@@ -1,0 +1,48 @@
+{
+  "date": "2024-01-14",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-14T08:00:00+00:00",
+  "utc_end": "2024-01-15T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:42:00.281010+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2437,
+        "title": "[Minor] Optimize cuda graph memory usage",
+        "url": "https://github.com/vllm-project/vllm/pull/2437",
+        "author": "esmeetu",
+        "mergedAt": "2024-01-14T17:40:52Z",
+        "createdAt": "2024-01-14T09:33:29Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR can reduce cuda graph captured memory usage by max_num_seqs parameter. For personal and test use case, there is no need to occupy up to all level batch size ([1,2...256]) cuda graphs caches.  So we can inform user to tune the max_num_seqs to save memory.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2355,
+        "title": "[CI] Add Buildkite",
+        "url": "https://github.com/vllm-project/vllm/pull/2355",
+        "author": "simon-mo",
+        "mergedAt": "2024-01-14T20:37:58Z",
+        "createdAt": "2024-01-05T19:15:21Z",
+        "changedFiles": 13,
+        "additions": 192,
+        "deletions": 37,
+        "commits": 74,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds basic setup for GPU CI environment. It should enable us to run our tests on L4 GPUs. As developer, you can add new tests to .buildkite/test-pipeline.yaml.\nCurrently, I have all tests enabled, in addition to benchmarks. However, I don't want to block the merge of this PR for debugging mo",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

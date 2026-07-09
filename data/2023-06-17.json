@@ -1,0 +1,66 @@
+{
+  "date": "2023-06-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-17T07:00:00+00:00",
+  "utc_end": "2023-06-18T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:29:02.009871+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 152,
+        "title": "Rename servers to engines",
+        "url": "https://github.com/vllm-project/vllm/pull/152",
+        "author": "zhuohan123",
+        "mergedAt": "2023-06-17T09:25:22Z",
+        "createdAt": "2023-06-17T08:43:34Z",
+        "changedFiles": 15,
+        "additions": 165,
+        "deletions": 174,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 150,
+        "title": "Rename to vLLM",
+        "url": "https://github.com/vllm-project/vllm/pull/150",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-06-17T10:07:41Z",
+        "createdAt": "2023-06-17T01:20:06Z",
+        "changedFiles": 90,
+        "additions": 342,
+        "deletions": 339,
+        "commits": 27,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The current plan is\n\nMerge this PR\nChange the repo name to vllm\nMove the repo to an organization\nFix readthedocs URL",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 148,
+        "title": "Add quickstart guide",
+        "url": "https://github.com/vllm-project/vllm/pull/148",
+        "author": "zhuohan123",
+        "mergedAt": "2023-06-17T17:26:12Z",
+        "createdAt": "2023-06-12T16:20:45Z",
+        "changedFiles": 4,
+        "additions": 129,
+        "deletions": 9,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Close #106.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

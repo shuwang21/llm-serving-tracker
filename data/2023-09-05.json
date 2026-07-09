@@ -1,0 +1,66 @@
+{
+  "date": "2023-09-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-05T07:00:00+00:00",
+  "utc_end": "2023-09-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:51.589608+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 938,
+        "title": "Clean up kernel unit tests",
+        "url": "https://github.com/vllm-project/vllm/pull/938",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-05T23:57:38Z",
+        "createdAt": "2023-09-03T11:36:33Z",
+        "changedFiles": 6,
+        "additions": 364,
+        "deletions": 399,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR cleans up the kernel unit tests with pytest.mark.parameterize. It also increases the coverage of the tests by adding test cases such as MQA and rotary_dim < head_dim.",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 957,
+        "title": "Use queue for finished requests",
+        "url": "https://github.com/vllm-project/vllm/pull/957",
+        "author": "Yard1",
+        "mergedAt": "2023-09-06T02:27:24Z",
+        "createdAt": "2023-09-06T00:01:23Z",
+        "changedFiles": 2,
+        "additions": 13,
+        "deletions": 9,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is probably not necessary, but now we have a strong consistency guarantee that the finished requests won't get updated mid-engine abort",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 941,
+        "title": "[BugFix] Implement RoPE for GPT-J",
+        "url": "https://github.com/vllm-project/vllm/pull/941",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-06T02:54:34Z",
+        "createdAt": "2023-09-04T15:16:12Z",
+        "changedFiles": 5,
+        "additions": 122,
+        "deletions": 72,
+        "commits": 17,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #747 and fixes #590\nThis PR fixes a bug in the GPT-J model implementation. The GPT-J model uses a rotary embedding that is slightly different from the GPT-NeoX style rotary embedding (which is commonly used for LLaMA and recent models). The difference isn't considered in the vLLM's current imp",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

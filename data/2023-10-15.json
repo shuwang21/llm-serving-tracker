@@ -1,0 +1,30 @@
+{
+  "date": "2023-10-15",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-15T07:00:00+00:00",
+  "utc_end": "2023-10-16T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:36:18.823298+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1356,
+        "title": "Minor fix on AWQ kernel launch",
+        "url": "https://github.com/vllm-project/vllm/pull/1356",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-10-16T04:53:56Z",
+        "createdAt": "2023-10-15T08:01:54Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is to make sure that the AWQ kernels are launched on the current CUDA stream rather than the default stream.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

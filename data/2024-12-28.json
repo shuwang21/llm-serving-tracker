@@ -1,0 +1,230 @@
+{
+  "date": "2024-12-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-28T08:00:00+00:00",
+  "utc_end": "2024-12-29T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:12:15.851061+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2633,
+        "title": "[docs]Refactor constrained decoding tutorial",
+        "url": "https://github.com/sgl-project/sglang/pull/2633",
+        "author": "shuaills",
+        "mergedAt": "2024-12-28T15:00:39Z",
+        "createdAt": "2024-12-28T14:52:50Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2628,
+        "title": "add configs for block fp8 related kernels",
+        "url": "https://github.com/sgl-project/sglang/pull/2628",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-28T15:12:04Z",
+        "createdAt": "2024-12-28T10:20:09Z",
+        "changedFiles": 37,
+        "additions": 5131,
+        "deletions": 50,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\ntune by @HandH1998 I help verify.\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2631,
+        "title": "Add `update_weights_from_tensor`",
+        "url": "https://github.com/sgl-project/sglang/pull/2631",
+        "author": "fzyzcjy",
+        "mergedAt": "2024-12-28T21:30:27Z",
+        "createdAt": "2024-12-28T13:04:25Z",
+        "changedFiles": 10,
+        "additions": 120,
+        "deletions": 1,
+        "commits": 16,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTwo motivations:\n\nPart 3 of #2583\nTo allow easy testing of part 2 of #2583 (also #2542)\n\nCurrently I have only tested correctness, not performance yet (e.g. does it cause memory copy? will it be slow?). So, in this PR, just consider it as a tool for testing (just like get_weights_by_name ",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2544,
+        "title": "[Feature] Function Calling",
+        "url": "https://github.com/sgl-project/sglang/pull/2544",
+        "author": "Tushar-ml",
+        "mergedAt": "2024-12-29T05:58:52Z",
+        "createdAt": "2024-12-22T14:11:19Z",
+        "changedFiles": 5,
+        "additions": 368,
+        "deletions": 2,
+        "commits": 20,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis PR provides support for function calling #2429 . Currently function tooling implemented for tokenizer apply_chat_template. Streaming not support as well for function tooling.\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined i",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11582,
+        "title": "[Model] Remove hardcoded image tokens ids from Pixtral",
+        "url": "https://github.com/vllm-project/vllm/pull/11582",
+        "author": "ywang96",
+        "mergedAt": "2024-12-28T10:54:24Z",
+        "createdAt": "2024-12-28T08:56:56Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Thanks to @patrickvonplaten and the Mistral AI team, now we can retrieve these values from the model config (params.json). This PR updates the model file to remove the previously hardcoded token IDs.\nTested with mistralai/Pixtral-12B-2409 and mistralai/Pixtral-Large-Instruct-2411.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11515,
+        "title": "[Hardware][AMD]: Replace HIPCC version with more precise ROCm version",
+        "url": "https://github.com/vllm-project/vllm/pull/11515",
+        "author": "kairos-yu",
+        "mergedAt": "2024-12-28T11:17:36Z",
+        "createdAt": "2024-12-26T11:24:53Z",
+        "changedFiles": 1,
+        "additions": 29,
+        "deletions": 23,
+        "commits": 4,
+        "labels": [
+          "rocm",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Hi all, Ifound that the representation of the ROCm version is somewhat unclear. For instance, in the case of the current ROCm version 6.2.0, the version specified in setup.py is 624, which corresponds to the HIPCC version. To represent the ROCm version more accurately, I opted to utilize the version",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11581,
+        "title": "[V1][Minor] Set pin_memory=False for token_ids_cpu tensor",
+        "url": "https://github.com/vllm-project/vllm/pull/11581",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-12-28T13:33:12Z",
+        "createdAt": "2024-12-28T07:34:03Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Minor fix to reduce pinned memory usage.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11580,
+        "title": "[Doc] Minor documentation fixes",
+        "url": "https://github.com/vllm-project/vllm/pull/11580",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-28T13:53:59Z",
+        "createdAt": "2024-12-28T07:15:41Z",
+        "changedFiles": 13,
+        "additions": 27,
+        "deletions": 25,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR includes mostly formatting fixes to the documentation.",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11583,
+        "title": "[bugfix] interleaving sliding window for cohere2 model",
+        "url": "https://github.com/vllm-project/vllm/pull/11583",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-28T16:55:42Z",
+        "createdAt": "2024-12-28T13:32:37Z",
+        "changedFiles": 7,
+        "additions": 206,
+        "deletions": 13,
+        "commits": 5,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "fix the interleaving sliding window support for cohere2, reported in #11357 .\nalso add the config directly so that we don't rely on the release of huggingface.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11545,
+        "title": "[V1] [5/N] API Server: unify `Detokenizer` and  `EngineCore` input",
+        "url": "https://github.com/vllm-project/vllm/pull/11545",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2024-12-28T20:51:58Z",
+        "createdAt": "2024-12-27T03:41:20Z",
+        "changedFiles": 6,
+        "additions": 66,
+        "deletions": 77,
+        "commits": 16,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nSplitting #11237 into separate PRs\nNote: should be merged after #11534\nunify inputs to Detokenizer and EngineCore\nnote: prepares 3 process architecture",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11594,
+        "title": "[Doc] Convert list tables to MyST",
+        "url": "https://github.com/vllm-project/vllm/pull/11594",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-29T07:56:22Z",
+        "createdAt": "2024-12-29T03:21:16Z",
+        "changedFiles": 6,
+        "additions": 961,
+        "deletions": 975,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR converts list tables from rST to MyST to solve #11583 (comment)",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      }
+    ]
+  }
+}

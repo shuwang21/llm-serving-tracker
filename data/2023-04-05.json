@@ -1,0 +1,48 @@
+{
+  "date": "2023-04-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-05T07:00:00+00:00",
+  "utc_end": "2023-04-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:17.503853+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 26,
+        "title": "Add CUDA graph-based all reduce launcher",
+        "url": "https://github.com/vllm-project/vllm/pull/26",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-05T18:16:57Z",
+        "createdAt": "2023-04-05T02:45:37Z",
+        "changedFiles": 7,
+        "additions": 103,
+        "deletions": 16,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Related to #22\nThis PR uses CUDA graph to reduce the CPU overhead of NCCL all reduce operation.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 28,
+        "title": "Fix potential bugs in FastAPI frontend and add comments",
+        "url": "https://github.com/vllm-project/vllm/pull/28",
+        "author": "zhuohan123",
+        "mergedAt": "2023-04-06T05:44:24Z",
+        "createdAt": "2023-04-06T04:14:19Z",
+        "changedFiles": 1,
+        "additions": 30,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ]
+  }
+}

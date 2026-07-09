@@ -1,0 +1,66 @@
+{
+  "date": "2024-04-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-04-06T07:00:00+00:00",
+  "utc_end": "2024-04-07T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:47:56.590556+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3889,
+        "title": "[CI/Benchmark] add more iteration and use multiple percentiles for robust latency benchmark",
+        "url": "https://github.com/vllm-project/vllm/pull/3889",
+        "author": "youkaichao",
+        "mergedAt": "2024-04-06T21:32:30Z",
+        "createdAt": "2024-04-06T20:29:03Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Prior to this PR, we use average latency across 3 runs, which seems to be very unstable. Here is what I get across 5 runs:\n0.4430512798329194\n0.4450072580948472\n0.45556532715757686\n0.451823682213823\n0.4521045722067356\n\nThe first step to optimize latency is to have a reliable benchmark. In this PR, I",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3871,
+        "title": "[Core] enable out-of-tree model register",
+        "url": "https://github.com/vllm-project/vllm/pull/3871",
+        "author": "youkaichao",
+        "mergedAt": "2024-04-07T00:11:41Z",
+        "createdAt": "2024-04-05T16:45:16Z",
+        "changedFiles": 6,
+        "additions": 148,
+        "deletions": 2,
+        "commits": 14,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Usage: add three lines:\nfrom vllm.model_executor.models import ModelRegistry\nfrom your_code import YourModelForCausalLM\nModelRegistry.register_out_of_tree_model(\"YourModelForCausalLM\", YourModelForCausalLM)",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 3890,
+        "title": "[WIP][Core] latency optimization",
+        "url": "https://github.com/vllm-project/vllm/pull/3890",
+        "author": "youkaichao",
+        "mergedAt": "2024-04-07T02:14:06Z",
+        "createdAt": "2024-04-07T01:24:19Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Some code is inefficient. Find some equivalent but more efficient code.",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

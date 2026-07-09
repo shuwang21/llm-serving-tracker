@@ -1,0 +1,48 @@
+{
+  "date": "2023-08-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-23T07:00:00+00:00",
+  "utc_end": "2023-08-24T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:05.345281+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 834,
+        "title": "Fix for breaking changes in xformers 0.0.21",
+        "url": "https://github.com/vllm-project/vllm/pull/834",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-08-23T08:44:21Z",
+        "createdAt": "2023-08-23T00:29:06Z",
+        "changedFiles": 2,
+        "additions": 4,
+        "deletions": 3,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #832\nThis PR fixes the breaking changes made in the latest release of xformers. Specifically, now the xformers attention bias should have the batch dimension, which is 1 in the current vLLM implementation.",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 844,
+        "title": "Clean up code",
+        "url": "https://github.com/vllm-project/vllm/pull/844",
+        "author": "wenjun93",
+        "mergedAt": "2023-08-23T23:44:15Z",
+        "createdAt": "2023-08-23T14:43:39Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "seq group status is already updated in _swap_out",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

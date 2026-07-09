@@ -1,0 +1,214 @@
+{
+  "date": "2025-02-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-02-23T08:00:00+00:00",
+  "utc_end": "2025-02-24T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:19:28.229949+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 3116,
+        "title": "Rename TokenizerManager to StdOrchestrator",
+        "url": "https://github.com/sgl-project/sglang/pull/3116",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-02-23T08:30:58Z",
+        "createdAt": "2025-01-25T02:04:51Z",
+        "changedFiles": 11,
+        "additions": 116,
+        "deletions": 130,
+        "commits": 82,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nCurrently the tokenizer manager does a lot of things, much more than tokenization, thus it is renamed.\nIt is called \"std\" orchestrator, because we will have a \"spmd\" one in the next PRs.\nMoreover, by doing this refactor, adding SPMD logic would be a bit easier and cleaner.\n\nModifications\n",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 3795,
+        "title": "[Docs]Add instruction for manually stopping nsys profiler",
+        "url": "https://github.com/sgl-project/sglang/pull/3795",
+        "author": "Fridge003",
+        "mergedAt": "2025-02-23T21:21:48Z",
+        "createdAt": "2025-02-23T21:02:06Z",
+        "changedFiles": 1,
+        "additions": 17,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nAdd method of stopping nsys profiler manually in doc. Inspired by @MuYu-zhi from #3511\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Update documentation / docstrings / example tutoria",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2693,
+        "title": "Hierarchical Caching for SGLang",
+        "url": "https://github.com/sgl-project/sglang/pull/2693",
+        "author": "xiezhq-hermann",
+        "mergedAt": "2025-02-24T05:56:30Z",
+        "createdAt": "2025-01-01T07:59:42Z",
+        "changedFiles": 7,
+        "additions": 732,
+        "deletions": 91,
+        "commits": 67,
+        "labels": [
+          "enhancement"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nWhile RadixTree-based context caching provides significant performance benefits, these gains are not always fully realized. A key bottleneck is the capacity limit of GPU memory. Currently, SGLang stores historical KV caches exclusively in GPU memory; whenever more memory is required for b",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 13278,
+        "title": "[LMM] Implement merged multimodal processor for whisper",
+        "url": "https://github.com/vllm-project/vllm/pull/13278",
+        "author": "Isotr0py",
+        "mergedAt": "2025-02-23T09:46:03Z",
+        "createdAt": "2025-02-14T10:13:43Z",
+        "changedFiles": 4,
+        "additions": 150,
+        "deletions": 83,
+        "commits": 18,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "TODO\n\n Fix profiling issue\n Add processor test",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 13688,
+        "title": "[Core][Distributed] Use IPC (domain socket) ZMQ socket for local comms",
+        "url": "https://github.com/vllm-project/vllm/pull/13688",
+        "author": "njhill",
+        "mergedAt": "2025-02-23T10:54:29Z",
+        "createdAt": "2025-02-21T23:58:05Z",
+        "changedFiles": 1,
+        "additions": 21,
+        "deletions": 21,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Should be more efficient than TCP based",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 13708,
+        "title": "[Misc] Deprecate `--dataset` from `benchmark_serving.py`",
+        "url": "https://github.com/vllm-project/vllm/pull/13708",
+        "author": "ywang96",
+        "mergedAt": "2025-02-23T13:32:21Z",
+        "createdAt": "2025-02-22T22:44:53Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 19,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "It's been a few releases since we gave the warning that we're going to deprecate this arg for running serving benchmark. This PR cleans it up.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 13642,
+        "title": "[v1] torchrun compatibility",
+        "url": "https://github.com/vllm-project/vllm/pull/13642",
+        "author": "youkaichao",
+        "mergedAt": "2025-02-23T14:47:24Z",
+        "createdAt": "2025-02-21T02:54:32Z",
+        "changedFiles": 14,
+        "additions": 67,
+        "deletions": 24,
+        "commits": 23,
+        "labels": [
+          "ready",
+          "ci/build",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "continue of #12071 in v1.\nsome changes to notice:\n\nwe need to disable VLLM_ENABLE_V1_MULTIPROCESSING so that the engine lives in the same process as the LLM class, which is required by RLHF framework https://github.com/volcengine/verl . this also reduces the scheduling non-determinism. (cc @robertgs",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 13298,
+        "title": "[V1][BugFix] Fix engine core client shutdown hangs",
+        "url": "https://github.com/vllm-project/vllm/pull/13298",
+        "author": "njhill",
+        "mergedAt": "2025-02-23T21:07:43Z",
+        "createdAt": "2025-02-14T17:22:05Z",
+        "changedFiles": 2,
+        "additions": 39,
+        "deletions": 16,
+        "commits": 4,
+        "labels": [
+          "bug",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Even though ZMQ context.destroy() is meant to close open sockets before terminating the context, it appears to be necessary to do this explicitly or else it can hang in the context.term() method.\nClose zmq sockets explicitly before terminating context, make shutdown of client resource more robust, s",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 13641,
+        "title": "Fix some issues with benchmark data output",
+        "url": "https://github.com/vllm-project/vllm/pull/13641",
+        "author": "huydhn",
+        "mergedAt": "2025-02-24T02:23:18Z",
+        "createdAt": "2025-02-21T02:35:17Z",
+        "changedFiles": 7,
+        "additions": 61,
+        "deletions": 16,
+        "commits": 9,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is a follow-up of #13068 to fix:\n\nHandle the inf qps config.  The JSON parser used by the database doesn't like this value.  So, I add a custom InfEncoder to convert this to an inf string.\nPassing the parameter --tensor-parallel-size to benchmark_serving.py script so that it can be stored in JS",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 13727,
+        "title": "[ci] Add logic to change model to S3 path only when S3 CI env var is on",
+        "url": "https://github.com/vllm-project/vllm/pull/13727",
+        "author": "khluu",
+        "mergedAt": "2025-02-24T06:32:11Z",
+        "createdAt": "2025-02-23T21:31:55Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

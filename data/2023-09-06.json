@@ -1,0 +1,30 @@
+{
+  "date": "2023-09-06",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-06T07:00:00+00:00",
+  "utc_end": "2023-09-07T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:55.313505+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 971,
+        "title": "Set torch default dtype in a context manager",
+        "url": "https://github.com/vllm-project/vllm/pull/971",
+        "author": "Yard1",
+        "mergedAt": "2023-09-07T06:39:37Z",
+        "createdAt": "2023-09-06T23:47:59Z",
+        "changedFiles": 1,
+        "additions": 24,
+        "deletions": 15,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Modifying the global state is unexpected and can lead to issues later (regarding eg. precision or when testing).",
+        "category": "CI / Tests",
+        "highImpact": true
+      }
+    ]
+  }
+}

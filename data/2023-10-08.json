@@ -1,0 +1,48 @@
+{
+  "date": "2023-10-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-08T07:00:00+00:00",
+  "utc_end": "2023-10-09T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:35:51.182158+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1289,
+        "title": "[FIX] Explain why the finished_reason of ignored sequences are length",
+        "url": "https://github.com/vllm-project/vllm/pull/1289",
+        "author": "zhuohan123",
+        "mergedAt": "2023-10-08T22:22:39Z",
+        "createdAt": "2023-10-07T22:41:52Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Explain the misunderstanding in #1274.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1292,
+        "title": "Update README.md",
+        "url": "https://github.com/vllm-project/vllm/pull/1292",
+        "author": "zhuohan123",
+        "mergedAt": "2023-10-09T06:15:50Z",
+        "createdAt": "2023-10-08T04:09:39Z",
+        "changedFiles": 9,
+        "additions": 1,
+        "deletions": 39,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add meetup slides to the latest news section and remove outdated performance comparisons with TGI.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-05-08",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-08T07:00:00+00:00",
+  "utc_end": "2023-05-09T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:26:10.037726+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 85,
+        "title": "Add a system logger",
+        "url": "https://github.com/vllm-project/vllm/pull/85",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-09T06:03:35Z",
+        "createdAt": "2023-05-08T02:03:31Z",
+        "changedFiles": 5,
+        "additions": 85,
+        "deletions": 13,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Closes #62\nThis PR adds a system logger. The code is adapted from https://github.com/skypilot-org/skypilot/blob/86dc0f6283a335e4aa37b3c10716f90999f48ab6/sky/sky_logging.py",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

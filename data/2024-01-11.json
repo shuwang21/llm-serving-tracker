@@ -1,0 +1,86 @@
+{
+  "date": "2024-01-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-11T08:00:00+00:00",
+  "utc_end": "2024-01-12T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:48.556275+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2385,
+        "title": "[Minor] Rename phi_1_5 to phi",
+        "url": "https://github.com/vllm-project/vllm/pull/2385",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-01-12T00:23:44Z",
+        "createdAt": "2024-01-08T23:42:51Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As vLLM also support the phi-2 model using the same script, it'd be better to rename it.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1011,
+        "title": "[DOC] Add additional comments for LLMEngine and AsyncLLMEngine",
+        "url": "https://github.com/vllm-project/vllm/pull/1011",
+        "author": "litone01",
+        "mergedAt": "2024-01-12T03:26:50Z",
+        "createdAt": "2023-09-11T06:22:10Z",
+        "changedFiles": 9,
+        "additions": 242,
+        "deletions": 15,
+        "commits": 13,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "For the following functions:\n\nLLMEngine: add_request, abort_request, step and _init_cache\nAsyncLLMEngine: generate and abort\n\nSummary of changes:\n\nAdded documentation pages in sphinx for LLMEngine and AsyncLLMEngine. To address questions related to memory usage, the documentation for init_cache from",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2425,
+        "title": "[Minor] Fix the format in quick start guide related to Model Scope",
+        "url": "https://github.com/vllm-project/vllm/pull/2425",
+        "author": "zhuohan123",
+        "mergedAt": "2024-01-12T03:44:02Z",
+        "createdAt": "2024-01-12T02:03:36Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 27,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2307,
+        "title": "Add gradio chatbot for openai webserver",
+        "url": "https://github.com/vllm-project/vllm/pull/2307",
+        "author": "arkohut",
+        "mergedAt": "2024-01-12T03:45:57Z",
+        "createdAt": "2023-12-30T10:11:01Z",
+        "changedFiles": 1,
+        "additions": 81,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow the example of https://github.com/vllm-project/vllm/blob/main/examples/gradio_webserver.py I create a gradio webserver for openai api server.\nRight now I find that OpenAI-compatible api server has more features than the default webserver and is much more popular. This script will create a cha",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

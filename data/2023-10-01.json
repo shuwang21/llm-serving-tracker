@@ -1,0 +1,30 @@
+{
+  "date": "2023-10-01",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-10-01T07:00:00+00:00",
+  "utc_end": "2023-10-02T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:35:27.055729+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1241,
+        "title": "fix vulnerable memory modification to gpu shared memory",
+        "url": "https://github.com/vllm-project/vllm/pull/1241",
+        "author": "soundOfDestiny",
+        "mergedAt": "2023-10-01T18:35:06Z",
+        "createdAt": "2023-10-01T11:46:08Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a vulnerable memory modification to gpu shared memory in CUDA kernel function single_query_cached_kv_attention_kernel.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

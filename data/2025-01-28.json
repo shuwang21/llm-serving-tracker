@@ -1,0 +1,382 @@
+{
+  "date": "2025-01-28",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-28T08:00:00+00:00",
+  "utc_end": "2025-01-29T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:16:05.664076+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2977,
+        "title": "[Fix] Address remaining issues of supporting MiniCPMV",
+        "url": "https://github.com/sgl-project/sglang/pull/2977",
+        "author": "mickqian",
+        "mergedAt": "2025-01-28T08:22:13Z",
+        "createdAt": "2025-01-19T07:51:03Z",
+        "changedFiles": 12,
+        "additions": 708,
+        "deletions": 223,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nAddress remaining issues of #2785\nModifications\n\nUpdate document of implementing a new vision-llm\nAdd some test for comparing logits output of SGLang and HF\nCode cleanup\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Runn",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 12495,
+        "title": "Update README.md with V1 alpha release",
+        "url": "https://github.com/vllm-project/vllm/pull/12495",
+        "author": "ywang96",
+        "mergedAt": "2025-01-28T08:22:41Z",
+        "createdAt": "2025-01-28T03:05:00Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12496,
+        "title": "[V1] Include Engine Version in Logs",
+        "url": "https://github.com/vllm-project/vllm/pull/12496",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-28T08:27:42Z",
+        "createdAt": "2025-01-28T03:12:27Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\ngot some feedback that we should let the user know when we are using V1",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12503,
+        "title": "[Core] Make raw_request optional in ServingCompletion",
+        "url": "https://github.com/vllm-project/vllm/pull/12503",
+        "author": "schoennenbeck",
+        "mergedAt": "2025-01-28T10:56:45Z",
+        "createdAt": "2025-01-28T07:10:21Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR simply ports the logic that is already used in OpenAIServingChat to OpenAIServingCompletion to make passing the raw_request optional.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12504,
+        "title": "[VLM] Merged multi-modal processor and V1 support for Qwen-VL",
+        "url": "https://github.com/vllm-project/vllm/pull/12504",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-01-28T16:25:06Z",
+        "createdAt": "2025-01-28T08:32:08Z",
+        "changedFiles": 4,
+        "additions": 387,
+        "deletions": 477,
+        "commits": 7,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "(Not to be confused with Qwen2-VL (which is already supported) and Qwen2.5-VL (not supported yet))\n\nI have tested V1 locally and the model output is basically the same, but not entirely sure why an extra EOS token is being outputted.\nV0 output:\n# python examples/offline_inference/vision_language.py ",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12514,
+        "title": "[Doc] Fix typo for x86 CPU installation",
+        "url": "https://github.com/vllm-project/vllm/pull/12514",
+        "author": "waltforme",
+        "mergedAt": "2025-01-28T16:37:10Z",
+        "createdAt": "2025-01-28T15:13:12Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes a typo in docs/source/getting_started/installation/cpu/x86.inc.md.",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12478,
+        "title": "[V1][Metrics] Hook up IterationStats for Prometheus metrics",
+        "url": "https://github.com/vllm-project/vllm/pull/12478",
+        "author": "markmc",
+        "mergedAt": "2025-01-28T16:38:38Z",
+        "createdAt": "2025-01-27T18:20:36Z",
+        "changedFiles": 3,
+        "additions": 66,
+        "deletions": 12,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow on from #12416, part of #10582\nPass IterationStats to the stat logger, and log them in both the logging and prometheus loggers.\nFor the logging stat logger, we need to calculate the throughput based on the number of tokens in the particular logging interval.\nIn the prometheus logger, we just ",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12472,
+        "title": "Replace missed warning_once for rerank API",
+        "url": "https://github.com/vllm-project/vllm/pull/12472",
+        "author": "mgoin",
+        "mergedAt": "2025-01-28T19:06:32Z",
+        "createdAt": "2025-01-27T16:06:56Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12521,
+        "title": "Do not run `suggestion` `pre-commit` hook multiple times",
+        "url": "https://github.com/vllm-project/vllm/pull/12521",
+        "author": "hmellor",
+        "mergedAt": "2025-01-28T20:05:27Z",
+        "createdAt": "2025-01-28T18:51:36Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Prevents the message To bypass pre-commit hooks, add --no-verify to git commit. from being printed once for each changed file.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12516,
+        "title": "[V1][Metrics] Add per-request prompt/generation_tokens histograms",
+        "url": "https://github.com/vllm-project/vllm/pull/12516",
+        "author": "markmc",
+        "mergedAt": "2025-01-28T22:07:22Z",
+        "createdAt": "2025-01-28T16:59:50Z",
+        "changedFiles": 5,
+        "additions": 102,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow on from #12478, part of #10582\nObserve these values as requests are finished.\nRequires keeping track of generated tokens per-request to handle streaming delta updates.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12482,
+        "title": "[Kernel] Pipe attn_logits_soft_cap through paged attention TPU kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/12482",
+        "author": "fenghuizhang",
+        "mergedAt": "2025-01-28T22:36:45Z",
+        "createdAt": "2025-01-27T19:13:50Z",
+        "changedFiles": 2,
+        "additions": 16,
+        "deletions": 26,
+        "commits": 1,
+        "labels": [
+          "tpu",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Pipe attn_logits_soft_cap through paged_attention, this will unblock some of our models' adoption.\nNote that the changed code currently doesn't have unit tests. I will add one later.\nThis is the same as #12294. We created a new PR as I messed up the sign off and previous commit chain.\nThanks,",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12531,
+        "title": "[TPU] Add example for profiling TPU inference",
+        "url": "https://github.com/vllm-project/vllm/pull/12531",
+        "author": "mgoin",
+        "mergedAt": "2025-01-29T03:16:48Z",
+        "createdAt": "2025-01-28T22:27:44Z",
+        "changedFiles": 2,
+        "additions": 168,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Provides an example for simple prefill or decode profiling on TPUs. This is a starting point equivalent to text-only inference using benchmark_latency.py, where all the user can specify is batch size, input length, and output length.\nFuture work should expand this example to cover realistic data and",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12473,
+        "title": "[Frontend] Support reasoning content for deepseek r1",
+        "url": "https://github.com/vllm-project/vllm/pull/12473",
+        "author": "gaocegege",
+        "mergedAt": "2025-01-29T03:38:08Z",
+        "createdAt": "2025-01-27T16:30:49Z",
+        "changedFiles": 16,
+        "additions": 977,
+        "deletions": 5,
+        "commits": 19,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #12468\nTwo CLI arguments are introduced for extensibility: --enable-reasoning and --reasoning-parser.\nvllm serve deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B --enable-reasoning --reasoning-parser deepseek_r1\nTest for full request:\nfrom openai import OpenAI\nclient = OpenAI(\n    base_url=\"http://100.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12471,
+        "title": "[Doc] Convert docs to use colon fences",
+        "url": "https://github.com/vllm-project/vllm/pull/12471",
+        "author": "hmellor",
+        "mergedAt": "2025-01-29T03:38:29Z",
+        "createdAt": "2025-01-27T11:20:12Z",
+        "changedFiles": 68,
+        "additions": 2091,
+        "deletions": 2080,
+        "commits": 8,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Converts docs to use colon fences instead of backtick fences, as requested in https://vllm-dev.slack.com/archives/C087WACBTHC/p1737623935138279",
+        "category": "Docs / Cookbook",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 12530,
+        "title": "[V1][Metrics] Add TTFT and TPOT histograms",
+        "url": "https://github.com/vllm-project/vllm/pull/12530",
+        "author": "markmc",
+        "mergedAt": "2025-01-29T04:11:17Z",
+        "createdAt": "2025-01-28T22:24:33Z",
+        "changedFiles": 4,
+        "additions": 45,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Follow on from #12516, part of #10582\nCompute these intervals on the API server side as EngineCoreOutputs are processed.\nThe OutputProcessor needs to track per-request arrival times and the generation timestamp of the most recent token generation.\nPrefill intervals are calculated when the first Engi",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12524,
+        "title": "Bugfix for whisper quantization due to fake k_proj bias",
+        "url": "https://github.com/vllm-project/vllm/pull/12524",
+        "author": "mgoin",
+        "mergedAt": "2025-01-29T04:49:03Z",
+        "createdAt": "2025-01-28T20:15:25Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Without this change, running a quantized whisper like https://huggingface.co/nm-testing/whisper-large-v2-FP8-dynamic results in a complaint about a non-existent bias_scale\n[rank0]:   File \"/home/mgoin/code/vllm/vllm/model_executor/models/whisper.py\", line 735, in load_weights\n[rank0]:     return loa",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12535,
+        "title": "[V1] Improve Error Message for Unsupported Config",
+        "url": "https://github.com/vllm-project/vllm/pull/12535",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-29T04:56:56Z",
+        "createdAt": "2025-01-29T02:02:37Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nimprove error message for unsupported config on V1",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 12420,
+        "title": "Fix the pydantic logging validator",
+        "url": "https://github.com/vllm-project/vllm/pull/12420",
+        "author": "maxdebayser",
+        "mergedAt": "2025-01-29T07:53:13Z",
+        "createdAt": "2025-01-24T20:06:34Z",
+        "changedFiles": 1,
+        "additions": 22,
+        "deletions": 7,
+        "commits": 7,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Prevent the validator from logging unused extra fields before object is validated by the pydantic validator.\nDuring the routing based on the request content where pydantic tries several classes for deserialization, this would result in spurious logs.\nFor example, during in a request like this one:\nc",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2023-07-24",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-24T07:00:00+00:00",
+  "utc_end": "2023-07-25T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:31:19.761082+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 532,
+        "title": "GPTJConfig has no attribute rotary. ",
+        "url": "https://github.com/vllm-project/vllm/pull/532",
+        "author": "leegohi04517",
+        "mergedAt": "2023-07-24T18:29:31Z",
+        "createdAt": "2023-07-20T13:19:45Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "GPTJConfig has no attribute rotary. Remove this line to skip runtime error when using gpt-j model.",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 503,
+        "title": "[Fix] Fix GPTBigcoder for distributed execution",
+        "url": "https://github.com/vllm-project/vllm/pull/503",
+        "author": "zhuohan123",
+        "mergedAt": "2023-07-25T01:36:34Z",
+        "createdAt": "2023-07-18T20:43:37Z",
+        "changedFiles": 1,
+        "additions": 62,
+        "deletions": 24,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #488 and #487",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 495,
+        "title": "Fix paged attention testing.",
+        "url": "https://github.com/vllm-project/vllm/pull/495",
+        "author": "shanshanpt",
+        "mergedAt": "2023-07-25T04:01:57Z",
+        "createdAt": "2023-07-18T08:22:10Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

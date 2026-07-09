@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-07T07:00:00+00:00",
+  "utc_end": "2023-04-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:24.969284+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 32,
+        "title": "Implement block copy kernel to optimize beam search",
+        "url": "https://github.com/vllm-project/vllm/pull/32",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-04-08T00:45:08Z",
+        "createdAt": "2023-04-07T21:01:12Z",
+        "changedFiles": 6,
+        "additions": 155,
+        "deletions": 49,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements a block copy kernel. By using this kernel, we can reduce the number of kernel invocations from 2 * num_layers * num_copying_blocks to 1.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

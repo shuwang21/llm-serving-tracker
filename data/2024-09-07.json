@@ -1,0 +1,149 @@
+{
+  "date": "2024-09-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-09-07T07:00:00+00:00",
+  "utc_end": "2024-09-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:01:09.081574+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 1345,
+        "title": "Fix some online scheduling delay",
+        "url": "https://github.com/sgl-project/sglang/pull/1345",
+        "author": "hnyls2002",
+        "mergedAt": "2024-09-08T03:46:27Z",
+        "createdAt": "2024-09-06T19:49:07Z",
+        "changedFiles": 2,
+        "additions": 52,
+        "deletions": 36,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\n\nWhen there are new requests sent in, also try to get a new prefill batch.\nAdd quick judgement.\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or ",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 8258,
+        "title": "[Bugfix] Fix broken OpenAI tensorizer test",
+        "url": "https://github.com/vllm-project/vllm/pull/8258",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-09-07T08:02:40Z",
+        "createdAt": "2024-09-07T02:51:00Z",
+        "changedFiles": 4,
+        "additions": 81,
+        "deletions": 40,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The current RemoteOpenAIServer assumes default model loader which isn't true in tensorizer tests. This PR adds an explicit download_model method to each model loader so that RemoteOpenAIServer can download the model in advance regardless of which model loader is used.\nFIX #8249\ncc @alexeykondrat",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8201,
+        "title": "[Model][VLM] Support multi-images inputs for InternVL2 models",
+        "url": "https://github.com/vllm-project/vllm/pull/8201",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-07T08:38:23Z",
+        "createdAt": "2024-09-05T16:21:32Z",
+        "changedFiles": 5,
+        "additions": 199,
+        "deletions": 57,
+        "commits": 10,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\nTODO\n\n Initialize multi-images inputs support for InternVL2\n Update _placeholder_str in entrypoint/chat_utils.py\n Add multi-images tests\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTI",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8269,
+        "title": "[Model][VLM] Decouple weight loading logic for `Paligemma`",
+        "url": "https://github.com/vllm-project/vllm/pull/8269",
+        "author": "Isotr0py",
+        "mergedAt": "2024-09-07T17:45:45Z",
+        "createdAt": "2024-09-07T14:45:30Z",
+        "changedFiles": 2,
+        "additions": 54,
+        "deletions": 81,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\n\nThis PR update and decouple the Siglip weight loading logic from Paligemma following #7186 and #8061.\n\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click t",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8026,
+        "title": "ppc64le: Dockerfile fixed, and a script for buildkite",
+        "url": "https://github.com/vllm-project/vllm/pull/8026",
+        "author": "sumitd2",
+        "mergedAt": "2024-09-07T18:18:40Z",
+        "createdAt": "2024-08-30T08:19:25Z",
+        "changedFiles": 2,
+        "additions": 43,
+        "deletions": 5,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "FILL IN THE PR DESCRIPTION HERE\nFIX #xxxx (link existing issues this PR will resolve)\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure th",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8133,
+        "title": "[CI/Build] Use python 3.12 in cuda image",
+        "url": "https://github.com/vllm-project/vllm/pull/8133",
+        "author": "joerunde",
+        "mergedAt": "2024-09-07T20:03:16Z",
+        "createdAt": "2024-09-03T21:00:38Z",
+        "changedFiles": 3,
+        "additions": 10,
+        "deletions": 5,
+        "commits": 11,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR updates the PYTHON_VERSION default arg in the cuda dockerfile to 3.12\nWe suspect this may improve performance, as IBM-built vlm images using python 3.11 instead of 3.10 are faster, and the Python 3.11 release was performance focused, see: https://docs.python.org/3/whatsnew/3.11.html\nPython 3",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 8267,
+        "title": "[Bugfix] Fix async postprocessor in case of preemption",
+        "url": "https://github.com/vllm-project/vllm/pull/8267",
+        "author": "alexm-redhat",
+        "mergedAt": "2024-09-08T04:01:51Z",
+        "createdAt": "2024-09-07T11:34:36Z",
+        "changedFiles": 4,
+        "additions": 172,
+        "deletions": 114,
+        "commits": 8,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR fixes the bug reported here #8219.\nWhen preemption kicks in, the previous code was running the async postprocessor for all sequences and then retrying the scheduling. However, this introduced a race condition with sequences that were already scheduled due to the possibility of them being alr",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-07-14",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-14T07:00:00+00:00",
+  "utc_end": "2023-07-15T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:44.644528+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 452,
+        "title": "Optimize MQA Kernel",
+        "url": "https://github.com/vllm-project/vllm/pull/452",
+        "author": "zhuohan123",
+        "mergedAt": "2023-07-15T00:06:40Z",
+        "createdAt": "2023-07-13T04:11:58Z",
+        "changedFiles": 5,
+        "additions": 84,
+        "deletions": 72,
+        "commits": 9,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements the MQA paged attention kernel and modifies the GPT Bigcode model to utilize the optimized MQA kernel.\nTODO: Check performance gain.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

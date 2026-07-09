@@ -1,0 +1,648 @@
+{
+  "date": "2025-10-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-10-11T07:00:00+00:00",
+  "utc_end": "2025-10-12T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:23:20.653259+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 9991,
+        "title": "Enable native ModelOpt quantization support (2/3)",
+        "url": "https://github.com/sgl-project/sglang/pull/9991",
+        "author": "Edwardf0t1",
+        "mergedAt": "2025-10-11T07:48:15Z",
+        "createdAt": "2025-09-04T00:52:21Z",
+        "changedFiles": 3,
+        "additions": 127,
+        "deletions": 26,
+        "commits": 24,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is the second PR in a three-part series to enable native ModelOpt quantization in SGLang. It includes changes from the first PR (#7149) and will be rebased once the first PR is merged.\nMotivation\nWe aim to enhance SGLang's quantization capabilities, making ModelOpt integration more robust and u",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10312,
+        "title": "Reland [1/2] Optimizations and refactors about quant kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/10312",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-11T07:59:04Z",
+        "createdAt": "2025-09-11T08:30:50Z",
+        "changedFiles": 13,
+        "additions": 1065,
+        "deletions": 178,
+        "commits": 47,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nreal change is tiny, most code are from the last pr which has been reviewed\nbefore fix: either error or 0% acc\nBlackwell:\n (cd /data/numa0/tom/primary_synced/sglang && SGL_JIT_DEEPGEMM_PRECOMPILE=0 SGLANG_IS_IN_CI=1 HF_TOKEN=... HF_HUB_ENABLE_HF_TRANSFER=1 python3 test/srt/ep/test_deepep_",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11448,
+        "title": "Super tiny delete unused openai router in sgl-router",
+        "url": "https://github.com/sgl-project/sglang/pull/11448",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-11T07:59:30Z",
+        "createdAt": "2025-10-11T03:47:37Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11461,
+        "title": "fix the server_args condition",
+        "url": "https://github.com/sgl-project/sglang/pull/11461",
+        "author": "zminglei",
+        "mergedAt": "2025-10-11T08:01:32Z",
+        "createdAt": "2025-10-11T07:27:10Z",
+        "changedFiles": 3,
+        "additions": 37,
+        "deletions": 30,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "bhe/1_stage_triton_kernel",
+        "bodyExcerpt": "Motivation\n\nfix the server_args condition\nfix lint\nModifications\nfix the server_args condition\n\nAccuracy Tests\nQwen3-8B TP4\npython3 -m sglang.launch_server --model-path /shared/public/elr-models/Qwen/Qwen3-8B/2069b3fae1114555f3c020c81410e51fa0f656f2 --attention-backend triton --enable-deterministic-",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11467,
+        "title": "Adjust logits metada init for target verify",
+        "url": "https://github.com/sgl-project/sglang/pull/11467",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-11T13:17:04Z",
+        "createdAt": "2025-10-11T09:49:29Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "In target verify phase, we do not need pass the extend-related lens.",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11427,
+        "title": "[Documentation][Configuration] Server args and documentation of PD-Multiplexing.",
+        "url": "https://github.com/sgl-project/sglang/pull/11427",
+        "author": "ykcombat",
+        "mergedAt": "2025-10-11T13:36:07Z",
+        "createdAt": "2025-10-10T14:13:57Z",
+        "changedFiles": 3,
+        "additions": 93,
+        "deletions": 1,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nThis PR adds the necessary server args and documentation for PD-Multiplexing. Subsequent related PRs can be found  here.\nModifications\n\n\nServer Args: Extended server_args.py with --enable-pdmux and --pdmux-config-path flags.\nDocs updated (keep updating)\n\nChecklist\n\n Format your code acco",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11470,
+        "title": "Fix enable_v2 in int8 quant",
+        "url": "https://github.com/sgl-project/sglang/pull/11470",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-11T13:56:30Z",
+        "createdAt": "2025-10-11T12:42:40Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nthe ci passed b/c that pr triggers the new sgl-kernel, while main branch use old sgl-kernel\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Upda",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11428,
+        "title": "[Fix] Fix split prefill with fa3.",
+        "url": "https://github.com/sgl-project/sglang/pull/11428",
+        "author": "ykcombat",
+        "mergedAt": "2025-10-11T14:03:28Z",
+        "createdAt": "2025-10-10T14:24:28Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nThis PR fixed split prefill (used in PD-Multiplexing) when using fa3 backend. Subsequent related PRs can be found  here.\nModifications\n\n\nAdd split prefill forward mode.\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and ad",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11462,
+        "title": "fix stop when stream ",
+        "url": "https://github.com/sgl-project/sglang/pull/11462",
+        "author": "whybeyoung",
+        "mergedAt": "2025-10-11T14:06:31Z",
+        "createdAt": "2025-10-11T07:41:18Z",
+        "changedFiles": 2,
+        "additions": 41,
+        "deletions": 3,
+        "commits": 8,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix: #11446\n\nSummary by CodeRabbit\n\n\nNew Features\n\nStreaming now recognizes forming stop sequences including prefix/overlap matches and withholds output until safe.\n\n\n\nBug Fixes\n\nPrevents leaking incomplete stop sequences during streaming, reducing flicker and premature outputs.\nProduces cleaner, mo",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 8919,
+        "title": "Add option to disable `any_whitespace` for `xgrammar` and `llguidance` backends.",
+        "url": "https://github.com/sgl-project/sglang/pull/8919",
+        "author": "lulor",
+        "mergedAt": "2025-10-11T14:24:58Z",
+        "createdAt": "2025-08-07T15:10:00Z",
+        "changedFiles": 5,
+        "additions": 21,
+        "deletions": 4,
+        "commits": 8,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nSee #8250.\nModifications\n\nThis PR simply adds a server arg which is passed through to the xgrammar and llguidance backends, preserving the current defaults.\nAccuracy Test\n\nBenchmark & Profiling\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit test",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11019,
+        "title": "[7/n] decouple quantization impl from vllm dependency - gguf kernel",
+        "url": "https://github.com/sgl-project/sglang/pull/11019",
+        "author": "FlamingoPg",
+        "mergedAt": "2025-10-11T21:04:57Z",
+        "createdAt": "2025-09-28T10:26:34Z",
+        "changedFiles": 19,
+        "additions": 7936,
+        "deletions": 1,
+        "commits": 12,
+        "labels": [
+          "ready-to-merge",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nSupport sglang native gguf kernel.\nWill change srt in next PR\nKernel List\n\nDone:\n\n\nggml_mul_mat_vec_a8\nggml_mul_mat_a8\nggml_dequantize\nggml_moe_get_block_size\nggml_moe_a8\nmoe_sum\nggml_moe_a8_vec\nmoe_sum (\n  \n    \n      sglang/python/sglang/srt/layers/moe/fused_moe_triton/fused_moe.py\n   ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11454,
+        "title": "fix Xeon CI",
+        "url": "https://github.com/sgl-project/sglang/pull/11454",
+        "author": "ZailiWang",
+        "mergedAt": "2025-10-11T21:08:28Z",
+        "createdAt": "2025-10-11T06:03:37Z",
+        "changedFiles": 2,
+        "additions": 5,
+        "deletions": 13,
+        "commits": 4,
+        "labels": [
+          "ci",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is to complement Xeon CI and fix failures after #10734 merged.\n\nMake PR_REPO & PR_HEAD_REF optional. They will be passed as --build-arg in docker build command only when set as non-empty in prior.\nSolidate the target folder name of git clone as sglang to avoid failure in the following cd sglang",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 9804,
+        "title": "[CI] Add nightly builds to dockerhub",
+        "url": "https://github.com/sgl-project/sglang/pull/9804",
+        "author": "csahithi",
+        "mergedAt": "2025-10-12T01:27:47Z",
+        "createdAt": "2025-08-29T19:55:52Z",
+        "changedFiles": 1,
+        "additions": 29,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nThe current nightly container builds overwrite the previous ones. This PR helps retain the last 14 builds.\ncc: @kushanam @sgodithi1\nModifications\n\nChanges release-docker-dev\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-com",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 10635,
+        "title": "[Feature] support regex strings as a stopping condition",
+        "url": "https://github.com/sgl-project/sglang/pull/10635",
+        "author": "glenliu21",
+        "mergedAt": "2025-10-12T02:53:15Z",
+        "createdAt": "2025-09-19T01:13:24Z",
+        "changedFiles": 9,
+        "additions": 219,
+        "deletions": 8,
+        "commits": 13,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIn this PR, I address the issue raised in #2007. This PR builds off of #2699.\nModifications\n\nAdd stop_regex as a field to SamplingParams.\nWrite a function that gets a strict upperbound on the number of tail tokens that need to be decoded given the provided stop_regex strings.\nImplement th",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11398,
+        "title": "Beta spec-overlap for EAGLE",
+        "url": "https://github.com/sgl-project/sglang/pull/11398",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-12T03:02:22Z",
+        "createdAt": "2025-10-09T19:30:45Z",
+        "changedFiles": 21,
+        "additions": 1567,
+        "deletions": 108,
+        "commits": 48,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Initial results\nexport SGLANG_ALLOW_OVERWRITE_LONGER_CONTEXT_LEN=1\nexport SGLANG_ENABLE_SPEC_V2=1\nMODEL=meta-llama/Meta-Llama-3.1-8B-Instruct\nSPEC_MODEL=lmsys/sglang-EAGLE-LLaMA3-Instruct-8B\nPORT=23333\npython -m sglang.launch_server \\\n    --dtype float16 \\\n    --model-path $MODEL \\\n    --attention-b",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 10062,
+        "title": "Piecewise CUDA Graph Support & Torch Compile Backend",
+        "url": "https://github.com/sgl-project/sglang/pull/10062",
+        "author": "Oasis-Git",
+        "mergedAt": "2025-10-12T03:55:57Z",
+        "createdAt": "2025-09-05T08:13:15Z",
+        "changedFiles": 21,
+        "additions": 2706,
+        "deletions": 19,
+        "commits": 27,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThis PR introduces support for Piecewise CUDA Graph and Torch Backend Support in SGLang.\nThis feature is inspired by the implementation in vLLM v1 which partitions the full inference graph into smaller sub-graphs with attention operations. This approach offers several potential advantages",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11489,
+        "title": "[Router]: Small Typo in a comment within tree.rs",
+        "url": "https://github.com/sgl-project/sglang/pull/11489",
+        "author": "xuwenyihust",
+        "mergedAt": "2025-10-12T04:59:48Z",
+        "createdAt": "2025-10-12T04:22:23Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nSpotted a small typo in a comment within tree.rs.\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark results acco",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11476,
+        "title": "chore: bump sgl-kernel version to 0.3.16",
+        "url": "https://github.com/sgl-project/sglang/pull/11476",
+        "author": "sglang-bot",
+        "mergedAt": "2025-10-12T05:04:49Z",
+        "createdAt": "2025-10-11T21:02:15Z",
+        "changedFiles": 4,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR bumps the sgl-kernel version to 0.3.16 across all relevant files.\nFiles Updated\n\nsgl-kernel/pyproject.toml\nsgl-kernel/pyproject_cpu.toml\nsgl-kernel/pyproject_rocm.toml\nsgl-kernel/python/sgl_kernel/version.py\n\n\ud83e\udd16 Generated with GitHub Actions\n\nSummary by CodeRabbit\n\nChores\n\nIncremented",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 24172,
+        "title": "[Refactor]: Use M-RoPE interface directly while defining model class instead of maintaining model specific M-RoPE implementation in mrope.py",
+        "url": "https://github.com/vllm-project/vllm/pull/24172",
+        "author": "divyanshsinghvi",
+        "mergedAt": "2025-10-11T07:21:04Z",
+        "createdAt": "2025-09-03T10:36:19Z",
+        "changedFiles": 9,
+        "additions": 974,
+        "deletions": 1051,
+        "commits": 20,
+        "labels": [
+          "new-model",
+          "ready",
+          "v1",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFixes #24165\nAdds supports for the various models to move away from mrope.py for better handling of the implementation.\n\nBy @DarkLight1337 and @wwl2755 : Use self.get_model() instead of self.model for interface checking to handle cases when the model is wrapped.\n\nTest Plan\npytest tests/model",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26401,
+        "title": "fix(nix): Allow local oneDNN path to fix vLLM CPU build failure",
+        "url": "https://github.com/vllm-project/vllm/pull/26401",
+        "author": "ihb2032",
+        "mergedAt": "2025-10-11T09:12:16Z",
+        "createdAt": "2025-10-08T08:19:49Z",
+        "changedFiles": 1,
+        "additions": 19,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR addresses the critical build failure encountered when compiling vLLM v0.10.2 for a CPU-only target with Python 3.12 in package environments like Nixpkgs.\nAs reported in #26229, the original build process failed during C++ compilation with the error:\nfatal error: common/memory_desc.hp",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26485,
+        "title": "Add EAGLE-3 Speculative Decoding Support for Qwen3 MoE",
+        "url": "https://github.com/vllm-project/vllm/pull/26485",
+        "author": "rahul-tuli",
+        "mergedAt": "2025-10-11T10:14:41Z",
+        "createdAt": "2025-10-09T12:34:36Z",
+        "changedFiles": 1,
+        "additions": 33,
+        "deletions": 4,
+        "commits": 4,
+        "labels": [
+          "speculative-decoding",
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds support for EAGLE-3 speculative decoding to the Qwen3MoeForCausalLM model, enabling faster inference with draft models like nm-testing/Mockup-qwen235-eagle3-fp16.\nChanges\nModified Files\n\nvllm/model_executor/models/qwen3_moe.py\n\nImplementation Details\n\n\nAdded SupportsEagle3 Interface\n\nIm",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26562,
+        "title": "[CPU] fix the issue when the node is '-' cause json decode error.",
+        "url": "https://github.com/vllm-project/vllm/pull/26562",
+        "author": "muzian666",
+        "mergedAt": "2025-10-11T12:04:05Z",
+        "createdAt": "2025-10-10T03:50:42Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Link to issue: #26560\nPurpose\nFix AssertionError \"No enough allowed NUMA nodes to bind threads\" in single-NUMA or containerized environments where lscpu -J outputs invalid JSON (\"node\": -) for NUMA node fields, leading to empty allowed_numa_nodes_list after filtering. The fix preprocesses the JSON s",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26627,
+        "title": "[Refactor]Reduce duplicate code in serving_chat",
+        "url": "https://github.com/vllm-project/vllm/pull/26627",
+        "author": "chaunceyjiang",
+        "mergedAt": "2025-10-11T12:04:49Z",
+        "createdAt": "2025-10-11T09:51:36Z",
+        "changedFiles": 3,
+        "additions": 56,
+        "deletions": 49,
+        "commits": 3,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison befor",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26604,
+        "title": "[compile] Add patched_fused_scaled_matmul_reduce_scatter",
+        "url": "https://github.com/vllm-project/vllm/pull/26604",
+        "author": "angelayi",
+        "mergedAt": "2025-10-11T12:44:44Z",
+        "createdAt": "2025-10-10T21:51:54Z",
+        "changedFiles": 3,
+        "additions": 119,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nIn #25277 (comment), while testing out #21031, we realized that symm_mem::fused_scaled_matmul_reduce_scatter is not properly symint-ified, meaning that if we trace a graph containing this op with dynamic shapes, the dynamic shape will become specialized. The proper fix is pytorch/pytorch#165",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26626,
+        "title": "[Bugfix][Qwen3VL] fix deepstack in qwen3vl",
+        "url": "https://github.com/vllm-project/vllm/pull/26626",
+        "author": "JJJYmmm",
+        "mergedAt": "2025-10-11T12:58:34Z",
+        "createdAt": "2025-10-11T09:42:04Z",
+        "changedFiles": 1,
+        "additions": 0,
+        "deletions": 6,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nquick fix deepstack for qwen3vl. If deepstack features is not none, we should set it properly. \ud83e\udd17\nrelated to QwenLM/Qwen3-VL#1576\n@ywang96",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26634,
+        "title": "[Bugfix] Fix qwen-moe packed_modules_mapping",
+        "url": "https://github.com/vllm-project/vllm/pull/26634",
+        "author": "jeejeelee",
+        "mergedAt": "2025-10-11T15:21:34Z",
+        "createdAt": "2025-10-11T11:43:08Z",
+        "changedFiles": 3,
+        "additions": 23,
+        "deletions": 11,
+        "commits": 4,
+        "labels": [
+          "ready",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison befor",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26641,
+        "title": "[Benchmark] Support Infinity API",
+        "url": "https://github.com/vllm-project/vllm/pull/26641",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-11T17:45:32Z",
+        "createdAt": "2025-10-11T15:07:56Z",
+        "changedFiles": 2,
+        "additions": 96,
+        "deletions": 29,
+        "commits": 1,
+        "labels": [
+          "performance",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAdd Infinity API backend so it is easier for us to diagnose and close the performance gaps.\ncc @noooop @maxdebayser\nTest Plan\nTest Result\n\n\n\nRequest Throughput (req/s)\nInfinity\nvLLM\nvLLM (--api-server-count 8)\n\n\n\n\nBAAI/bge-base-en-v1.5 [text]\n150.42\n26.06 (-83%)\n77.26 (-49%)\n\n\nintfloat/e5-mi",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26509,
+        "title": "CP: make correct_attn_out robust to 4\u2011D views and fix Triton arg binding",
+        "url": "https://github.com/vllm-project/vllm/pull/26509",
+        "author": "hl475",
+        "mergedAt": "2025-10-11T20:50:58Z",
+        "createdAt": "2025-10-09T17:21:58Z",
+        "changedFiles": 1,
+        "additions": 46,
+        "deletions": 8,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThe issue is found from @simon-mo where we want to bring up H100 resources for CI #26396 , and there is a failure https://buildkite.com/vllm/ci/builds/33954/steps/canvas?sid=0199c256-fc49-4e2d-afd6-c54961f0ffb0 with the error msg\n(Worker_TP0 pid=3232) ERROR 10-07 22:59:10 [multiproc_executor",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 26645,
+        "title": "[compile] Fix inductor partition config",
+        "url": "https://github.com/vllm-project/vllm/pull/26645",
+        "author": "angelayi",
+        "mergedAt": "2025-10-11T21:03:15Z",
+        "createdAt": "2025-10-11T16:34:34Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "When trying to run the following cmd, I ran into this assertion error because self.backend is equal to \"\".\nvllm bench latency \\\n    --model=RedHatAI/Meta-Llama-3.1-8B-Instruct-FP8 \\\n    --output-len 1 --input-len 8192 --batch-size 1 \\\n    --tensor-parallel-size 8 --load-format dummy \\\n    --num_iter",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 22100,
+        "title": "[EPLB] Support ernie4.5-moe",
+        "url": "https://github.com/vllm-project/vllm/pull/22100",
+        "author": "HsChen-sys",
+        "mergedAt": "2025-10-12T02:40:48Z",
+        "createdAt": "2025-08-01T16:20:26Z",
+        "changedFiles": 1,
+        "additions": 132,
+        "deletions": 7,
+        "commits": 12,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Essential Elements of an Effective PR Description Checklist\n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison before and after, or e2e results\n (Opti",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 26652,
+        "title": "Add @noooop to codeowner for pooling models",
+        "url": "https://github.com/vllm-project/vllm/pull/26652",
+        "author": "noooop",
+        "mergedAt": "2025-10-12T06:04:44Z",
+        "createdAt": "2025-10-12T05:10:14Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThanks @youkaichao for inviting me to join as a Reviewer for pooling models.\nI am excited to contribute further to the vLLM project and am happy to take on the responsibility of reviewing and maintaining the codebase.\nI also deeply appreciate the helpful code reviews and guidance from @DarkL",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

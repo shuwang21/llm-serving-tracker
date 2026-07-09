@@ -1,0 +1,48 @@
+{
+  "date": "2023-09-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-11T07:00:00+00:00",
+  "utc_end": "2023-09-12T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:13.162276+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1004,
+        "title": "Use FP32 in RoPE initialization",
+        "url": "https://github.com/vllm-project/vllm/pull/1004",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-11T07:26:35Z",
+        "createdAt": "2023-09-10T06:26:19Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 6,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes #883\nThis PR uses FP32 for initializing the cos and sin cache in RoPE. This resolves the precision issues when using a large base like 1000000 with FP16.\nNOTE: This change is aligned with the RoPE definition in HuggingFace. However, as mentioned in #863, this may not align with the original de",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1013,
+        "title": "Bump up the version to v0.1.7",
+        "url": "https://github.com/vllm-project/vllm/pull/1013",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-11T07:54:31Z",
+        "createdAt": "2023-09-11T07:29:39Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Now that we fixed critical issues on ALiBi, Falcon, and Code Llama, we should bump up the version and make a new release.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-03-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-11T08:00:00+00:00",
+  "utc_end": "2023-03-12T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:22:51.596585+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 6,
+        "title": "Automatically configure KV cache size",
+        "url": "https://github.com/vllm-project/vllm/pull/6",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-12T07:23:14Z",
+        "createdAt": "2023-03-03T10:05:40Z",
+        "changedFiles": 7,
+        "additions": 216,
+        "deletions": 34,
+        "commits": 17,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds OPT memory analyzer to the system, and uses it to automatically determine the KV cache size.\nTested models:\n\nOPT-125M\nOPT-350M\nOPT-1.3B\nOPT-2.7B\nOPT-6.7B\nOPT-13B\n\nTested GPUs:\n\nA100",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

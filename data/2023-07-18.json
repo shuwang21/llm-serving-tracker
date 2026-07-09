@@ -1,0 +1,48 @@
+{
+  "date": "2023-07-18",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-18T07:00:00+00:00",
+  "utc_end": "2023-07-19T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:58.681944+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 498,
+        "title": "Fixed old name reference for max_seq_len",
+        "url": "https://github.com/vllm-project/vllm/pull/498",
+        "author": "MoeedDar",
+        "mergedAt": "2023-07-18T16:22:56Z",
+        "createdAt": "2023-07-18T15:49:22Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 496,
+        "title": "hotfix attn alibi wo head mapping",
+        "url": "https://github.com/vllm-project/vllm/pull/496",
+        "author": "Oliver-ss",
+        "mergedAt": "2023-07-18T18:31:48Z",
+        "createdAt": "2023-07-18T08:27:12Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

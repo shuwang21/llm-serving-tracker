@@ -1,0 +1,485 @@
+{
+  "date": "2026-01-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2026-01-17T08:00:00+00:00",
+  "utc_end": "2026-01-18T08:00:00+00:00",
+  "generated_at": "2026-07-08T22:51:34.923140+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 17191,
+        "title": "[BUGFIX] fix radix cache memory consumption to avoid OOM",
+        "url": "https://github.com/sgl-project/sglang/pull/17191",
+        "author": "yizhang2077",
+        "mergedAt": "2026-01-17T08:47:37Z",
+        "createdAt": "2026-01-16T06:44:22Z",
+        "changedFiles": 5,
+        "additions": 45,
+        "deletions": 11,
+        "commits": 3,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nWhen radix tree does splitting, new_node and child both hold the view for inserted value, so when child is evicted, child.value will not return to torch memory pool until all nodes along path hold the view of value are evicted. It may cause dynamic CUDA OOM when tree shares long prefix\nT",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 14883,
+        "title": "[DLLM] Implement initial dynamic batching for diffusion LLM",
+        "url": "https://github.com/sgl-project/sglang/pull/14883",
+        "author": "ClawSeven",
+        "mergedAt": "2026-01-17T08:48:15Z",
+        "createdAt": "2025-12-11T08:14:25Z",
+        "changedFiles": 8,
+        "additions": 381,
+        "deletions": 88,
+        "commits": 6,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe current dLLM implementations lack batching capabilities, with batch size set to 1 by default. Additionally, the existing dLLM implementation is tightly coupled with chunked prefill execution, limiting flexibility and extensibility.\n\nModifications\nThis PR introduces two key improvement",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17048,
+        "title": "Change routing policy API to be async to support more policies",
+        "url": "https://github.com/sgl-project/sglang/pull/17048",
+        "author": "fzyzcjy",
+        "mergedAt": "2026-01-17T09:12:51Z",
+        "createdAt": "2026-01-14T00:05:02Z",
+        "changedFiles": 16,
+        "additions": 350,
+        "deletions": 217,
+        "commits": 8,
+        "labels": [
+          "run-ci",
+          "model-gateway"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17257,
+        "title": "Revert \"[Diffusion] Move diffusion time embedding to jit kernel\"",
+        "url": "https://github.com/sgl-project/sglang/pull/17257",
+        "author": "michaelzhang-ai",
+        "mergedAt": "2026-01-17T13:29:22Z",
+        "createdAt": "2026-01-17T09:40:00Z",
+        "changedFiles": 10,
+        "additions": 206,
+        "deletions": 228,
+        "commits": 1,
+        "labels": [
+          "sgl-kernel",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reverts #16879\nIt caused AMD CI error: https://github.com/sgl-project/sglang/actions/runs/21088369400/job/60655945538\n@yctseng0211 @bingxche @HaiShaw",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17256,
+        "title": "fix(ci): recover from corrupted MMMU parquet cache",
+        "url": "https://github.com/sgl-project/sglang/pull/17256",
+        "author": "harvenstar",
+        "mergedAt": "2026-01-18T01:32:01Z",
+        "createdAt": "2026-01-17T09:13:11Z",
+        "changedFiles": 1,
+        "additions": 76,
+        "deletions": 10,
+        "commits": 2,
+        "labels": [
+          "Multi-modal",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "When MMMU dataset parquet files are corrupted in HuggingFace cache (ArrowInvalid: Parquet magic bytes not found), the lmms_eval process fails without producing JSON results, causing CI test failures.\nhttps://github.com/sgl-project/sglang/actions/runs/21076101101/job/60658633322?pr=16388\nhttps://gith",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17225,
+        "title": "[diffusion] default 4-step inference for Flux2-Klein distilled models",
+        "url": "https://github.com/sgl-project/sglang/pull/17225",
+        "author": "RuixiangMa",
+        "mergedAt": "2026-01-18T02:15:50Z",
+        "createdAt": "2026-01-16T14:50:29Z",
+        "changedFiles": 4,
+        "additions": 40,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFlux2Klein is step-distilled and optimized for 4-step inference. This change provides the optimal default while still allowing users to specify custom step counts.\nModifications\nAccuracy Tests\ncurl -X POST http://localhost:30010/v1/images/generations   -H \"Content-Type: application/json\" ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17234,
+        "title": "Add runner utilization report workflow",
+        "url": "https://github.com/sgl-project/sglang/pull/17234",
+        "author": "alisonshao",
+        "mergedAt": "2026-01-18T03:28:05Z",
+        "createdAt": "2026-01-16T22:02:32Z",
+        "changedFiles": 2,
+        "additions": 352,
+        "deletions": 0,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Tracks idle/active time per runner label to understand machine utilization. Helps identify when to add more runners (high utilization) or when runners are over-provisioned (low utilization).\nRuns daily at 8 AM UTC. Can also trigger manually with custom time window and label filter.\nExample output:\n\n",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 17250,
+        "title": "cli: support sglang version",
+        "url": "https://github.com/sgl-project/sglang/pull/17250",
+        "author": "mickqian",
+        "mergedAt": "2026-01-18T05:20:24Z",
+        "createdAt": "2026-01-17T06:34:04Z",
+        "changedFiles": 4,
+        "additions": 59,
+        "deletions": 4,
+        "commits": 7,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n...getting tired of the environment mismatch issue\nusage and behavior:\n$ sglang version\nsglang version: 0.5.6\ngit revision: b18abd9\n\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests accor",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 17261,
+        "title": "Use swa radix cache and memory pool for gpt-oss model",
+        "url": "https://github.com/sgl-project/sglang/pull/17261",
+        "author": "ispobock",
+        "mergedAt": "2026-01-18T05:47:07Z",
+        "createdAt": "2026-01-17T15:35:31Z",
+        "changedFiles": 3,
+        "additions": 25,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n#17220 (review)\nModifications\n\nAccuracy Tests\n\n|Tasks|Version|     Filter     |n-shot|  Metric   |   |Value |   |Stderr|\n|-----|------:|----------------|-----:|-----------|---|-----:|---|-----:|\n|gsm8k|      3|flexible-extract|     8|exact_match|\u2191  |0.8893|\u00b1  |0.0086|\n|     |       |stric",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 16152,
+        "title": "[VLM][Reland] Refactor load_mm_data to improve performance",
+        "url": "https://github.com/sgl-project/sglang/pull/16152",
+        "author": "yuan-luo",
+        "mergedAt": "2026-01-18T06:11:17Z",
+        "createdAt": "2025-12-30T08:50:21Z",
+        "changedFiles": 2,
+        "additions": 192,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nPer discussed with @JustinTong0323 , we do need this enhancement as a part for token-in and token-out implementation, request to re-land #14644.\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 17264,
+        "title": "[Tiny] Improve docs",
+        "url": "https://github.com/sgl-project/sglang/pull/17264",
+        "author": "mmangkad",
+        "mergedAt": "2026-01-18T06:57:01Z",
+        "createdAt": "2026-01-17T17:43:10Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [
+          "documentation"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 17182,
+        "title": "[diffusion] Change guidance_scale default to None",
+        "url": "https://github.com/sgl-project/sglang/pull/17182",
+        "author": "ChangyiYang",
+        "mergedAt": "2026-01-18T07:04:11Z",
+        "createdAt": "2026-01-16T01:38:31Z",
+        "changedFiles": 2,
+        "additions": 122,
+        "deletions": 122,
+        "commits": 5,
+        "labels": [
+          "run-ci",
+          "diffusion"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "We observed severe vedio quality drop in wan series in CI. The reason is the guidance_scale is set to 1 in protocol, which will overide the wan's default setting which is 3.0\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pr",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 17287,
+        "title": "Tiny fix comment typo",
+        "url": "https://github.com/sgl-project/sglang/pull/17287",
+        "author": "ispobock",
+        "mergedAt": "2026-01-18T07:06:34Z",
+        "createdAt": "2026-01-18T07:06:14Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 16974,
+        "title": "[SPEC_V2] Enable cudagraph draft_extend for trtllm_mla_backend and Acclen Fix for DP under cudagraph mode",
+        "url": "https://github.com/sgl-project/sglang/pull/16974",
+        "author": "YAMY1234",
+        "mergedAt": "2026-01-18T07:56:21Z",
+        "createdAt": "2026-01-12T18:12:48Z",
+        "changedFiles": 2,
+        "additions": 22,
+        "deletions": 3,
+        "commits": 6,
+        "labels": [
+          "high priority",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nEnable CUDA graph draft extend support for trtllm_mla_backend\nFix accept length degradation (~35% drop) when draft extend CUDA graph is enabled with DP Attention\n\nModifications\n\nAdd TRTLLMMLAMultiStepDraftBackend support in eagle_worker_v2.py to enable CUDA graph capture for draft extend",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 32385,
+        "title": "[Model] Molmo2: Enable quantized weight mapping for vision backbone",
+        "url": "https://github.com/vllm-project/vllm/pull/32385",
+        "author": "George-Polya",
+        "mergedAt": "2026-01-17T09:33:06Z",
+        "createdAt": "2026-01-15T05:10:36Z",
+        "changedFiles": 1,
+        "additions": 23,
+        "deletions": 8,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nThis PR enables FP8 quantized weight loading for the Molmo2 vision backbone by adding proper prefix parameters to vision layers.\nChanges:\n\nFix BaseDummyInputsBuilder import path (moved to vllm.multimodal.processing.dummy_inputs)\nAdd prefix parameter to vision layers for quantized weight mapp",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 32411,
+        "title": "[Misc] Fix typo: seperator -> separator in flashmla_sparse.py",
+        "url": "https://github.com/vllm-project/vllm/pull/32411",
+        "author": "T1mn",
+        "mergedAt": "2026-01-17T12:18:31Z",
+        "createdAt": "2026-01-15T12:12:52Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 7,
+        "commits": 4,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFix a typo in flashmla_sparse.py: rename FP8SeperatePrefillDecode to FP8SeparatePrefillDecode (seperator -> separator).\nTest Plan\nNo functional changes - this is a pure rename for code readability.\nTest Result",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 31492,
+        "title": "[CI/Build][Docker] Add centralized version manifest for Docker builds",
+        "url": "https://github.com/vllm-project/vllm/pull/31492",
+        "author": "mritunjaysharma394",
+        "mergedAt": "2026-01-17T13:45:30Z",
+        "createdAt": "2025-12-29T10:51:41Z",
+        "changedFiles": 4,
+        "additions": 271,
+        "deletions": 6,
+        "commits": 10,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nIntroduces docker/versions.json as a centralized, machine-readable version manifest for all pinned dependencies in Docker builds.\nProblem\nVersion information is currently scattered across docker/Dockerfile and various install scripts, making it hard to:\n\nTrack version changes across releases",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 32522,
+        "title": "[build] fix cu130 related release pipeline steps and publish as nightly image",
+        "url": "https://github.com/vllm-project/vllm/pull/32522",
+        "author": "Harry-Chen",
+        "mergedAt": "2026-01-18T02:36:11Z",
+        "createdAt": "2026-01-17T14:33:58Z",
+        "changedFiles": 3,
+        "additions": 68,
+        "deletions": 16,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAfter #31032 is merged, we have received some feedback from NVIDIA, mainly #31032 (review):\n\n@Harry-Chen if you are going to take #31822 and merge it as your own, could you at least check out the differences and consult us (NVIDIA) why those differences are there?\n\nThis was indeed my oversig",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 32386,
+        "title": "[Feature] Add FIPS 140-3 compliant hash algorithm option for multimodal hashing",
+        "url": "https://github.com/vllm-project/vllm/pull/32386",
+        "author": "karanb192",
+        "mergedAt": "2026-01-18T03:02:01Z",
+        "createdAt": "2026-01-15T05:33:17Z",
+        "changedFiles": 2,
+        "additions": 46,
+        "deletions": 3,
+        "commits": 4,
+        "labels": [
+          "ready",
+          "multi-modality"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nAdds configurable hash algorithm for multimodal content hashing via VLLM_MM_HASHER_ALGORITHM environment variable\nEnables FIPS 140-3 compliance for government/enterprise deployments\nMaintains backward compatibility (blake3 remains the default)\n\nSupported Algorithms\n\n\n\nAlgorithm\nFIPS Complia",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 32532,
+        "title": "[Model Runner V2] Move mrope_positions buffer to MRopeState",
+        "url": "https://github.com/vllm-project/vllm/pull/32532",
+        "author": "WoosukKwon",
+        "mergedAt": "2026-01-18T04:09:49Z",
+        "createdAt": "2026-01-18T03:01:22Z",
+        "changedFiles": 4,
+        "additions": 49,
+        "deletions": 34,
+        "commits": 3,
+        "labels": [
+          "v1",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 32129,
+        "title": "[MoE Refactor] Move Test Impl into Test Dirs",
+        "url": "https://github.com/vllm-project/vllm/pull/32129",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2026-01-18T04:16:59Z",
+        "createdAt": "2026-01-11T21:47:21Z",
+        "changedFiles": 3,
+        "additions": 58,
+        "deletions": 64,
+        "commits": 3,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nmove test impl into test directory\n\nTest Plan\n\nci\n\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, su",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 32403,
+        "title": "[Performance] Improve Triton prefill attention kernel's performance ",
+        "url": "https://github.com/vllm-project/vllm/pull/32403",
+        "author": "Isotr0py",
+        "mergedAt": "2026-01-18T04:19:59Z",
+        "createdAt": "2026-01-15T09:05:20Z",
+        "changedFiles": 3,
+        "additions": 33,
+        "deletions": 48,
+        "commits": 8,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nRefine prefill attention kernel with FA2 implementation based on https://github.com/ModelTC/LightLLM/blob/2fbd2b8a7b180570129bd539bb34cbe0a5dbb22a/lightllm/common/basemodel/triton_kernel/att/prefill_att/context_flashattention_nopad.py#L287-L288\n\nIn previous implementation, we use float(\"-inf",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 32535,
+        "title": "[Model Runner V2] Minor optimization for eagle input processing",
+        "url": "https://github.com/vllm-project/vllm/pull/32535",
+        "author": "WoosukKwon",
+        "mergedAt": "2026-01-18T05:55:17Z",
+        "createdAt": "2026-01-18T05:43:35Z",
+        "changedFiles": 2,
+        "additions": 12,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-06-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-06-25T07:00:00+00:00",
+  "utc_end": "2023-06-26T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:29:34.432204+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 236,
+        "title": "Mention FastChat-vLLM integration in README",
+        "url": "https://github.com/vllm-project/vllm/pull/236",
+        "author": "merrymercy",
+        "mergedAt": "2023-06-25T23:58:07Z",
+        "createdAt": "2023-06-25T09:22:29Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Please use the more precise term \"FastChat-vLLM integration\" when mentioning anything related to Chatbot Arena.\nOtherwise, people will get confused and think we are deprecating FastChat.\nlm-sys/FastChat#1775",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

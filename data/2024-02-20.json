@@ -1,0 +1,85 @@
+{
+  "date": "2024-02-20",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-20T08:00:00+00:00",
+  "utc_end": "2024-02-21T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:35.115381+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 210,
+        "title": "Added the ability to Modify the Context Length",
+        "url": "https://github.com/sgl-project/sglang/pull/210",
+        "author": "psych0v0yager",
+        "mergedAt": "2024-02-21T00:22:56Z",
+        "createdAt": "2024-02-20T23:24:26Z",
+        "changedFiles": 4,
+        "additions": 16,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fixes issue #159\nYou can now specify how much context you want the model to have.\nFor example Mixtral 8x7b AWQ:\npython -m sglang.launch_server --model-path /path/to/bagel_mixtral_AWQ --port 30000 --tp 2\nRank 1: max_total_num_token=135505, max_prefill_num_token=32768, context_len=32768, model_mode=[]",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2930,
+        "title": "[FIX] Fix beam search test",
+        "url": "https://github.com/vllm-project/vllm/pull/2930",
+        "author": "zhuohan123",
+        "mergedAt": "2024-02-20T22:37:39Z",
+        "createdAt": "2024-02-20T06:53:54Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Revert a change in #2869 that causes beam search test to fail.",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2877,
+        "title": "Make vLLM logging formatting optional",
+        "url": "https://github.com/vllm-project/vllm/pull/2877",
+        "author": "Yard1",
+        "mergedAt": "2024-02-20T22:38:55Z",
+        "createdAt": "2024-02-14T21:43:02Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "We add an env var to make logging formatting changes done by vLLM optional for better integration into existing systems that may have their own logging formats.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2876,
+        "title": "Add metrics to RequestOutput",
+        "url": "https://github.com/vllm-project/vllm/pull/2876",
+        "author": "Yard1",
+        "mergedAt": "2024-02-21T05:55:57Z",
+        "createdAt": "2024-02-14T20:58:17Z",
+        "changedFiles": 6,
+        "additions": 61,
+        "deletions": 9,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Adds some extra metrics to RequestOutput which can be used for third party logging/metrics.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,103 @@
+{
+  "date": "2024-02-22",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-22T08:00:00+00:00",
+  "utc_end": "2024-02-23T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:44:44.225849+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 193,
+        "title": "Fix logprobs with logprob_start_len",
+        "url": "https://github.com/sgl-project/sglang/pull/193",
+        "author": "comaniac",
+        "mergedAt": "2024-02-22T18:33:03Z",
+        "createdAt": "2024-02-15T23:12:21Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "When logprob_start_len > 0, the current implementation returns incorrect token logprobs, because we only computes logprobs of input_ids[logprob_start_len + 1 :]. This PR fixes this issue.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2983,
+        "title": "[FIX] Fix issue #2904",
+        "url": "https://github.com/vllm-project/vllm/pull/2983",
+        "author": "44670",
+        "mergedAt": "2024-02-22T09:40:05Z",
+        "createdAt": "2024-02-22T09:20:47Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Hi,\nThis PR fixes issue #2904 , allowing the YaRN models be workable again.",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2982,
+        "title": "Remove Flash Attention in test env",
+        "url": "https://github.com/vllm-project/vllm/pull/2982",
+        "author": "WoosukKwon",
+        "mergedAt": "2024-02-22T17:58:30Z",
+        "createdAt": "2024-02-22T07:59:39Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "To my understanding, we don't need flash_attn for our testing. Removing it from dependencies will resolve the occasional test failures due to flash_attn.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2802,
+        "title": "Include tokens from prompt phase in `counter_generation_tokens`",
+        "url": "https://github.com/vllm-project/vllm/pull/2802",
+        "author": "ronensc",
+        "mergedAt": "2024-02-22T22:00:12Z",
+        "createdAt": "2024-02-07T13:40:12Z",
+        "changedFiles": 3,
+        "additions": 39,
+        "deletions": 1,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "I noticed that the counter_generation_tokens metric was missing tokens generated during the prompt phase, only counting those from the autoregressive generation phase. This PR addresses that by incorporating tokens from both phases into the counter. Also, I've added a simple unit test to verify the ",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2781,
+        "title": "Fix nvcc not found in vllm-openai image",
+        "url": "https://github.com/vllm-project/vllm/pull/2781",
+        "author": "zhaoyang-star",
+        "mergedAt": "2024-02-22T22:25:07Z",
+        "createdAt": "2024-02-06T06:32:53Z",
+        "changedFiles": 2,
+        "additions": 10,
+        "deletions": 5,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #2778",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ]
+  }
+}

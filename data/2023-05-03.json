@@ -1,0 +1,66 @@
+{
+  "date": "2023-05-03",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-05-03T07:00:00+00:00",
+  "utc_end": "2023-05-04T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:25:51.244782+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 52,
+        "title": "New weight loader without np copy",
+        "url": "https://github.com/vllm-project/vllm/pull/52",
+        "author": "zhuohan123",
+        "mergedAt": "2023-05-03T07:32:04Z",
+        "createdAt": "2023-04-30T10:32:04Z",
+        "changedFiles": 12,
+        "additions": 289,
+        "deletions": 357,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix #48.\nThis PR makes the numpy copy in the previous weight loading optional. Specifically, we implement a new hf_model_weights_iterator, which iterates all the weights of a huggingface checkpoint. We then load each weight in the checkpoint to the model's state_dict.",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 53,
+        "title": "Refactor attention kernels",
+        "url": "https://github.com/vllm-project/vllm/pull/53",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-03T20:40:13Z",
+        "createdAt": "2023-05-02T07:38:04Z",
+        "changedFiles": 14,
+        "additions": 1253,
+        "deletions": 2569,
+        "commits": 17,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR refactors attention kernels, making the helper functions more modular and pruning unused code. This PR will make it easier to add support for a new data type such as bfloat16.\nIn addition, this PR reduces the computation overhead of the attention kernel, by using the reduced precision (i.e.,",
+        "category": "CI / Tests",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 54,
+        "title": "Support bfloat16 data type",
+        "url": "https://github.com/vllm-project/vllm/pull/54",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-05-03T21:09:44Z",
+        "createdAt": "2023-05-02T09:28:33Z",
+        "changedFiles": 12,
+        "additions": 455,
+        "deletions": 53,
+        "commits": 28,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Should be merged after #53\nThis PR adds support for the bfloat16 data type, which is used for some LLMs including Dolly V2.",
+        "category": "Other",
+        "highImpact": true
+      }
+    ]
+  }
+}

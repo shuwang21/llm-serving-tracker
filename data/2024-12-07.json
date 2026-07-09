@@ -1,0 +1,310 @@
+{
+  "date": "2024-12-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-07T08:00:00+00:00",
+  "utc_end": "2024-12-08T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:10:18.298179+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2387,
+        "title": "fix: resolve fp8 moe issue",
+        "url": "https://github.com/sgl-project/sglang/pull/2387",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-07T11:28:53Z",
+        "createdAt": "2024-12-07T10:07:25Z",
+        "changedFiles": 2,
+        "additions": 27,
+        "deletions": 56,
+        "commits": 1,
+        "labels": [
+          "bug",
+          "high priority"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nfix #2386 #2370 #2366\ncc @BBuf @HaiShaw\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2390,
+        "title": "fix: update xgrammar v0.1.6",
+        "url": "https://github.com/sgl-project/sglang/pull/2390",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-07T13:09:16Z",
+        "createdAt": "2024-12-07T13:07:46Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\ncc @Ubospica\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2388,
+        "title": "Fp8 MoE optimizations on AMD",
+        "url": "https://github.com/sgl-project/sglang/pull/2388",
+        "author": "HaiShaw",
+        "mergedAt": "2024-12-07T13:18:27Z",
+        "createdAt": "2024-12-07T11:05:26Z",
+        "changedFiles": 2,
+        "additions": 97,
+        "deletions": 22,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nRecover AMD optimizations over fused_moe_triton\nModifications\n\n#2347\nChecklist\n\n[+] Format your code according to the Contributor Guide.\n[+] Add unit tests as outlined in the Contributor Guide.\n[+] Update documentation as needed, including docstrings or example tutorials.",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 2391,
+        "title": "minor: update killall script",
+        "url": "https://github.com/sgl-project/sglang/pull/2391",
+        "author": "zhyncs",
+        "mergedAt": "2024-12-07T20:21:00Z",
+        "createdAt": "2024-12-07T13:30:09Z",
+        "changedFiles": 2,
+        "additions": 14,
+        "deletions": 5,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2392,
+        "title": "[router] Health check on worker before added to the router",
+        "url": "https://github.com/sgl-project/sglang/pull/2392",
+        "author": "ByronHsu",
+        "mergedAt": "2024-12-07T23:39:54Z",
+        "createdAt": "2024-12-07T23:32:05Z",
+        "changedFiles": 5,
+        "additions": 79,
+        "deletions": 31,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\n\nUsers call /add_worker\nThe router performs health check on the worker periodically\nIf passed, the worker is added to the router\n\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 10676,
+        "title": "[Model] Implement merged input processor for LLaVA model",
+        "url": "https://github.com/vllm-project/vllm/pull/10676",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-07T08:50:58Z",
+        "createdAt": "2024-11-26T16:26:34Z",
+        "changedFiles": 10,
+        "additions": 626,
+        "deletions": 421,
+        "commits": 24,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Part of #10114\nThis PR completes the basic support for merged input processor. In particular:\n\nAdded method for MultiModalProcessor to generate dummy data for profiling. The default implementation uses the placeholder tokens defined in its metadata.\nUpdated PlaceholderMap and V1 MMInputMapper to han",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10060,
+        "title": "[Build] Fix for the Wswitch-bool clang warning",
+        "url": "https://github.com/vllm-project/vllm/pull/10060",
+        "author": "gshtras",
+        "mergedAt": "2024-12-07T09:03:44Z",
+        "createdAt": "2024-11-06T00:04:00Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 14,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Refactor switch on boolean into if to address the Wswitch-bool compiler warning.\nBEFORE SUBMITTING, PLEASE READ THE CHECKLIST BELOW AND FILL IN THE DESCRIPTION ABOVE\n\n\n\n PR Checklist (Click to Expand) \nThank you for your contribution to vLLM! Before submitting the pull request, please ensure the PR ",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10958,
+        "title": "[Misc][LoRA] Refactor and clean MergedQKVParallelLinearWithLora implementation ",
+        "url": "https://github.com/vllm-project/vllm/pull/10958",
+        "author": "Isotr0py",
+        "mergedAt": "2024-12-07T10:33:49Z",
+        "createdAt": "2024-12-06T17:20:13Z",
+        "changedFiles": 1,
+        "additions": 60,
+        "deletions": 263,
+        "commits": 6,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR aims to clean up MergedColumnParallelLinearWithLora and MergedQKVParallelLinearWithLora implementation\n\nMergedQKVParallelLinearWithLora has a similar weights initialization with MergedColumnParallelLinearWithLora, and we can treat it as a special case of MergedColumnParallelLinearWithLora wi",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10944,
+        "title": "[Model] Composite weight loading for multimodal Qwen2",
+        "url": "https://github.com/vllm-project/vllm/pull/10944",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-07T14:22:52Z",
+        "createdAt": "2024-12-06T06:29:36Z",
+        "changedFiles": 7,
+        "additions": 147,
+        "deletions": 205,
+        "commits": 5,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR removes some redundant code in Qwen2-VL and Qwen2-Audio by reusing logic defined by the submodules.",
+        "category": "Model Support",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10978,
+        "title": "[Doc] Explicitly state that InternVL 2.5 is supported",
+        "url": "https://github.com/vllm-project/vllm/pull/10978",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-07T16:58:02Z",
+        "createdAt": "2024-12-07T14:09:18Z",
+        "changedFiles": 3,
+        "additions": 4,
+        "deletions": 4,
+        "commits": 2,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The model architecture of InternVL2.5 is the same as InternVL2 except for different LM backbone. We have already implemented dynamic LM loading for this model, so no further changes are needed to support this model in vLLM.\nI have tested the 4B model locally (vllm serve OpenGVLab/InternVL2_5-4B) and",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10711,
+        "title": "[Model] Update multi-modal processor to support Mantis(LLaVA) model",
+        "url": "https://github.com/vllm-project/vllm/pull/10711",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-07T17:10:06Z",
+        "createdAt": "2024-11-27T13:15:08Z",
+        "changedFiles": 14,
+        "additions": 175,
+        "deletions": 78,
+        "commits": 24,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR leverages the extensibility of the merged multi-modal processor to add support for Mantis (based on LLaVA), simply by overriding the HF processor to apply to the input data.\nFIX #7143",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10975,
+        "title": "[Doc] Explicitly state that PP isn't compatible with speculative decoding yet",
+        "url": "https://github.com/vllm-project/vllm/pull/10975",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-07T17:20:49Z",
+        "createdAt": "2024-12-07T02:29:21Z",
+        "changedFiles": 8,
+        "additions": 32,
+        "deletions": 9,
+        "commits": 5,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "PP isn't compatible with speculative decoding, so let's throw an error explicitly.\nTo make PP compatible with speculative decoding:\n\nMake sampler available in the model regardless of PP (done in this PR)\nResolve https://buildkite.com/vllm/ci/builds/10343#0193a03c-9df2-4587-824a-93ddc33ef66b/198-3687",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10928,
+        "title": "[BugFix][Kernel]: fix illegal memory access in causal_conv1d when conv_states is None",
+        "url": "https://github.com/vllm-project/vllm/pull/10928",
+        "author": "xffxff",
+        "mergedAt": "2024-12-07T17:21:18Z",
+        "createdAt": "2024-12-05T12:15:08Z",
+        "changedFiles": 2,
+        "additions": 23,
+        "deletions": 18,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "fix #10895\nIssue #10895 reports an illegal memory access error on H100 GPUs when calling the causal_conv1d_fn function with specific input shapes and when conv_states is not provided. After some investigation, I found that the root cause as an attempt to assign a value to a nullptr.\ncc @mzusman @tlr",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 10976,
+        "title": "[core][executor] simplify instance id",
+        "url": "https://github.com/vllm-project/vllm/pull/10976",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-07T17:33:46Z",
+        "createdAt": "2024-12-07T06:32:01Z",
+        "changedFiles": 10,
+        "additions": 22,
+        "deletions": 55,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "instance id will be attached to the vllm_config object instead of passing by env var.",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 10920,
+        "title": "[core][misc] remove use_dummy driver for _run_workers",
+        "url": "https://github.com/vllm-project/vllm/pull/10920",
+        "author": "youkaichao",
+        "mergedAt": "2024-12-07T20:06:08Z",
+        "createdAt": "2024-12-05T07:43:12Z",
+        "changedFiles": 4,
+        "additions": 43,
+        "deletions": 44,
+        "commits": 4,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "a tiny step to make _run_workers unified so that we can have device-agnostic executor.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

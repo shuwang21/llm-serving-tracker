@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-21",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-21T08:00:00+00:00",
+  "utc_end": "2023-11-22T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:38.766100+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1745,
+        "title": "Add stop_token_ids in SamplingParams.__repr__",
+        "url": "https://github.com/vllm-project/vllm/pull/1745",
+        "author": "chenxu2048",
+        "mergedAt": "2023-11-22T04:13:53Z",
+        "createdAt": "2023-11-22T02:53:45Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The stop_token_ids is missing in the __repr__ method.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

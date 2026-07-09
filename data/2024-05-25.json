@@ -1,0 +1,67 @@
+{
+  "date": "2024-05-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-05-25T07:00:00+00:00",
+  "utc_end": "2024-05-26T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:51:43.312474+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 440,
+        "title": "Optimize retract",
+        "url": "https://github.com/sgl-project/sglang/pull/440",
+        "author": "hnyls2002",
+        "mergedAt": "2024-05-25T16:07:26Z",
+        "createdAt": "2024-05-14T13:18:15Z",
+        "changedFiles": 7,
+        "additions": 299,
+        "deletions": 114,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Deprecated the old style of appending fast-forwarded str directly to input_ids, introducing prev_output_str and prev_output_ids instead.\nWhen prefilling, input_ids = origin_input_ids + prev_output_ids and we can still hit cache here.\nAdd the retracted tokens into prev_output_ids instead of discardin",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 5000,
+        "title": "[Dynamic Spec Decoding] Minor fix for disabling speculative decoding",
+        "url": "https://github.com/vllm-project/vllm/pull/5000",
+        "author": "LiuXiaoxuanPKU",
+        "mergedAt": "2024-05-25T17:00:14Z",
+        "createdAt": "2024-05-23T07:23:08Z",
+        "changedFiles": 3,
+        "additions": 63,
+        "deletions": 11,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "In the current implementation, even if running_queue_size >= speculative_disable_by_batch_size, it will still go through the speculative decoding logic, which includes get_spec_proposals with k=0, score_proposal, rejection sampling and create sampler output. The flow introduces extra overhead (espec",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 5044,
+        "title": "[Misc] Make Serving Benchmark More User-friendly",
+        "url": "https://github.com/vllm-project/vllm/pull/5044",
+        "author": "ywang96",
+        "mergedAt": "2024-05-25T17:28:16Z",
+        "createdAt": "2024-05-25T00:07:55Z",
+        "changedFiles": 2,
+        "additions": 32,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As appeared in a number of issues (e.g,  #4987, #4001, #3964), sometimes the benchmark fails because of user errors (most likely misconfiguration of benchmark arguments).\nThis PR adds a initial test run to the serving benchmark before kicking off the main run as well as fixing a few places that woul",
+        "category": "CI / Tests",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2024-01-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-07T08:00:00+00:00",
+  "utc_end": "2024-01-08T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:34.069693+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2290,
+        "title": "Changed scheduler to use deques instead of lists",
+        "url": "https://github.com/vllm-project/vllm/pull/2290",
+        "author": "NadavShmayo",
+        "mergedAt": "2024-01-07T17:48:07Z",
+        "createdAt": "2023-12-27T19:38:03Z",
+        "changedFiles": 3,
+        "additions": 28,
+        "deletions": 24,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently the scheduler uses lists to store the running, waiting and swapped requests.\nWhen iterating over each state queue we pop the first item and append to a new list, which is not good for performance since each pop is O(N) time complexity, which means the scheduler currently runs in O(N^2) tim",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ]
+  }
+}

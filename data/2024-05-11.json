@@ -1,0 +1,103 @@
+{
+  "date": "2024-05-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-05-11T07:00:00+00:00",
+  "utc_end": "2024-05-12T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:50:40.710255+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 380,
+        "title": "Compat with latest VLLM 0.4.2 main + fork.number rename + Flashinfer 0.0.4",
+        "url": "https://github.com/sgl-project/sglang/pull/380",
+        "author": "Qubitium",
+        "mergedAt": "2024-05-11T23:37:50Z",
+        "createdAt": "2024-04-23T02:03:03Z",
+        "changedFiles": 20,
+        "additions": 611,
+        "deletions": 187,
+        "commits": 20,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Reason for PR:\n\nCompat with VLLM main\nRename fork(number=N) param to fork(size=N) for clarity.\nComplete flashinfer 0.0.4 todo",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 420,
+        "title": "Optimize the memory usage of logits processor",
+        "url": "https://github.com/sgl-project/sglang/pull/420",
+        "author": "merrymercy",
+        "mergedAt": "2024-05-11T23:56:42Z",
+        "createdAt": "2024-05-11T23:56:37Z",
+        "changedFiles": 2,
+        "additions": 4,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 422,
+        "title": "Clean up",
+        "url": "https://github.com/sgl-project/sglang/pull/422",
+        "author": "merrymercy",
+        "mergedAt": "2024-05-12T03:55:00Z",
+        "createdAt": "2024-05-12T03:54:28Z",
+        "changedFiles": 8,
+        "additions": 246,
+        "deletions": 278,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "reorganize arguments and functions under server.py\ndisable unused logging",
+        "category": "Other",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 3734,
+        "title": "[Model][Misc] Add e5-mistral-7b-instruct and Embedding API",
+        "url": "https://github.com/vllm-project/vllm/pull/3734",
+        "author": "CatherineSue",
+        "mergedAt": "2024-05-11T18:30:37Z",
+        "createdAt": "2024-03-29T20:54:17Z",
+        "changedFiles": 38,
+        "additions": 1627,
+        "deletions": 160,
+        "commits": 43,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Key Features of This Pull Request\nThis PR adds the e5-mistral-7b-instruct model and enables an E2E embedding vector generation.\nThere are a few open PRs that add support for embedding models. Our PR uniquely addresses the following key issues:\nIntegration of the OpenAI Server Front End\nThis PR inclu",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 4636,
+        "title": "[Model] Add support for IBM Granite Code models",
+        "url": "https://github.com/vllm-project/vllm/pull/4636",
+        "author": "yikangshen",
+        "mergedAt": "2024-05-12T04:27:24Z",
+        "createdAt": "2024-05-06T22:17:13Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 2,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "To support IBM Granite Code 3B and 8B models, this PR adds MLP bias and tie word embedding support to the llama architecture.",
+        "category": "Model Support",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "date": "2023-12-14",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-14T08:00:00+00:00",
+  "utc_end": "2023-12-15T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:40:05.494277+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2100,
+        "title": "Fix typing in generate function for AsyncLLMEngine & add toml to requirements-dev",
+        "url": "https://github.com/vllm-project/vllm/pull/2100",
+        "author": "mezuzza",
+        "mergedAt": "2023-12-14T08:19:41Z",
+        "createdAt": "2023-12-14T07:45:10Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 6,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The main focus of this change is to add the AsyncIterator typing to the\nAsyncLLMEngine function.\nAs a small side change, it turns out that yapf complains if toml isn't\ninstalled as well. These could be separate changes, so let me know if\nyou want them split up.",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2101,
+        "title": "Fix Dockerfile.rocm",
+        "url": "https://github.com/vllm-project/vllm/pull/2101",
+        "author": "tjtanaa",
+        "mergedAt": "2023-12-14T08:45:59Z",
+        "createdAt": "2023-12-14T08:42:45Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix Dockerfile.rocm",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 1817,
+        "title": "avoid multiple redefinition",
+        "url": "https://github.com/vllm-project/vllm/pull/1817",
+        "author": "MitchellX",
+        "mergedAt": "2023-12-14T17:35:59Z",
+        "createdAt": "2023-11-28T16:47:17Z",
+        "changedFiles": 4,
+        "additions": 8,
+        "deletions": 0,
+        "commits": 13,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "By including these guards, you ensure that if ops.h is included multiple times in different files, its contents will only be processed once by the compiler, avoiding redefinition errors and saving time",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

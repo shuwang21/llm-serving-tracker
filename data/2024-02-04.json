@@ -1,0 +1,85 @@
+{
+  "date": "2024-02-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-02-04T08:00:00+00:00",
+  "utc_end": "2024-02-05T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:43:31.626639+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 142,
+        "title": "fix undfined variable",
+        "url": "https://github.com/sgl-project/sglang/pull/142",
+        "author": "yaya-sy",
+        "mergedAt": "2024-02-04T22:27:52Z",
+        "createdAt": "2024-02-04T22:11:22Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Line 109 in the python file python/sglang/openai.py raises a 'dtype' ValueError. However, this variable is not defined. This pull request fixes this issue by raising the ValueError of sampling_params.dtype.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2741,
+        "title": "Set&Get llm internal tokenizer instead of the TokenizerGroup",
+        "url": "https://github.com/vllm-project/vllm/pull/2741",
+        "author": "dancingpipi",
+        "mergedAt": "2024-02-04T22:25:36Z",
+        "createdAt": "2024-02-04T08:51:08Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Since LLMEngine uses TokenizerGroup, the get_tokenizer and set_tokenizer methods in LLM need to be adjusted so that they operate on the original tokenizer  in LLMEngine.\n@WoosukKwon",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 2611,
+        "title": "Remove eos tokens from output by default",
+        "url": "https://github.com/vllm-project/vllm/pull/2611",
+        "author": "zcnrex",
+        "mergedAt": "2024-02-04T22:32:43Z",
+        "createdAt": "2024-01-26T06:11:34Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 4,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Addressing the issue #2538\nAs suggested by @simon-mo, extend the include_stop_str_in_output flag to support stop_token_ids",
+        "category": "Cleanup / Refactor",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 2746,
+        "title": "add requirement: triton >= 2.1.0",
+        "url": "https://github.com/vllm-project/vllm/pull/2746",
+        "author": "whyiug",
+        "mergedAt": "2024-02-05T07:07:36Z",
+        "createdAt": "2024-02-04T14:10:50Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "fix #2711",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

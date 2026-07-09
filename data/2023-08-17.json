@@ -1,0 +1,48 @@
+{
+  "date": "2023-08-17",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-17T07:00:00+00:00",
+  "utc_end": "2023-08-18T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:32:43.546472+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 784,
+        "title": "explicitly del state",
+        "url": "https://github.com/vllm-project/vllm/pull/784",
+        "author": "cauyxy",
+        "mergedAt": "2023-08-17T19:56:05Z",
+        "createdAt": "2023-08-17T12:58:25Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "improvement to the memory management on machines with low CPU memory. Previously, the state variable was not explicitly deleted after its use, potentially leading to killed when you loading a big model in low cpu mem meachine.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 788,
+        "title": "Fix typo in sampling_params.py",
+        "url": "https://github.com/vllm-project/vllm/pull/788",
+        "author": "wangcx18",
+        "mergedAt": "2023-08-18T01:12:46Z",
+        "createdAt": "2023-08-18T00:14:43Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "verity -> verify",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

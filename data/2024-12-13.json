@@ -1,0 +1,321 @@
+{
+  "date": "2024-12-13",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-12-13T08:00:00+00:00",
+  "utc_end": "2024-12-14T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:10:55.320567+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11159,
+        "title": "[Bugfix][CI][CPU] add missing datasets package to requirements-cpu.txt ",
+        "url": "https://github.com/vllm-project/vllm/pull/11159",
+        "author": "bigPYJ1151",
+        "mergedAt": "2024-12-13T08:50:35Z",
+        "createdAt": "2024-12-13T06:02:02Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11129,
+        "title": "[Frontend] Separate pooling APIs in offline inference",
+        "url": "https://github.com/vllm-project/vllm/pull/11129",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-13T10:40:07Z",
+        "createdAt": "2024-12-12T10:38:33Z",
+        "changedFiles": 21,
+        "additions": 659,
+        "deletions": 294,
+        "commits": 19,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR builds on #10820, splitting up the LLM.encode() API according to the model's task. This avoids confusion about the data format when accessing the pooler output. The pooling-related APIs are:\n\n[UPDATED] LLM.encode(): Returns the raw tensor, instead of a nested list of floats\n[NEW] LLM.embed()",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11165,
+        "title": "[V1][VLM] Fix edge case bug for InternVL2",
+        "url": "https://github.com/vllm-project/vllm/pull/11165",
+        "author": "ywang96",
+        "mergedAt": "2024-12-13T11:09:30Z",
+        "createdAt": "2024-12-13T08:43:14Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "When there's only one image in the batch, the image_embeds needs to be reshaped to [feature_size, hidden_size] from [num_patches, feature_size_per_patch, hidden_size] before getting unsqueezed.\nThis was previously not observed during offline mode because the default max_num_batched_tokens=8196 is al",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11163,
+        "title": "[Refactor]A simple device-related refactor",
+        "url": "https://github.com/vllm-project/vllm/pull/11163",
+        "author": "noemotiovon",
+        "mergedAt": "2024-12-13T13:39:01Z",
+        "createdAt": "2024-12-13T08:15:57Z",
+        "changedFiles": 7,
+        "additions": 51,
+        "deletions": 31,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "A simple device-related refactor: abstract is_pin_memory_available into individual Platform classes, reducing the use of if-else statements and improving maintainability.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 8240,
+        "title": "[Core] support LoRA and prompt adapter in content-based hashing for Block Manager v2 prefix caching",
+        "url": "https://github.com/vllm-project/vllm/pull/8240",
+        "author": "llsj14",
+        "mergedAt": "2024-12-13T15:51:25Z",
+        "createdAt": "2024-09-06T14:04:11Z",
+        "changedFiles": 10,
+        "additions": 246,
+        "deletions": 55,
+        "commits": 16,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nBlock Manager v2, unlike v1, did not support LoRA and prompt adapter for the block hash in prefix caching mode.\nI added logic to inject the LoRA ID and prompt adapter ID into the block hash function to support LoRA and prompt adapter while using prefix caching mode with block manager v2.\nDet",
+        "category": "Other",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11156,
+        "title": "[Bugfix] using len(tokenizer) instead of tokenizer.vocab_size in AllowedTokenIdsLogitsProcessor",
+        "url": "https://github.com/vllm-project/vllm/pull/11156",
+        "author": "zhangjf-nlp",
+        "mergedAt": "2024-12-13T15:56:19Z",
+        "createdAt": "2024-12-13T03:46:55Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "As defined in tokenization_utils_fast.py, len(tokenizer) includes the added tokens but tokenizer.vocab_size does not.\n    @property\n    def __len__(self) -> int:\n        \"\"\"\n        Size of the full vocabulary with the added tokens.\n        \"\"\"\n        return self._tokenizer.get_vocab_size(with_adde",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11174,
+        "title": "[Misc] Add tokenizer_mode param to benchmark_serving.py",
+        "url": "https://github.com/vllm-project/vllm/pull/11174",
+        "author": "alexm-redhat",
+        "mergedAt": "2024-12-13T16:19:10Z",
+        "createdAt": "2024-12-13T14:22:25Z",
+        "changedFiles": 1,
+        "additions": 12,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This is a small PR to add tokenizer_mode param to benchmark_serving.py.\nExample execution results are here:\nhttps://docs.google.com/spreadsheets/d/1biWEgyAyZ-WLis6KcyyNASfsLrsUSNNg2_wLpC6-4Hg/edit?usp=sharing",
+        "category": "Docs / Cookbook",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11172,
+        "title": "[Doc] Reorganize online pooling APIs",
+        "url": "https://github.com/vllm-project/vllm/pull/11172",
+        "author": "DarkLight1337",
+        "mergedAt": "2024-12-13T16:22:22Z",
+        "createdAt": "2024-12-13T12:00:46Z",
+        "changedFiles": 10,
+        "additions": 368,
+        "deletions": 288,
+        "commits": 16,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR moves the /v1/score endpoint to /score to better indicate that the Score API is not part of OpenAI spec.\nIt also fixes some small issues in the pooling examples.\ncc @maxdebayser",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11169,
+        "title": "[Bugfix][Hardware][CPU] Enable Gemma2 with SDPA on CPU backend",
+        "url": "https://github.com/vllm-project/vllm/pull/11169",
+        "author": "janimo",
+        "mergedAt": "2024-12-13T18:00:41Z",
+        "createdAt": "2024-12-13T09:48:06Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Make sure is_causal is only True when mask is None as required by SDPA otherwise there is an error raised\nRuntimeError: _scaled_dot_product_attention: Explicit attn_mask should not be set when is_causal=True\nWith models such as Gemma2, that have alternating layers of sliding window attention and ful",
+        "category": "Scheduler / Runtime",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11138,
+        "title": "[Distributed] Allow the placement group more time to wait for resources to be ready",
+        "url": "https://github.com/vllm-project/vllm/pull/11138",
+        "author": "Jeffwan",
+        "mergedAt": "2024-12-13T20:17:38Z",
+        "createdAt": "2024-12-12T13:56:35Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11134\nCase 1: Waiting resource to be ready\n\nstart a ray cluster ray start --head --dashboard-host 0.0.0.0 --disable-usage-stats --block  --num-gpus 1\nlaunch vLLM python -m vllm.entrypoints.openai.api_server     --model Qwen/Qwen2.5-1.5B-Instruct     --trust-remote-code     --distributed-executo",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11074,
+        "title": "[Core] V1: Use multiprocessing by default",
+        "url": "https://github.com/vllm-project/vllm/pull/11074",
+        "author": "russellb",
+        "mergedAt": "2024-12-14T00:27:32Z",
+        "createdAt": "2024-12-10T21:49:58Z",
+        "changedFiles": 10,
+        "additions": 299,
+        "deletions": 17,
+        "commits": 6,
+        "labels": [
+          "documentation",
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR turns on VLLM_ENABLE_V1_MULTIPROCESSING by default.\nIt handles the choice of Python multiprocessing method in such a way that we\ntry to give things the best chance of working, and clear failures if not. This\ntopic is discussed in detail in the included design doc.\nhttps://github.com/russellb",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11185,
+        "title": "[V1][Bugfix] Fix EngineCoreProc profile",
+        "url": "https://github.com/vllm-project/vllm/pull/11185",
+        "author": "tlrmchlsmth",
+        "mergedAt": "2024-12-14T01:02:36Z",
+        "createdAt": "2024-12-13T22:11:00Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Small bugfix when profiling in V1 with VLLM_ENABLE_V1_MULTIPROCESSING and TP size > 1",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11186,
+        "title": "[Bugfix][V1] Re-compute an entire block when fully cache hit",
+        "url": "https://github.com/vllm-project/vllm/pull/11186",
+        "author": "comaniac",
+        "mergedAt": "2024-12-14T01:08:24Z",
+        "createdAt": "2024-12-13T23:17:02Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Previously we re-compute the last token when the prompt is fully cache hit. However, since allocate_slots() calculates number of computed tokens based on the number of computed blocks, the number of computed tokens allocate_slots() inferred is always multiply by the block size. This results in the l",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11183,
+        "title": "update compressed-tensors to latest version",
+        "url": "https://github.com/vllm-project/vllm/pull/11183",
+        "author": "dhuangnm",
+        "mergedAt": "2024-12-14T03:22:44Z",
+        "createdAt": "2024-12-13T21:04:09Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Update compressed-tensor version to the latest 0.8.1",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11140,
+        "title": "[Core] Update outlines and increase its threadpool size",
+        "url": "https://github.com/vllm-project/vllm/pull/11140",
+        "author": "russellb",
+        "mergedAt": "2024-12-14T07:46:18Z",
+        "createdAt": "2024-12-12T14:34:21Z",
+        "changedFiles": 2,
+        "additions": 11,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "6c2b68e0a [Build/CI] Update outlines to 0.10.0\na07b90830 outlines: Scale thread pool size based on cpu count\nfc1ce151a Update to outlines-0.1.11\ncommit 6c2b68e0a98ac9e02d75be9a99ae0e2a07d58170\nAuthor: Russell Bryant rbryant@redhat.com\nDate:   Thu Dec 12 14:33:15 2024 +0000\n[Build/CI] Update outlines",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}

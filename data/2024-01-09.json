@@ -1,0 +1,67 @@
+{
+  "date": "2024-01-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-01-09T08:00:00+00:00",
+  "utc_end": "2024-01-10T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:40.871045+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2,
+        "title": "Add SRT json decode example",
+        "url": "https://github.com/sgl-project/sglang/pull/2",
+        "author": "hnyls2002",
+        "mergedAt": "2024-01-09T20:35:44Z",
+        "createdAt": "2024-01-09T08:07:33Z",
+        "changedFiles": 4,
+        "additions": 33,
+        "deletions": 2,
+        "commits": 4,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Only suitable for SRT backend, using dtype's regex and a comma.\n\n\nCI States\nLatest PR Test (Base): \u274c Missing run-ci label -- add it to run CI tests.\nLatest PR Test (Extra): \u274c Blocked -- run-ci is required first.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 3,
+        "title": "Add install with pip",
+        "url": "https://github.com/sgl-project/sglang/pull/3",
+        "author": "merrymercy",
+        "mergedAt": "2024-01-09T20:43:40Z",
+        "createdAt": "2024-01-09T20:43:13Z",
+        "changedFiles": 4,
+        "additions": 10,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Other",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2336,
+        "title": "[Speculative decoding 1/9] Optimized rejection sampler",
+        "url": "https://github.com/vllm-project/vllm/pull/2336",
+        "author": "cadedaniel",
+        "mergedAt": "2024-01-09T23:38:41Z",
+        "createdAt": "2024-01-04T00:37:32Z",
+        "changedFiles": 2,
+        "additions": 784,
+        "deletions": 0,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Speculative decoding\nThis PR is a part of a larger series of PRs implementing speculative decoding, contributed to open source vLLM by Anyscale. See #2188 and Speculative decoding open sourcing plan for more information.\nRejection sampling\nThis PR implements optimized rejection sampling, including t",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ]
+  }
+}

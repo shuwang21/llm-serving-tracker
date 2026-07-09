@@ -1,0 +1,362 @@
+{
+  "date": "2025-05-05",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-05-05T07:00:00+00:00",
+  "utc_end": "2025-05-06T07:00:00+00:00",
+  "generated_at": "2026-07-08T21:28:40.899415+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 5587,
+        "title": "[Test] Add flashmla attention backend test",
+        "url": "https://github.com/sgl-project/sglang/pull/5587",
+        "author": "PopSoda2002",
+        "mergedAt": "2025-05-05T17:32:02Z",
+        "createdAt": "2025-04-20T23:28:25Z",
+        "changedFiles": 3,
+        "additions": 68,
+        "deletions": 0,
+        "commits": 34,
+        "labels": [
+          "ready-to-merge"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nTest flashmla attention backend\nModifications\nTest latency and mmlu ability using deepseek-v2 lite model in flashmla backend,\nThere are 2 different tests:\n\nlatency\nmmlu\n\nAll passed\nCoauthor: @sleepcoo @yyihuang\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5555,
+        "title": "Fix \"Avoid computing lse in Ragged Prefill when there's no prefix match\"",
+        "url": "https://github.com/sgl-project/sglang/pull/5555",
+        "author": "Edenzzzz",
+        "mergedAt": "2025-05-05T17:32:17Z",
+        "createdAt": "2025-04-19T17:35:51Z",
+        "changedFiles": 3,
+        "additions": 23,
+        "deletions": 15,
+        "commits": 16,
+        "labels": [
+          "ready-to-merge"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nReopens #5476 as per #5544.\nLocally passed python3 test/srt/models/test_reward_models.py, but we can wait for all CIs before merging.\n\nModifications\n\nChecklist\n\n Format your code according to the Code Formatting with Pre-Commit.\n Add unit tests as outlined in the Running Unit Tests.\n Upda",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5428,
+        "title": "feat: Add a unified merge_state API",
+        "url": "https://github.com/sgl-project/sglang/pull/5428",
+        "author": "DefTruth",
+        "mergedAt": "2025-05-05T17:32:33Z",
+        "createdAt": "2025-04-15T16:21:05Z",
+        "changedFiles": 2,
+        "additions": 142,
+        "deletions": 0,
+        "commits": 16,
+        "labels": [
+          "ready-to-merge"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add a unified merge_state API, which can automatically fallback to the Triton kernel in some cases (e.g., for AMD GPUs, when the head dimension is not a multiple of 4 or 8, and in FP8 precision). This PR should not be merged until #5419 is ready.\nw/ this PR and flashinfer backend\n\nlaunch cmd\n\npython",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5996,
+        "title": "feat: append more comprehensive fields in messages instead of merely role and content",
+        "url": "https://github.com/sgl-project/sglang/pull/5996",
+        "author": "minleminzui",
+        "mergedAt": "2025-05-05T18:43:34Z",
+        "createdAt": "2025-05-03T12:30:38Z",
+        "changedFiles": 3,
+        "additions": 65,
+        "deletions": 58,
+        "commits": 12,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThe changes in the adapter are made to ensure that all fields from the original message (not just role and content) are preserved when constructing openai_compatible_messages.\nThis is important because:\nSome downstream logic or templates may need access to extra fields like tool_calls, re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5752,
+        "title": "[Security][Bug] Prevent binding to all TCP interfaces",
+        "url": "https://github.com/sgl-project/sglang/pull/5752",
+        "author": "adarshxs",
+        "mergedAt": "2025-05-05T19:21:45Z",
+        "createdAt": "2025-04-25T18:09:07Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nAs, reported in #5569 by @avilum, we fix the following:\nThe system's security now heavily relies on network segmentation \u2013 ensuring that the specific IP (connect_ip) the remote_socket binds to is only reachable by trusted SGLang worker nodes within the cluster and not all(*).\nWe assume mu",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 5081,
+        "title": "Fix prefill OOM error in the case of large page size",
+        "url": "https://github.com/sgl-project/sglang/pull/5081",
+        "author": "xiezhq-hermann",
+        "mergedAt": "2025-05-05T23:02:56Z",
+        "createdAt": "2025-04-05T06:22:14Z",
+        "changedFiles": 3,
+        "additions": 11,
+        "deletions": 2,
+        "commits": 16,
+        "labels": [
+          "bug",
+          "high priority",
+          "ready-to-merge"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIn the case of large page size, current scheduler might underestimate the need for memory, thus causing OOM error, e.g.,:\nRuntimeError: Prefill out of memory. Try to lower your batch size.Try to allocate 1444 tokens.Avaliable tokens:5120self.token to kv pool allocator.available size()=512",
+        "category": "Scheduler / Runtime",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 16850,
+        "title": "[Kernel] some optimizations for dense marlin and moe marlin",
+        "url": "https://github.com/vllm-project/vllm/pull/16850",
+        "author": "jinzhen-lin",
+        "mergedAt": "2025-05-05T16:39:31Z",
+        "createdAt": "2025-04-18T15:46:46Z",
+        "changedFiles": 26,
+        "additions": 3501,
+        "deletions": 3257,
+        "commits": 54,
+        "labels": [
+          "performance",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR optimizes dense marlin kernel and moe marlin kernel.\nSummary:\n\n(dense marlin only) Migrate the optimization method introduced for the moe marlin kernel in #14447 to the dense marlin kernel. Including\n\nBy modifying the workspace usage logic, the limitation of max_par was removed, accelerating",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 17654,
+        "title": "[Doc] Fix broken cuda installation doc rendering",
+        "url": "https://github.com/vllm-project/vllm/pull/17654",
+        "author": "Isotr0py",
+        "mergedAt": "2025-05-05T17:52:40Z",
+        "createdAt": "2025-05-05T13:40:16Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 3,
+        "labels": [
+          "documentation",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Seems that myst-parser can't render markdown headings with code inside a tab-item correctly after update:\n\n\n\nThis PR tries to fix the rendering to keep the heading readable:",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17616,
+        "title": "Use git-path commit in hook",
+        "url": "https://github.com/vllm-project/vllm/pull/17616",
+        "author": "thomasjpfan",
+        "mergedAt": "2025-05-05T17:55:32Z",
+        "createdAt": "2025-05-03T18:55:21Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR updates the pre-commit hook to use git rev-parse --git-path COMMIT_EDITMSG to find the commit message.\nWithin a worktree the commit path is:\n$ git rev-parse --git-path COMMIT_EDITMSG\n/Users/.../Repos/vllm/.git/worktrees/vllm2/COMMIT_EDITMSG\nWithin a non-worktree:\n$ git rev-parse --git-path C",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17651,
+        "title": "[Benchmarks] Remove invalid option under V1 engine",
+        "url": "https://github.com/vllm-project/vllm/pull/17651",
+        "author": "russellb",
+        "mergedAt": "2025-05-05T20:30:22Z",
+        "createdAt": "2025-05-05T12:46:39Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 20,
+        "commits": 2,
+        "labels": [
+          "structured-output",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Specifying the structured output backend is no longer allowed with the\nV1 engine. Remove the option to avoid confusion.\nSigned-off-by: Russell Bryant rbryant@redhat.com",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 17642,
+        "title": "[BugFix] Increase timeout for startup failure test",
+        "url": "https://github.com/vllm-project/vllm/pull/17642",
+        "author": "njhill",
+        "mergedAt": "2025-05-05T20:53:19Z",
+        "createdAt": "2025-05-05T02:02:24Z",
+        "changedFiles": 1,
+        "additions": 21,
+        "deletions": 14,
+        "commits": 3,
+        "labels": [
+          "bug",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This test is now failing on main most of the time due to the timeout not being large enough.\nI'm still confused why this started failing recently. The problem is that just creating VllmConfig takes 10 seconds before we even create the LLM, which is due to the model class being loaded in a separate p",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 17335,
+        "title": "[TPU] Enable gemma3-27b with TP>1 on multi-chips.",
+        "url": "https://github.com/vllm-project/vllm/pull/17335",
+        "author": "vanbasten23",
+        "mergedAt": "2025-05-05T21:19:58Z",
+        "createdAt": "2025-04-28T23:47:02Z",
+        "changedFiles": 2,
+        "additions": 44,
+        "deletions": 0,
+        "commits": 10,
+        "labels": [
+          "tpu",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR enables gemma3-27b with TP>1 on multi-chips. Without the change, it fails with an error:\ncallstack:\n\nTraceback (most recent call last):\n  File \"/home/xiowei/vllm/vllm/v1/executor/multiproc_executor.py\", line 465, in worker_busy_loop\n    output = func(*args, **kwargs)\n  File \"/home/xiowei/vll",
+        "category": "AMD / ROCm",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17072,
+        "title": "[TPU][V1] Add support for top-logprobs",
+        "url": "https://github.com/vllm-project/vllm/pull/17072",
+        "author": "NickLucche",
+        "mergedAt": "2025-05-05T21:20:15Z",
+        "createdAt": "2025-04-23T18:09:03Z",
+        "changedFiles": 4,
+        "additions": 105,
+        "deletions": 17,
+        "commits": 9,
+        "labels": [
+          "tpu",
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements top-logprobs support for TPU V1.\nThe main design decisions I've taken in this first version are:\n\nReturning logprobs is optional, so it has a separate graph that is executed only when needed.\nAkin to what is happening on GPU, when a single request in the batch requires logprobs, t",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17677,
+        "title": "[Bugfix] LoRA - Retire unused maxnreg LoRA kernel argument",
+        "url": "https://github.com/vllm-project/vllm/pull/17677",
+        "author": "varun-sundar-rabindranath",
+        "mergedAt": "2025-05-06T00:34:30Z",
+        "createdAt": "2025-05-05T21:26:39Z",
+        "changedFiles": 2,
+        "additions": 0,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "LoRA triton kernels fail to compile on non-CUDA gpus because the maxnreg argument is recognized only on CUDA platforms.\nFix: The maxnreg argument isn't used and it is safe to retire completely.\nFIX #16676",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17678,
+        "title": "Update nm to rht in doc links + refine fp8 doc",
+        "url": "https://github.com/vllm-project/vllm/pull/17678",
+        "author": "mgoin",
+        "mergedAt": "2025-05-06T00:41:14Z",
+        "createdAt": "2025-05-05T22:04:27Z",
+        "changedFiles": 2,
+        "additions": 16,
+        "deletions": 72,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 17497,
+        "title": "[Model] Add GraniteMoeHybrid 4.0 model",
+        "url": "https://github.com/vllm-project/vllm/pull/17497",
+        "author": "s3woz",
+        "mergedAt": "2025-05-06T04:00:31Z",
+        "createdAt": "2025-04-30T20:07:16Z",
+        "changedFiles": 6,
+        "additions": 637,
+        "deletions": 0,
+        "commits": 24,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "The PR adds support for upcoming Granite4.0 models. It is a companion PR to huggingface/transformers#37658 for adding the same model to HF.\nNote: Running the model in vLLM depends on having HF Transformers with Granite4.0 support installed, see https://huggingface.co/ibm-granite/granite-4.0-tiny-pre",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 17138,
+        "title": "[easy] Fix logspam on PiecewiseBackend errors",
+        "url": "https://github.com/vllm-project/vllm/pull/17138",
+        "author": "zou3519",
+        "mergedAt": "2025-05-06T06:46:11Z",
+        "createdAt": "2025-04-24T21:41:41Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Sometimes when there is an error, we get spammed with a dump of the current torch.fx.Graph that is being compiled. That is due to this code here:\nhttps://github.com/pytorch/pytorch/blob/fc6e37ceb23f99808265c11a37368078d5f982b8/torch/fx/interpreter.py#L173-L183\nWe turn off this flag so we don't get l",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-04",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-04T07:00:00+00:00",
+  "utc_end": "2023-04-05T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:14.145564+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 24,
+        "title": "Basic attention kernel that supports cached KV + (multi-)prompts",
+        "url": "https://github.com/vllm-project/vllm/pull/24",
+        "author": "suquark",
+        "mergedAt": "2023-04-05T03:34:47Z",
+        "createdAt": "2023-04-03T12:19:03Z",
+        "changedFiles": 3,
+        "additions": 622,
+        "deletions": 0,
+        "commits": 25,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR implements a basic and not highly optimized kernel to support cached KV with multiple import prompts.",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

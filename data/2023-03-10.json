@@ -1,0 +1,30 @@
+{
+  "date": "2023-03-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-03-10T08:00:00+00:00",
+  "utc_end": "2023-03-11T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:22:47.390126+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 7,
+        "title": "Support beam search & parallel generation",
+        "url": "https://github.com/vllm-project/vllm/pull/7",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-03-10T17:58:22Z",
+        "createdAt": "2023-03-09T20:40:36Z",
+        "changedFiles": 16,
+        "additions": 662,
+        "deletions": 163,
+        "commits": 43,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds support for beam search and parallel generation (i.e., n > 1).\nNOTE: The correctness is only checked for beam search, but not for random sampling methods.\nTested models:\n\nOPT-125M\nOPT-350M\nOPT-1.3B\nOPT-2.7B\nOPT-6.7B\nOPT-13B\n\nTested GPUs:\n\nA100",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

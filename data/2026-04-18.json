@@ -1,0 +1,255 @@
+{
+  "date": "2026-04-18",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2026-04-18T07:00:00+00:00",
+  "utc_end": "2026-04-19T07:00:00+00:00",
+  "generated_at": "2026-07-08T23:35:37.211462+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 22169,
+        "title": "[main] chore: add bias for base layer with lora",
+        "url": "https://github.com/sgl-project/sglang/pull/22169",
+        "author": "gongyisheng",
+        "mergedAt": "2026-04-18T09:07:03Z",
+        "createdAt": "2026-04-05T23:35:09Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "high priority",
+          "lora",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nBug fix for LoRA base layer when I m doing miles RL lora training\nrelated PR: #22846\nmodel: qwen2.5-3B\nTo reproduce it the error we can mimic the way that miles start sglang:\n#!/bin/bash\n# Start SGLang server with Qwen2.5-3B-Instruct for weight update reproduction.\n# Config mirrors _compu",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 22664,
+        "title": "Qwen3next flashinfer allreduce auto enable",
+        "url": "https://github.com/sgl-project/sglang/pull/22664",
+        "author": "BBuf",
+        "mergedAt": "2026-04-18T14:32:41Z",
+        "createdAt": "2026-04-13T05:31:03Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Made with @codex\nSummary\nEnable FlashInfer allreduce fusion by default for Qwen3NextForCausalLM on supported single-node SM90/SM100 TP runs.\nWhy\nQwen/Qwen3-Coder-Next was running with enable_flashinfer_allreduce_fusion=false on H100, and profiler traces showed prefill time dominated by unfused cross",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 22814,
+        "title": "diffusion: add HunyuanVideo GroupNorm+SiLU fast path",
+        "url": "https://github.com/sgl-project/sglang/pull/22814",
+        "author": "BBuf",
+        "mergedAt": "2026-04-18T15:38:50Z",
+        "createdAt": "2026-04-14T15:24:47Z",
+        "changedFiles": 4,
+        "additions": 492,
+        "deletions": 4,
+        "commits": 6,
+        "labels": [
+          "run-ci",
+          "diffusion",
+          "jit-kernel"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds a Triton GroupNorm + SiLU fast path for HunyuanVideoResnetBlockCausal3D only.\nIt is gated by SGLANG_USE_CUDA_HUNYUANVIDEO_GROUP_NORM_SILU=1.\nH100 (CUDA_VISIBLE_DEVICES=1) benchmark on latest main:\n\nDenoisingStage: 41406.19 -> 41582.68 ms (+0.4%)\nDecodingStage: 15514.60 -> 14548.95 ms (-",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 22431,
+        "title": "Fix Qwen3.5 video processing when passing video_data in \"processor_output\" format",
+        "url": "https://github.com/sgl-project/sglang/pull/22431",
+        "author": "lkhl",
+        "mergedAt": "2026-04-18T16:04:03Z",
+        "createdAt": "2026-04-09T07:52:16Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nCurrently, the video preprocessing function of Qwen3.5 requires two return values:\n\n  \n    \n      sglang/python/sglang/srt/multimodal/processors/qwen_vl.py\n    \n    \n        Lines 514 to 518\n      in\n      ef6bfc1\n    \n  \n  \n    \n\n        \n          \n           videos_processed = [ \n     ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 39782,
+        "title": "[DOC] Add fuse_minimax_qk_norm ",
+        "url": "https://github.com/vllm-project/vllm/pull/39782",
+        "author": "jeejeelee",
+        "mergedAt": "2026-04-18T07:41:37Z",
+        "createdAt": "2026-04-14T08:48:03Z",
+        "changedFiles": 1,
+        "additions": 34,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this PR will resolve)\".\n The test plan, such as providing test command.\n The test results, such as pasting the results comparison befor",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 39909,
+        "title": "Added general ND x ND matmul and unit test for it",
+        "url": "https://github.com/vllm-project/vllm/pull/39909",
+        "author": "YM2132",
+        "mergedAt": "2026-04-18T14:05:21Z",
+        "createdAt": "2026-04-15T13:40:38Z",
+        "changedFiles": 2,
+        "additions": 129,
+        "deletions": 31,
+        "commits": 6,
+        "labels": [
+          "ready",
+          "v1"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nAdd a general ND x ND batch invariant matmul branch. The Gemma4-E2B model has a 4D x 3D matmul, which is not covered by the batch invariant implementation at the moment. This PR fixes: #38892 and the general implementation ensures all shapes supported by torch.matmul are now supported by bat",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 40194,
+        "title": "[Attention] TurboQuant: remove redundant random signs, add prior art attribution",
+        "url": "https://github.com/vllm-project/vllm/pull/40194",
+        "author": "dalistarh",
+        "mergedAt": "2026-04-18T18:31:59Z",
+        "createdAt": "2026-04-18T07:32:55Z",
+        "changedFiles": 6,
+        "additions": 53,
+        "deletions": 103,
+        "commits": 2,
+        "labels": [
+          "ready",
+          "v1",
+          "quantization"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\n\nRemove per-layer random sign flips from the Hadamard rotation. The Hadamard signs should have no effect on Lloyd-Max quantization quality; first, because the quantizer is symmetric around zero, and second because the randomness will add variance. In this PR, all layers now share the same p",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 40191,
+        "title": "[Bugfix] Guard mxfp4_experts_quant bindings on ENABLE_NVFP4_SM100",
+        "url": "https://github.com/vllm-project/vllm/pull/40191",
+        "author": "ultism",
+        "mergedAt": "2026-04-18T20:58:47Z",
+        "createdAt": "2026-04-18T05:40:47Z",
+        "changedFiles": 3,
+        "additions": 12,
+        "deletions": 20,
+        "commits": 4,
+        "labels": [
+          "bug",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThe SM_100 and SM_120 NVFP4 build branches in CMakeLists.txt have asymmetric source lists:\n\nThe SM_120 branch (lines 910\u2013941, consumer Blackwell \u2014 RTX 50 series) compiles:\n\nnvfp4_quant_kernels.cu, activation_nvfp4_quant_fusion_kernels.cu, nvfp4_experts_quant.cu, nvfp4_scaled_mm_sm120_kernels",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 39352,
+        "title": "[Frontend] Preserve structured output special tokens in offline LLM.chat",
+        "url": "https://github.com/vllm-project/vllm/pull/39352",
+        "author": "lucianommartins",
+        "mergedAt": "2026-04-18T23:46:08Z",
+        "createdAt": "2026-04-08T21:31:56Z",
+        "changedFiles": 1,
+        "additions": 58,
+        "deletions": 0,
+        "commits": 2,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nWhen using the offline API (LLM.chat) with models that encode structured output syntax as special tokens (such as Gemma 4's thinking delimiters <|channel> and tool call tokens <|tool_call>), the current default skip_special_tokens=True in SamplingParams strips these tokens from output.text. ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 40010,
+        "title": "[KV Connector] Allow metrics of multiple connectors of same types in multi connector.",
+        "url": "https://github.com/vllm-project/vllm/pull/40010",
+        "author": "omerpaz95",
+        "mergedAt": "2026-04-19T04:49:11Z",
+        "createdAt": "2026-04-16T12:30:58Z",
+        "changedFiles": 1,
+        "additions": 11,
+        "deletions": 1,
+        "commits": 12,
+        "labels": [
+          "bug",
+          "ready",
+          "kv-connector"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nFix stats collection and Prometheus metric registration in MultiConnector when multiple connectors of the same class are configured (e.g., two OffloadingConnector instances\nfor different transfer types).\nTwo bugs fixed:\n\n\nStats overwrite \u2014 get_kv_connector_stats() keyed stats by class name, ",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 39185,
+        "title": "[KV Offload] Pass request context",
+        "url": "https://github.com/vllm-project/vllm/pull/39185",
+        "author": "omerpaz95",
+        "mergedAt": "2026-04-19T05:54:59Z",
+        "createdAt": "2026-04-07T12:10:20Z",
+        "changedFiles": 7,
+        "additions": 170,
+        "deletions": 81,
+        "commits": 13,
+        "labels": [
+          "documentation",
+          "rocm",
+          "frontend",
+          "intel-gpu",
+          "ready",
+          "ci/build",
+          "v1",
+          "multi-modality",
+          "gpt-oss",
+          "kv-connector",
+          "nvidia"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\nPass per-request context (kv_transfer_params) through the CPU offloading manager interface.\nThe OffloadingManager ABC and CPUOffloadingManager now accept a ReqContext argument on lookup, prepare_load, and prepare_store. ReqContext wraps request.kv_transfer_params (a free-form dict set via sa",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      }
+    ]
+  }
+}

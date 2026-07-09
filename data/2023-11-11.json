@@ -1,0 +1,30 @@
+{
+  "date": "2023-11-11",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-11-11T08:00:00+00:00",
+  "utc_end": "2023-11-12T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:38:00.829313+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1628,
+        "title": "Fix cpu heavy code in async function _AsyncLLMEngine._run_workers_async",
+        "url": "https://github.com/vllm-project/vllm/pull/1628",
+        "author": "dominik-schwabe",
+        "mergedAt": "2023-11-11T22:50:45Z",
+        "createdAt": "2023-11-11T21:46:12Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 7,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "The function _AsyncLLMEngine._run_workers_async executes a function on the workers via getattr(worker, method) which is cpu bound and blocks the event loop and requests with fastapi for example can not be optimally served.\nMore specifically, the _queue in the created stream object in the following l",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      }
+    ]
+  }
+}

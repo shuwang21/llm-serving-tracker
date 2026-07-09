@@ -1,0 +1,30 @@
+{
+  "date": "2023-07-07",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-07T07:00:00+00:00",
+  "utc_end": "2023-07-08T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:19.969476+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 364,
+        "title": "Add trust-remote-code flag to handle remote tokenizers",
+        "url": "https://github.com/vllm-project/vllm/pull/364",
+        "author": "codethazine",
+        "mergedAt": "2023-07-07T18:04:59Z",
+        "createdAt": "2023-07-04T21:53:11Z",
+        "changedFiles": 5,
+        "additions": 39,
+        "deletions": 6,
+        "commits": 6,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix issue #353",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

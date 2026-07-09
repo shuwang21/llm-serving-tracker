@@ -1,0 +1,48 @@
+{
+  "date": "2023-08-30",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-08-30T07:00:00+00:00",
+  "utc_end": "2023-08-31T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:33:29.807366+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 234,
+        "title": "Accelerate LLaMA model loading",
+        "url": "https://github.com/vllm-project/vllm/pull/234",
+        "author": "JF-D",
+        "mergedAt": "2023-08-30T08:00:14Z",
+        "createdAt": "2023-06-25T07:31:32Z",
+        "changedFiles": 8,
+        "additions": 191,
+        "deletions": 113,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR is for accelerating LLaMA model weights loading with safetensors. I find current load weight implementation doubles the time cost as the tensor-model parallelism increases (refer to the belowing loading time table for LLaMA-65B).\n\n\n\nParallelism Degree\nOriginal (minutes)\nSafetensors (minutes)",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 707,
+        "title": "Improve _prune_hidden_states micro-benchmark",
+        "url": "https://github.com/vllm-project/vllm/pull/707",
+        "author": "tmm1",
+        "mergedAt": "2023-08-31T04:28:44Z",
+        "createdAt": "2023-08-09T00:17:02Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "I've been poking around the benchmarks for #485, and tried running benchmark_throughput.py and benchmark_latency.py with cProfile and line_profiler.\nI noticed this stood out:\n7201829 function calls (6535053 primitive calls) in 54976.552 seconds                                             \n          ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      }
+    ]
+  }
+}

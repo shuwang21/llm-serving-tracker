@@ -1,0 +1,30 @@
+{
+  "date": "2023-07-29",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-29T07:00:00+00:00",
+  "utc_end": "2023-07-30T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:31:37.765422+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 599,
+        "title": "fix ModuleNotFoundError",
+        "url": "https://github.com/vllm-project/vllm/pull/599",
+        "author": "mklf",
+        "mergedAt": "2023-07-30T03:52:42Z",
+        "createdAt": "2023-07-27T08:27:44Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "this pr is related to issue #572\nas stated in this issue, the error originates from the capture of self object, but only 3 config is needed.",
+        "category": "Other",
+        "highImpact": false
+      }
+    ]
+  }
+}

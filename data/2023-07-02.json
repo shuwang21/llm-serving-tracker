@@ -1,0 +1,30 @@
+{
+  "date": "2023-07-02",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-07-02T07:00:00+00:00",
+  "utc_end": "2023-07-03T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:30:00.155593+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 330,
+        "title": "feat: add ChatCompletion endpoint in OpenAI demo server.",
+        "url": "https://github.com/vllm-project/vllm/pull/330",
+        "author": "gesanqiu",
+        "mergedAt": "2023-07-03T05:54:33Z",
+        "createdAt": "2023-07-02T07:31:50Z",
+        "changedFiles": 2,
+        "additions": 284,
+        "deletions": 6,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Adapt from https://github.com/lm-sys/FastChat/blob/v0.2.14/fastchat/serve/openai_api_server.py\nTest on vicuna-7b-v1.3 and WizardCoder.",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      }
+    ]
+  }
+}

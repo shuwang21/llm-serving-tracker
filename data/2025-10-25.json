@@ -1,0 +1,602 @@
+{
+  "date": "2025-10-25",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-10-25T07:00:00+00:00",
+  "utc_end": "2025-10-26T07:00:00+00:00",
+  "generated_at": "2026-07-08T22:25:47.332187+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 11869,
+        "title": "[bugs] docker file name should be <name>.Dockerfile so it can properly render",
+        "url": "https://github.com/sgl-project/sglang/pull/11869",
+        "author": "slin1237",
+        "mergedAt": "2025-10-25T15:34:43Z",
+        "createdAt": "2025-10-20T16:03:01Z",
+        "changedFiles": 15,
+        "additions": 14,
+        "deletions": 14,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "docker file name should be <name>.Dockerfile\nhttps://docs.docker.com/build/concepts/dockerfile/#filename\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provi",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12124,
+        "title": "Clean up server args & Add CI scripts",
+        "url": "https://github.com/sgl-project/sglang/pull/12124",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-25T18:53:57Z",
+        "createdAt": "2025-10-25T17:38:04Z",
+        "changedFiles": 4,
+        "additions": 134,
+        "deletions": 156,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12119,
+        "title": "[Misc] Improve the error message of failed import",
+        "url": "https://github.com/sgl-project/sglang/pull/12119",
+        "author": "DarkSharpness",
+        "mergedAt": "2025-10-25T19:09:05Z",
+        "createdAt": "2025-10-25T10:40:07Z",
+        "changedFiles": 1,
+        "additions": 13,
+        "deletions": 1,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nKey motivation: this error wasted precious 10 min of my life\nWhen import sgl_kernel fails, I got this:\n[sgl_kernel] CRITICAL: Could not load any common_ops library!\n\nAttempted locations:\n1. Architecture-specific pattern: /root/sglang/.venv/lib/python3.12/site-packages/sgl_kernel/sm90/com",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11962,
+        "title": "[CI] Add ci monitor balance workflow",
+        "url": "https://github.com/sgl-project/sglang/pull/11962",
+        "author": "BBuf",
+        "mergedAt": "2025-10-25T19:14:36Z",
+        "createdAt": "2025-10-22T07:48:12Z",
+        "changedFiles": 5,
+        "additions": 655,
+        "deletions": 87,
+        "commits": 18,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12098,
+        "title": "Skip TestLlama4LoRA in CI",
+        "url": "https://github.com/sgl-project/sglang/pull/12098",
+        "author": "lifuhuang",
+        "mergedAt": "2025-10-25T19:16:36Z",
+        "createdAt": "2025-10-25T01:26:54Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 6,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Skip tests in CI to reduce execution time.\n\nMotivation\nThis test is very expensive (8-GPU) but it does not have significant value as no real LoRA adapter is loaded.\nSkipping it in CI for now, later we can consider add a more proper llama4 test with smaller # of GPUs (e.g., 4)\nModifications\n\nAccuracy",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12126,
+        "title": "clean up github tokens",
+        "url": "https://github.com/sgl-project/sglang/pull/12126",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-25T19:23:54Z",
+        "createdAt": "2025-10-25T19:18:00Z",
+        "changedFiles": 7,
+        "additions": 11,
+        "deletions": 13,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12115,
+        "title": "Fix Illegal Instruction/IMA errors when using DP attention -- num_tokens_for_logprob calculation",
+        "url": "https://github.com/sgl-project/sglang/pull/12115",
+        "author": "YAMY1234",
+        "mergedAt": "2025-10-25T19:28:26Z",
+        "createdAt": "2025-10-25T08:40:47Z",
+        "changedFiles": 1,
+        "additions": 8,
+        "deletions": 5,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFinding the root fix for #12052\nIssue: When running with --enable-dp-attention, the DP gather operation in logits stage uses incorrect metadata, causing Triton kernel to access out-of-bounds memory.\nAssertionError: src OOB: sz=661, chunk_size=7168, required=4738048, src.numel=21504\n\nRoot ",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12127,
+        "title": "Fix token for CI monitor",
+        "url": "https://github.com/sgl-project/sglang/pull/12127",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-25T19:38:26Z",
+        "createdAt": "2025-10-25T19:38:17Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11814,
+        "title": "Reenable b200 tests",
+        "url": "https://github.com/sgl-project/sglang/pull/11814",
+        "author": "Kangyan-Zhou",
+        "mergedAt": "2025-10-25T20:02:33Z",
+        "createdAt": "2025-10-19T00:07:40Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Set up a new CI runner for b200",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12101,
+        "title": "Update document index for DeepSeek-v32 docs",
+        "url": "https://github.com/sgl-project/sglang/pull/12101",
+        "author": "Fridge003",
+        "mergedAt": "2025-10-25T20:38:58Z",
+        "createdAt": "2025-10-25T02:54:11Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nUpdate index so it can show on website, following #11877\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12125,
+        "title": "Update sgl-kernel version to 0.3.16.post4",
+        "url": "https://github.com/sgl-project/sglang/pull/12125",
+        "author": "Fridge003",
+        "mergedAt": "2025-10-25T21:33:33Z",
+        "createdAt": "2025-10-25T17:47:27Z",
+        "changedFiles": 2,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFix CI break in  https://github.com/sgl-project/sglang/actions/runs/18796162478/job/53637188677?pr=12098#step:5:558\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run a",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12130,
+        "title": "[Doc] Fix format for deepseek v3.2 document",
+        "url": "https://github.com/sgl-project/sglang/pull/12130",
+        "author": "Fridge003",
+        "mergedAt": "2025-10-25T22:07:50Z",
+        "createdAt": "2025-10-25T21:30:15Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11993,
+        "title": "Accelerate deepseek fp4 b200 ci",
+        "url": "https://github.com/sgl-project/sglang/pull/11993",
+        "author": "Qiaolin-Yu",
+        "mergedAt": "2025-10-25T22:29:15Z",
+        "createdAt": "2025-10-23T02:05:33Z",
+        "changedFiles": 1,
+        "additions": 5,
+        "deletions": 0,
+        "commits": 7,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nIt's based on #11821 . Will rebase after that pr is merged.\n\n\nIt takes 386s on my local server. I think it's time to add this back.\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests accordi",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12132,
+        "title": "Clean up server launch code and multi tokenizer",
+        "url": "https://github.com/sgl-project/sglang/pull/12132",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-25T23:40:27Z",
+        "createdAt": "2025-10-25T22:32:07Z",
+        "changedFiles": 9,
+        "additions": 130,
+        "deletions": 141,
+        "commits": 13,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Simplify many redundant logics around server launch and multi-tokenizer",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 11936,
+        "title": "[Test] Add dsv3.2 nsa backend testing",
+        "url": "https://github.com/sgl-project/sglang/pull/11936",
+        "author": "Johnsonms",
+        "mergedAt": "2025-10-26T00:07:37Z",
+        "createdAt": "2025-10-21T22:34:33Z",
+        "changedFiles": 2,
+        "additions": 125,
+        "deletions": 0,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12133,
+        "title": "[docs] upd docker files names everywhere",
+        "url": "https://github.com/sgl-project/sglang/pull/12133",
+        "author": "vincentzed",
+        "mergedAt": "2025-10-26T01:20:23Z",
+        "createdAt": "2025-10-25T22:37:29Z",
+        "changedFiles": 7,
+        "additions": 9,
+        "deletions": 9,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nAfter #11869 we want to update it everywhere\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentati",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12118,
+        "title": "Make bmm batch invariant injection optional",
+        "url": "https://github.com/sgl-project/sglang/pull/12118",
+        "author": "fzyzcjy",
+        "mergedAt": "2025-10-26T02:18:36Z",
+        "createdAt": "2025-10-25T09:44:49Z",
+        "changedFiles": 1,
+        "additions": 9,
+        "deletions": 5,
+        "commits": 3,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12138,
+        "title": "[Doc] Small update of DeepSeek v3.2 document",
+        "url": "https://github.com/sgl-project/sglang/pull/12138",
+        "author": "Fridge003",
+        "mergedAt": "2025-10-26T03:34:05Z",
+        "createdAt": "2025-10-26T02:40:42Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nFixing a wrong sentence\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accurac",
+        "category": "MoE / Expert Parallel",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12139,
+        "title": "docs: update README",
+        "url": "https://github.com/sgl-project/sglang/pull/12139",
+        "author": "zhyncs",
+        "mergedAt": "2025-10-26T03:49:10Z",
+        "createdAt": "2025-10-26T03:46:39Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nModifications\n\nAccuracy Tests\n\nBenchmarking and Profiling\n\nChecklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark re",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12097,
+        "title": "[router] MCP Manager - Support Connection Pooling, Tool Inventory and Proxy",
+        "url": "https://github.com/sgl-project/sglang/pull/12097",
+        "author": "slin1237",
+        "mergedAt": "2025-10-26T04:26:28Z",
+        "createdAt": "2025-10-24T23:39:52Z",
+        "changedFiles": 36,
+        "additions": 3840,
+        "deletions": 854,
+        "commits": 26,
+        "labels": [
+          "enhancement",
+          "high priority",
+          "router",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\nThis PR refactors the MCP (Model Context Protocol) manager from a complex hierarchical architecture to a simplified flat structure with connection pooling, TTL-based caching, and non-blocking startup. The changes address critical performance, correctness, and reliability issues while maintai",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 11991,
+        "title": "[NVIDIA] Change default quant method for model_opt",
+        "url": "https://github.com/sgl-project/sglang/pull/11991",
+        "author": "kaixih",
+        "mergedAt": "2025-10-26T05:04:57Z",
+        "createdAt": "2025-10-23T01:53:43Z",
+        "changedFiles": 2,
+        "additions": 9,
+        "deletions": 3,
+        "commits": 7,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nWhile working on Qwen + Eagle, I found it\u2019s not compatible with NVIDIA\u2019s released Eagle heads (nvidia/Qwen3-235B-A22B-Eagle3). The root cause is that we default quant_method to fp8 for ModelOpt checkpoints, but this assumption doesn\u2019t hold, for example, this model doesn\u2019t specify any quan",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12141,
+        "title": "[router] update smg code owners for each component",
+        "url": "https://github.com/sgl-project/sglang/pull/12141",
+        "author": "slin1237",
+        "mergedAt": "2025-10-26T05:28:59Z",
+        "createdAt": "2025-10-26T03:50:39Z",
+        "changedFiles": 1,
+        "additions": 14,
+        "deletions": 4,
+        "commits": 1,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Checklist\n\n Format your code according to the Format code with pre-commit.\n Add unit tests according to the Run and add unit tests.\n Update documentation according to Write documentations.\n Provide accuracy and speed benchmark results according to Test the accuracy and Benchmark the speed.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12147,
+        "title": "[router] cleaned up all the redundant comments in the config module",
+        "url": "https://github.com/sgl-project/sglang/pull/12147",
+        "author": "CatherineSue",
+        "mergedAt": "2025-10-26T06:11:00Z",
+        "createdAt": "2025-10-26T06:07:28Z",
+        "changedFiles": 4,
+        "additions": 62,
+        "deletions": 279,
+        "commits": 1,
+        "labels": [
+          "router",
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary of Changes\ntypes.rs\n\nRemoved field comments that simply restated the field names (e.g., \"Server host address\" above host)\nKept meaningful comments that explain constraints or special behavior (e.g., \"Set to -1 to disable rate limiting\")\n\nbuilder.rs\n\nRemoved doc comments from builder methods ",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12136,
+        "title": "Clean up attention backend selection code & Other minor rename",
+        "url": "https://github.com/sgl-project/sglang/pull/12136",
+        "author": "merrymercy",
+        "mergedAt": "2025-10-26T06:50:12Z",
+        "createdAt": "2025-10-26T01:51:53Z",
+        "changedFiles": 6,
+        "additions": 282,
+        "deletions": 275,
+        "commits": 10,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "move the default attention backend selection logic from model_runner.py to server_args.py, so we can put all attention backend related things into a single place\nrename spec_num_total_accepted_tokens -> spec_num_accepted_tokens , cum_spec_accept_length -> spec_total_num_accepted_tokens",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "sglang",
+        "number": 12116,
+        "title": "[log] Make forward iter count optional",
+        "url": "https://github.com/sgl-project/sglang/pull/12116",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-26T06:51:07Z",
+        "createdAt": "2025-10-25T08:49:25Z",
+        "changedFiles": 3,
+        "additions": 23,
+        "deletions": 5,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "related to #9366. Make it optional.",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 12113,
+        "title": "[misc] depdencies & enviroment flag",
+        "url": "https://github.com/sgl-project/sglang/pull/12113",
+        "author": "hnyls2002",
+        "mergedAt": "2025-10-26T06:52:35Z",
+        "createdAt": "2025-10-25T07:03:30Z",
+        "changedFiles": 4,
+        "additions": 15,
+        "deletions": 12,
+        "commits": 4,
+        "labels": [
+          "run-ci"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Remove gguf in optional dependency (already in dependency)\nRemove --enable-beta-spec and introduce SGLANG_ENABLE_SPEC_V2 environment vairable.",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 27490,
+        "title": "[Attention] Add missing kv cache scale setup",
+        "url": "https://github.com/vllm-project/vllm/pull/27490",
+        "author": "MatthewBonanni",
+        "mergedAt": "2025-10-25T07:12:50Z",
+        "createdAt": "2025-10-24T21:23:52Z",
+        "changedFiles": 1,
+        "additions": 72,
+        "deletions": 59,
+        "commits": 4,
+        "labels": [
+          "bug",
+          "ready",
+          "deepseek"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n#25103 missed the kv cache scale setup when breaking out MLAAttention. This PR adds this to MLAAttention.__init__\ncc @pavanimajety\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (link existing issues this",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 27470,
+        "title": "[CI/Build] Refactor processing tests",
+        "url": "https://github.com/vllm-project/vllm/pull/27470",
+        "author": "DarkLight1337",
+        "mergedAt": "2025-10-25T16:14:30Z",
+        "createdAt": "2025-10-24T10:07:28Z",
+        "changedFiles": 4,
+        "additions": 174,
+        "deletions": 230,
+        "commits": 14,
+        "labels": [
+          "ready",
+          "multi-modality",
+          "qwen"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nAutomatically include architectures from the test registry for test_common.py\nUse code from test_common.py to format the inputs for test_tensor_schema.py\n\nTest Plan\nTest Result\n\n\n Essential Elements of an Effective PR Description Checklist \n\n The purpose of the PR, such as \"Fix some issue (",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 27522,
+        "title": "[CI/Build] Use CPU for mm processing test on CI",
+        "url": "https://github.com/vllm-project/vllm/pull/27522",
+        "author": "Isotr0py",
+        "mergedAt": "2025-10-26T05:09:19Z",
+        "createdAt": "2025-10-26T04:01:09Z",
+        "changedFiles": 1,
+        "additions": 4,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Purpose\n\nUse CPU environment for multimodal processing test, because GPU is never used in these tests.\n\nTest Plan\npytest -s -v tests/models/multimodal/processing/\n\npytest -s -v tests/models/multimodal/test_mapping.py\n\nTest Result\nHave confirmed these tests passed in local CPU build.\n\n\n Essential Ele",
+        "category": "Speculative Decoding",
+        "highImpact": false
+      }
+    ]
+  }
+}

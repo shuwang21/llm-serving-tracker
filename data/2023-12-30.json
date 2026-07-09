@@ -1,0 +1,30 @@
+{
+  "date": "2023-12-30",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-12-30T08:00:00+00:00",
+  "utc_end": "2023-12-31T08:00:00+00:00",
+  "generated_at": "2026-07-08T20:41:03.798991+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 2301,
+        "title": "Add support GPT-NeoX Models without attention biases",
+        "url": "https://github.com/vllm-project/vllm/pull/2301",
+        "author": "dalgarak",
+        "mergedAt": "2023-12-30T16:42:04Z",
+        "createdAt": "2023-12-29T14:14:32Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR enables support for GPT-NeoX models without attention bias.\nAll models with the currently released GPT-NeoX architecture use attention bias by default, but the next version of huggingface transformers will support models without attention bias (merged PR - huggingface/transformers#28126), an",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

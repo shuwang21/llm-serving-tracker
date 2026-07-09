@@ -1,0 +1,30 @@
+{
+  "date": "2023-04-10",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-04-10T07:00:00+00:00",
+  "utc_end": "2023-04-11T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:24:34.780136+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 29,
+        "title": "Memcpy kernel for flash attention",
+        "url": "https://github.com/vllm-project/vllm/pull/29",
+        "author": "suquark",
+        "mergedAt": "2023-04-11T01:22:49Z",
+        "createdAt": "2023-04-06T08:52:22Z",
+        "changedFiles": 4,
+        "additions": 293,
+        "deletions": 0,
+        "commits": 16,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Memcpy kernel for flash attention\nnum_tokens: 64, num_heads: 40, head_size: 128, block_size: 8, num_blocks: 1024, dtype: torch.float16\n[Latency] gather_cached_kv: 0.008 ms\n[Throughput] gather_cached_kv: 156.479 GB/s\nnum_tokens: 128, num_heads: 40, head_size: 128, block_size: 8, num_blocks: 1024, dty",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      }
+    ]
+  }
+}

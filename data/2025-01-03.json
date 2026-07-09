@@ -1,0 +1,353 @@
+{
+  "date": "2025-01-03",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2025-01-03T08:00:00+00:00",
+  "utc_end": "2025-01-04T08:00:00+00:00",
+  "generated_at": "2026-07-08T21:12:49.934031+00:00",
+  "repos": {
+    "sglang": [
+      {
+        "repo": "sglang",
+        "number": 2722,
+        "title": "Update README.md",
+        "url": "https://github.com/sgl-project/sglang/pull/2722",
+        "author": "merrymercy",
+        "mergedAt": "2025-01-03T08:32:20Z",
+        "createdAt": "2025-01-03T08:31:55Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "add new contributors so they can trigger the CI automatically",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2727,
+        "title": "[Docs] fix 404 - Contributor Guide, again",
+        "url": "https://github.com/sgl-project/sglang/pull/2727",
+        "author": "gaocegege",
+        "mergedAt": "2025-01-03T14:21:38Z",
+        "createdAt": "2025-01-03T14:13:24Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nfix: Fix 404 link in PR template\nModifications\n\nChecklist\n\n Format your code according to the Contributor Guide.\n Add unit tests as outlined in the Contributor Guide.\n Update documentation as needed, including docstrings or example tutorials.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2726,
+        "title": "feat: Support VLM in reference_hf",
+        "url": "https://github.com/sgl-project/sglang/pull/2726",
+        "author": "gaocegege",
+        "mergedAt": "2025-01-03T14:32:30Z",
+        "createdAt": "2025-01-03T14:00:42Z",
+        "changedFiles": 1,
+        "additions": 84,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\nThanks for the project! It\u2019s like a handy little Swiss Army knife\u2014small but efficient.\nI\u2019ve been experimenting with QWen2 VL model and ran into some issues with bitsandbytes, so I wanted to double-check if everything works with reference_hf. Turns out, the script didn\u2019t support VLM initia",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "sglang",
+        "number": 2571,
+        "title": "Refactor SchedulePolicy to improve code organization",
+        "url": "https://github.com/sgl-project/sglang/pull/2571",
+        "author": "libratiger",
+        "mergedAt": "2025-01-03T16:05:16Z",
+        "createdAt": "2024-12-25T11:03:59Z",
+        "changedFiles": 2,
+        "additions": 211,
+        "deletions": 90,
+        "commits": 7,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Motivation\n\nWhen I try to deep into the  Zero-Overhead Batch Scheduler , I find is hard to get clear on the scheduling, and is hard to impl a new scheduling policy, so I try to refactor SchedulePolicy,and make it easy to add new policy for me and others.\nModifications\n\n\nMove sorting logic into separ",
+        "category": "MoE / Expert Parallel",
+        "highImpact": true
+      }
+    ],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 11280,
+        "title": "[Model] Whisper model implementation",
+        "url": "https://github.com/vllm-project/vllm/pull/11280",
+        "author": "aurickq",
+        "mergedAt": "2025-01-03T08:39:20Z",
+        "createdAt": "2024-12-18T03:46:40Z",
+        "changedFiles": 16,
+        "additions": 1045,
+        "deletions": 55,
+        "commits": 48,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add Whisper model implementation. Based on #5964 but heavily optimized and integrated with newer encoder/decoder support in vLLM. Currently only supports audio up to 30s. No VAD model, no beam search, no phoneme model, forced alignment, etc.\nPerformance overall looks OK, especially at larger batch s",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11659,
+        "title": "[V1] Simplify Shutdown",
+        "url": "https://github.com/vllm-project/vllm/pull/11659",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-03T17:25:39Z",
+        "createdAt": "2024-12-31T15:45:15Z",
+        "changedFiles": 7,
+        "additions": 42,
+        "deletions": 60,
+        "commits": 23,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nobjects that for manage background processes or IPC implements shutdown and weakref.finalize\nremove use of __del__ (resolves weird logs when LLM is cleaned up\nremove need for higher level classes like LLM, LLMEngine, or AsyncLLM to need to do anything special for shutdown, since all the ob",
+        "category": "Speculative Decoding",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11708,
+        "title": "[Bugfix] Fix ColumnParallelLinearWithLoRA slice",
+        "url": "https://github.com/vllm-project/vllm/pull/11708",
+        "author": "zinccat",
+        "mergedAt": "2025-01-03T21:02:34Z",
+        "createdAt": "2025-01-03T05:44:02Z",
+        "changedFiles": 1,
+        "additions": 2,
+        "deletions": 2,
+        "commits": 8,
+        "labels": [
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Fix Incorrect attribute reference in vllm/lora/layers.py\nFIX #11707 (link existing issues this PR will resolve)",
+        "category": "CI / Tests",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11721,
+        "title": "[V1] Improve TP>1 Error Handling + Stack Trace",
+        "url": "https://github.com/vllm-project/vllm/pull/11721",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-03T21:29:11Z",
+        "createdAt": "2025-01-03T18:15:04Z",
+        "changedFiles": 4,
+        "additions": 40,
+        "deletions": 21,
+        "commits": 44,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nhandle startup error (VLLM currently hangs if there is an error initializing the model with TP>1)\nhandle runtime error in LLM when TP>1 (VLLM currently does not clean up all resources in this case)\nimprove WORKER runtime error stack trace for TP>1 (we currently do not see the root cause)\n\n",
+        "category": "NVIDIA / CUDA",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11719,
+        "title": "[Misc]Add BNB quantization for Qwen2VL",
+        "url": "https://github.com/vllm-project/vllm/pull/11719",
+        "author": "jeejeelee",
+        "mergedAt": "2025-01-03T22:19:02Z",
+        "createdAt": "2025-01-03T16:36:23Z",
+        "changedFiles": 1,
+        "additions": 40,
+        "deletions": 29,
+        "commits": 2,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #11687",
+        "category": "Model Support",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11695,
+        "title": "Update requirements-tpu.txt to support python 3.9 and 3.11",
+        "url": "https://github.com/vllm-project/vllm/pull/11695",
+        "author": "mgoin",
+        "mergedAt": "2025-01-03T22:36:46Z",
+        "createdAt": "2025-01-02T20:51:55Z",
+        "changedFiles": 2,
+        "additions": 7,
+        "deletions": 3,
+        "commits": 2,
+        "labels": [
+          "tpu",
+          "ready",
+          "ci/build"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Also including a small suggestion to block table size warning.\nTested on TPUv6e with Python 3.11.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11724,
+        "title": "[V1] Chore: cruft removal",
+        "url": "https://github.com/vllm-project/vllm/pull/11724",
+        "author": "robertgshaw2-redhat",
+        "mergedAt": "2025-01-03T23:25:03Z",
+        "createdAt": "2025-01-03T20:00:16Z",
+        "changedFiles": 4,
+        "additions": 0,
+        "deletions": 11,
+        "commits": 1,
+        "labels": [
+          "frontend",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "SUMMARY:\n\nremove cruft",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11656,
+        "title": "log GPU blocks num for MultiprocExecutor",
+        "url": "https://github.com/vllm-project/vllm/pull/11656",
+        "author": "WangErXiao",
+        "mergedAt": "2025-01-04T00:13:12Z",
+        "createdAt": "2024-12-31T09:22:16Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "log GPU blocks num for MultiprocExecutor",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11701,
+        "title": "Update tool_calling.md",
+        "url": "https://github.com/vllm-project/vllm/pull/11701",
+        "author": "Bryce1010",
+        "mergedAt": "2025-01-04T06:16:30Z",
+        "createdAt": "2025-01-03T02:41:27Z",
+        "changedFiles": 1,
+        "additions": 1,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "As you can see, there is no tool_chat_template_llama3_json.jinja file exsist.\nupdate tool_chat_template_llama3_json.jinja\nto tool_chat_template_llama3.1_json.jinja",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11718,
+        "title": "Update bnb.md with example for OpenAI",
+        "url": "https://github.com/vllm-project/vllm/pull/11718",
+        "author": "bet0x",
+        "mergedAt": "2025-01-04T06:29:02Z",
+        "createdAt": "2025-01-03T16:28:31Z",
+        "changedFiles": 1,
+        "additions": 7,
+        "deletions": 0,
+        "commits": 1,
+        "labels": [
+          "documentation",
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "OpenAI Compatible Server example\nAdds example for the command line arguments when loading 4bit models.",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11712,
+        "title": "[V1] Add `RayExecutor` support for `AsyncLLM` (api server)",
+        "url": "https://github.com/vllm-project/vllm/pull/11712",
+        "author": "jikunshang",
+        "mergedAt": "2025-01-04T06:41:32Z",
+        "createdAt": "2025-01-03T06:54:06Z",
+        "changedFiles": 1,
+        "additions": 6,
+        "deletions": 1,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Add RayExecutor support for AsyncLLM (api server)",
+        "category": "Frontend / API / Tool Calling",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 11513,
+        "title": "[V1] Add kv cache utils tests.",
+        "url": "https://github.com/vllm-project/vllm/pull/11513",
+        "author": "xcnick",
+        "mergedAt": "2025-01-04T06:49:47Z",
+        "createdAt": "2024-12-26T10:19:44Z",
+        "changedFiles": 1,
+        "additions": 241,
+        "deletions": 0,
+        "commits": 3,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR adds unit tests for the kv cache related data structures of V1",
+        "category": "KV Cache / Memory",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 11233,
+        "title": "[Core][Bugfix] Use correct device to initialize GPU data during CUDA-graph-capture",
+        "url": "https://github.com/vllm-project/vllm/pull/11233",
+        "author": "yanburman",
+        "mergedAt": "2025-01-04T06:50:16Z",
+        "createdAt": "2024-12-16T14:31:38Z",
+        "changedFiles": 5,
+        "additions": 23,
+        "deletions": 15,
+        "commits": 1,
+        "labels": [
+          "ready"
+        ],
+        "baseRefName": "main",
+        "bodyExcerpt": "Until now, tensors and tiles were created over the default device. When trying to capture a CUDA-graph over other different devices, the code failed since the data was created on a different GPU.\nThis PR fixes this problem by initializing the data on the correct device.",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      }
+    ]
+  }
+}

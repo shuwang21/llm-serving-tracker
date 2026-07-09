@@ -1,0 +1,66 @@
+{
+  "date": "2023-09-23",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2023-09-23T07:00:00+00:00",
+  "utc_end": "2023-09-24T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:34:57.135410+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 1156,
+        "title": "[FIX] Simplify sampler logic",
+        "url": "https://github.com/vllm-project/vllm/pull/1156",
+        "author": "zhuohan123",
+        "mergedAt": "2023-09-24T00:21:57Z",
+        "createdAt": "2023-09-23T00:59:44Z",
+        "changedFiles": 1,
+        "additions": 10,
+        "deletions": 37,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As we only have one seq for the prompt seq group, we don't need these ifs in the code logic.",
+        "category": "Other",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 1164,
+        "title": "Fix config for Falcon",
+        "url": "https://github.com/vllm-project/vllm/pull/1164",
+        "author": "WoosukKwon",
+        "mergedAt": "2023-09-24T00:38:43Z",
+        "createdAt": "2023-09-23T23:45:32Z",
+        "changedFiles": 2,
+        "additions": 8,
+        "deletions": 3,
+        "commits": 1,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Currently, vLLM does not read the number of KV heads correctly and thus returns gibberish outputs for Falcon-40B model. This PR fixes the bug.",
+        "category": "KV Cache / Memory",
+        "highImpact": false
+      },
+      {
+        "repo": "vllm",
+        "number": 852,
+        "title": "Align `max_tokens` behavior with openai",
+        "url": "https://github.com/vllm-project/vllm/pull/852",
+        "author": "HermitSun",
+        "mergedAt": "2023-09-24T01:10:13Z",
+        "createdAt": "2023-08-24T12:39:13Z",
+        "changedFiles": 2,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 5,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "As OpenAI's API doc says, max_tokens is an optional int param which defaults to inf. And since there is no official int inf in Python, we have two ways to trigger this param's default behavior:\n\nSimply not pass this param when requests, and pydantic will set it to 16 for us.\n\n  \n    \n      vllm/vllm",
+        "category": "Model Support",
+        "highImpact": true
+      }
+    ]
+  }
+}

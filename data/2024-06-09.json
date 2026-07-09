@@ -1,0 +1,66 @@
+{
+  "date": "2024-06-09",
+  "timezone": "America/Los_Angeles",
+  "utc_start": "2024-06-09T07:00:00+00:00",
+  "utc_end": "2024-06-10T07:00:00+00:00",
+  "generated_at": "2026-07-08T20:52:49.841672+00:00",
+  "repos": {
+    "sglang": [],
+    "vllm": [
+      {
+        "repo": "vllm",
+        "number": 5047,
+        "title": "[Kernel][Misc] Use TORCH_LIBRARY instead of PYBIND11_MODULE for custom ops",
+        "url": "https://github.com/vllm-project/vllm/pull/5047",
+        "author": "bnellnm",
+        "mergedAt": "2024-06-09T20:23:30Z",
+        "createdAt": "2024-05-25T06:29:06Z",
+        "changedFiles": 55,
+        "additions": 833,
+        "deletions": 451,
+        "commits": 41,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "This PR makes the following changes\n\nreplaces the uses of PYBIND11_MODULE with TORCH_LIBRARY and adds schemas and meta functions (where) needed for all custom (C++/CUDA) kernels.\nThe remainder of the custom operators are wrapped in _custom_ops.py, i.e. cuda_utils, cache_ops, moe, custom_ar and punic",
+        "category": "NVIDIA / CUDA",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 5164,
+        "title": "[Bugfix] Fix KeyError: 1 When Using LoRA adapters ",
+        "url": "https://github.com/vllm-project/vllm/pull/5164",
+        "author": "tdrunsri",
+        "mergedAt": "2024-06-09T23:23:15Z",
+        "createdAt": "2024-05-31T19:43:44Z",
+        "changedFiles": 1,
+        "additions": 3,
+        "deletions": 1,
+        "commits": 8,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "FIX #5113\nDuring batch inference, when using LoRA adapters, the process crashes due to attempting to remove a LoRA adapter that has already been removed.\nTo address this problem, I have added a condition to ensure that the LoRA adapter is only removed if it exists in the curr_loras list:\nif (\n    cu",
+        "category": "AMD / ROCm",
+        "highImpact": true
+      },
+      {
+        "repo": "vllm",
+        "number": 5350,
+        "title": "[Misc] Update to comply with the new `compressed-tensors` config",
+        "url": "https://github.com/vllm-project/vllm/pull/5350",
+        "author": "dsikka",
+        "mergedAt": "2024-06-10T03:49:46Z",
+        "createdAt": "2024-06-07T19:20:53Z",
+        "changedFiles": 4,
+        "additions": 19,
+        "deletions": 20,
+        "commits": 10,
+        "labels": [],
+        "baseRefName": "main",
+        "bodyExcerpt": "Summary\n\nUpdate to the compressed-tensors quantization method to comply with the new config file structure",
+        "category": "Distributed / PD Disaggregation",
+        "highImpact": false
+      }
+    ]
+  }
+}
