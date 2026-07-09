@@ -29,17 +29,20 @@ def publish_site_data() -> None:
 
     dates = []
     by_month: dict[str, list[dict]] = {}
-    for data_path in sorted(DATA_DIR.glob("????-??-??.json")):
-        dates.append(data_path.stem)
+    for data_path in sorted(DATA_DIR.glob("[0-9]*/[0-9]*/????-??-??.json")):
+        date = data_path.stem
+        dates.append(date)
         with open(data_path) as f:
             data = json.load(f)
         for prs in data["repos"].values():
             for pr in prs:
                 for key in SLIM_PR_DROP_KEYS:
                     pr.pop(key, None)
-        with open(site_data_dir / data_path.name, "w") as f:
+        day_out_dir = site_data_dir / date[:4] / date[5:7]
+        day_out_dir.mkdir(parents=True, exist_ok=True)
+        with open(day_out_dir / data_path.name, "w") as f:
             json.dump(data, f, separators=(",", ":"))
-        by_month.setdefault(data_path.stem[:7], []).append(data)
+        by_month.setdefault(date[:7], []).append(data)
 
     for month, days in sorted(by_month.items()):
         summary = {"month": month, "days": [d["date"] for d in days], "repos": {}}

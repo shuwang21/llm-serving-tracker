@@ -202,7 +202,7 @@ def main():
     parser.add_argument("--out-dir", default=str(Path(__file__).resolve().parent.parent / "data"))
     args = parser.parse_args()
 
-    out_path = Path(args.out_dir) / f"{args.date}.json"
+    out_path = Path(args.out_dir) / args.date[:4] / args.date[5:7] / f"{args.date}.json"
     if out_path.exists() and not args.force:
         print(f"Cache hit: {out_path} already exists (use --force to refetch)")
         return

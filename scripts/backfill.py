@@ -41,7 +41,7 @@ def main():
     fetched = skipped = 0
     for d in daterange(start, end):
         day = d.isoformat()
-        if not args.force and (DATA_DIR / f"{day}.json").exists():
+        if not args.force and (DATA_DIR / day[:4] / day[5:7] / f"{day}.json").exists():
             print(f"[skip] {day} (cached)")
             skipped += 1
             continue

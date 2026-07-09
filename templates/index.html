@@ -262,7 +262,7 @@ function datesInRange(from, to) {
 
 async function fetchDay(date) {
   if (!dayCache[date]) {
-    const resp = await fetch(`data/${date}.json`);
+    const resp = await fetch(`data/${date.slice(0, 4)}/${date.slice(5, 7)}/${date}.json`);
     if (!resp.ok) throw new Error(`failed to load ${date}.json`);
     dayCache[date] = await resp.json();
   }
