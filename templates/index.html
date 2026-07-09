@@ -237,9 +237,12 @@ const CATEGORY_COLORS = {
   "Other": "#9ca3af",
 };
 const MAX_CARDS = 400;
+const SUMMARY_MODE_DAYS = 62;
 
 let manifestDates = [];
+let manifestMonths = [];
 const dayCache = {};
+const monthCache = {};
 
 const $ = (sel) => document.querySelector(sel);
 
@@ -266,35 +269,69 @@ async function fetchDay(date) {
   return dayCache[date];
 }
 
-function aggregate(days) {
+async function fetchMonth(month) {
+  if (!monthCache[month]) {
+    const resp = await fetch(`data/months/${month}.json`);
+    if (!resp.ok) throw new Error(`failed to load months/${month}.json`);
+    monthCache[month] = await resp.json();
+  }
+  return monthCache[month];
+}
+
+function monthBounds(month) {
+  const [y, m] = month.split("-").map(Number);
+  const last = new Date(Date.UTC(y, m, 0)).getUTCDate();
+  return [`${month}-01`, `${month}-${String(last).padStart(2, "0")}`];
+}
+
+function impactScore(p) {
+  return p.changedFiles + p.additions + p.deletions;
+}
+
+function aggregate(days, months, summaryMode) {
   const out = {};
   for (const key of Object.keys(REPOS)) {
-    const prs = [];
-    for (const day of days) prs.push(...(day.repos[key] || []));
-    prs.sort((a, b) => (a.mergedAt < b.mergedAt ? 1 : -1));
+    const dayPrs = [];
+    for (const day of days) dayPrs.push(...(day.repos[key] || []));
 
-    const authors = new Set(prs.map((p) => p.author));
+    const authors = new Set(dayPrs.map((p) => p.author));
     const catCounts = {};
-    let additions = 0, deletions = 0;
-    for (const p of prs) {
+    let total = dayPrs.length, additions = 0, deletions = 0;
+    for (const p of dayPrs) {
       additions += p.additions;
       deletions += p.deletions;
       catCounts[p.category] = (catCounts[p.category] || 0) + 1;
     }
+    const highImpact = dayPrs.filter((p) => p.highImpact);
+
+    for (const m of months) {
+      const r = m.repos[key];
+      if (!r) continue;
+      total += r.total;
+      additions += r.additions;
+      deletions += r.deletions;
+      for (const a of Object.keys(r.authors)) authors.add(a);
+      for (const [cat, n] of Object.entries(r.categories)) catCounts[cat] = (catCounts[cat] || 0) + n;
+      highImpact.push(...r.highImpact);
+    }
+
     const categoryDist = Object.entries(catCounts).sort((a, b) => b[1] - a[1]);
-    const highImpact = prs
-      .filter((p) => p.highImpact)
-      .sort((a, b) => (b.changedFiles + b.additions + b.deletions) - (a.changedFiles + a.additions + a.deletions));
+    highImpact.sort((a, b) => impactScore(b) - impactScore(a));
+
+    const prs = summaryMode
+      ? highImpact
+      : dayPrs.sort((a, b) => (a.mergedAt < b.mergedAt ? 1 : -1));
 
     out[key] = {
       prs,
-      total: prs.length,
+      total,
       uniqueAuthors: authors.size,
       additions,
       deletions,
       categoryDist,
       topCategory: categoryDist[0] || null,
       highImpact,
+      summaryMode,
     };
   }
   return out;
@@ -343,9 +380,12 @@ function repoColumnHtml(key, st) {
   const cards = shown.length
     ? shown.map(prCardHtml).join("")
     : '<p style="color: var(--text-dim); font-size: 13px;">No merged PRs in this range.</p>';
-  const truncNote = st.prs.length > MAX_CARDS
-    ? `<div class="truncate-note">Showing latest ${MAX_CARDS} of ${st.prs.length.toLocaleString()} PRs — narrow the range or filter by category to see the rest.</div>`
-    : "";
+  let truncNote = "";
+  if (st.summaryMode) {
+    truncNote = `<div class="truncate-note">Long range: showing top ${shown.length.toLocaleString()} high-impact PRs of ${st.total.toLocaleString()} merged — pick a range under ${SUMMARY_MODE_DAYS} days to browse all PRs.</div>`;
+  } else if (st.prs.length > MAX_CARDS) {
+    truncNote = `<div class="truncate-note">Showing latest ${MAX_CARDS} of ${st.prs.length.toLocaleString()} PRs — narrow the range or filter by category to see the rest.</div>`;
+  }
 
   return `
     <div class="repo-column" style="--repo-color: ${repo.color}">
@@ -405,11 +445,27 @@ async function loadRange(from, to) {
   badge.textContent = dates.length === 1
     ? `${dates[0]} report`
     : `${dates[0]} – ${dates[dates.length - 1]} · ${dates.length} days`;
-  status.textContent = `Loading ${dates.length} day${dates.length > 1 ? "s" : ""}…`;
+
+  const summaryMode = dates.length > SUMMARY_MODE_DAYS && manifestMonths.length > 0;
+  let fullMonths = [], fetchDates = dates;
+  if (summaryMode) {
+    fullMonths = manifestMonths.filter((m) => {
+      const [mStart, mEnd] = monthBounds(m);
+      return mStart >= from && mEnd <= to;
+    });
+    const monthSet = new Set(fullMonths);
+    fetchDates = dates.filter((d) => !monthSet.has(d.slice(0, 7)));
+  }
+  status.textContent = summaryMode
+    ? `Loading ${fullMonths.length} month summaries + ${fetchDates.length} days…`
+    : `Loading ${dates.length} day${dates.length > 1 ? "s" : ""}…`;
 
   try {
-    const days = await Promise.all(dates.map(fetchDay));
-    const agg = aggregate(days);
+    const [days, months] = await Promise.all([
+      Promise.all(fetchDates.map(fetchDay)),
+      Promise.all(fullMonths.map(fetchMonth)),
+    ]);
+    const agg = aggregate(days, months, summaryMode);
     $("#columns").innerHTML = Object.keys(REPOS).map((k) => repoColumnHtml(k, agg[k])).join("");
     status.textContent = "";
   } catch (err) {
@@ -439,7 +495,9 @@ function applyPreset(preset, btn) {
 async function init() {
   try {
     const resp = await fetch("data/manifest.json");
-    manifestDates = (await resp.json()).dates;
+    const manifest = await resp.json();
+    manifestDates = manifest.dates;
+    manifestMonths = manifest.months || [];
   } catch (err) {
     $("#status").textContent = "Failed to load data manifest.";
     return;
